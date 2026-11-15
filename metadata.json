@@ -1,0 +1,6 @@
+{
+  "name": "ScorePulse xG - Correct Score AI & Live 1xBet Tips",
+  "description": "ระบบวิเคราะห์และพยากรณ์ผลสกอร์แม่นยำ (Correct Score) ด้วยโมเดล xG หลายสถาบัน, Dixon-Coles Poisson, Data Calibration ความคลาดเคลื่อนต่ำกว่า 5% พร้อมผลบอลสด แจ้งเตือนประตู และกระดานสนทนาคอบอล",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
