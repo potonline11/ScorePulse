@@ -64,6 +64,15 @@ export function createApiApp() {
   const app = express();
   app.use(express.json());
 
+  app.get(['/api/health', '/api/index'], (_req: Request, res: Response) => {
+    res.json({
+      ok: true,
+      service: 'ScorePulse xG API',
+      isServerless: IS_SERVERLESS,
+      bangkokNow: getBangkokServerTime().formattedTime,
+    });
+  });
+
   const apiKey = process.env.GEMINI_API_KEY;
   const isRealApiKey = apiKey && apiKey !== 'MY_GEMINI_API_KEY' && !apiKey.startsWith('MY_');
 

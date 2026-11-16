@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'http';
-import { createApiApp } from '../server/createApp.js';
+import { createApiApp } from './createApp.js';
 
 let cachedApp: ReturnType<typeof createApiApp> | null = null;
 let initError: Error | null = null;
