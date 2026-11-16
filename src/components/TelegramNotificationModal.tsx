@@ -125,6 +125,18 @@ const stripTelegramHtmlTags = (html: string) =>
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>');
 
+async function parseJsonSafe(res: Response): Promise<any> {
+  const text = await res.text();
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {
+      error: `เซิร์ฟเวอร์ตอบกลับผิดรูปแบบ (HTTP ${res.status}): ${text.slice(0, 140)}`,
+    };
+  }
+}
+
 export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps> = ({
   isOpen,
   onClose,
@@ -164,7 +176,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
 
       let loadedTgCfg: TelegramConfig | null = null;
       if (tgCfgRes.ok) {
-        loadedTgCfg = await tgCfgRes.json();
+        loadedTgCfg = await parseJsonSafe(tgCfgRes);
       }
 
       if (loadedTgCfg && !loadedTgCfg.botToken && typeof window !== 'undefined') {
@@ -179,7 +191,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                 body: JSON.stringify(backup),
               });
               if (syncRes.ok) {
-                const syncData = await syncRes.json();
+                const syncData = await parseJsonSafe(syncRes);
                 if (syncData?.config) loadedTgCfg = syncData.config;
               }
             }
@@ -198,11 +210,13 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
       }
 
       if (stateRes.ok) {
-        const stateData = await stateRes.json();
-        setEngineState(stateData);
+        const stateData = await parseJsonSafe(stateRes);
+        if (stateData?.bangkokNow) {
+          setEngineState(stateData);
+        }
       }
       if (tgPreviewRes.ok) {
-        const tgPrevData = await tgPreviewRes.json();
+        const tgPrevData = await parseJsonSafe(tgPreviewRes);
         if (tgPrevData.htmlMessage) setLiveTelegramPreviewHtml(tgPrevData.htmlMessage);
       }
     } catch (err) {
@@ -231,7 +245,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ botToken: cleanedToken }),
       });
-      const data = await res.json();
+      const data = await parseJsonSafe(res);
       if (res.ok && data.valid) {
         soundManager.playGoalAlert();
         const nextCfg: TelegramConfig = {
@@ -275,7 +289,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ botToken: cleanedToken }),
       });
-      const data = await res.json();
+      const data = await parseJsonSafe(res);
       if (res.ok && data.ok) {
         const chats: TelegramChatInfo[] = data.chats || [];
         const selectedId = data.selectedChatId || tgConfig.chatId;
@@ -337,7 +351,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
           chatId: cleanedChatId,
         }),
       });
-      const data = await res.json();
+      const data = await parseJsonSafe(res);
       if (res.ok && data.success) {
         soundManager.playGoalAlert();
         saveTelegramBackupToBrowser({
@@ -387,7 +401,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      const data = await res.json();
+      const data = await parseJsonSafe(res);
 
       if (!res.ok) {
         setTestResult({
@@ -462,7 +476,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
     setTestResult(null);
     try {
       const res = await fetch('/api/cron/tick', { method: 'POST' });
-      const data = await res.json();
+      const data = await parseJsonSafe(res);
       if (res.ok && data.ok) {
         await loadModalData();
         onConfigUpdated?.();

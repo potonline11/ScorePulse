@@ -672,7 +672,10 @@ function appendLog(
 // --- TELEGRAM GROUP CHAT AUTOMATION ENGINE ---
 export function sanitizeTelegramToken(raw?: string): string {
   if (!raw || typeof raw !== 'string') return '';
-  return raw.trim().replace(/[\r\n\s]+/g, '');
+  return raw
+    .trim()
+    .replace(/^['"]+|['"]+$/g, '')
+    .replace(/[\r\n\s]+/g, '');
 }
 
 export function loadTelegramConfig(): TelegramConfigData {

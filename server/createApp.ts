@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
 import { GoogleGenAI } from '@google/genai';
@@ -16,9 +16,13 @@ import {
   TelegramConfigData,
   IS_SERVERLESS,
   RUNTIME_DATA_DIR,
-} from './dailyEngine';
+} from './dailyEngine.js';
 
-dotenv.config();
+try {
+  dotenv.config();
+} catch {
+  // ignore dotenv errors in serverless environments
+}
 
 const PROMO_CONFIG_FILE = path.join(RUNTIME_DATA_DIR, '.promo-config.json');
 
@@ -257,129 +261,149 @@ export function createApiApp() {
 
   // 6. Telegram Group Bot Automation API Endpoints
   app.get('/api/telegram/config', (_req: Request, res: Response) => {
-    const config = loadTelegramConfig();
-    res.json(config);
+    try {
+      const config = loadTelegramConfig();
+      res.json(config);
+    } catch (err: any) {
+      res.status(500).json({ error: err?.message || 'Failed to load Telegram config' });
+    }
   });
 
   app.post('/api/telegram/config', async (req: Request, res: Response) => {
-    const current = loadTelegramConfig();
-    const nextToken =
-      typeof req.body.botToken === 'string' ? sanitizeTelegramToken(req.body.botToken) : current.botToken;
-    let nextChatId = typeof req.body.chatId === 'string' ? req.body.chatId.trim() : current.chatId;
+    try {
+      const body = req.body || {};
+      const current = loadTelegramConfig();
+      const nextToken =
+        typeof body.botToken === 'string' ? sanitizeTelegramToken(body.botToken) : current.botToken;
+      let nextChatId = typeof body.chatId === 'string' ? body.chatId.trim() : current.chatId;
 
-    const updated: TelegramConfigData = {
-      ...current,
-      ...req.body,
-      botToken: nextToken,
-      chatId: nextChatId,
-      notifyTime: req.body.notifyTime || current.notifyTime || '06:30',
-    };
+      const updated: TelegramConfigData = {
+        ...current,
+        ...body,
+        botToken: nextToken,
+        chatId: nextChatId,
+        notifyTime: body.notifyTime || current.notifyTime || '06:30',
+      };
 
-    let tokenValid = false;
-    let verificationError: string | undefined;
+      let tokenValid = false;
+      let verificationError: string | undefined;
 
-    if (nextToken) {
-      const verification = await verifyTelegramBotToken(nextToken);
-      if (verification.valid) {
-        tokenValid = true;
-        updated.verifiedBotName = verification.displayName;
-        updated.verifiedBotUsername = verification.username;
-        updated.lastError = undefined;
-        if (updated.lastDispatchStatus === 'NO_TOKEN') {
-          updated.lastDispatchStatus = 'PENDING';
-        }
+      if (nextToken) {
+        const verification = await verifyTelegramBotToken(nextToken);
+        if (verification.valid) {
+          tokenValid = true;
+          updated.verifiedBotName = verification.displayName;
+          updated.verifiedBotUsername = verification.username;
+          updated.lastError = undefined;
+          if (updated.lastDispatchStatus === 'NO_TOKEN') {
+            updated.lastDispatchStatus = 'PENDING';
+          }
 
-        const detected = await detectTelegramGroupChats(nextToken);
-        if (detected.ok && detected.chats.length > 0) {
-          updated.detectedChats = detected.chats;
-          if (!nextChatId) {
-            const preferred =
-              detected.chats.find((c) => c.type === 'supergroup' || c.type === 'group') || detected.chats[0];
-            if (preferred) {
-              nextChatId = preferred.chatId;
-              updated.chatId = preferred.chatId;
+          const detected = await detectTelegramGroupChats(nextToken);
+          if (detected.ok && detected.chats.length > 0) {
+            updated.detectedChats = detected.chats;
+            if (!nextChatId) {
+              const preferred =
+                detected.chats.find((c) => c.type === 'supergroup' || c.type === 'group') || detected.chats[0];
+              if (preferred) {
+                nextChatId = preferred.chatId;
+                updated.chatId = preferred.chatId;
+              }
             }
           }
+        } else {
+          verificationError = verification.error;
+          updated.lastError = verification.error;
+          updated.lastDispatchStatus = 'ERROR';
         }
       } else {
-        verificationError = verification.error;
-        updated.lastError = verification.error;
-        updated.lastDispatchStatus = 'ERROR';
+        updated.lastDispatchStatus = 'NO_TOKEN';
+        updated.verifiedBotName = undefined;
+        updated.verifiedBotUsername = undefined;
+        updated.lastError = undefined;
       }
-    } else {
-      updated.lastDispatchStatus = 'NO_TOKEN';
-      updated.verifiedBotName = undefined;
-      updated.verifiedBotUsername = undefined;
-      updated.lastError = undefined;
+
+      saveTelegramConfig(updated);
+
+      let engineState = null;
+      if (tokenValid && updated.enabled && updated.chatId && !IS_SERVERLESS) {
+        try {
+          engineState = await runAutomatedPipelineTick(false, true);
+        } catch (err) {
+          console.warn('[Telegram Save Catch-Up Tick Error]:', err);
+        }
+      } else {
+        try {
+          engineState = await runAutomatedPipelineTick(false, false);
+        } catch {
+          // non-fatal
+        }
+      }
+
+      const latestConfig = loadTelegramConfig();
+      res.json({
+        success: true,
+        tokenValid,
+        verificationError,
+        config: latestConfig,
+        engineState,
+      });
+    } catch (err: any) {
+      console.error('[Telegram Config Save Error]:', err);
+      res.status(500).json({ error: err?.message || 'บันทึกการตั้งค่า Telegram ไม่สำเร็จ' });
     }
-
-    saveTelegramConfig(updated);
-
-    let engineState = null;
-    if (tokenValid && updated.enabled && updated.chatId && !IS_SERVERLESS) {
-      try {
-        engineState = await runAutomatedPipelineTick(false, true);
-      } catch (err) {
-        console.warn('[Telegram Save Catch-Up Tick Error]:', err);
-      }
-    } else {
-      try {
-        engineState = await runAutomatedPipelineTick(false, false);
-      } catch {
-        // non-fatal
-      }
-    }
-
-    const latestConfig = loadTelegramConfig();
-    res.json({
-      success: true,
-      tokenValid,
-      verificationError,
-      config: latestConfig,
-      engineState,
-    });
   });
 
   app.post('/api/telegram/verify', async (req: Request, res: Response) => {
-    const current = loadTelegramConfig();
-    const token = sanitizeTelegramToken(req.body.botToken || current.botToken);
-    const verification = await verifyTelegramBotToken(token);
-    if (verification.valid) {
-      current.botToken = token;
-      current.verifiedBotName = verification.displayName;
-      current.verifiedBotUsername = verification.username;
-      current.lastError = undefined;
-      if (current.lastDispatchStatus === 'NO_TOKEN') {
-        current.lastDispatchStatus = 'PENDING';
+    try {
+      const body = req.body || {};
+      const current = loadTelegramConfig();
+      const token = sanitizeTelegramToken(body.botToken || current.botToken);
+      const verification = await verifyTelegramBotToken(token);
+      if (verification.valid) {
+        current.botToken = token;
+        current.verifiedBotName = verification.displayName;
+        current.verifiedBotUsername = verification.username;
+        current.lastError = undefined;
+        if (current.lastDispatchStatus === 'NO_TOKEN') {
+          current.lastDispatchStatus = 'PENDING';
+        }
+        saveTelegramConfig(current);
       }
-      saveTelegramConfig(current);
+      res.status(verification.valid ? 200 : 400).json(verification);
+    } catch (err: any) {
+      res.status(500).json({ valid: false, error: err?.message || 'ตรวจสอบ Bot Token ไม่สำเร็จ' });
     }
-    res.status(verification.valid ? 200 : 400).json(verification);
   });
 
   app.post('/api/telegram/detect-chats', async (req: Request, res: Response) => {
-    const current = loadTelegramConfig();
-    const token = sanitizeTelegramToken(req.body.botToken || current.botToken);
-    const detected = await detectTelegramGroupChats(token);
-    if (!detected.ok) {
-      return res.status(400).json(detected);
+    try {
+      const body = req.body || {};
+      const current = loadTelegramConfig();
+      const token = sanitizeTelegramToken(body.botToken || current.botToken);
+      const detected = await detectTelegramGroupChats(token);
+      if (!detected.ok) {
+        return res.status(400).json(detected);
+      }
+      const updated: TelegramConfigData = {
+        ...current,
+        botToken: token || current.botToken,
+        detectedChats: detected.chats,
+      };
+      if (!updated.chatId && detected.chats.length > 0) {
+        const preferred =
+          detected.chats.find((c) => c.type === 'supergroup' || c.type === 'group') || detected.chats[0];
+        if (preferred) updated.chatId = preferred.chatId;
+      }
+      saveTelegramConfig(updated);
+      res.json({
+        ok: true,
+        chats: detected.chats,
+        selectedChatId: updated.chatId,
+      });
+    } catch (err: any) {
+      res.status(500).json({ ok: false, chats: [], error: err?.message || 'สแกนหากลุ่ม Telegram ไม่สำเร็จ' });
     }
-    const updated: TelegramConfigData = {
-      ...current,
-      botToken: token || current.botToken,
-      detectedChats: detected.chats,
-    };
-    if (!updated.chatId && detected.chats.length > 0) {
-      const preferred =
-        detected.chats.find((c) => c.type === 'supergroup' || c.type === 'group') || detected.chats[0];
-      if (preferred) updated.chatId = preferred.chatId;
-    }
-    saveTelegramConfig(updated);
-    res.json({
-      ok: true,
-      chats: detected.chats,
-      selectedChatId: updated.chatId,
-    });
   });
 
   app.get('/api/telegram/preview-message', async (_req: Request, res: Response) => {
@@ -536,6 +560,16 @@ export function createApiApp() {
     } catch (err: any) {
       res.status(500).json({ error: err?.message || 'บันทึกรหัสโปรโมชั่นไม่สำเร็จ' });
     }
+  });
+
+  // Global JSON error handler so API routes never return plain-text/HTML 500 errors
+  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    console.error('[API Unhandled Error]:', err);
+    if (res.headersSent) return;
+    res.status(err?.status || 500).json({
+      ok: false,
+      error: err?.message || 'Internal Server Error',
+    });
   });
 
   return app;

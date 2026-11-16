@@ -2,8 +2,8 @@ import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import fs from 'fs';
-import { createApiApp } from './server/createApp';
-import { runAutomatedPipelineTick } from './server/dailyEngine';
+import { createApiApp } from './server/createApp.js';
+import { runAutomatedPipelineTick } from './server/dailyEngine.js';
 
 const app = createApiApp();
 
