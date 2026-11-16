@@ -86,7 +86,7 @@ import { soundManager } from '../utils/audio';
 import { DailyUpdateScheduleModal } from '../components/DailyUpdateScheduleModal';
 import { TenSourceConsensusModal } from '../components/TenSourceConsensusModal';
 import { CorrectScoreSurgeryModal } from '../components/CorrectScoreSurgeryModal';
-import { LineNotificationModal, LINE_STORAGE_KEY, TELEGRAM_STORAGE_KEY } from '../components/LineNotificationModal';
+import { TelegramNotificationModal, TELEGRAM_STORAGE_KEY } from '../components/TelegramNotificationModal';
 import { PROMO_STORAGE_KEY, PromoConfigState } from '../components/PromoCodeModal';
 
 interface DailySuperPickViewProps {
@@ -153,7 +153,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   const [showScheduleModal, setShowScheduleModal] = useState<boolean>(false);
   const [showTenSourceModal, setShowTenSourceModal] = useState<boolean>(false);
   const [showSurgeryModal, setShowSurgeryModal] = useState<boolean>(false);
-  const [showLineModal, setShowLineModal] = useState<boolean>(false);
+  const [showTelegramModal, setShowTelegramModal] = useState<boolean>(false);
   const [notificationEnabled, setNotificationEnabled] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isBlindSpotExpanded, setIsBlindSpotExpanded] = useState<boolean>(true);
@@ -170,16 +170,8 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
       settleSummary?: string;
       issueDoneAt?: string;
       issueSummary?: string;
-      lineDoneAt?: string;
-      lineStatus?: string;
       telegramDoneAt?: string;
       telegramStatus?: string;
-    };
-    lineStatus?: {
-      enabled: boolean;
-      hasToken: boolean;
-      lastDispatchStatus?: string;
-      verifiedBotName?: string;
     };
     telegramStatus?: {
       enabled: boolean;
@@ -192,7 +184,6 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
     settledRecords?: any[];
   } | null>(null);
 
-  const [didAutoHealLine, setDidAutoHealLine] = useState<boolean>(false);
   const [didAutoHealTelegram, setDidAutoHealTelegram] = useState<boolean>(false);
 
   const fetchServerEngineState = async () => {
@@ -201,42 +192,6 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
       if (res.ok) {
         let data = await res.json();
         if (data.success) {
-          // Self-healing sync: restore LINE backup if container restarted cleanly
-          if (!data.lineStatus?.hasToken && !didAutoHealLine && typeof window !== 'undefined') {
-            try {
-              const rawBackup = window.localStorage.getItem(LINE_STORAGE_KEY);
-              if (rawBackup) {
-                const parsed = JSON.parse(rawBackup);
-                if (parsed?.channelAccessToken) {
-                  setDidAutoHealLine(true);
-                  const restoreRes = await fetch('/api/line/config', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(parsed),
-                  });
-                  if (restoreRes.ok) {
-                    const restoreData = await restoreRes.json();
-                    if (restoreData?.engineState) {
-                      data = {
-                        ...data,
-                        ...restoreData.engineState,
-                        lineStatus: restoreData.config
-                          ? {
-                              enabled: restoreData.config.enabled,
-                              hasToken: Boolean(restoreData.config.channelAccessToken),
-                              lastDispatchStatus: restoreData.config.lastDispatchStatus,
-                              verifiedBotName: restoreData.config.verifiedBotName,
-                            }
-                          : data.lineStatus,
-                      };
-                    }
-                  }
-                }
-              }
-            } catch {
-              // ignore storage errors
-            }
-          }
 
           // Self-healing sync: restore Telegram group bot backup if container restarted cleanly
           if (!data.telegramStatus?.hasToken && !didAutoHealTelegram && typeof window !== 'undefined') {
@@ -348,7 +303,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
       setUserSelectedManualPick(false);
       setTimeLeft(bkk.remainingToNext0600);
       setLastSyncTime(bkk.formattedTime);
-      showToast(`✅ ซิงค์ระบบ & เวลาไทยสำเร็จ (${bkk.formattedTime} น.): อัปเดตผล 05:00 + โพย 06:00 + ตรวจคิว LINE 06:30 แล้ว!`);
+      showToast(`✅ ซิงค์ระบบ & เวลาไทยสำเร็จ (${bkk.formattedTime} น.): อัปเดตผล 05:00 + โพย 06:00 + ตรวจคิว Telegram 06:30 แล้ว!`);
     }
   };
 
@@ -571,11 +526,11 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
         }}
       />
 
-      {/* LINE 06:30 AM Auto-Notification Modal */}
-      <LineNotificationModal
-        isOpen={showLineModal}
+      {/* Telegram Group 06:30 AM Auto-Notification Modal */}
+      <TelegramNotificationModal
+        isOpen={showTelegramModal}
         onClose={() => {
-          setShowLineModal(false);
+          setShowTelegramModal(false);
           fetchServerEngineState();
         }}
         onConfigUpdated={fetchServerEngineState}
@@ -622,13 +577,13 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
             <button
               onClick={() => {
                 soundManager.playTap();
-                setShowLineModal(true);
+                setShowTelegramModal(true);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-black bg-[#06C755]/20 hover:bg-[#06C755]/30 text-[#06C755] border border-[#06C755]/40 transition-all cursor-pointer shadow-sm shadow-[#06C755]/20 active:scale-95 animate-pulse"
-              title="ตั้งค่าแจ้งเตือนโพยคู่เอกส่งเข้า LINE OA และ กลุ่ม Telegram อัตโนมัติทุกเช้า 06:30 น."
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-black bg-[#229ED9]/20 hover:bg-[#229ED9]/30 text-sky-300 border border-[#229ED9]/40 transition-all cursor-pointer shadow-sm shadow-[#229ED9]/20 active:scale-95 animate-pulse"
+              title="ตั้งค่าแจ้งเตือนโพยคู่เอกส่งเข้ากลุ่ม Telegram อัตโนมัติทุกเช้า 06:30 น."
             >
-              <span className="w-2 h-2 rounded-full bg-[#06C755] animate-ping" />
-              <span>🟢 LINE & ✈️ Telegram 06:30</span>
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+              <span>✈️ แจ้งเตือน Telegram 06:30</span>
             </button>
 
             <button
@@ -718,11 +673,11 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span className="font-bold text-emerald-300 text-[11px] flex items-center gap-1">
                 <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>ท่อส่งอัตโนมัติ Server-Authoritative (05:00 สรุปผล &rarr; 06:00 ออกโพย &rarr; 06:30 LINE / Telegram)</span>
+                <span>ท่อส่งอัตโนมัติ Server-Authoritative (05:00 สรุปผล &rarr; 06:00 ออกโพย &rarr; 06:30 Telegram กลุ่ม)</span>
               </span>
             </div>
             <span className="text-[10px] text-slate-400 font-mono">
-              Catch-Up Engine ทำงานอัตโนมัติ 24 ชม.
+              Telegram Free Unlimited + Vercel Ready
             </span>
           </div>
 
@@ -755,53 +710,40 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
             <div
               onClick={() => {
                 soundManager.playTap();
-                setShowLineModal(true);
+                setShowTelegramModal(true);
               }}
               className={`p-2 rounded-xl border text-[11px] cursor-pointer transition-all ${
-                serverEngine?.lineStatus?.lastDispatchStatus === 'SUCCESS' ||
                 serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS'
-                  ? 'bg-emerald-950/30 border-emerald-500/50 hover:border-emerald-400'
-                  : serverEngine?.lineStatus?.lastDispatchStatus === 'ERROR' ||
-                    serverEngine?.telegramStatus?.lastDispatchStatus === 'ERROR'
+                  ? 'bg-sky-950/40 border-[#229ED9]/60 hover:border-sky-400'
+                  : serverEngine?.telegramStatus?.lastDispatchStatus === 'ERROR'
                   ? 'bg-rose-950/40 border-rose-500/60 hover:border-rose-400'
-                  : 'bg-amber-950/30 border-amber-500/50 hover:border-amber-400'
+                  : 'bg-sky-950/20 border-sky-500/40 hover:border-sky-400'
               }`}
             >
-              <div className="text-[#06C755] font-bold flex items-center justify-between gap-1">
-                <span>3. 06:30 LINE / TG</span>
-                <div className="flex items-center gap-1">
-                  <span
-                    className={`px-1.5 py-0.5 rounded text-[9px] font-black ${
-                      serverEngine?.lineStatus?.lastDispatchStatus === 'SUCCESS'
-                        ? 'bg-[#06C755] text-slate-950'
-                        : serverEngine?.lineStatus?.lastDispatchStatus === 'ERROR'
-                        ? 'bg-rose-500 text-white'
-                        : serverEngine?.lineStatus?.hasToken
-                        ? 'bg-emerald-500/20 text-emerald-300'
-                        : 'bg-slate-800 text-slate-300'
-                    }`}
-                  >
-                    LINE {serverEngine?.lineStatus?.lastDispatchStatus === 'SUCCESS' ? '✓' : serverEngine?.lineStatus?.hasToken ? '•' : 'ตั้งค่า'}
-                  </span>
-                  <span
-                    className={`px-1.5 py-0.5 rounded text-[9px] font-black ${
-                      serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS'
-                        ? 'bg-[#229ED9] text-slate-950'
-                        : serverEngine?.telegramStatus?.lastDispatchStatus === 'ERROR'
-                        ? 'bg-rose-500 text-white'
-                        : serverEngine?.telegramStatus?.hasToken && serverEngine?.telegramStatus?.hasChatId
-                        ? 'bg-[#229ED9]/20 text-sky-300'
-                        : 'bg-sky-500/15 text-sky-300'
-                    }`}
-                  >
-                    TG {serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS' ? '✓' : serverEngine?.telegramStatus?.hasChatId ? '•' : '+ตั้งค่า'}
-                  </span>
-                </div>
+              <div className="text-sky-400 font-bold flex items-center justify-between gap-1">
+                <span>3. 06:30 น. Telegram กลุ่ม</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded text-[9px] font-black ${
+                    serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS'
+                      ? 'bg-[#229ED9] text-slate-950'
+                      : serverEngine?.telegramStatus?.lastDispatchStatus === 'ERROR'
+                      ? 'bg-rose-500 text-white'
+                      : serverEngine?.telegramStatus?.hasToken && serverEngine?.telegramStatus?.hasChatId
+                      ? 'bg-emerald-500/20 text-emerald-300'
+                      : 'bg-sky-500/20 text-sky-300'
+                  }`}
+                >
+                  {serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS'
+                    ? '✓ SENT'
+                    : serverEngine?.telegramStatus?.lastDispatchStatus === 'ERROR'
+                    ? '! ERROR'
+                    : serverEngine?.telegramStatus?.hasToken && serverEngine?.telegramStatus?.hasChatId
+                    ? 'READY'
+                    : 'ตั้งค่า TG'}
+                </span>
               </div>
               <div className="text-slate-300 text-[10px] mt-0.5 line-clamp-2">
-                {serverEngine?.telegramStatus?.lastDispatchStatus === 'SUCCESS'
-                  ? `LINE & Telegram กลุ่ม: ส่งรอบวันนี้ครบแล้ว`
-                  : serverEngine?.pipeline?.lineStatus || 'คลิกเพื่อตั้งค่า LINE OA และ กลุ่ม Telegram อัตโนมัติ'}
+                {serverEngine?.pipeline?.telegramStatus || 'คลิกเพื่อตั้งค่าส่งโพยเข้ากลุ่ม Telegram อัตโนมัติ (ฟรีไม่อั้น)'}
               </div>
             </div>
           </div>

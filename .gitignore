@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+.line-config.json
+.telegram-config.json
+.promo-config.json
+.scorepulse-engine.json
+

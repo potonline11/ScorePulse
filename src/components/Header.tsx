@@ -13,7 +13,7 @@ interface HeaderProps {
   onSelectSuperPick?: () => void;
   onOpenPromoModal?: () => void;
   onOpenLiveStream?: () => void;
-  onOpenLineModal?: () => void;
+  onOpenTelegramModal?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectSuperPick,
   onOpenPromoModal,
   onOpenLiveStream,
-  onOpenLineModal,
+  onOpenTelegramModal,
 }) => {
   const handleTestSound = () => {
     soundManager.playWhistle();
@@ -62,19 +62,19 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Action Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 flex-wrap justify-end">
-          {/* LINE & Telegram 06:30 Notification Button */}
-          {onOpenLineModal && (
+          {/* Telegram 06:30 Notification Button */}
+          {onOpenTelegramModal && (
             <button
               onClick={() => {
                 soundManager.playTap();
-                onOpenLineModal();
+                onOpenTelegramModal();
               }}
-              className="flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg bg-[#06C755]/20 hover:bg-[#06C755]/30 border border-[#06C755]/40 text-[#06C755] text-[11px] sm:text-xs font-black transition-all active:scale-95 cursor-pointer shadow-sm shadow-[#06C755]/20 whitespace-nowrap"
-              title="ตั้งค่าแจ้งเตือนโพยคู่เอกส่งเข้า LINE และ Telegram อัตโนมัติทุกเช้า 06:30 น."
+              className="flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg bg-[#229ED9]/20 hover:bg-[#229ED9]/30 border border-[#229ED9]/40 text-sky-300 text-[11px] sm:text-xs font-black transition-all active:scale-95 cursor-pointer shadow-sm shadow-[#229ED9]/20 whitespace-nowrap"
+              title="ตั้งค่าแจ้งเตือนโพยคู่เอกส่งเข้ากลุ่ม Telegram อัตโนมัติทุกเช้า 06:30 น."
             >
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#06C755] animate-ping" />
-              <span className="sm:hidden">LINE / TG</span>
-              <span className="hidden sm:inline">LINE & Telegram 06:30</span>
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-sky-400 animate-ping" />
+              <span className="sm:hidden">TG 06:30</span>
+              <span className="hidden sm:inline">Telegram 06:30</span>
             </button>
           )}
 

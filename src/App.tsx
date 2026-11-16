@@ -19,7 +19,7 @@ import { MatchDetailModal } from './views/MatchDetailModal';
 import { LiveStreamView } from './views/LiveStreamView';
 import { AiChatDrawer } from './views/AiChatDrawer';
 import { PromoCodeModal } from './components/PromoCodeModal';
-import { LineNotificationModal } from './components/LineNotificationModal';
+import { TelegramNotificationModal } from './components/TelegramNotificationModal';
 import { soundManager } from './utils/audio';
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
   const [selectedMatchModal, setSelectedMatchModal] = useState<Match | null>(null);
   const [isAiChatOpen, setIsAiChatOpen] = useState<boolean>(false);
   const [isPromoModalOpen, setIsPromoModalOpen] = useState<boolean>(false);
-  const [isLineModalOpen, setIsLineModalOpen] = useState<boolean>(false);
+  const [isTelegramModalOpen, setIsTelegramModalOpen] = useState<boolean>(false);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
   const [isMobileFrame, setIsMobileFrame] = useState<boolean>(false);
 
@@ -252,7 +252,7 @@ export default function App() {
           soundManager.playTap();
           setActiveTab('stream');
         }}
-        onOpenLineModal={() => setIsLineModalOpen(true)}
+        onOpenTelegramModal={() => setIsTelegramModalOpen(true)}
       />
 
       {/* Main Content Body */}
@@ -357,10 +357,10 @@ export default function App() {
         );
       })()}
 
-      {/* LINE Official Account Notification Modal */}
-      <LineNotificationModal
-        isOpen={isLineModalOpen}
-        onClose={() => setIsLineModalOpen(false)}
+      {/* Telegram Group Notification Modal */}
+      <TelegramNotificationModal
+        isOpen={isTelegramModalOpen}
+        onClose={() => setIsTelegramModalOpen(false)}
       />
 
       {/* Bottom Navigation Bar */}

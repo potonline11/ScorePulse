@@ -91,33 +91,6 @@ export interface SettledPickRecord {
   note: string;
 }
 
-export interface DetectedWebhookRecipient {
-  id: string;
-  type: 'user' | 'group' | 'room';
-  label: string;
-  detectedAtBkk: string;
-}
-
-export interface LineConfigData {
-  enabled: boolean;
-  channelAccessToken: string;
-  targetUserId: string;
-  notifyTime: string; // e.g. "06:30"
-  lastSentOperationalDate?: string;
-  lastSentDate?: string;
-  lastSentAt?: string;
-  lastDispatchStatus?: 'SUCCESS' | 'ERROR' | 'PENDING' | 'NO_TOKEN';
-  lastDispatchMessage?: string;
-  lastError?: string;
-  verifiedBotName?: string;
-  verifiedBotBasicId?: string;
-  verifiedBotPictureUrl?: string;
-  quotaType?: string;
-  quotaLimit?: number;
-  quotaUsed?: number;
-  detectedRecipients?: DetectedWebhookRecipient[];
-}
-
 export interface TelegramChatInfo {
   chatId: string;
   title: string;
@@ -144,7 +117,7 @@ export interface TelegramConfigData {
 export interface PipelineLogEntry {
   timeBkk: string;
   dateKey: string;
-  step: '05:00_SETTLE' | '06:00_ISSUE' | '06:30_LINE' | '06:30_TG' | 'CRON_TICK' | 'VERIFY';
+  step: '05:00_SETTLE' | '06:00_ISSUE' | '06:30_TG' | 'CRON_TICK' | 'VERIFY';
   status: 'OK' | 'SKIP' | 'WARN' | 'ERROR';
   message: string;
 }
@@ -161,9 +134,6 @@ export interface EngineStateFile {
     issueDoneForDate?: string;
     issueDoneAt?: string;
     issueSummary?: string;
-    lineDoneForDate?: string;
-    lineDoneAt?: string;
-    lineStatus?: string;
     telegramDoneForDate?: string;
     telegramDoneAt?: string;
     telegramStatus?: string;
@@ -181,10 +151,18 @@ const THAI_MONTHS_SHORT = [
   'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.',
 ];
 
-const LINE_CONFIG_FILE = path.resolve('.line-config.json');
-const TELEGRAM_CONFIG_FILE = path.resolve('.telegram-config.json');
-const ENGINE_STATE_FILE = path.resolve('.scorepulse-engine.json');
-const DEFAULT_APP_URL = process.env.APP_URL || 'https://ais-dev-emjt54ywuwdvx2ltfzut2w-736728638814.asia-southeast1.run.app';
+export const IS_SERVERLESS = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+export const RUNTIME_DATA_DIR = IS_SERVERLESS ? '/tmp' : process.cwd();
+
+const TELEGRAM_CONFIG_FILE = path.join(RUNTIME_DATA_DIR, '.telegram-config.json');
+const ENGINE_STATE_FILE = path.join(RUNTIME_DATA_DIR, '.scorepulse-engine.json');
+
+const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+const DEFAULT_APP_URL =
+  process.env.APP_URL ||
+  (vercelHost ? `https://${vercelHost}` : '') ||
+  process.env.RENDER_EXTERNAL_URL ||
+  'https://ais-dev-emjt54ywuwdvx2ltfzut2w-736728638814.asia-southeast1.run.app';
 
 export function getBangkokServerTime(referenceDate: Date = new Date()): ServerBangkokTime {
   const formatter = new Intl.DateTimeFormat('en-US', {
@@ -670,86 +648,6 @@ export function saveEngineState(state: EngineStateFile) {
   }
 }
 
-export function sanitizeLineToken(raw?: string): string {
-  if (!raw || typeof raw !== 'string') return '';
-  return raw
-    .trim()
-    .replace(/^Bearer\s+/i, '')
-    .replace(/[\r\n\s]+/g, '')
-    .trim();
-}
-
-export function isValidLineTargetId(target?: string): boolean {
-  const t = (target || '').trim();
-  if (!t || t.toLowerCase() === 'all') return true;
-  // LINE Messaging API userId (U...), groupId (C...), roomId (R...) are 33 chars starting with U/C/R
-  return /^[UCR][0-9a-fA-F]{32}$/.test(t);
-}
-
-export function translateLineApiError(status: number, bodyText: string): string {
-  let rawMsg = bodyText;
-  try {
-    const parsed = JSON.parse(bodyText);
-    if (parsed?.message) rawMsg = parsed.message;
-  } catch {
-    // ignore JSON parse errors
-  }
-  if (status === 401) {
-    return `Token ไม่ถูกต้องหรือหมดอายุ (LINE 401): กรุณาไปที่ LINE Developers > Messaging API > กด Issue Channel access token (long-lived) ใหม่ แล้วนำมาวาง (${rawMsg})`;
-  }
-  if (status === 400) {
-    if (rawMsg.toLowerCase().includes('to') || rawMsg.toLowerCase().includes('invalid')) {
-      return `LINE User ID / Group ID ไม่ถูกต้อง (LINE 400): ต้องเป็นรหัส 33 ตัวขึ้นต้นด้วย U..., C... หรือ R... (ห้ามใส่ @ไอดีไลน์) — หากอยากส่งทุกคนที่เป็นเพื่อนกับบอท ให้ลบช่องนี้ให้ว่างไว้! (${rawMsg})`;
-    }
-    return `คำขอไม่ถูกต้อง (LINE 400): ${rawMsg}`;
-  }
-  if (status === 403) {
-    return `บอทไม่มีสิทธิ์ส่งข้อความ (LINE 403): ตรวจสอบว่าเปิด Messaging API และบอทยังไม่ได้ถูกปิดใช้งาน (${rawMsg})`;
-  }
-  if (status === 429) {
-    return `โควตาข้อความฟรีรายเดือนของ LINE OA เต็มแล้ว (LINE 429): เดือนนี้ส่งเกินแพ็กเกจฟรี 200-300 ข้อความ/เดือน (${rawMsg})`;
-  }
-  return `LINE API (${status}): ${rawMsg}`;
-}
-
-export function loadLineConfig(): LineConfigData {
-  const envToken = sanitizeLineToken(process.env.LINE_CHANNEL_ACCESS_TOKEN);
-  const envTarget = (process.env.LINE_TARGET_USER_ID || '').trim();
-  try {
-    if (fs.existsSync(LINE_CONFIG_FILE)) {
-      const data = JSON.parse(fs.readFileSync(LINE_CONFIG_FILE, 'utf-8'));
-      const fileToken = sanitizeLineToken(data.channelAccessToken);
-      const fileTarget = typeof data.targetUserId === 'string' ? data.targetUserId.trim() : '';
-      return {
-        enabled: true,
-        notifyTime: '06:30',
-        detectedRecipients: [],
-        ...data,
-        channelAccessToken: fileToken || envToken,
-        targetUserId: fileTarget || envTarget,
-      };
-    }
-  } catch (e) {
-    console.warn('[LINE] Failed to read .line-config.json:', e);
-  }
-  return {
-    enabled: true,
-    channelAccessToken: envToken,
-    targetUserId: envTarget,
-    notifyTime: '06:30',
-    detectedRecipients: [],
-    lastDispatchStatus: envToken ? 'PENDING' : 'NO_TOKEN',
-  };
-}
-
-export function saveLineConfig(config: LineConfigData) {
-  try {
-    fs.writeFileSync(LINE_CONFIG_FILE, JSON.stringify(config, null, 2), 'utf-8');
-  } catch (e) {
-    console.error('[LINE] Failed to save .line-config.json:', e);
-  }
-}
-
 function appendLog(
   state: EngineStateFile,
   bkk: ServerBangkokTime,
@@ -769,163 +667,6 @@ function appendLog(
     return; // prevent noisy duplicate spam
   }
   state.pipeline.logs = [entry, ...state.pipeline.logs].slice(0, 25);
-}
-
-/**
- * Formats a clean, high-impact Thai LINE message dynamically from today's active Super Pick.
- */
-export function formatDailySuperPickLineMessage(pick: ServerDailyPick, appUrl = DEFAULT_APP_URL): string {
-  const cleanBet = Math.round(50 * pick.primaryOdds);
-  return `👑 [ScorePulse xG] โพยคู่เอกประจำวัน (Pure Correct Score)
-━━━━━━━━━━━━━━━━━━━━
-📅 ${pick.dateText}
-⚽ คู่แข่งขัน: ${pick.matchTitle}
-🏆 รายการ: ${pick.league}
-🏟️ สนาม: ${pick.venue}
-⏰ คิกออฟ: ${pick.kickoffTime}
-
-🎯 ฟันธงสกอร์เต็ง 1 ตัวตรง:
-▶ สกอร์: ${pick.primaryScore} (ค่าน้ำ 1xBet @${pick.primaryOdds.toFixed(2)})
-📋 สลิปเดี่ยวในระบบ: ${pick.slipNumber} (วาง 50 ลุ้นรับ ${cleanBet} บาท)
-📈 Expected Value: +${pick.expectedValue.toFixed(1)}% EV
-
-📊 ผ่านกฎผ่าตัดระบบ & สถิติรับรอง:
-✓ 100 สถาบันสถิติสากล & 10 ปัจจัย เห็นพ้องตรงกัน ${pick.consensusRate.toFixed(1)}%
-✓ Poisson Density Peak: ${pick.poissonPeak.toFixed(1)}% (เกณฑ์ผ่าน ≥ 18.0%)
-✓ xG โมเดลรวม: ${pick.homeTeam.name} ${pick.homeTeam.expectedGoals.toFixed(2)} vs ${pick.awayTeam.name} ${pick.awayTeam.expectedGoals.toFixed(2)}
-━━━━━━━━━━━━━━━━━━━━
-📲 ดูรายละเอียดครบทั้ง 100 สถาบัน:
-${appUrl}`;
-}
-
-export async function verifyLineBotToken(token: string): Promise<{
-  valid: boolean;
-  displayName?: string;
-  userId?: string;
-  basicId?: string;
-  pictureUrl?: string;
-  quotaType?: string;
-  quotaLimit?: number;
-  quotaUsed?: number;
-  error?: string;
-}> {
-  const trimmed = sanitizeLineToken(token);
-  if (!trimmed) {
-    return { valid: false, error: 'ยังไม่ได้กรอก LINE Channel Access Token' };
-  }
-  try {
-    const res = await fetch('https://api.line.me/v2/bot/info', {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${trimmed}`,
-      },
-    });
-    if (!res.ok) {
-      const errText = await res.text();
-      return { valid: false, error: translateLineApiError(res.status, errText) };
-    }
-    const info = await res.json();
-
-    // Fetch monthly quota & consumption in parallel (non-fatal if unsupported)
-    let quotaType: string | undefined;
-    let quotaLimit: number | undefined;
-    let quotaUsed: number | undefined;
-    try {
-      const [qRes, cRes] = await Promise.all([
-        fetch('https://api.line.me/v2/bot/message/quota', {
-          headers: { Authorization: `Bearer ${trimmed}` },
-        }),
-        fetch('https://api.line.me/v2/bot/message/quota/consumption', {
-          headers: { Authorization: `Bearer ${trimmed}` },
-        }),
-      ]);
-      if (qRes.ok) {
-        const qData = await qRes.json();
-        quotaType = qData.type;
-        if (typeof qData.value === 'number') quotaLimit = qData.value;
-      }
-      if (cRes.ok) {
-        const cData = await cRes.json();
-        if (typeof cData.totalUsage === 'number') quotaUsed = cData.totalUsage;
-      }
-    } catch {
-      // quota lookup optional
-    }
-
-    return {
-      valid: true,
-      displayName: info.displayName,
-      userId: info.userId,
-      basicId: info.basicId,
-      pictureUrl: info.pictureUrl,
-      quotaType,
-      quotaLimit,
-      quotaUsed,
-    };
-  } catch (err: any) {
-    return { valid: false, error: err?.message || 'เชื่อมต่อ LINE Bot Info API ไม่สำเร็จ' };
-  }
-}
-
-export async function sendLineMessage(token: string, targetUserId: string, messageText: string) {
-  const trimmedToken = sanitizeLineToken(token);
-  if (!trimmedToken) {
-    throw new Error('กรุณาระบุ LINE Channel Access Token ก่อนส่งข้อความ');
-  }
-
-  const trimmedTarget = (targetUserId || '').trim();
-  if (!isValidLineTargetId(trimmedTarget)) {
-    throw new Error(
-      `รูปแบบ User ID / Group ID "${trimmedTarget}" ไม่ถูกต้อง (LINE API ต้องใช้รหัส 33 ตัวขึ้นต้นด้วย U..., C... หรือ R... เท่านั้น ห้ามใส่ @ไอดีไลน์) — หากต้องการส่งให้เพื่อนทุกคนของบอท ให้ลบช่อง User ID ให้ว่างไว้เลยครับ`
-    );
-  }
-
-  const isBroadcast = !trimmedTarget || trimmedTarget.toLowerCase() === 'all';
-  const url = isBroadcast
-    ? 'https://api.line.me/v2/bot/message/broadcast'
-    : 'https://api.line.me/v2/bot/message/push';
-
-  const payload = isBroadcast
-    ? { messages: [{ type: 'text', text: messageText }] }
-    : { to: trimmedTarget, messages: [{ type: 'text', text: messageText }] };
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${trimmedToken}`,
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    const errorBody = await response.text();
-    const translated = translateLineApiError(response.status, errorBody);
-    console.error('[LINE API Error]', response.status, errorBody);
-    throw new Error(translated);
-  }
-
-  return await response.json().catch(() => ({ success: true }));
-}
-
-export async function replyLineMessage(token: string, replyToken: string, messageText: string) {
-  const trimmedToken = sanitizeLineToken(token);
-  if (!trimmedToken || !replyToken) return;
-  try {
-    await fetch('https://api.line.me/v2/bot/message/reply', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${trimmedToken}`,
-      },
-      body: JSON.stringify({
-        replyToken,
-        messages: [{ type: 'text', text: messageText }],
-      }),
-    });
-  } catch (err) {
-    console.warn('[LINE Reply Warning]', err);
-  }
 }
 
 // --- TELEGRAM GROUP CHAT AUTOMATION ENGINE ---
@@ -1360,20 +1101,21 @@ let isTickRunning = false;
  * Main Idempotent 3-Step Automation Pipeline (Asia/Bangkok UTC+7):
  * - 05:00+: Settle yesterday's match
  * - 06:00+: Issue today's Super Pick
- * - >= notifyTime (default 06:30): Dispatch LINE notification with catch-up window!
+ * - >= notifyTime (default 06:30): Dispatch Telegram Group notification
  */
-export async function runAutomatedPipelineTick(forceSync = false): Promise<{
+export async function runAutomatedPipelineTick(
+  forceSync = false,
+  allowAutoDispatch = !IS_SERVERLESS
+): Promise<{
   bangkokNow: ServerBangkokTime;
   activePick: ServerDailyPick;
   settledRecords: SettledPickRecord[];
   picksByDate: Record<string, ServerDailyPick>;
   pipeline: EngineStateFile['pipeline'];
-  lineConfig: LineConfigData;
   telegramConfig: TelegramConfigData;
 }> {
   const bkk = getBangkokServerTime(new Date());
   const state = loadEngineState();
-  const lineConfig = loadLineConfig();
   const telegramConfig = loadTelegramConfig();
 
   if (isTickRunning && !forceSync) {
@@ -1384,7 +1126,6 @@ export async function runAutomatedPipelineTick(forceSync = false): Promise<{
       settledRecords: state.settledRecords,
       picksByDate: state.picksByDate,
       pipeline: state.pipeline,
-      lineConfig,
       telegramConfig,
     };
   }
@@ -1425,62 +1166,7 @@ export async function runAutomatedPipelineTick(forceSync = false): Promise<{
       }
     }
 
-    // STEP 3A: >= 06:30 LINE Auto-Dispatch (Catch-up Window)
-    const targetTimeStr = lineConfig.notifyTime || '06:30';
-    const [targetH, targetM] = targetTimeStr.split(':').map((n) => parseInt(n, 10) || 0);
-    const targetMinutes = targetH * 60 + targetM;
-
-    if (!lineConfig.channelAccessToken) {
-      lineConfig.lastDispatchStatus = 'NO_TOKEN';
-      state.pipeline.lineStatus = 'ยังไม่ได้ตั้งค่า LINE Channel Access Token';
-    } else if (!lineConfig.enabled) {
-      lineConfig.lastDispatchStatus = 'PENDING';
-      state.pipeline.lineStatus = 'ปิดการส่ง LINE อัตโนมัติอยู่';
-    } else if (lineConfig.lastSentOperationalDate === opKey) {
-      const sentTimeBkk = lineConfig.lastSentAt
-        ? getBangkokServerTime(new Date(lineConfig.lastSentAt)).formattedTime
-        : bkk.formattedTime;
-      const doneMsg =
-        lineConfig.lastDispatchMessage ||
-        `ส่งโพยรอบ ${targetTimeStr} น. เข้า LINE สำเร็จแล้ว (${activePick.matchTitle} ${activePick.primaryScore})`;
-      lineConfig.lastDispatchStatus = 'SUCCESS';
-      state.pipeline.lineDoneForDate = opKey;
-      state.pipeline.lineDoneAt = sentTimeBkk;
-      state.pipeline.lineStatus = doneMsg;
-      if (!state.pipeline.logs.some((l) => l.dateKey === opKey && l.step === '06:30_LINE' && l.status === 'OK')) {
-        appendLog(state, bkk, '06:30_LINE', 'OK', doneMsg);
-      }
-    } else if (bkk.isAfter0600 && bkk.minutesOfDay >= targetMinutes) {
-      try {
-        const msg = formatDailySuperPickLineMessage(activePick);
-        await sendLineMessage(lineConfig.channelAccessToken, lineConfig.targetUserId, msg);
-        lineConfig.lastSentOperationalDate = opKey;
-        lineConfig.lastSentDate = bkk.formattedDate;
-        lineConfig.lastSentAt = new Date().toISOString();
-        lineConfig.lastDispatchStatus = 'SUCCESS';
-        lineConfig.lastDispatchMessage = `ส่งอัตโนมัติสำเร็จเวลา ${bkk.formattedTime} น. (${activePick.matchTitle} ${activePick.primaryScore})`;
-        lineConfig.lastError = undefined;
-        saveLineConfig(lineConfig);
-
-        state.pipeline.lineDoneForDate = opKey;
-        state.pipeline.lineDoneAt = bkk.formattedTime;
-        state.pipeline.lineStatus = lineConfig.lastDispatchMessage;
-        appendLog(state, bkk, '06:30_LINE', 'OK', lineConfig.lastDispatchMessage);
-      } catch (err: any) {
-        const errMsg = err?.message || 'LINE API Error';
-        lineConfig.lastDispatchStatus = 'ERROR';
-        lineConfig.lastError = errMsg;
-        saveLineConfig(lineConfig);
-
-        state.pipeline.lineStatus = `ส่ง LINE ไม่สำเร็จ: ${errMsg}`;
-        appendLog(state, bkk, '06:30_LINE', 'ERROR', errMsg);
-      }
-    } else {
-      lineConfig.lastDispatchStatus = 'PENDING';
-      state.pipeline.lineStatus = `รอถึงเวลา ${targetTimeStr} น. เพื่อส่งเข้า LINE (${activePick.matchTitle})`;
-    }
-
-    // STEP 3B: >= 06:30 Telegram Group Auto-Dispatch (Catch-up Window — unlimited free messages)
+    // STEP 3: >= 06:30 Telegram Group Auto-Dispatch (unlimited free messages)
     const tgTargetTimeStr = telegramConfig.notifyTime || '06:30';
     const [tgH, tgM] = tgTargetTimeStr.split(':').map((n) => parseInt(n, 10) || 0);
     const tgTargetMinutes = tgH * 60 + tgM;
@@ -1507,7 +1193,7 @@ export async function runAutomatedPipelineTick(forceSync = false): Promise<{
       if (!state.pipeline.logs.some((l) => l.dateKey === opKey && l.step === '06:30_TG' && l.status === 'OK')) {
         appendLog(state, bkk, '06:30_TG', 'OK', doneMsg);
       }
-    } else if (bkk.isAfter0600 && bkk.minutesOfDay >= tgTargetMinutes) {
+    } else if (allowAutoDispatch && bkk.isAfter0600 && bkk.minutesOfDay >= tgTargetMinutes) {
       try {
         const htmlMsg = formatDailySuperPickTelegramMessage(activePick);
         const sendRes = await sendTelegramMessage(telegramConfig.botToken, telegramConfig.chatId, htmlMsg);
@@ -1535,6 +1221,9 @@ export async function runAutomatedPipelineTick(forceSync = false): Promise<{
         state.pipeline.telegramStatus = `ส่ง Telegram ไม่สำเร็จ: ${errMsg}`;
         appendLog(state, bkk, '06:30_TG', 'ERROR', errMsg);
       }
+    } else if (bkk.isAfter0600 && bkk.minutesOfDay >= tgTargetMinutes) {
+      telegramConfig.lastDispatchStatus = 'PENDING';
+      state.pipeline.telegramStatus = `พร้อมส่งเข้ากลุ่ม Telegram รอจังหวะ Cron 06:30 หรือกดส่งทันที (${activePick.matchTitle})`;
     } else {
       telegramConfig.lastDispatchStatus = 'PENDING';
       state.pipeline.telegramStatus = `รอถึงเวลา ${tgTargetTimeStr} น. เพื่อส่งเข้ากลุ่ม Telegram (${activePick.matchTitle})`;
@@ -1548,7 +1237,6 @@ export async function runAutomatedPipelineTick(forceSync = false): Promise<{
       settledRecords: state.settledRecords,
       picksByDate: state.picksByDate,
       pipeline: state.pipeline,
-      lineConfig,
       telegramConfig,
     };
   } finally {
