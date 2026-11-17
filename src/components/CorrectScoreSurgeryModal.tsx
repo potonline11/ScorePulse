@@ -43,13 +43,13 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
             </div>
             <div>
               <h2 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
-                <span>ผ่าตัดระบบวิเคราะห์ Correct Score</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40">
-                  Surgical Autopsy & Precision Fix
+                <span>ผ่าตัดระบบ Correct Score v2 (Anti-Blowout)</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  Surgical v2 Precision Fix
                 </span>
               </h2>
               <p className="text-[11px] text-slate-400">
-                วิเคราะห์เชิงลึกว่าทำไมสกอร์เต็งถึงหลุดช่วงหลัง & 4 ยุทธศาสตร์กู้คืนความแม่นยำสู่ยุคทอง
+                ถอดบทเรียนชุดผ่าตัดแรกที่หลุด 5 วันติด (12–16 พ.ย.) & อัปเกรดสู่ระบบ Anti-Blowout + Dual-Shield
               </p>
             </div>
           </div>
@@ -70,82 +70,81 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
           <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 space-y-2">
             <div className="flex items-center gap-2 text-amber-400 font-black text-xs uppercase tracking-wide">
               <Target className="w-4 h-4 text-amber-400" />
-              <span>สรุปประเด็นสำคัญสำหรับผู้เล่น Correct Score เดี่ยวโดยเฉพาะ</span>
+              <span>ยอมรับความจริง 100%: ทำไม "ผ่าตัดรอบแรก" ถึงหลุดรัวๆ 12–16 พ.ย.?</span>
             </div>
             <p className="text-slate-200 text-xs">
-              การเล่น Correct Score (ทายสกอร์ตรงตัว) ไม่เหมือนการเล่นแฮนดิแคปหรือ Over/Under เพราะการทายสกอร์ตรงตัวมี
-              <strong>ความไวต่อตัวแปรสุ่มสูงมาก (High Variance)</strong> ประตูนาทีบาป 90+4 เพียงลูกเดียวสามารถทำลายสกอร์ 2-0 กลายเป็น 2-1 ได้ทันที การที่โพยหลุดติดต่อกันในช่วงหลังเกิดจาก
-              <strong className="text-rose-400"> “ข้อผิดพลาดเชิงโครงสร้าง 3 ประการ”</strong> ไม่ใช่เพราะดวงไม่ดี และสามารถแก้ไขได้จริงด้วยหลักคณิตศาสตร์
+              หลังผ่าตัดรอบแรก (12–16 พ.ย.) ระบบบังคับเลือกคู่ที่ทีมต่อเหนือกว่าขาดลอยและฝืนฟันธงสกอร์ <strong>2-0 เพียงอย่างเดียว</strong> พร้อมตัดแผนเซฟตี้ออก ผลลัพธ์คือทีมต่อหลายคู่ยิงไหลเกินเป้า (เนเธอร์แลนด์ 7-0, สวิตเซอร์แลนด์ 4-0) และบอลทีมชาติมีความผันผวนสูง (โปรตุเกสแพ้ 1-4, อังกฤษ 2-1, ฝรั่งเศส 2-1) จึงอัปเกรดเป็น
+              <strong className="text-emerald-300"> โมเดล Surgical v2 (Anti-Blowout + Dual-Shield)</strong>
             </p>
           </div>
 
-          {/* Part 1: Comparison between Early Golden Era vs Recent Slump */}
+          {/* Part 1: Comparison between Early Golden Era vs Surgical v1 Slump */}
           <div className="space-y-3">
             <h3 className="text-xs font-black text-white uppercase tracking-wider flex items-center gap-2">
               <BarChart3 className="w-4 h-4 text-sky-400" />
-              <span>1. เปรียบเทียบ: ยุคแรกที่วินรัวๆ VS ยุคหลังที่หลุดเป้า</span>
+              <span>1. เปรียบเทียบ: ช่วงทำกำไร VS ช่วงผ่าตัดรอบแรกที่หลุด 5 วันติด</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Early Golden Era */}
               <div className="p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 space-y-2">
                 <div className="flex items-center justify-between text-emerald-400 font-black text-xs">
-                  <span>🏆 ยุคแรก (วินติดๆ กัน สกอร์ตรง)</span>
+                  <span>🏆 คู่บอลที่เข้าเป้าสกอร์ตรงจริง</span>
                   <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 font-mono">
-                    WIN RATE สูงสุด
+                    สมดุล xG พอดี
                   </span>
                 </div>
                 <div className="space-y-1.5 text-[11px] text-slate-300">
-                  <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Sevilla vs Osasuna</span>
-                    <strong className="text-emerald-400 font-mono">ฟันธง 2-0 (จบ 2-0 🎯)</strong>
-                  </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
                     <span>• Villarreal vs Espanyol</span>
                     <strong className="text-emerald-400 font-mono">ฟันธง 2-0 (จบ 2-0 🎯)</strong>
                   </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Sassuolo vs Lazio</span>
+                    <span>• Sunderland vs Chelsea</span>
                     <strong className="text-emerald-400 font-mono">ฟันธง 1-2 (จบ 1-2 🎯)</strong>
                   </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Buriram vs Bangkok</span>
-                    <strong className="text-emerald-400 font-mono">ฟันธง 2-0 (จบ 2-0 🎯)</strong>
+                    <span>• Rayo vs Las Palmas</span>
+                    <strong className="text-emerald-400 font-mono">ฟันธง 1-0 (จบ 1-0 🎯)</strong>
+                  </div>
+                  <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+                    <span>• Wycombe vs Crawley</span>
+                    <strong className="text-emerald-400 font-mono">ฟันธง 2-1 (จบ 2-1 🎯)</strong>
                   </div>
                 </div>
                 <div className="text-[10px] text-emerald-300/90 bg-emerald-950/60 p-2 rounded-xl border border-emerald-500/30">
-                  <strong>เหตุผลที่ชนะ:</strong> คัดเฉพาะเกม <em>Asymmetrical Dominance</em> (ทีมต่อคุมเกมรับเบ็ดเสร็จ การันตีคลีนชีต xG ทีมเยือนต่ำมาก ไม่มีความผันผวน)
+                  <strong>จุดร่วมของคู่ที่เข้า:</strong> ลีกสโมสรที่มีวินัยแท็กติก ส่วนต่าง xG พอเหมาะ (ไม่ไหล 4-0/7-0) และเลือกสกอร์ยืดหยุ่น (1-0, 2-0, 2-1)
                 </div>
               </div>
 
-              {/* Recent Slump */}
+              {/* Surgical v1 Slump */}
               <div className="p-3.5 rounded-2xl bg-rose-950/30 border border-rose-500/40 space-y-2">
                 <div className="flex items-center justify-between text-rose-400 font-black text-xs">
-                  <span>❌ ยุคหลัง (หลุดเป้าสะสม)</span>
+                  <span>❌ ผ่าตัด v1 (12–16 พ.ย. หลุด 5 วันติด)</span>
                   <span className="text-[10px] px-2 py-0.5 rounded bg-rose-500/20 border border-rose-500/40 font-mono">
-                    หลุดเป้าบ่อย
+                    ฝืน 2-0 / ยิงไหล
                   </span>
                 </div>
                 <div className="space-y-1.5 text-[11px] text-slate-300">
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Chelsea vs Man Utd</span>
-                    <strong className="text-rose-400 font-mono">ฟันธง 2-1 (จบ 1-1 ❌)</strong>
+                    <span>• Netherlands vs Greece</span>
+                    <strong className="text-rose-400 font-mono">วาง 2-0 (จบ 7-0 ❌)</strong>
                   </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Liverpool vs Arsenal</span>
-                    <strong className="text-rose-400 font-mono">ฟันธง 2-1 (จบ 0-1 ❌)</strong>
+                    <span>• Portugal vs Denmark</span>
+                    <strong className="text-rose-400 font-mono">วาง 2-0 (จบ 1-4 ❌)</strong>
                   </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Fenerbahce vs Liverpool</span>
-                    <strong className="text-rose-400 font-mono">ฟันธง 1-2 (จบ 3-2 ❌)</strong>
+                    <span>• France vs Türkiye</span>
+                    <strong className="text-rose-400 font-mono">วาง 2-0 (จบ 2-1 ❌)</strong>
                   </div>
                   <div className="p-1.5 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
-                    <span>• Leeds vs Tottenham</span>
-                    <strong className="text-rose-400 font-mono">ฟันธง 1-2 (จบ 1-1 ❌)</strong>
+                    <span>• Switzerland vs Scotland</span>
+                    <strong className="text-rose-400 font-mono">วาง 2-0 (จบ 4-0 ❌)</strong>
                   </div>
                 </div>
                 <div className="text-[10px] text-rose-300/90 bg-rose-950/60 p-2 rounded-xl border border-rose-500/30">
-                  <strong>เหตุผลที่หลุด:</strong> ระบบไปหยิบ <em>บิ๊กแมตช์ / ดาร์บี้แมตช์ / บอลยุโรปนัดเยือน</em> ซึ่งแท็กติกเปลี่ยนนาทีต่อนาที ความแปรปรวนสูงสุด
+                  <strong>สาเหตุที่พัง:</strong> บอลทีมชาติ xG ห่างเกิน 1.3 จนทีมต่อถล่มยิงเกิน 2-0 และตัดแผนคุ้มครองทุน (Win/1X) ออกหมด
                 </div>
               </div>
             </div>
@@ -203,51 +202,51 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
             </div>
           </div>
 
-          {/* Part 3: The 4 Surgical Solutions */}
+          {/* Part 3: The 4 Surgical v2 Solutions */}
           <div className="space-y-3">
             <h3 className="text-xs font-black text-emerald-400 uppercase tracking-wider flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              <span>3. ทางออก 4 ขั้นตอนผ่าตัดระบบให้แม่นยำขั้นสุด (The 4-Step Solution)</span>
+              <span>3. กฎเหล็กผ่าตัดรอบ 2 (Surgical v2 — Anti-Blowout &amp; Dual-Shield)</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 space-y-1.5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>1. แบนคู่บิ๊กแมตช์/ดาร์บี้แมตช์ 100%</span>
+                  <span>1. Anti-Blowout Filter (คุมช่องว่าง xG &le; 1.15)</span>
                 </div>
                 <p className="text-[11px] text-slate-300">
-                  ห้ามเลือกคู่บิ๊กแมตช์สูสีมาเป็นโพย Correct Score เด็ดขาด คัดเฉพาะคู่ที่มีความได้เปรียบทางโครงสร้างขาดลอย (Asymmetrical Dominance) เท่านั้น
+                  แบนคู่ที่ทีมต่อเหนือกว่ามากเกินไป (xG Diff &gt; 1.15) เพื่อป้องกันเกมถล่ม 4-0 หรือ 7-0 และคัดเฉพาะคู่ที่มีส่วนต่าง xG 0.60–1.15 เท่านั้น
                 </p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 space-y-1.5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>2. ใช้โมเดล Clean Sheet Dominance (2-0 / 1-0)</span>
+                  <span>2. เลือกสกอร์ยืดหยุ่น (1-0 / 2-0 / 2-1)</span>
                 </div>
                 <p className="text-[11px] text-slate-300">
-                  เลิกพึ่งพาสกอร์ 2-1 ที่ต้องลุ้นให้ทีมรองยิง 1 ลูก หันมาเน้นสกอร์ <strong>2-0 หรือ 1-0</strong> ที่ทีมต่อในบ้านคลีนชีตเบ็ดเสร็จ (โอกาสเข้าเป้าสูงขึ้น 2.5 เท่า)
+                  เลิกฝืนล็อกสกอร์ <strong>2-0</strong> เพียงแบบเดียว ให้โมเดลเลือก <strong>1-0</strong> เมื่อคาดการณ์เกมรับแน่น และ <strong>2-0</strong> เมื่อสมดุล xG เหมาะสม
                 </p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 space-y-1.5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>3. ตัวกรอง Poisson Peak &ge; 18%</span>
+                  <span>3. เปิดแผนเซฟตี้ Dual-Shield กลับมาช่วยพอร์ต</span>
                 </div>
                 <p className="text-[11px] text-slate-300">
-                  กำหนดเกณฑ์ขั้นต่ำทางคณิตศาสตร์ สกอร์เต็ง 1 ต้องมีความหนาแน่นความน่าจะเป็นเกิน 18% ขึ้นไป หากคู่ไหนกระจายตัวต่ำกว่า 18% ระบบจะตัดทิ้งไม่นำมาเป็นโพย
+                  ทุกโพยต้องแนบแผนประกันความเสี่ยง (เช่น <strong>1X, Under 2.5, หรือ Win เต็มเวลา</strong>) เพราะตลอด 4 วันที่ผ่านมา ทีมต่อชนะจริง 3 จาก 4 คู่
                 </p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 space-y-1.5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>4. โฟกัสเฉพาะบิลเดี่ยว Correct Score 100%</span>
+                  <span>4. ล็อกโปรแกรมจริงรายวันไม่ซ้ำคู่เมื่อวาน</span>
                 </div>
                 <p className="text-[11px] text-slate-300">
-                  ตัดทางเลือกแผนประกัน (Double Chance, Over/Under) ที่ไม่ต้องการออกไป มุ่งมั่นวิเคราะห์เจาะลึกเฉพาะสลิปเดี่ยว 1xBet สกอร์ตรงเท่านั้น
+                  บังคับตรวจสอบตารางแข่งจริงรายวัน (ห้ามซ้ำคู่เมื่อวานเด็ดขาด) พร้อมระบบ Cron Timeout &lt; 5 วินาทีเพื่อให้ Telegram 06:30 น. ยิงตรงเวลาทุกวัน
                 </p>
               </div>
             </div>
@@ -258,13 +257,13 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
             <div className="flex items-center justify-between text-sky-400 font-black text-xs">
               <span className="flex items-center gap-1.5">
                 <Compass className="w-4 h-4" />
-                <span>ตัวอย่างการนำสูตรนี้มาใช้จริง: คู่คืนนี้ (พฤหัส 12 พ.ย. 02:45 น.)</span>
+                <span>ตัวอย่างโพยแรกของระบบ Surgical v2 (คืนอังคาร 17 พ.ย. 02:45 น.)</span>
               </span>
-              <span className="font-mono text-amber-400 font-black">อังกฤษ vs โครเอเชีย</span>
+              <span className="font-mono text-amber-400 font-black">บอสเนีย vs โรมาเนีย</span>
             </div>
             <p className="text-[11px] text-slate-200 leading-relaxed">
-              คู่คืนนี้เข้าเกณฑ์ผ่าตัดระบบใหม่ครบ 100%: อังกฤษเล่นในบ้านเวมบลีย์คลีนชีต 4 นัดติด xG เจ้าบ้าน 2.15 ขณะที่โครเอเชียเกมเยือน xG เพียง 0.82
-              ความน่าจะเป็นของสกอร์ <strong>2-0 สูงถึง 19.8% (Poisson Peak &ge; 18%)</strong> และตัดความเสี่ยงของทีมเยือนออกไป สลิปเดี่ยว 1xBet № 89965104812 ค่าน้ำ @7.40 จึงตรงตามเกณฑ์ยุคทองสมบูรณ์แบบ
+              คู่คืนนี้เข้าเกณฑ์ Anti-Blowout v2 สมบูรณ์: บอสเนีย (xG 1.48) พบ โรมาเนีย (xG 0.78) ส่วนต่าง 0.70 ไม่ไหลเป็นสกอร์ถล่ม
+              Poisson Peak อยู่ที่ <strong>1-0 (18.8%) ค่าน้ำ @6.40</strong> สลิป № 89998111717 พร้อมแผนคุ้มครองทุน <strong>Under 2.5 (@1.62) / 1X</strong>
             </p>
           </div>
         </div>
@@ -273,7 +272,7 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
         <div className="p-4 border-t border-slate-800 bg-slate-950/90 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-[11px] text-slate-400 flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>ปรับปรุงอัลกอริทึมคัดเลือกคู่บอลและโมเดล Poisson ในระบบแล้ว</span>
+            <span>อัปเกรดอัลกอริทึมเป็น Surgical v2 (Anti-Blowout + Dual-Shield) แล้ว</span>
           </div>
 
           <button
@@ -286,7 +285,7 @@ export const CorrectScoreSurgeryModal: React.FC<CorrectScoreSurgeryModalProps> =
             }}
             className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-amber-500/20 active:scale-95"
           >
-            <span>ดูโพยคืนนี้ที่ผ่านเกณฑ์ผ่าตัดระบบใหม่ (อังกฤษ 2-0 @7.40)</span>
+            <span>ดูโพยคืนนี้ (บอสเนีย vs โรมาเนีย 1-0 @6.40)</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
         </div>

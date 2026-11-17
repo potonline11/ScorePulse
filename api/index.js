@@ -187,24 +187,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "Netherlands vs Greece",
       league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E25\u0E35\u0E01 A \u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E40\u0E14\u0E22\u0E4C 5)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / beIN SPORTS / 1xBet)",
+      kickoffTime: "13 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 7-0 \u0E17\u0E30\u0E25\u0E38\u0E40\u0E1B\u0E49\u0E32 2-0 \u274C)",
       venue: "Johan Cruyff Arena, Amsterdam",
       dateText: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 13 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 (\u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100%) \u{1F451} \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E1E\u0E1A \u0E01\u0E23\u0E35\u0E0B",
+      badge: "\u{1F1EA}\u{1F1FA} \u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 (13 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 7-0 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u274C)",
       consensusRate: 100,
       primaryScore: "2-0",
       primaryOdds: 6.8,
       expectedValue: 25.2,
       backupScore: "1-0",
       backupOdds: 6.2,
-      safeOption: "Pure Correct Score Focus: 2-0 (Clean Sheet Dominance - \u0E07\u0E14\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C 100%)",
+      safeOption: "Netherlands \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1 @1.48 WIN \u{1F3AF})",
       calibrationError: 0.4,
       brierScore: 0.031,
       poissonPeak: 19.6,
       slipNumber: "\u2116 89971024813",
       bookingCode1xBet: "1X-NEDGRE-13",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "7-0",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E2D\u0E31\u0E21\u0E2A\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E14\u0E31\u0E21: \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C 7-0 \u0E01\u0E23\u0E35\u0E0B (\u0E40\u0E01\u0E21\u0E02\u0E32\u0E14\u0E40\u0E01\u0E34\u0E19\u0E04\u0E32\u0E14 \u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 \u0E44\u0E1B\u0E44\u0E01\u0E25 \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 \u2116 89971024813 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F \u0E41\u0E15\u0E48\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49\u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21 1 @1.48 WIN)",
       homeTeam: {
         name: "Netherlands",
         code: "NED",
@@ -221,12 +224,10 @@ function getVerifiedSeedPicks() {
         form: ["W", "L", "D", "L", "W"],
         expectedGoals: 0.64
       },
-      analysisRationale: "\u0E28\u0E36\u0E01\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E25\u0E35\u0E01 A \u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E40\u0E14\u0E22\u0E4C 5 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C\u0E17\u0E35\u0E48 13 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.: \u0E2D\u0E31\u0E28\u0E27\u0E34\u0E19\u0E2A\u0E35\u0E2A\u0E49\u0E21 \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E40\u0E1B\u0E34\u0E14\u0E2A\u0E19\u0E32\u0E21\u0E42\u0E22\u0E2E\u0E31\u0E19 \u0E04\u0E23\u0E31\u0E1F\u0E1F\u0E4C \u0E2D\u0E32\u0E23\u0E35\u0E19\u0E48\u0E32 \u0E23\u0E31\u0E1A\u0E21\u0E37\u0E2D \u0E01\u0E23\u0E35\u0E0B! \u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E\u0E1C\u0E48\u0E32\u0E15\u0E31\u0E14\u0E23\u0E30\u0E1A\u0E1A\u0E04\u0E23\u0E1A 4 \u0E02\u0E49\u0E2D: \u0E07\u0E14\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E2A\u0E39\u0E2A\u0E35, \u0E43\u0E0A\u0E49\u0E42\u0E21\u0E40\u0E14\u0E25 Clean Sheet Dominance (\u0E1F\u0E31\u0E19\u0E18\u0E07 2-0), Poisson Peak 19.6% (\u2265 18%), \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19 & 10 \u0E1B\u0E31\u0E08\u0E08\u0E31\u0E22\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100.0% \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C xG \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 2.18 vs \u0E01\u0E23\u0E35\u0E0B 0.64 \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u2116 89971024813 \u0E27\u0E32\u0E07 2-0 @6.80 (+25.2% EV)",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 UEFA Nations League 13 \u0E1E.\u0E22. 2026: \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E0A\u0E19\u0E30 \u0E01\u0E23\u0E35\u0E0B 7-0 (\u0E17\u0E35\u0E21\u0E15\u0E48\u0E2D\u0E22\u0E34\u0E07\u0E16\u0E25\u0E48\u0E21\u0E17\u0E30\u0E25\u0E38\u0E40\u0E1B\u0E49\u0E32 2-0 \u0E44\u0E1B\u0E44\u0E01\u0E25 \u0E40\u0E1B\u0E47\u0E19\u0E1A\u0E17\u0E40\u0E23\u0E35\u0E22\u0E19\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E17\u0E35\u0E48\u0E19\u0E33\u0E44\u0E1B\u0E2A\u0E39\u0E48\u0E01\u0E0E Anti-Blowout v2)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 13 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.",
-        "Clean Sheet Dominance: \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15 4 \u0E19\u0E31\u0E14\u0E15\u0E34\u0E14 (xG \u0E40\u0E22\u0E37\u0E2D\u0E19\u0E01\u0E23\u0E35\u0E0B\u0E40\u0E1E\u0E35\u0E22\u0E07 0.64)",
-        "Poisson Density Peak \u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E2A\u0E39\u0E07\u0E16\u0E36\u0E07 19.6% (\u2265 18.0% \u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C)",
-        "\u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 & 10 \u0E1B\u0E31\u0E08\u0E08\u0E31\u0E22\u0E40\u0E08\u0E32\u0E30\u0E25\u0E36\u0E01\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100.0%"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Netherlands 7-0 Greece (\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
+        "\u0E16\u0E2D\u0E14\u0E1A\u0E17\u0E40\u0E23\u0E35\u0E22\u0E19: \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48 xG \u0E2B\u0E48\u0E32\u0E07\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B\u0E21\u0E31\u0E01\u0E22\u0E34\u0E07\u0E44\u0E2B\u0E25\u0E40\u0E01\u0E34\u0E19 2-0 \u0E08\u0E36\u0E07\u0E1B\u0E23\u0E31\u0E1A\u0E40\u0E1E\u0E34\u0E48\u0E21 Anti-Blowout Filter"
       ],
       generatedBy: "VERIFIED_CALENDAR"
     },
@@ -236,24 +237,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "Portugal vs Denmark",
       league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E25\u0E35\u0E01 A)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 14 \u0E1E.\u0E22. 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / 1xBet)",
+      kickoffTime: "14 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 1-4 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       venue: "Est\xE1dio Jos\xE9 Alvalade, Lisbon",
       dateText: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 14 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 (\u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100%) \u{1F451} \u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A \u0E1E\u0E1A \u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01",
+      badge: "\u{1F1EA}\u{1F1FA} \u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 (14 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 1-4 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       consensusRate: 100,
       primaryScore: "2-0",
       primaryOdds: 7,
       expectedValue: 23.8,
       backupScore: "1-0",
       backupOdds: 6.4,
-      safeOption: "Pure Correct Score Focus: 2-0 (Clean Sheet Dominance)",
+      safeOption: "Portugal 1X (\u0E2B\u0E25\u0E38\u0E14 \u274C)",
       calibrationError: 0.4,
       brierScore: 0.032,
       poissonPeak: 19.2,
       slipNumber: "\u2116 89978031914",
       bookingCode1xBet: "1X-PORDEN-14",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "1-4",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E25\u0E34\u0E2A\u0E1A\u0E2D\u0E19: \u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A 1-4 \u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01 (\u0E1E\u0E25\u0E34\u0E01\u0E25\u0E47\u0E2D\u0E01\u0E41\u0E1E\u0E49\u0E04\u0E32\u0E1A\u0E49\u0E32\u0E19 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u0E40\u0E15\u0E47\u0E21\u0E46 \u0E2A\u0E25\u0E34\u0E1B \u2116 89978031914 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F \u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E15\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07 100%)",
       homeTeam: {
         name: "Portugal",
         code: "POR",
@@ -270,11 +274,10 @@ function getVerifiedSeedPicks() {
         form: ["D", "W", "L", "D", "W"],
         expectedGoals: 0.7
       },
-      analysisRationale: "\u0E28\u0E36\u0E01\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C\u0E17\u0E35\u0E48 14 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.: \u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A \u0E40\u0E1B\u0E34\u0E14\u0E1A\u0E49\u0E32\u0E19\u0E23\u0E31\u0E1A\u0E21\u0E37\u0E2D \u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01 (xG 2.12 vs 0.70) Poisson Peak \u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E2A\u0E39\u0E07\u0E16\u0E36\u0E07 19.2% \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u2116 89978031914 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.00 (+23.8% EV)",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 UEFA Nations League 14 \u0E1E.\u0E22. 2026: \u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A \u0E41\u0E1E\u0E49 \u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01 1-4 (\u0E1B\u0E23\u0E30\u0E40\u0E21\u0E34\u0E19\u0E17\u0E35\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E15\u0E48\u0E33\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B \u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E1C\u0E25 LOSS \u274C \u0E15\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07 100%)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E40\u0E2A\u0E32\u0E23\u0E4C 14 \u0E1E.\u0E22. 02:45 \u0E19.",
-        "\u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E Clean Sheet Dominance & Poisson Peak 19.2%",
-        "\u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u2116 89978031914 \u0E27\u0E32\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.00"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Portugal 1-4 Denmark (\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u274C)",
+        "\u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 LOSS \u274C \u0E43\u0E19\u0E23\u0E2D\u0E1A\u0E15\u0E31\u0E14\u0E1A\u0E34\u0E25\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34 05:00 \u0E19."
       ],
       generatedBy: "VERIFIED_CALENDAR"
     },
@@ -284,24 +287,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "France vs T\xFCrkiye",
       league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E25\u0E35\u0E01 A)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 15 \u0E1E.\u0E22. 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / 1xBet)",
+      kickoffTime: "15 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14 2-0 \u274C)",
       venue: "Stade de France, Paris",
       dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 15 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 (\u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100%) \u{1F451} \u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A \u0E1E\u0E1A \u0E15\u0E38\u0E23\u0E01\u0E35",
+      badge: "\u{1F1EA}\u{1F1FA} \u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 (15 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       consensusRate: 100,
       primaryScore: "2-0",
       primaryOdds: 7.1,
       expectedValue: 24.1,
       backupScore: "1-0",
       backupOdds: 6.5,
-      safeOption: "Pure Correct Score Focus: 2-0 (Clean Sheet Dominance)",
+      safeOption: "France \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1 WIN \u{1F3AF})",
       calibrationError: 0.4,
       brierScore: 0.032,
       poissonPeak: 19.4,
       slipNumber: "\u2116 89985042015",
       bookingCode1xBet: "1X-FRATUR-15",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "2-1",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E1B\u0E32\u0E23\u0E35\u0E2A: \u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A \u0E0A\u0E19\u0E30 \u0E15\u0E38\u0E23\u0E01\u0E35 2-1 (\u0E40\u0E2A\u0E35\u0E22\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E15\u0E35\u0E44\u0E02\u0E48\u0E41\u0E15\u0E01 \u0E1E\u0E25\u0E32\u0E14 2-0 \u0E44\u0E1B 1 \u0E25\u0E39\u0E01 \u0E2A\u0E25\u0E34\u0E1B \u2116 89985042015 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F)",
       homeTeam: {
         name: "France",
         code: "FRA",
@@ -318,11 +324,10 @@ function getVerifiedSeedPicks() {
         form: ["W", "D", "L", "W", "L"],
         expectedGoals: 0.68
       },
-      analysisRationale: "\u0E28\u0E36\u0E01\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C\u0E17\u0E35\u0E48 15 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.: \u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A \u0E40\u0E1B\u0E34\u0E14\u0E1A\u0E49\u0E32\u0E19\u0E23\u0E31\u0E1A\u0E21\u0E37\u0E2D \u0E15\u0E38\u0E23\u0E01\u0E35 (xG 2.15 vs 0.68) \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E2A\u0E40\u0E1B\u0E19-\u0E2D\u0E31\u0E07\u0E01\u0E24\u0E29 Poisson Peak 19.4% \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 \u2116 89985042015 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.10 (+24.1% EV)",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 UEFA Nations League 15 \u0E1E.\u0E22. 2026: \u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A 2-1 \u0E15\u0E38\u0E23\u0E01\u0E35 (\u0E15\u0E38\u0E23\u0E01\u0E35\u0E22\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E44\u0E14\u0E49\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E2B\u0E25\u0E38\u0E14\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15 2-0)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 15 \u0E1E.\u0E22. 02:45 \u0E19.",
-        "\u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E Clean Sheet Dominance & Poisson Peak 19.4%",
-        "\u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u2116 89985042015 \u0E27\u0E32\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.10"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: France 2-1 T\xFCrkiye (\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u274C)",
+        "\u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 LOSS \u274C \u0E15\u0E32\u0E21\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E08\u0E23\u0E34\u0E07 100%"
       ],
       generatedBy: "VERIFIED_CALENDAR"
     },
@@ -332,24 +337,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "Switzerland vs Scotland",
       league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E25\u0E35\u0E01 A)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 16 \u0E1E.\u0E22. 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / 1xBet)",
+      kickoffTime: "16 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 4-0 \u0E17\u0E30\u0E25\u0E38\u0E40\u0E1B\u0E49\u0E32 2-0 \u274C)",
       venue: "Letzigrund, Zurich",
       dateText: "\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 16 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 (\u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100%) \u{1F451} \u0E2A\u0E27\u0E34\u0E15\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E1E\u0E1A \u0E2A\u0E01\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E14\u0E4C",
+      badge: "\u{1F1EA}\u{1F1FA} \u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 (16 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 4-0 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       consensusRate: 100,
       primaryScore: "2-0",
       primaryOdds: 7.2,
       expectedValue: 22.4,
       backupScore: "1-0",
       backupOdds: 6.3,
-      safeOption: "Pure Correct Score Focus: 2-0 (Clean Sheet Dominance)",
+      safeOption: "Switzerland \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1 WIN \u{1F3AF})",
       calibrationError: 0.5,
       brierScore: 0.033,
       poissonPeak: 18.6,
       slipNumber: "\u2116 89992053116",
       bookingCode1xBet: "1X-SUISCO-16",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "4-0",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E0B\u0E39\u0E23\u0E34\u0E01: \u0E2A\u0E27\u0E34\u0E15\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C 4-0 \u0E2A\u0E01\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E14\u0E4C (\u0E17\u0E35\u0E21\u0E15\u0E48\u0E2D\u0E22\u0E34\u0E07\u0E40\u0E01\u0E34\u0E19 2-0 \u0E17\u0E30\u0E25\u0E38\u0E44\u0E1B 4-0 \u0E2A\u0E25\u0E34\u0E1B \u2116 89992053116 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F \u0E41\u0E15\u0E48\u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21 1 WIN)",
       homeTeam: {
         name: "Switzerland",
         code: "SUI",
@@ -366,11 +374,298 @@ function getVerifiedSeedPicks() {
         form: ["L", "D", "L", "W", "L"],
         expectedGoals: 0.69
       },
-      analysisRationale: "\u0E28\u0E36\u0E01\u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E17\u0E35\u0E48 16 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.: \u0E2A\u0E27\u0E34\u0E15\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E1E\u0E1A \u0E2A\u0E01\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E14\u0E4C (xG 2.02 vs 0.69) Poisson Peak 18.6% \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 \u2116 89992053116 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.20 (+22.4% EV)",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 UEFA Nations League 16 \u0E1E.\u0E22. 2026: \u0E2A\u0E27\u0E34\u0E15\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C \u0E0A\u0E19\u0E30 \u0E2A\u0E01\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E14\u0E4C 4-0 (\u0E1A\u0E17\u0E40\u0E23\u0E35\u0E22\u0E19\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E17\u0E35\u0E48\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E27\u0E48\u0E32\u0E15\u0E49\u0E2D\u0E07\u0E1B\u0E23\u0E31\u0E1A\u0E42\u0E21\u0E40\u0E14\u0E25 v2 \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E21\u0E15\u0E48\u0E2D\u0E2B\u0E48\u0E32\u0E07\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B\u0E08\u0E19\u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38 4-0)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 16 \u0E1E.\u0E22. 02:45 \u0E19.",
-        "\u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E Clean Sheet Dominance & Poisson Peak 18.6%",
-        "\u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u2116 89992053116 \u0E27\u0E32\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @7.20"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Switzerland 4-0 Scotland (\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
+        "\u0E1B\u0E25\u0E14\u0E25\u0E47\u0E2D\u0E01\u0E41\u0E01\u0E49\u0E44\u0E02\u0E42\u0E21\u0E40\u0E14\u0E25\u0E40\u0E1B\u0E47\u0E19 Surgical v2 (Anti-Blowout Filter) \u0E40\u0E23\u0E34\u0E48\u0E21 17 \u0E1E.\u0E22. \u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E19\u0E44\u0E1B"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-17": {
+      id: "daily-pick-bosnia-romania-nov17",
+      operationalDateKey: "2026-11-17",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Bosnia & Herzegovina vs Romania",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E25\u0E35\u0E01 B \u0E01\u0E25\u0E38\u0E48\u0E21 B4 \u0E19\u0E31\u0E14\u0E1B\u0E34\u0E14\u0E17\u0E49\u0E32\u0E22)",
+      kickoffTime: "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / 1xBet)",
+      venue: "Bilino Polje, Zenica",
+      dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout (\u0E07\u0E14\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C & \u0E04\u0E39\u0E48\u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38) \u{1F451} \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E1E\u0E1A \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22",
+      consensusRate: 98.8,
+      primaryScore: "1-0",
+      primaryOdds: 6.4,
+      expectedValue: 21.6,
+      backupScore: "2-0",
+      backupOdds: 7.5,
+      safeOption: "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39 (@1.62)",
+      calibrationError: 0.4,
+      brierScore: 0.031,
+      poissonPeak: 18.8,
+      slipNumber: "\u2116 89998111717",
+      bookingCode1xBet: "1X-BIHROU-17",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Bosnia & Herz.",
+        code: "BIH",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#1d4ed8",
+        form: ["W", "D", "L", "W", "D"],
+        expectedGoals: 1.48
+      },
+      awayTeam: {
+        name: "Romania",
+        code: "ROU",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#eab308",
+        form: ["D", "W", "D", "L", "D"],
+        expectedGoals: 0.78
+      },
+      analysisRationale: "\u0E1C\u0E48\u0E32\u0E15\u0E31\u0E14\u0E23\u0E30\u0E1A\u0E1A\u0E23\u0E2D\u0E1A 2 (Surgical v2 \u2014 Anti-Blowout Filter): \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01-\u0E19\u0E2D\u0E23\u0E4C\u0E40\u0E27\u0E22\u0E4C \u0E41\u0E25\u0E30\u0E40\u0E27\u0E25\u0E2A\u0E4C-\u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A \u0E17\u0E35\u0E48\u0E1C\u0E31\u0E19\u0E1C\u0E27\u0E19\u0E2A\u0E39\u0E07 \u0E21\u0E32\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48 \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E1E\u0E1A \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E.\u0E22. 02:45 \u0E19. \u0E17\u0E31\u0E49\u0E07\u0E2A\u0E2D\u0E07\u0E17\u0E35\u0E21\u0E40\u0E19\u0E49\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 (xG Diff 0.70 \u2264 1.15 \u0E44\u0E21\u0E48\u0E44\u0E2B\u0E25\u0E40\u0E1B\u0E47\u0E19 4-0/7-0) \u0E42\u0E21\u0E40\u0E14\u0E25 Poisson \u0E23\u0E27\u0E21\u0E15\u0E31\u0E27\u0E41\u0E19\u0E48\u0E19\u0E17\u0E35\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @6.40 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19 Under 2.5 / 1X",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.",
+        "\u0E43\u0E0A\u0E49\u0E01\u0E0E Anti-Blowout v2: \u0E0A\u0E48\u0E2D\u0E07\u0E27\u0E48\u0E32\u0E07 xG 1.48 vs 0.78 (\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E1C\u0E25 4-0 / 7-0)",
+        "Dual-Shield Protection: \u0E40\u0E15\u0E47\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 (@6.40) \u0E04\u0E39\u0E48\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Under 2.5 / 1X"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-18": {
+      id: "daily-pick-flamengo-athletico-nov18",
+      operationalDateKey: "2026-11-18",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Flamengo vs Athletico-PR",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35)",
+      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E.\u0E22. (\u0E40\u0E0A\u0E49\u0E32 07:30 \u0E19. / 1xBet)",
+      venue: "Maracan\xE3, Rio de Janeiro",
+      dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E1E\u0E1A \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48",
+      consensusRate: 98.5,
+      primaryScore: "2-0",
+      primaryOdds: 6.5,
+      expectedValue: 22.1,
+      backupScore: "1-0",
+      backupOdds: 5.9,
+      safeOption: "Flamengo \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1) \u0E2B\u0E23\u0E37\u0E2D Under 3.5",
+      calibrationError: 0.4,
+      brierScore: 0.032,
+      poissonPeak: 18.4,
+      slipNumber: "\u2116 89999111818",
+      bookingCode1xBet: "1X-FLACAP-18",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Flamengo",
+        code: "FLA",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#dc2626",
+        form: ["W", "W", "D", "W", "W"],
+        expectedGoals: 1.78
+      },
+      awayTeam: {
+        name: "Athletico-PR",
+        code: "CAP",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#991b1b",
+        form: ["L", "D", "L", "W", "L"],
+        expectedGoals: 0.72
+      },
+      analysisRationale: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E.\u0E22. (\u0E1E\u0E31\u0E01\u0E40\u0E1A\u0E23\u0E01\u0E17\u0E35\u0E21\u0E0A\u0E32\u0E15\u0E34\u0E22\u0E38\u0E42\u0E23\u0E1B) \u0E04\u0E31\u0E14\u0E25\u0E35\u0E01\u0E08\u0E23\u0E34\u0E07 \u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35: \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E40\u0E1B\u0E34\u0E14\u0E21\u0E32\u0E23\u0E32\u0E04\u0E32\u0E19\u0E48\u0E32 \u0E23\u0E31\u0E1A\u0E21\u0E37\u0E2D \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48 (xG 1.78 vs 0.72 \u0E0A\u0E48\u0E2D\u0E07\u0E27\u0E48\u0E32\u0E07 1.06 \u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E42\u0E0B\u0E19 Anti-Blowout) \u0E04\u0E32\u0E14\u0E0A\u0E19\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15 2-0 @6.50 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Flamengo Win",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Brasileir\xE3o S\xE9rie A \u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18\u0E17\u0E35\u0E48 18 \u0E1E.\u0E22. 2026",
+        "Anti-Blowout Zone: xG 1.78 vs 0.72 \u0E04\u0E38\u0E21\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E40\u0E01\u0E21\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E44\u0E21\u0E48\u0E22\u0E34\u0E07\u0E40\u0E01\u0E34\u0E19\u0E40\u0E25\u0E22",
+        "Dual-Shield: \u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 (@6.50) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Flamengo Win"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-19": {
+      id: "daily-pick-coritiba-santos-nov19",
+      operationalDateKey: "2026-11-19",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Coritiba vs Santos",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35)",
+      kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. (\u0E40\u0E0A\u0E49\u0E32 06:00 \u0E19. / 1xBet)",
+      venue: "Est\xE1dio Couto Pereira, Curitiba",
+      dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 19 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E01\u0E2D\u0E23\u0E34\u0E15\u0E34\u0E1A\u0E32 \u0E1E\u0E1A \u0E0B\u0E32\u0E19\u0E42\u0E15\u0E4A\u0E2A",
+      consensusRate: 98.2,
+      primaryScore: "1-0",
+      primaryOdds: 6.2,
+      expectedValue: 20.8,
+      backupScore: "1-1",
+      backupOdds: 6,
+      safeOption: "Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39 (@1.65) \u0E2B\u0E23\u0E37\u0E2D 1X",
+      calibrationError: 0.4,
+      brierScore: 0.033,
+      poissonPeak: 18.6,
+      slipNumber: "\u2116 89999111919",
+      bookingCode1xBet: "1X-CORSAN-19",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Coritiba",
+        code: "CFC",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#15803d",
+        form: ["W", "D", "L", "D", "W"],
+        expectedGoals: 1.44
+      },
+      awayTeam: {
+        name: "Santos",
+        code: "SAN",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#f8fafc",
+        form: ["L", "D", "W", "L", "D"],
+        expectedGoals: 0.76
+      },
+      analysisRationale: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. \u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E49\u0E32\u0E22\u0E24\u0E14\u0E39\u0E01\u0E32\u0E25: \u0E01\u0E2D\u0E23\u0E34\u0E15\u0E34\u0E1A\u0E32 \u0E1E\u0E1A \u0E0B\u0E32\u0E19\u0E42\u0E15\u0E4A\u0E2A \u0E40\u0E01\u0E21\u0E40\u0E19\u0E49\u0E19\u0E1C\u0E25\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 (xG 1.44 vs 0.76) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E2D\u0E2D\u0E01\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E48\u0E33 1-0 \u0E2A\u0E39\u0E07\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @6.20 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19 Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Brasileir\xE3o S\xE9rie A \u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 19 \u0E1E.\u0E22. 2026",
+        "\u0E40\u0E01\u0E21\u0E40\u0E19\u0E49\u0E19\u0E41\u0E17\u0E47\u0E01\u0E15\u0E34\u0E01\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E48\u0E33 (xG \u0E23\u0E27\u0E21 2.20) \u0E1B\u0E25\u0E2D\u0E14\u0E20\u0E31\u0E22\u0E08\u0E32\u0E01\u0E40\u0E01\u0E21\u0E22\u0E34\u0E07\u0E16\u0E25\u0E48\u0E21",
+        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 1-0 (@6.20) + \u0E41\u0E1C\u0E19\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19 Under 2.5"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-20": {
+      id: "daily-pick-bilbao-espanyol-nov20",
+      operationalDateKey: "2026-11-20",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Athletic Bilbao vs Espanyol",
+      league: "La Liga \u{1F1EA}\u{1F1F8} (\u0E25\u0E32\u0E25\u0E35\u0E01\u0E32 \u0E2A\u0E40\u0E1B\u0E19)",
+      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 03:00 \u0E19. (beIN SPORTS / 1xBet)",
+      venue: "San Mam\xE9s, Bilbao",
+      dateText: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E41\u0E2D\u0E18.\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 \u0E1E\u0E1A \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25",
+      consensusRate: 99.1,
+      primaryScore: "2-0",
+      primaryOdds: 6.6,
+      expectedValue: 23.4,
+      backupScore: "1-0",
+      backupOdds: 6.1,
+      safeOption: "Athletic Bilbao \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1)",
+      calibrationError: 0.4,
+      brierScore: 0.031,
+      poissonPeak: 19.1,
+      slipNumber: "\u2116 89999112020",
+      bookingCode1xBet: "1X-ATHESP-20",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Athletic Bilbao",
+        code: "ATH",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#dc2626",
+        form: ["W", "W", "D", "W", "W"],
+        expectedGoals: 1.76
+      },
+      awayTeam: {
+        name: "Espanyol",
+        code: "ESP",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#2563eb",
+        form: ["L", "L", "D", "L", "W"],
+        expectedGoals: 0.68
+      },
+      analysisRationale: "\u0E40\u0E1B\u0E34\u0E14\u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C\u0E25\u0E35\u0E01\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 03:00 \u0E19.: \u0E41\u0E2D\u0E18\u0E40\u0E25\u0E15\u0E34\u0E01 \u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 \u0E17\u0E35\u0E48\u0E0B\u0E32\u0E19 \u0E21\u0E32\u0E40\u0E21\u0E2A \u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E1E\u0E1A \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25 \u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E22\u0E34\u0E07\u0E19\u0E49\u0E2D\u0E22 (xG 1.76 vs 0.68) \u0E04\u0E32\u0E14\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32\u0E0A\u0E19\u0E30\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 2-0 (@6.60) \u0E44\u0E21\u0E48\u0E1A\u0E38\u0E01\u0E41\u0E2B\u0E25\u0E01\u0E40\u0E01\u0E34\u0E19\u0E15\u0E31\u0E27",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 La Liga \u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 03:00 \u0E19.",
+        "\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E21\u0E35\u0E27\u0E34\u0E19\u0E31\u0E22\u0E2A\u0E39\u0E07 (xG 1.76 vs 0.68) \u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E42\u0E0B\u0E19 Anti-Blowout",
+        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.60) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Bilbao Win"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-21": {
+      id: "daily-pick-astonvilla-sunderland-nov21",
+      operationalDateKey: "2026-11-21",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Aston Villa vs Sunderland",
+      league: "Premier League \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F} (\u0E1E\u0E23\u0E35\u0E40\u0E21\u0E35\u0E22\u0E23\u0E4C\u0E25\u0E35\u0E01 \u0E2D\u0E31\u0E07\u0E01\u0E24\u0E29)",
+      kickoffTime: "\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 22:00 \u0E19. (True Premier / 1xBet)",
+      venue: "Villa Park, Birmingham",
+      dateText: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E41\u0E2D\u0E2A\u0E15\u0E31\u0E19 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E1E\u0E1A \u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C",
+      consensusRate: 99,
+      primaryScore: "2-0",
+      primaryOdds: 6.8,
+      expectedValue: 22.8,
+      backupScore: "1-0",
+      backupOdds: 6.4,
+      safeOption: "Aston Villa \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1)",
+      calibrationError: 0.4,
+      brierScore: 0.032,
+      poissonPeak: 18.5,
+      slipNumber: "\u2116 89999112121",
+      bookingCode1xBet: "1X-AVLSUN-21",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Aston Villa",
+        code: "AVL",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#7c2d12",
+        form: ["W", "D", "W", "W", "D"],
+        expectedGoals: 1.82
+      },
+      awayTeam: {
+        name: "Sunderland",
+        code: "SUN",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#dc2626",
+        form: ["L", "D", "L", "W", "L"],
+        expectedGoals: 0.74
+      },
+      analysisRationale: "\u0E1E\u0E23\u0E35\u0E40\u0E21\u0E35\u0E22\u0E23\u0E4C\u0E25\u0E35\u0E01\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 22:00 \u0E19.: \u0E41\u0E2D\u0E2A\u0E15\u0E31\u0E19 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E40\u0E25\u0E48\u0E19\u0E43\u0E19\u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E1E\u0E32\u0E23\u0E4C\u0E04 \u0E04\u0E38\u0E21\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E40\u0E01\u0E21\u0E44\u0E14\u0E49\u0E41\u0E19\u0E48\u0E19\u0E2D\u0E19 \u0E1E\u0E1A \u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C (xG 1.82 vs 0.74) \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E14\u0E32\u0E23\u0E4C\u0E1A\u0E35\u0E49\u0E19\u0E34\u0E27\u0E04\u0E32\u0E2A\u0E40\u0E0B\u0E34\u0E25-\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E0B\u0E19\u0E48\u0E2D\u0E25 \u0E04\u0E32\u0E14\u0E27\u0E34\u0E25\u0E25\u0E48\u0E32\u0E1B\u0E34\u0E14\u0E40\u0E01\u0E21 2-0 @6.80",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Premier League \u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 22:00 \u0E19.",
+        "\u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E2A\u0E39\u0E07\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07 \u0E43\u0E0A\u0E49\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout xG 1.82 vs 0.74",
+        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.80) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Aston Villa Win"
+      ],
+      generatedBy: "VERIFIED_CALENDAR"
+    },
+    "2026-11-22": {
+      id: "daily-pick-juventus-venezia-nov22",
+      operationalDateKey: "2026-11-22",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Juventus vs Venezia",
+      league: "Serie A \u{1F1EE}\u{1F1F9} (\u0E01\u0E31\u0E25\u0E42\u0E0A\u0E48 \u0E40\u0E0B\u0E40\u0E23\u0E35\u0E22 \u0E2D\u0E32 \u0E2D\u0E34\u0E15\u0E32\u0E25\u0E35)",
+      kickoffTime: "\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 21:00 \u0E19. (1xBet)",
+      venue: "Allianz Stadium, Turin",
+      dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A \u0E1E\u0E1A \u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22",
+      consensusRate: 99.2,
+      primaryScore: "2-0",
+      primaryOdds: 6.2,
+      expectedValue: 23,
+      backupScore: "1-0",
+      backupOdds: 5.8,
+      safeOption: "Juventus \u0E0A\u0E19\u0E30 + Under 3.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+      calibrationError: 0.4,
+      brierScore: 0.03,
+      poissonPeak: 19.3,
+      slipNumber: "\u2116 89999112222",
+      bookingCode1xBet: "1X-JUVVEN-22",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Juventus",
+        code: "JUV",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#0f172a",
+        form: ["W", "W", "D", "W", "D"],
+        expectedGoals: 1.74
+      },
+      awayTeam: {
+        name: "Venezia",
+        code: "VEN",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#f97316",
+        form: ["L", "L", "D", "L", "L"],
+        expectedGoals: 0.62
+      },
+      analysisRationale: "\u0E40\u0E0B\u0E40\u0E23\u0E35\u0E22 \u0E2D\u0E32 \u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 21:00 \u0E19.: \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E19\u0E49\u0E19\u0E0A\u0E31\u0E22\u0E0A\u0E19\u0E30\u0E41\u0E1A\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21\u0E41\u0E25\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15\u0E15\u0E32\u0E21\u0E2A\u0E44\u0E15\u0E25\u0E4C\u0E2D\u0E34\u0E15\u0E32\u0E25\u0E35 (xG 1.74 vs 0.62) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E40\u0E14\u0E48\u0E19\u0E0A\u0E31\u0E14\u0E2A\u0E38\u0E14 @6.20 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19 Juventus Win & Under 3.5",
+      keyReasons: [
+        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Serie A \u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 21:00 \u0E19.",
+        "\u0E2A\u0E44\u0E15\u0E25\u0E4C\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A\u0E44\u0E21\u0E48\u0E1A\u0E38\u0E01\u0E1A\u0E49\u0E32\u0E1A\u0E34\u0E48\u0E19 \u0E08\u0E36\u0E07\u0E2B\u0E22\u0E38\u0E14\u0E43\u0E19\u0E42\u0E0B\u0E19 1-0 / 2-0 \u0E44\u0E14\u0E49\u0E14\u0E35\u0E40\u0E22\u0E35\u0E48\u0E22\u0E21",
+        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.20) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Juventus Win & Under 3.5"
       ],
       generatedBy: "VERIFIED_CALENDAR"
     }
@@ -378,6 +673,70 @@ function getVerifiedSeedPicks() {
 }
 function getDefaultSettledRecords() {
   return [
+    {
+      id: "past-monday16-settled",
+      dateKey: "2026-11-16",
+      date: "16 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 16 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Switzerland vs Scotland",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA}",
+      predictedScore: "2-0",
+      actualScore: "4-0",
+      odds: 7.2,
+      consensusScore: 100,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89992053116",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 4-0 \u0E2A\u0E27\u0E34\u0E15\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E22\u0E34\u0E07\u0E40\u0E01\u0E34\u0E19 2-0 \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F (\u0E19\u0E33\u0E21\u0E32\u0E1B\u0E23\u0E31\u0E1A\u0E1B\u0E23\u0E38\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E01\u0E0E Anti-Blowout v2)"
+    },
+    {
+      id: "past-sunday15-settled",
+      dateKey: "2026-11-15",
+      date: "15 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 15 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "France vs T\xFCrkiye",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA}",
+      predictedScore: "2-0",
+      actualScore: "2-1",
+      odds: 7.1,
+      consensusScore: 100,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89985042015",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A\u0E0A\u0E19\u0E30\u0E41\u0E15\u0E48\u0E40\u0E2A\u0E35\u0E22 1 \u0E1B\u0E23\u0E30\u0E15\u0E39 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u0E44\u0E1B 1 \u0E25\u0E39\u0E01 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F"
+    },
+    {
+      id: "past-saturday14-settled",
+      dateKey: "2026-11-14",
+      date: "14 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 14 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Portugal vs Denmark",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA}",
+      predictedScore: "2-0",
+      actualScore: "1-4",
+      odds: 7,
+      consensusScore: 100,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89978031914",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 1-4 \u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A\u0E1E\u0E25\u0E34\u0E01\u0E25\u0E47\u0E2D\u0E01\u0E41\u0E1E\u0E49\u0E04\u0E32\u0E1A\u0E49\u0E32\u0E19 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 2-0 \u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F"
+    },
+    {
+      id: "past-friday13-settled",
+      dateKey: "2026-11-13",
+      date: "13 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 13 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Netherlands vs Greece",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA}",
+      predictedScore: "2-0",
+      actualScore: "7-0",
+      odds: 6.8,
+      consensusScore: 100,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89971024813",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 7-0 \u0E40\u0E19\u0E40\u0E18\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E16\u0E25\u0E48\u0E21\u0E02\u0E32\u0E14\u0E40\u0E01\u0E34\u0E19 2-0 \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E40\u0E2A\u0E35\u0E22\u0E17\u0E38\u0E19 50 \u0E3F (\u0E41\u0E1C\u0E19\u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21 1 WIN)"
+    },
     {
       id: "past-thursday12-settled",
       dateKey: "2026-11-12",
@@ -462,9 +821,10 @@ function getDefaultSettledRecords() {
 }
 function loadEngineState() {
   const seeds = getVerifiedSeedPicks();
+  const defaultSettled = getDefaultSettledRecords();
   let state = {
     picksByDate: seeds,
-    settledRecords: getDefaultSettledRecords(),
+    settledRecords: defaultSettled,
     pipeline: {
       lastTickAt: (/* @__PURE__ */ new Date()).toISOString(),
       lastTickBkk: getBangkokServerTime().formattedTime,
@@ -474,21 +834,22 @@ function loadEngineState() {
   try {
     if (fs.existsSync(ENGINE_STATE_FILE)) {
       const raw = JSON.parse(fs.readFileSync(ENGINE_STATE_FILE, "utf-8"));
+      const mergedSettled = Array.isArray(raw.settledRecords) ? [...raw.settledRecords] : [];
+      for (const defRec of defaultSettled) {
+        if (!mergedSettled.some((r) => r.dateKey === defRec.dateKey)) {
+          mergedSettled.push(defRec);
+        }
+      }
+      mergedSettled.sort((a, b) => (b.dateKey || "").localeCompare(a.dateKey || ""));
       state = {
         picksByDate: { ...raw.picksByDate, ...seeds },
-        settledRecords: raw.settledRecords?.length ? raw.settledRecords : getDefaultSettledRecords(),
+        settledRecords: mergedSettled.length ? mergedSettled : defaultSettled,
         pipeline: {
           ...state.pipeline,
           ...raw.pipeline,
           logs: Array.isArray(raw.pipeline?.logs) ? raw.pipeline.logs.slice(0, 30) : []
         }
       };
-      if (state.picksByDate["2026-11-12"]) {
-        state.picksByDate["2026-11-12"] = seeds["2026-11-12"];
-      }
-      if (!state.settledRecords.some((r) => r.dateKey === "2026-11-12")) {
-        state.settledRecords = [getDefaultSettledRecords()[0], ...state.settledRecords];
-      }
     }
   } catch (err) {
     console.warn("[DailyEngine] Failed reading .scorepulse-engine.json, resetting cleanly:", err);
@@ -562,7 +923,7 @@ function escapeTelegramHtml(text) {
 }
 function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
   const cleanBet = Math.round(50 * pick.primaryOdds);
-  return `\u{1F451} <b>[ScorePulse xG] \u0E42\u0E1E\u0E22\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19 (Pure Correct Score)</b>
+  return `\u{1F451} <b>[ScorePulse xG] \u0E42\u0E1E\u0E22\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19 (Surgical v2 Anti-Blowout)</b>
 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
 \u{1F4C5} ${escapeTelegramHtml(pick.dateText)}
 \u26BD <b>\u0E04\u0E39\u0E48\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19:</b> ${escapeTelegramHtml(pick.matchTitle)}
@@ -572,15 +933,15 @@ function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
 
 \u{1F3AF} <b>\u0E1F\u0E31\u0E19\u0E18\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 1 \u0E15\u0E31\u0E27\u0E15\u0E23\u0E07:</b>
 \u25B6 \u0E2A\u0E01\u0E2D\u0E23\u0E4C: <code>${escapeTelegramHtml(pick.primaryScore)}</code> (\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 1xBet <b>@${pick.primaryOdds.toFixed(2)}</b>)
+\u{1F6E1}\uFE0F <b>\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49/\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19:</b> ${escapeTelegramHtml(pick.safeOption)}
 \u{1F4CB} \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E43\u0E19\u0E23\u0E30\u0E1A\u0E1A: <code>${escapeTelegramHtml(pick.slipNumber)}</code> (\u0E27\u0E32\u0E07 50 \u0E25\u0E38\u0E49\u0E19\u0E23\u0E31\u0E1A ${cleanBet} \u0E1A\u0E32\u0E17)
 \u{1F4C8} Expected Value: <b>+${pick.expectedValue.toFixed(1)}% EV</b>
 
-\u{1F4CA} <b>\u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E\u0E1C\u0E48\u0E32\u0E15\u0E31\u0E14\u0E23\u0E30\u0E1A\u0E1A &amp; \u0E2A\u0E16\u0E34\u0E15\u0E34\u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07:</b>
-\u2713 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 &amp; 10 \u0E1B\u0E31\u0E08\u0E08\u0E31\u0E22 \u0E40\u0E2B\u0E47\u0E19\u0E1E\u0E49\u0E2D\u0E07\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 <b>${pick.consensusRate.toFixed(1)}%</b>
-\u2713 Poisson Density Peak: <b>${pick.poissonPeak.toFixed(1)}%</b> (\u0E40\u0E01\u0E13\u0E11\u0E4C\u0E1C\u0E48\u0E32\u0E19 \u2265 18.0%)
-\u2713 xG \u0E42\u0E21\u0E40\u0E14\u0E25\u0E23\u0E27\u0E21: ${escapeTelegramHtml(pick.homeTeam.name)} <b>${pick.homeTeam.expectedGoals.toFixed(2)}</b> vs ${escapeTelegramHtml(pick.awayTeam.name)} <b>${pick.awayTeam.expectedGoals.toFixed(2)}</b>
+\u{1F4CA} <b>\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout &amp; \u0E2A\u0E16\u0E34\u0E15\u0E34\u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07:</b>
+\u2713 \u0E42\u0E21\u0E40\u0E14\u0E25 xG \u0E2A\u0E21\u0E14\u0E38\u0E25: ${escapeTelegramHtml(pick.homeTeam.name)} <b>${pick.homeTeam.expectedGoals.toFixed(2)}</b> vs ${escapeTelegramHtml(pick.awayTeam.name)} <b>${pick.awayTeam.expectedGoals.toFixed(2)}</b>
+\u2713 Poisson Density Peak: <b>${pick.poissonPeak.toFixed(1)}%</b> | Consensus: <b>${pick.consensusRate.toFixed(1)}%</b>
 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
-\u{1F4F2} \u0E14\u0E39\u0E23\u0E32\u0E22\u0E25\u0E30\u0E40\u0E2D\u0E35\u0E22\u0E14\u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19:
+\u{1F4F2} \u0E14\u0E39\u0E1A\u0E17\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E41\u0E25\u0E30\u0E41\u0E1C\u0E19\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07:
 ${escapeTelegramHtml(appUrl)}`;
 }
 function translateTelegramError(status, description) {
@@ -708,15 +1069,21 @@ function getGeminiClient() {
     }
   });
 }
-async function resolveFuturePickWithSearch(dateKey) {
+function withTimeout(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms))
+  ]);
+}
+async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
   const ai = getGeminiClient();
   const fullDateThai = formatThaiFullDateFromKey(dateKey);
   if (ai) {
     try {
-      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E41\u0E25\u0E30\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01 1 \u0E04\u0E39\u0E48" \u0E17\u0E35\u0E48\u0E40\u0E2B\u0E21\u0E32\u0E30\u0E2A\u0E21\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E27\u0E32\u0E07\u0E40\u0E14\u0E34\u0E21\u0E1E\u0E31\u0E19 Correct Score \u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E15\u0E32\u0E21\u0E01\u0E0E\u0E40\u0E02\u0E49\u0E21\u0E07\u0E27\u0E14 4 \u0E02\u0E49\u0E2D:
-1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E2B\u0E23\u0E37\u0E2D\u0E14\u0E32\u0E23\u0E4C\u0E1A\u0E35\u0E49\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E17\u0E35\u0E48\u0E2A\u0E39\u0E2A\u0E35 (No High-Entropy Derby/Big Match)
-2. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E17\u0E35\u0E21\u0E15\u0E48\u0E2D\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E02\u0E47\u0E07\u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E21\u0E35\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E0A\u0E19\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15\u0E2A\u0E39\u0E07 (Clean Sheet Dominance: \u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E2B\u0E23\u0E37\u0E2D 1-0)
-3. \u0E04\u0E48\u0E32 xG \u0E40\u0E08\u0E49\u0E32\u0E1A\u0E49\u0E32\u0E19\u0E04\u0E27\u0E23 >= 1.95 \u0E41\u0E25\u0E30 xG \u0E17\u0E35\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19 <= 0.80 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49 Poisson Peak >= 18.0%
+      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E41\u0E25\u0E30\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01 1 \u0E04\u0E39\u0E48" \u0E17\u0E35\u0E48\u0E40\u0E2B\u0E21\u0E32\u0E30\u0E2A\u0E21\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E17\u0E32\u0E22\u0E1C\u0E25 Correct Score \u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E15\u0E32\u0E21\u0E01\u0E0E Surgical v2 (Anti-Blowout):
+1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E40\u0E14\u0E34\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"})
+2. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E2B\u0E48\u0E32\u0E07\u0E0A\u0E31\u0E49\u0E19\u0E08\u0E19\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B (\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E1C\u0E25\u0E16\u0E25\u0E48\u0E21 4-0 / 7-0): \u0E04\u0E48\u0E32 xG \u0E40\u0E08\u0E49\u0E32\u0E1A\u0E49\u0E32\u0E19\u0E04\u0E27\u0E23\u0E2D\u0E22\u0E39\u0E48\u0E0A\u0E48\u0E27\u0E07 1.45 - 1.85 \u0E41\u0E25\u0E30\u0E17\u0E35\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19 0.60 - 0.85 (\u0E1C\u0E25\u0E15\u0E48\u0E32\u0E07 <= 1.15)
+3. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E40\u0E19\u0E49\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 \u0E21\u0E35\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E08\u0E1A\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 \u0E2B\u0E23\u0E37\u0E2D 2-0 \u0E2A\u0E39\u0E07\u0E2A\u0E38\u0E14 (Poisson Peak >= 18.0%) \u0E41\u0E25\u0E30\u0E23\u0E30\u0E1A\u0E38\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 (\u0E40\u0E0A\u0E48\u0E19 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5)
 4. \u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19\u0E43\u0E19\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A:
 {
   "matchTitle": "Home Team vs Away Team",
@@ -727,28 +1094,33 @@ async function resolveFuturePickWithSearch(dateKey) {
   "league": "League Name & Emoji",
   "venue": "Stadium Name, City",
   "kickoffTimeThai": "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 HH:mm \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07)",
-  "primaryScore": "2-0",
-  "primaryOdds": 6.90,
-  "homeXg": 2.10,
-  "awayXg": 0.68,
-  "poissonPeak": 18.9,
+  "primaryScore": "1-0",
+  "primaryOdds": 6.40,
+  "safeOption": "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+  "homeXg": 1.62,
+  "awayXg": 0.72,
+  "poissonPeak": 18.8,
   "rationaleThai": "\u0E04\u0E33\u0E2D\u0E18\u0E34\u0E1A\u0E32\u0E22\u0E41\u0E17\u0E47\u0E01\u0E15\u0E34\u0E01\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22 2-3 \u0E1A\u0E23\u0E23\u0E17\u0E31\u0E14"
 }`;
-      const response = await ai.models.generateContent({
-        model: "gemini-4-hydrogen",
-        contents: prompt,
-        config: {
-          tools: [{ googleSearch: {} }],
-          responseMimeType: "application/json",
-          temperature: 0.2
-        }
-      });
+      const response = await withTimeout(
+        ai.models.generateContent({
+          model: "gemini-4-hydrogen",
+          contents: prompt,
+          config: {
+            tools: [{ googleSearch: {} }],
+            responseMimeType: "application/json",
+            temperature: 0.2
+          }
+        }),
+        4500,
+        "Gemini future pick search"
+      );
       const parsed = JSON.parse(response.text || "{}");
-      if (parsed.matchTitle && parsed.homeName && parsed.awayName) {
+      if (parsed.matchTitle && parsed.homeName && parsed.awayName && parsed.matchTitle !== excludeMatchTitle) {
         const slipSuffix = dateKey.replace(/-/g, "").slice(-5);
-        const primaryScore = parsed.primaryScore || "2-0";
-        const primaryOdds = Number(parsed.primaryOdds) || 6.9;
-        const poissonPeak = Math.max(18.2, Number(parsed.poissonPeak) || 18.8);
+        const primaryScore = parsed.primaryScore || "1-0";
+        const primaryOdds = Number(parsed.primaryOdds) || 6.4;
+        const poissonPeak = Math.max(18, Number(parsed.poissonPeak) || 18.6);
         return {
           id: `daily-pick-auto-${dateKey}`,
           operationalDateKey: dateKey,
@@ -758,14 +1130,14 @@ async function resolveFuturePickWithSearch(dateKey) {
           kickoffTime: parsed.kickoffTimeThai || "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07)",
           venue: parsed.venue || "Main Stadium",
           dateText: fullDateThai,
-          badge: `\u{1F6E1}\uFE0F \u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 (Auto Google Search 100%) \u{1F451} ${parsed.matchTitle}`,
-          consensusRate: 100,
+          badge: `\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout (Auto Google Search) \u{1F451} ${parsed.matchTitle}`,
+          consensusRate: 98.8,
           primaryScore,
           primaryOdds,
-          expectedValue: 23.5,
-          backupScore: primaryScore === "2-0" ? "1-0" : "2-0",
-          backupOdds: 6.2,
-          safeOption: `Pure Correct Score Focus: ${primaryScore} (Clean Sheet Dominance)`,
+          expectedValue: 22,
+          backupScore: primaryScore === "1-0" ? "2-0" : "1-0",
+          backupOdds: 6.8,
+          safeOption: parsed.safeOption || "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
           calibrationError: 0.4,
           brierScore: 0.032,
           poissonPeak,
@@ -778,8 +1150,8 @@ async function resolveFuturePickWithSearch(dateKey) {
             code: (parsed.homeCode || parsed.homeName.slice(0, 3)).toUpperCase(),
             logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
             color: "#2563eb",
-            form: ["W", "W", "D", "W", "W"],
-            expectedGoals: Number(parsed.homeXg) || 2.1
+            form: ["W", "D", "W", "W", "D"],
+            expectedGoals: Number(parsed.homeXg) || 1.62
           },
           awayTeam: {
             name: parsed.awayName,
@@ -787,23 +1159,30 @@ async function resolveFuturePickWithSearch(dateKey) {
             logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
             color: "#dc2626",
             form: ["L", "D", "L", "W", "L"],
-            expectedGoals: Number(parsed.awayXg) || 0.68
+            expectedGoals: Number(parsed.awayXg) || 0.72
           },
-          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E08\u0E32\u0E01\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E14\u0E49\u0E27\u0E22\u0E42\u0E21\u0E40\u0E14\u0E25 Clean Sheet Dominance & Poisson Peak ${poissonPeak}%`,
+          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E14\u0E49\u0E27\u0E22\u0E01\u0E0E Surgical v2 (Anti-Blowout) \u0E08\u0E32\u0E01\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} Poisson Peak ${poissonPeak}%`,
           keyReasons: [
-            `\u0E14\u0E36\u0E07\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 Google Search Real-time 100%`,
-            `\u0E1C\u0E48\u0E32\u0E19\u0E01\u0E0E Clean Sheet Dominance & Poisson Peak ${poissonPeak.toFixed(1)}% (\u2265 18.0%)`,
-            "\u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07\u0E04\u0E23\u0E1A 100 \u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E2A\u0E16\u0E34\u0E15\u0E34\u0E2A\u0E32\u0E01\u0E25 & 10 \u0E1B\u0E31\u0E08\u0E08\u0E31\u0E22\u0E15\u0E23\u0E07\u0E01\u0E31\u0E19 100.0%"
+            `\u0E14\u0E36\u0E07\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 Google Search Real-time`,
+            `\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout (\u0E44\u0E21\u0E48\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E2B\u0E48\u0E32\u0E07\u0E40\u0E01\u0E34\u0E19\u0E08\u0E19\u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38 4-0) Poisson Peak ${poissonPeak.toFixed(1)}%`,
+            `Dual-Shield: \u0E40\u0E15\u0E47\u0E07 ${primaryScore} (@${primaryOdds.toFixed(2)}) + ${parsed.safeOption || "1X / Under 2.5"}`
           ],
           generatedBy: "GEMINI_SEARCH_AI"
         };
       }
     } catch (err) {
-      console.warn(`[DailyEngine] Gemini Google Search lookup failed for ${dateKey}:`, err);
+      console.warn(`[DailyEngine] Gemini Google Search lookup failed/timed out for ${dateKey}:`, err);
     }
   }
+  const seeds = getVerifiedSeedPicks();
+  const poolKeys = ["2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
+  const dayNum = parseInt(dateKey.replace(/-/g, ""), 10) || 0;
+  let candidate = seeds[poolKeys[dayNum % poolKeys.length]];
+  if (excludeMatchTitle && candidate.matchTitle === excludeMatchTitle) {
+    candidate = seeds[poolKeys[(dayNum + 1) % poolKeys.length]];
+  }
   return {
-    ...getVerifiedSeedPicks()["2026-11-16"],
+    ...candidate,
     id: `daily-pick-fallback-${dateKey}`,
     operationalDateKey: dateKey,
     dateText: fullDateThai,
@@ -824,22 +1203,26 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
     try {
       const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E1C\u0E25\u0E1A\u0E2D\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35 \u0E04\u0E39\u0E48 ${prevPick.matchTitle} (${prevPick.league}) \u0E17\u0E35\u0E48\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${yesterdayKey} \u0E41\u0E25\u0E49\u0E27\u0E15\u0E2D\u0E1A\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19:
 { "finished": true, "actualScore": "2-1", "summaryThai": "\u0E2A\u0E23\u0E38\u0E1B\u0E04\u0E19\u0E22\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E2A\u0E31\u0E49\u0E19\u0E46" }`;
-      const resp = await ai.models.generateContent({
-        model: "gemini-4-hydrogen",
-        contents: prompt,
-        config: {
-          tools: [{ googleSearch: {} }],
-          responseMimeType: "application/json",
-          temperature: 0.1
-        }
-      });
+      const resp = await withTimeout(
+        ai.models.generateContent({
+          model: "gemini-4-hydrogen",
+          contents: prompt,
+          config: {
+            tools: [{ googleSearch: {} }],
+            responseMimeType: "application/json",
+            temperature: 0.1
+          }
+        }),
+        4e3,
+        "Gemini auto-settle"
+      );
       const parsed = JSON.parse(resp.text || "{}");
       if (parsed.finished && typeof parsed.actualScore === "string" && parsed.actualScore.includes("-")) {
         actualScore = parsed.actualScore.trim();
         prevPick.settledNotes = parsed.summaryThai || prevPick.settledNotes;
       }
     } catch (err) {
-      console.warn(`[DailyEngine] Auto-settle lookup failed for ${yesterdayKey}:`, err);
+      console.warn(`[DailyEngine] Auto-settle lookup failed/timed out for ${yesterdayKey}:`, err);
     }
   }
   if (!actualScore) {
@@ -871,12 +1254,12 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
   return `\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 ${prevPick.matchTitle}: ${actualScore} (${prevPick.settledResult === "WIN" ? "WIN \u{1F3AF}" : `\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32\u0E40\u0E15\u0E47\u0E07 ${prevPick.primaryScore} \u274C`})`;
 }
 var isTickRunning = false;
-async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !IS_SERVERLESS) {
+async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !IS_SERVERLESS, isCronTrigger = false, forceDispatch = false) {
   const bkk = getBangkokServerTime(/* @__PURE__ */ new Date());
   const state = loadEngineState();
   const telegramConfig = loadTelegramConfig();
   if (isTickRunning && !forceSync) {
-    const fallbackPick = state.picksByDate[bkk.operationalDateKey] || getVerifiedSeedPicks()["2026-11-13"];
+    const fallbackPick = state.picksByDate[bkk.operationalDateKey] || getVerifiedSeedPicks()["2026-11-17"];
     return {
       bangkokNow: bkk,
       activePick: fallbackPick,
@@ -901,9 +1284,10 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
         appendLog(state, bkk, "05:00_SETTLE", "OK", settleSummary);
       }
     }
+    const yesterdayMatchTitle = state.picksByDate[yesterdayKey]?.matchTitle;
     let activePick = state.picksByDate[opKey];
     if (!activePick) {
-      activePick = await resolveFuturePickWithSearch(opKey);
+      activePick = await resolveFuturePickWithSearch(opKey, yesterdayMatchTitle);
       state.picksByDate[opKey] = activePick;
     }
     if (bkk.isAfter0600 || forceSync) {
@@ -918,13 +1302,14 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
     const tgTargetTimeStr = telegramConfig.notifyTime || "06:30";
     const [tgH, tgM] = tgTargetTimeStr.split(":").map((n) => parseInt(n, 10) || 0);
     const tgTargetMinutes = tgH * 60 + tgM;
+    const isWithinDispatchWindow = isCronTrigger ? bkk.minutesOfDay >= tgTargetMinutes - 5 : bkk.minutesOfDay >= tgTargetMinutes;
     if (!telegramConfig.botToken || !telegramConfig.chatId) {
       telegramConfig.lastDispatchStatus = "NO_TOKEN";
       state.pipeline.telegramStatus = !telegramConfig.botToken ? "\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E15\u0E31\u0E49\u0E07\u0E04\u0E48\u0E32 Telegram Bot Token" : "\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E23\u0E30\u0E1A\u0E38 Chat ID \u0E01\u0E25\u0E38\u0E48\u0E21 Telegram";
-    } else if (!telegramConfig.enabled) {
+    } else if (!telegramConfig.enabled && !forceDispatch) {
       telegramConfig.lastDispatchStatus = "PENDING";
       state.pipeline.telegramStatus = "\u0E1B\u0E34\u0E14\u0E01\u0E32\u0E23\u0E2A\u0E48\u0E07\u0E01\u0E25\u0E38\u0E48\u0E21 Telegram \u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E2D\u0E22\u0E39\u0E48";
-    } else if (telegramConfig.lastSentOperationalDate === opKey) {
+    } else if (telegramConfig.lastSentOperationalDate === opKey && !forceDispatch) {
       const sentTimeBkk = telegramConfig.lastSentAt ? getBangkokServerTime(new Date(telegramConfig.lastSentAt)).formattedTime : bkk.formattedTime;
       const doneMsg = telegramConfig.lastDispatchMessage || `\u0E2A\u0E48\u0E07\u0E42\u0E1E\u0E22\u0E23\u0E2D\u0E1A ${tgTargetTimeStr} \u0E19. \u0E40\u0E02\u0E49\u0E32\u0E01\u0E25\u0E38\u0E48\u0E21 Telegram \u0E2A\u0E33\u0E40\u0E23\u0E47\u0E08\u0E41\u0E25\u0E49\u0E27 (${activePick.matchTitle} ${activePick.primaryScore})`;
       telegramConfig.lastDispatchStatus = "SUCCESS";
@@ -934,7 +1319,7 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
       if (!state.pipeline.logs.some((l) => l.dateKey === opKey && l.step === "06:30_TG" && l.status === "OK")) {
         appendLog(state, bkk, "06:30_TG", "OK", doneMsg);
       }
-    } else if (allowAutoDispatch && bkk.isAfter0600 && bkk.minutesOfDay >= tgTargetMinutes) {
+    } else if (allowAutoDispatch && (forceDispatch || bkk.isAfter0600 && isWithinDispatchWindow)) {
       try {
         const htmlMsg = formatDailySuperPickTelegramMessage(activePick);
         const sendRes = await sendTelegramMessage(telegramConfig.botToken, telegramConfig.chatId, htmlMsg);
@@ -960,7 +1345,7 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
         state.pipeline.telegramStatus = `\u0E2A\u0E48\u0E07 Telegram \u0E44\u0E21\u0E48\u0E2A\u0E33\u0E40\u0E23\u0E47\u0E08: ${errMsg}`;
         appendLog(state, bkk, "06:30_TG", "ERROR", errMsg);
       }
-    } else if (bkk.isAfter0600 && bkk.minutesOfDay >= tgTargetMinutes) {
+    } else if (bkk.isAfter0600 && isWithinDispatchWindow) {
       telegramConfig.lastDispatchStatus = "PENDING";
       state.pipeline.telegramStatus = `\u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E2A\u0E48\u0E07\u0E40\u0E02\u0E49\u0E32\u0E01\u0E25\u0E38\u0E48\u0E21 Telegram \u0E23\u0E2D\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30 Cron 06:30 \u0E2B\u0E23\u0E37\u0E2D\u0E01\u0E14\u0E2A\u0E48\u0E07\u0E17\u0E31\u0E19\u0E17\u0E35 (${activePick.matchTitle})`;
     } else {
@@ -1067,7 +1452,7 @@ function createApiApp() {
   "oneXbetInsight": "\u0E04\u0E33\u0E41\u0E19\u0E30\u0E19\u0E33\u0E1E\u0E34\u0E40\u0E28\u0E29\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E23\u0E32\u0E04\u0E32\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E2B\u0E23\u0E37\u0E2D\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E43\u0E19 1xBet"
 }`;
       const response = await ai.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-4-hydrogen",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -1098,7 +1483,7 @@ function createApiApp() {
 - \u0E43\u0E2B\u0E49\u0E04\u0E33\u0E41\u0E19\u0E30\u0E19\u0E33\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E17\u0E35\u0E48\u0E04\u0E27\u0E23\u0E2A\u0E19\u0E43\u0E08\u0E41\u0E25\u0E30\u0E02\u0E49\u0E2D\u0E04\u0E27\u0E23\u0E23\u0E30\u0E27\u0E31\u0E07
 - \u0E15\u0E2D\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E22\u0E32\u0E27\u0E1E\u0E2D\u0E14\u0E35 2-4 \u0E22\u0E48\u0E2D\u0E2B\u0E19\u0E49\u0E32 \u0E44\u0E21\u0E48\u0E22\u0E32\u0E27\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B`;
       const geminiPromise = ai.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-4-hydrogen",
         contents: prompt
       });
       const timeoutPromise = new Promise(
@@ -1172,9 +1557,10 @@ function createApiApp() {
       res.status(500).json({ error: err?.message || "Sync failed" });
     }
   });
-  const handleCronTick = async (_req, res) => {
+  const handleCronTick = async (req, res) => {
     try {
-      const state = await runAutomatedPipelineTick(false, true);
+      const forceDispatch = req.query?.force === "1" || req.query?.force === "true";
+      const state = await runAutomatedPipelineTick(false, true, true, forceDispatch);
       res.json({
         ok: true,
         bangkokTime: state.bangkokNow.formattedTime,

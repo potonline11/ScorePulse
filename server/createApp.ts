@@ -126,7 +126,7 @@ export function createApiApp() {
 }`;
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
+        model: 'gemini-4-hydrogen',
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -163,7 +163,7 @@ export function createApiApp() {
 - ตอบความยาวพอดี 2-4 ย่อหน้า ไม่ยาวเกินไป`;
 
       const geminiPromise = ai.models.generateContent({
-        model: 'gemini-3.8-flash',
+        model: 'gemini-4-hydrogen',
         contents: prompt,
       });
 
@@ -246,10 +246,11 @@ export function createApiApp() {
     }
   });
 
-  // 5. Cron Endpoint (triggered automatically by Vercel Cron / cron-job.org / manual Catch-Up)
-  const handleCronTick = async (_req: Request, res: Response) => {
+  // 5. Cron Endpoint (triggered automatically by cron-job.org / manual Catch-Up)
+  const handleCronTick = async (req: Request, res: Response) => {
     try {
-      const state = await runAutomatedPipelineTick(false, true);
+      const forceDispatch = req.query?.force === '1' || req.query?.force === 'true';
+      const state = await runAutomatedPipelineTick(false, true, true, forceDispatch);
       res.json({
         ok: true,
         bangkokTime: state.bangkokNow.formattedTime,

@@ -888,7 +888,7 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                   className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#229ED9] to-sky-600 hover:from-sky-400 hover:to-sky-500 disabled:opacity-40 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-[#229ED9]/20 active:scale-95"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>ส่งโพยวันนี้ ({engineState?.activePick?.primaryScore || '2-0'}) เข้ากลุ่มทันที</span>
+                  <span>ส่งโพยวันนี้ ({engineState?.activePick?.primaryScore || '1-0'}) เข้ากลุ่มทันที</span>
                 </button>
               </div>
 
@@ -1010,9 +1010,9 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                   <div>GEMINI_API_KEY = (ตัวเสริม สำหรับดึงผลบอล/ออกโพยล่วงหน้า)</div>
                 </div>
                 <p className="text-slate-300 leading-relaxed">
-                  ระบบมี <code className="text-emerald-300">vercel.json</code> ตั้ง <strong>Vercel Cron</strong> ที่เวลา{' '}
-                  <code>30 23 * * *</code> (06:30 น. เวลาไทย) ไว้แล้ว หรือนำไปวางใน{' '}
-                  <strong>cron-job.org</strong> ยิงมาที่ลิงก์นี้ทุกวัน 06:30 น. ได้ตรงนาทีที่สุด:
+                  แนะนำตั้งค่าใน <strong>cron-job.org</strong> เพียงแหล่งเดียวเพื่อป้องกันโพยส่งซ้ำ (ยิงวันละ 1 ครั้งที่{' '}
+                  <strong>06:30 น.</strong>, Timezone: <code className="text-emerald-300">Asia/Bangkok</code>,{' '}
+                  <strong>Request Timeout: 30s</strong>):
                 </p>
                 <div className="flex items-center gap-2 bg-slate-950 p-2 rounded-xl border border-slate-800">
                   <code className="text-[10px] font-mono text-emerald-300 truncate flex-1">{cronTickUrl}</code>
@@ -1024,6 +1024,10 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                     <span>{copiedCronUrl ? 'คัดลอกแล้ว' : 'Copy'}</span>
                   </button>
                 </div>
+                <p className="text-[10px] text-amber-300/90 leading-relaxed">
+                  💡 ทิปส์: ระบบรองรับการยิงก่อนเวลาได้ถึง 5 นาที (เช่น 06:25–06:30 น.) และหากต้องการทดสอบส่งผ่านลิงก์ทันทีให้เติม{' '}
+                  <code className="bg-slate-950 px-1 py-0.5 rounded text-sky-300">?force=1</code> ต่อท้าย URL
+                </p>
               </div>
             </div>
           )}

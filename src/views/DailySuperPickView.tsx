@@ -13,16 +13,26 @@ import {
   SETTLED_LAZIO_RECORD,
   SETTLED_MANCITY_RECORD,
   SETTLED_VENEZIA_RECORD,
-  SUPER_PICK_FRIDAY_13,
-  SUPER_PICK_SATURDAY_14,
-  SUPER_PICK_SUNDAY_15,
+  SUPER_PICK_TUESDAY_17,
+  SUPER_PICK_WEDNESDAY_18,
+  SUPER_PICK_THURSDAY_19,
+  SUPER_PICK_FRIDAY_20,
+  SUPER_PICK_SATURDAY_21,
+  SUPER_PICK_SUNDAY_22,
   SUPER_PICK_MONDAY_16,
+  SUPER_PICK_SUNDAY_15,
+  SUPER_PICK_SATURDAY_14,
+  SUPER_PICK_FRIDAY_13,
   SUPER_PICK_THURSDAY_12,
   SUPER_PICK_WEDNESDAY_11,
   SUPER_PICK_TUESDAY_10,
   SUPER_PICK_MONDAY_9,
   SUPER_PICK_SUNDAY_8,
   SUPER_PICK_SATURDAY_7,
+  SETTLED_MONDAY_16_RECORD,
+  SETTLED_SUNDAY_15_RECORD,
+  SETTLED_SATURDAY_14_RECORD,
+  SETTLED_FRIDAY_13_RECORD,
   SETTLED_THURSDAY_12_RECORD,
   SETTLED_WEDNESDAY_11_RECORD,
   SETTLED_TUESDAY_10_RECORD,
@@ -439,18 +449,22 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   const handleApplyDualShieldStrategy = () => {
     soundManager.playTap();
     handleQuickAddPrimaryToSlip();
-    const x2Hedge = pick.blindSpotAudit?.recommendedHedges[0] || {
-      market: 'สเปอร์ส ชนะหรือเสมอ (Double Chance - X2)',
-      selection: 'Tottenham หรือ เสมอ (X2)',
-      odds: 1.38,
-      reason: 'คุ้มครองเงินต้น 100%',
+    const safeHedge = pick.blindSpotAudit?.recommendedHedges[0] || {
+      market: `แผนคุ้มครองทุน (${pick.safeOption})`,
+      selection: pick.safeOption || `${pick.homeTeam.name} Win / 1X`,
+      odds: 1.55,
+      reason: 'คุ้มครองเงินต้น 70/30',
     };
-    handleAddHedgeToSlip(x2Hedge);
-    showToast('🛡️ จัดพอร์ตคุ้มครองทุน 70/30 สำเร็จ: เพิ่มทั้ง X2 (กันหลุด) และ สกอร์ 1-2 (ลุ้นกำไร) ลงในบิล 1xBet แล้ว');
+    handleAddHedgeToSlip(safeHedge);
+    showToast(`🛡️ จัดพอร์ต Dual-Shield 70:30 สำเร็จ: เพิ่ม ${safeHedge.selection} และสกอร์ ${pick.primaryScore} ลงบิล 1xBet แล้ว`);
   };
 
-  // Dynamic history starting from server-settled records & yesterday's settled Nov 12 England 2-1 Croatia + all historical settled days
+  // Dynamic history starting from server-settled records & all verified settled days (most recent first)
   const baseHistory = [
+    SETTLED_MONDAY_16_RECORD,
+    SETTLED_SUNDAY_15_RECORD,
+    SETTLED_SATURDAY_14_RECORD,
+    SETTLED_FRIDAY_13_RECORD,
     SETTLED_THURSDAY_12_RECORD,
     SETTLED_WEDNESDAY_11_RECORD,
     SETTLED_TUESDAY_10_RECORD,
@@ -474,8 +488,15 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   ];
 
   const baseHistoryIds = new Set(baseHistory.map((h) => h.id));
+  const baseHistoryDateKeys = new Set(
+    baseHistory.map((h: any) => h.dateKey).filter((k: any): k is string => Boolean(k))
+  );
   const extraServerSettled = (serverEngine?.settledRecords || []).filter(
-    (rec: any) => rec && rec.id && !baseHistoryIds.has(rec.id)
+    (rec: any) =>
+      rec &&
+      rec.id &&
+      !baseHistoryIds.has(rec.id) &&
+      (!rec.dateKey || !baseHistoryDateKeys.has(rec.dateKey))
   );
   const displayedHistory = [...extraServerSettled, ...baseHistory];
 
@@ -691,7 +712,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 </span>
               </div>
               <div className="text-slate-300 text-[10px] mt-0.5 line-clamp-2">
-                {serverEngine?.pipeline?.settleSummary || 'ตัดรอบสรุปผลบอลจริงเมื่อคืนอัตโนมัติ (อังกฤษ 2-1 โครเอเชีย)'}
+                {serverEngine?.pipeline?.settleSummary || 'ตัดรอบสรุปผลบอลจริงเมื่อคืนอัตโนมัติ (05:00 น.)'}
               </div>
             </div>
 
@@ -856,7 +877,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           <div className="flex items-center gap-2 pt-1">
             <button
               onClick={() => {
-                setSelectedPickId(dynamicDateTabs[0]?.pickId || SUPER_PICK_FRIDAY_13.id);
+                setSelectedPickId(dynamicDateTabs[0]?.pickId || SUPER_PICK_TUESDAY_17.id);
                 setRolloverState('PRE_MATCH');
                 setUserSelectedManualPick(false);
                 showToast(`🟢 กลับสู่โพยรอบเช้า 06:00 น. วันนี้ (${todayOperationalPick.matchTitle})`);
@@ -902,105 +923,25 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     <span className="text-[10px] font-bold text-slate-400 truncate max-w-[110px]">
                       {item.league}
                     </span>
-                    {item.id === 'daily-pick-netherlands-greece-nov13' ? (
+                    {item.id === todayOperationalPick.id ? (
                       <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-gradient-to-r from-amber-400 to-emerald-400 text-slate-950 shadow-sm whitespace-nowrap">
-                        👑 ศุกร์ 13 พ.ย. (วันนี้ 02:45 น. Clean Sheet 2-0)
+                        👑 วันนี้ v2 Anti-Blowout ({item.primaryScore})
                       </span>
-                    ) : item.id === 'daily-pick-portugal-denmark-nov14' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
-                        📅 เสาร์ 14 พ.ย. (รอปล่อย 06:00 น.)
-                      </span>
-                    ) : item.id === 'daily-pick-france-turkiye-nov15' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
-                        📅 อาทิตย์ 15 พ.ย. (รอปล่อย 06:00 น.)
-                      </span>
-                    ) : item.id === 'daily-pick-switzerland-scotland-nov16' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
-                        📅 จันทร์ 16 พ.ย. (รอปล่อย 06:00 น.)
-                      </span>
-                    ) : item.id === 'daily-pick-england-croatia-nov12' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 12 พ.ย. (จบ 2-1 หลุด 2-0 ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-armenia-cyprus-nov11' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 11 พ.ย. (จบ 1-1 หลุด 2-1 ❌ / 1X WIN)
-                      </span>
-                    ) : item.id === 'daily-pick-wycombe-crawley-nov10' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 whitespace-nowrap">
-                        🎯 10 พ.ย. (WIN 2-1 @8.40)
-                      </span>
-                    ) : item.id === 'daily-pick-rayo-laspalmas-nov9' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 whitespace-nowrap">
-                        🎯 9 พ.ย. (WIN 1-0 @6.80)
-                      </span>
-                    ) : item.id === 'daily-pick-sunderland-chelsea-nov8' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 whitespace-nowrap">
-                        🎯 8 พ.ย. (WIN 1-2 @8.60)
-                      </span>
-                    ) : item.id === 'daily-pick-leeds-tottenham-nov7' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 7 พ.ย. (จบ 1-1 หลุด 1-2 ❌ / เซฟตี้ X2 WIN)
-                      </span>
-                    ) : item.id === 'daily-pick-dortmund-stuttgart' || item.id === 'daily-pick-friday-6' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 6 พ.ย. (โปรแกรมหลุด/เสียทุน ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-leverkusen-marseille' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 5 พ.ย. (จบ 0-1 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-fenerbahce-liverpool' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 4 พ.ย. (จบ 3-2 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-barca-astonvilla' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 3 พ.ย. (จบ 3-0 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-monday-2' || item.id === 'daily-pick-newcastle-everton' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 2 พ.ย. (จบ 0-1 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-sunday-1' || item.id === 'daily-pick-liverpool-arsenal' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 1 พ.ย. (จบ 0-1 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-saturday-31' || item.id === 'daily-pick-chelsea-manutd' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">
-                        ❌ 31 ต.ค. (จบ 1-1 หลุดเป้า ❌)
-                      </span>
-                    ) : item.id === 'daily-pick-villarreal-espanyol' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 whitespace-nowrap">
-                        🎯 WIN 2-0 (สลิปเดี่ยว @7.50 จ่าย 375฿)
-                      </span>
-                    ) : item.id === 'daily-pick-everton-newcastle' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 whitespace-nowrap">
-                        🎯 29 ต.ค. (WIN 1-2 @8.50)
-                      </span>
-                    ) : item.id === 'daily-pick-fiorentina-atalanta' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
-                        ⭐ เซเรีย อา (1-2 @8.80)
-                      </span>
-                    ) : item.id === 'daily-pick-mancity-brighton' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 whitespace-nowrap">
-                        28 ต.ค. (จบจริง 2-2 เซฟตี้กำไร)
-                      </span>
-                    ) : item.id === 'daily-pick-venezia-inter' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 whitespace-nowrap">
-                        28 ต.ค. (จบ 0-2 WIN 🎯)
-                      </span>
-                    ) : item.id === 'daily-pick-lazio' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 whitespace-nowrap">
-                        27 ต.ค. (จบ 1-2 WIN 🎯)
-                      </span>
-                    ) : item.id === 'daily-pick-sevilla' ? (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 whitespace-nowrap">
-                        26 ต.ค. (จบ 2-0 WIN 🎯)
+                    ) : item.isSettled ? (
+                      <span
+                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border whitespace-nowrap ${
+                          item.settledResult === 'WIN'
+                            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                            : 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+                        }`}
+                      >
+                        {item.settledResult === 'WIN'
+                          ? `🎯 WIN ${item.settledScore || item.primaryScore}`
+                          : `❌ จบ ${item.settledScore || '-'} (วาง ${item.primaryScore})`}
                       </span>
                     ) : (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-800 text-slate-300 whitespace-nowrap">
-                        {item.dateText}
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
+                        📅 {item.dateText.replace('วัน', '').replace(' พฤศจิกายน 2026', ' พ.ย.')} (ล่วงหน้า v2)
                       </span>
                     )}
                   </div>
@@ -1314,28 +1255,28 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           </div>
         </div>
 
-        {/* Anti-Loss Streak Protection & Capital Shield (Solves "กลัวหลุด 8 นัดติด") */}
+        {/* Anti-Loss Streak Protection & Dual-Shield Capital Shield */}
         <div className="mt-4 rounded-3xl bg-gradient-to-br from-[#0c1f17] via-[#0b162c] to-[#0c1f17] border-2 border-emerald-400/80 p-4 sm:p-5 shadow-2xl shadow-emerald-500/20 space-y-3.5 relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div className="space-y-0.5">
               <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-amber-400 text-slate-950 shadow-md">
                   <ShieldCheck className="w-4 h-4 fill-slate-950" />
-                  <span>ศูนย์ป้องกันหลุด 8 นัดติด &bull; สูตรคุ้มครองเงินทุน 100%</span>
+                  <span>Surgical v2 Dual-Shield &bull; สูตรคุ้มครองเงินทุน 70:30</span>
                 </span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                  🛡️ ปลอดภัยสูงสุด
+                  🛡️ Anti-Blowout Protected
                 </span>
               </div>
               <h3 className="text-sm font-black text-white pt-1">
-                กังวลว่าสกอร์ตรง 1-2 จะหลุด 8 นัดติด? แนะนำเปิดใช้ &ldquo;แผนคุ้มครองเงินต้น 70:30&rdquo;
+                คู่ {pick.matchTitle}: แนะนำเล่นสกอร์ตรง {pick.primaryScore} (@{pick.primaryOdds.toFixed(2)}) คู่แผน &ldquo;Dual-Shield 70:30&rdquo;
               </h3>
             </div>
-            
+
             <button
               onClick={handleApplyDualShieldStrategy}
               className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 hover:from-emerald-300 text-slate-950 font-black text-xs shadow-lg shadow-emerald-400/30 flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95 shrink-0"
-              title="กดเพื่อจัดพอร์ตอัตโนมัติ (ใส่ทั้ง X2 เซฟทุน และ สกอร์ 1-2 ลุ้นกำไร)"
+              title="กดเพื่อจัดพอร์ต Dual-Shield อัตโนมัติ (ใส่ทั้งแผนเซฟตี้ และ สกอร์เต็งหลัก)"
             >
               <Zap className="w-4 h-4 fill-slate-950" />
               <span>⚡ จัดพอร์ตเซฟทุน 70:30 ลงบิลทันที</span>
@@ -1344,64 +1285,65 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
           <div className="p-3.5 rounded-2xl bg-slate-950/85 border border-emerald-500/30 text-xs space-y-2.5">
             <div className="text-slate-300 leading-relaxed text-[11px]">
-              <strong className="text-amber-300 block mb-1">💡 ความจริงที่นักวิเคราะห์ระดับโลกแนะนำเพื่อไม่ให้เสียเงิน:</strong>
-              การเล่นสกอร์ตัวตรง (Correct Score 1-2 ค่าน้ำ @8.80) มีค่าน้ำสูงถึง 8.8 เท่า ย่อมมีความผันผวนสูง หากเกมจบ 0-1, 0-2, 1-3 หรือเสมอ 1-1 สกอร์ตัวตรงจะหลุด แต่ในรูปเกม <strong>ท็อตแน่ม ฮ็อทสเปอร์ ไม่แพ้แน่นอนตามการประเมิน 100 สถาบัน</strong> เพื่อไม่ให้เกิดสถิติหลุด 8 นัดติดและเสียเงินทุน แนะนำให้กระจายทุนตามหลักการบริหารเงินระดับสากล:
+              <strong className="text-amber-300 block mb-1">💡 บทเรียนจาก 13–16 พ.ย. สู่สูตร Dual-Shield v2:</strong>
+              การแทง Correct Score เดี่ยว ({pick.primaryScore} ค่าน้ำ @{pick.primaryOdds.toFixed(2)}) มีความอ่อนไหวต่อ 1 ประตู (เช่น ชนะ 2-1 หรือยิงทะลุ 4-0) แนะนำแบ่งทุน <strong>70% ลงแผนเซฟตี้ ({pick.safeOption})</strong> และ <strong>30% ลุ้นสกอร์เต็ง {pick.primaryScore}</strong> เพื่อป้องกันพอร์ตแตก
             </div>
 
-            {/* 3 Pillars of Protection */}
+            {/* 3 Pillars of Protection (Dynamic per match) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
-              <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-1">
-                    <span>ทางเลือกที่ 1 (เซฟทุน 100%)</span>
-                    <span className="text-emerald-400">ปลอดภัยสูงสุด</span>
+              {(pick.blindSpotAudit?.recommendedHedges && pick.blindSpotAudit.recommendedHedges.length > 0
+                ? pick.blindSpotAudit.recommendedHedges.slice(0, 2)
+                : [
+                    {
+                      market: 'แผนคุ้มครองเงินต้น (Safe Insurance)',
+                      selection: pick.safeOption || `${pick.homeTeam.name} Win / 1X`,
+                      odds: 1.55,
+                      reason: 'ช่วยเซฟทุนกรณีสกอร์ขยับ 1 ลูกหรือทีมต่อชนะขาด',
+                      hedgeRatio: 'พอร์ตเซฟตี้ 70%',
+                    },
+                    {
+                      market: 'สกอร์สำรอง (Backup Correct Score)',
+                      selection: `Correct Score ${pick.backupScore}`,
+                      odds: pick.backupOdds,
+                      reason: `รองรับกรณีเกมออกสกอร์สำรอง ${pick.backupScore}`,
+                      hedgeRatio: 'กระจายความเสี่ยง',
+                    },
+                  ]
+              ).map((hedge, idx) => (
+                <div key={idx} className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-1">
+                      <span>ทางเลือกที่ {idx + 1}</span>
+                      <span className="text-emerald-400">{hedge.hedgeRatio}</span>
+                    </div>
+                    <div className="font-black text-white text-xs truncate">{hedge.market}</div>
+                    <div className="text-[11px] text-amber-400 font-bold font-mono">
+                      {hedge.selection} (@{hedge.odds.toFixed(2)})
+                    </div>
+                    <p className="text-[10px] text-slate-400 mt-1">{hedge.reason}</p>
                   </div>
-                  <div className="font-black text-white text-xs">Double Chance (X2)</div>
-                  <div className="text-[11px] text-amber-400 font-bold font-mono">Tottenham หรือ เสมอ (@1.38)</div>
-                  <p className="text-[10px] text-slate-400 mt-1">
-                    สเปอร์สชนะ 0-1, 1-2, 0-2, 1-3 หรือเสมอ 1-1 ชนะบิลทันที ไม่หลุดแน่นอน
-                  </p>
+                  <button
+                    onClick={() => handleAddHedgeToSlip(hedge)}
+                    className="mt-2 w-full py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[10px] font-black flex items-center justify-center gap-1 cursor-pointer transition-all"
+                  >
+                    <Plus className="w-3 h-3 stroke-[3]" />
+                    <span>ใส่บิล (@{hedge.odds.toFixed(2)})</span>
+                  </button>
                 </div>
-                <button
-                  onClick={() => handleAddHedgeToSlip({ selection: 'Tottenham หรือ เสมอ (X2)', odds: 1.38, market: 'Double Chance' })}
-                  className="mt-2 w-full py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[10px] font-black flex items-center justify-center gap-1 cursor-pointer transition-all"
-                >
-                  <Plus className="w-3 h-3 stroke-[3]" />
-                  <span>ใส่บิล X2 (@1.38)</span>
-                </button>
-              </div>
+              ))}
 
               <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-1">
-                    <span>ทางเลือกที่ 2 (เกมรุกเปิดแลก)</span>
-                    <span className="text-sky-400">xG สูง</span>
-                  </div>
-                  <div className="font-black text-white text-xs">สกอร์รวม Over 2.5 ลูก</div>
-                  <div className="text-[11px] text-amber-400 font-bold font-mono">สูงกว่า 2.5 ประตู (@1.55)</div>
-                  <p className="text-[10px] text-slate-400 mt-1">
-                    ยิงรวม 3 ลูกขึ้นไป (1-2, 2-1, 2-2, 1-3) วินทันที ครอบคลุมทุกผลสกอร์สูง
-                  </p>
-                </div>
-                <button
-                  onClick={() => handleAddHedgeToSlip({ selection: 'Over 2.5 ประตู', odds: 1.55, market: 'Over/Under' })}
-                  className="mt-2 w-full py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/40 text-[10px] font-black flex items-center justify-center gap-1 cursor-pointer transition-all"
-                >
-                  <Plus className="w-3 h-3 stroke-[3]" />
-                  <span>ใส่บิล Over 2.5 (@1.55)</span>
-                </button>
-              </div>
-
-              <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-1">
-                    <span>ทางเลือกที่ 3 (สูตร 70/30)</span>
+                    <span>สูตร 70/30 Dual-Shield</span>
                     <span className="text-amber-400">พอร์ตมืออาชีพ</span>
                   </div>
-                  <div className="font-black text-white text-xs">สูตรกระจายทุนเซฟตี้</div>
-                  <div className="text-[11px] text-emerald-400 font-bold">วาง X2 (70%) + สกอร์ 1-2 (30%)</div>
+                  <div className="font-black text-white text-xs">จัดพอร์ตเซฟตี้ + เต็งสกอร์</div>
+                  <div className="text-[11px] text-emerald-400 font-bold">
+                    วางเซฟตี้ 70% + สกอร์ {pick.primaryScore} 30%
+                  </div>
                   <p className="text-[10px] text-slate-400 mt-1">
-                    หากสกอร์หลุดแต่สเปอร์สไม่แพ้ ได้ทุนคืนครบ / หากเข้า 1-2 กำไรเต็มเหนี่ยว
+                    ได้ทุนคืนจากแผนเซฟตี้หากสกอร์คลาดเคลื่อน 1 ลูก และรับกำไรคูณ {pick.primaryOdds.toFixed(1)} เท่าเมื่อเข้า {pick.primaryScore}
                   </p>
                 </div>
                 <button
@@ -1461,11 +1403,13 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
             {isBlindSpotExpanded && (
               <div className="p-4 pt-1 space-y-3.5 border-t border-rose-500/30 text-xs">
-                {/* Mathematical Reality Clarification Box (Solves user's core confusion!) */}
+                {/* Mathematical Reality Clarification Box */}
                 <div className="p-3 rounded-xl bg-slate-950/90 border border-amber-500/40 space-y-1.5">
                   <div className="flex items-center gap-1.5 text-amber-400 font-bold text-xs">
                     <Info className="w-4 h-4 shrink-0" />
-                    <span>คำชี้แจงความเข้าใจผิด: Consensus 95.8% ไม่ใช่โอกาสถูกของสกอร์ 1-2!</span>
+                    <span>
+                      คำชี้แจง: Consensus {pick.consensusRate}% ไม่ใช่โอกาสถูก {pick.consensusRate}% ของสกอร์ {pick.primaryScore}!
+                    </span>
                   </div>
                   <p className="text-[11px] text-slate-300 leading-relaxed">
                     {pick.blindSpotAudit.consensusClarification}
@@ -1533,7 +1477,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                   </div>
 
                   <p className="text-[11px] text-slate-300">
-                    หากไม่ต้องการเสี่ยงกับสกอร์ 1-2 ตัวเดียว แนะนำให้กระจายทุนไปยังตลาดที่มีความผันผวนต่ำกว่า ดังนี้:
+                    หากไม่ต้องการเสี่ยงกับสกอร์ {pick.primaryScore} ตัวเดียว แนะนำกระจายทุนร่วมกับตลาดความผันผวนต่ำ (Dual-Shield):
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -1678,7 +1622,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           {/* Win Rate Badge */}
           <div className="text-right">
             <div className={`text-xs font-black font-mono ${recent7Wins > 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-              สถิติ 7 วันล่าสุด ({recent7[recent7.length - 1]?.date || '6 พ.ย.'} - {recent7[0]?.date || '12 พ.ย.'}): เข้าเป้า {recent7Wins}/{recent7.length} วัน ({recent7Rate}%)
+              สถิติ 7 วันล่าสุด ({recent7[recent7.length - 1]?.date || '10 พ.ย.'} - {recent7[0]?.date || '16 พ.ย.'}): เข้าเป้า {recent7Wins}/{recent7.length} วัน ({recent7Rate}%)
             </div>
             <div className="text-[9px] text-slate-400">
               สถิติรวมทั้งหมด: เข้าเป้า {winCount}/{displayedHistory.length} วัน ({winRate}%) &middot; บันทึกผลตามสกอร์จริง 100% ไม่บิดเบือนข้อมูล
@@ -1692,8 +1636,8 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
             const isWin = h.result === 'WIN';
             const isJustSettled =
               index === 0 ||
-              h.id === SETTLED_THURSDAY_12_RECORD.id ||
-              h.id === SETTLED_WEDNESDAY_11_RECORD.id;
+              h.id === SETTLED_MONDAY_16_RECORD.id ||
+              h.id === SETTLED_SUNDAY_15_RECORD.id;
 
             return (
               <div
