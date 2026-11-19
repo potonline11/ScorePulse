@@ -478,7 +478,7 @@ export const PromoCodeModal: React.FC<PromoCodeModalProps> = ({
                       <strong className="text-white">
                         {/^\d+-\d+$/.test(activeScore)
                           ? 'เลื่อนหาหมวด “คะแนนที่ถูกต้อง (Correct Score)”'
-                          : 'เลื่อนหาหมวด “แฮนดิแคปเอเชีย (Asian Handicap)”'}
+                          : 'เลือกแถบ “เวลาปกติ” → เลื่อนหาหมวด “เอเชียนแฮนดิแคป” (ราคา .25 / .75)'}
                       </strong>
                     </div>
                   </div>
@@ -491,9 +491,9 @@ export const PromoCodeModal: React.FC<PromoCodeModalProps> = ({
                       <strong className="text-white">
                         {/^\d+-\d+$/.test(activeScore)
                           ? `กดเลือกสกอร์ ${activeScore}`
-                          : `กดเลือกต่อ/รอง ${activeScore}`}
+                          : `กดเลือกปุ่ม ${activeScore}`}
                       </strong>{' '}
-                      (ค่าน้ำประมาณ @{activeOdds.toFixed(2)}) แล้วใส่จำนวนเงินวางเดิมพันได้ทันที
+                      (ค่าน้ำประมาณ @{activeOdds.toFixed(3).replace(/0$/, '')}) แล้วใส่จำนวนเงินวางเดิมพันได้ทันที
                     </div>
                   </div>
                 </div>

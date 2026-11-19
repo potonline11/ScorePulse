@@ -640,17 +640,17 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
       kickoffTime: 'พฤหัส 19 พ.ย. (เช้ามืด 05:30 น. 20 พ.ย. ICT)',
       venue: 'Estádio São Januário, Rio de Janeiro',
       dateText: 'วันพฤหัสบดี 19 พฤศจิกายน 2026',
-      badge: '🏆 ASIAN HANDICAP ซุปเปอร์โพย • คัดเดี่ยวอันดับ 1 (Vasco -0.5)',
+      badge: '🏆 ASIAN HANDICAP 1xBet • คัดเดี่ยวอันดับ 1 [1 (-0.75)]',
       consensusRate: 98.8,
       primaryScore: '2-0',
-      primaryOdds: 1.68,
-      expectedValue: 15.1,
+      primaryOdds: 1.741,
+      expectedValue: 10.8,
       backupScore: '2-1',
-      backupOdds: 1.92,
-      safeOption: 'Vasco da Gama HDP 0 (DNB @1.30) หรือ Over 1.5 (@1.32)',
+      backupOdds: 1.403,
+      safeOption: 'Vasco da Gama -0.25 [ปุ่ม 1 (-0.25) @1.403] หรือ Over 1.5 (@1.32)',
       calibrationError: 0.4,
       brierScore: 0.031,
-      poissonPeak: 68.5,
+      poissonPeak: 62.5,
       slipNumber: '№ 89999111919',
       bookingCode1xBet: '1X-VASINT-19',
       isRealMatchTonight: true,
@@ -671,24 +671,25 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
         form: ['D', 'L', 'W', 'L', 'W'],
         expectedGoals: 0.95,
       },
-      analysisRationale: 'คัดเดี่ยว 1 คู่ที่ดีที่สุดประจำวันพฤหัส 19 พ.ย. (เวลาไทยเช้ามืด 05:30 น. 20 พ.ย.): วาสโก ดา กาม่า (อันดับ 11, 44 แต้ม ชนะ 2 นัดรวด ลุ้นพื้นที่บอลถ้วยทวีป) เปิดรังเซา จานูอาริโอ พบ อินเตอร์นาซิอองนาล (อันดับ 16, 38 แต้ม จ่อโซนตกชั้น) ค่า xG ทิ้งขาด +0.89 (1.84 vs 0.95) เหนือกว่าทุกคู่ในโปรแกรมวันนี้ — วาง Asian Handicap Vasco da Gama -0.5 (@1.68) ชนะ 1 ลูกกินเต็ม!',
+      analysisRationale:
+        'คัดเดี่ยว 1 คู่ที่ดีที่สุดประจำวันพฤหัส 19 พ.ย. (เวลาไทยเช้ามืด 05:30 น. 20 พ.ย.): วาสโก ดา กาม่า (อันดับ 11, 44 แต้ม ชนะ 2 นัดรวด) เปิดรังเซา จานูอาริโอ พบ อินเตอร์นาซิอองนาล (อันดับ 16, 38 แต้ม จ่อโซนตกชั้น) ค่า xG ทิ้งขาด +0.89 (1.84 vs 0.95) — ในแอป 1xBet หมวด "เวลาปกติ → เอเชียนแฮนดิแคป" เลือกปุ่ม 1 (-0.75) ค่าน้ำจริง @1.741 (ชนะ 2+ กินเต็ม / ชนะ 1 กินครึ่ง)',
       keyReasons: [
-        'คัดอันดับ 1 จากโปรแกรม Brasileirão Série A วันที่ 19 พ.ย. (แซง São Paulo vs Fluminense และ Vitória vs Bragantino)',
-        'ส่วนต่าง xG กว้างสุดของวัน: Vasco 1.84 vs Internacional 0.95 (+0.89 xG) โอกาสเจ้าบ้านชนะหรือเสมอ 82%',
-        'วาง Asian Handicap: Vasco da Gama -0.5 (@1.68) ชนะ 1 ลูกกินเต็ม 100% | แผนเซฟ: Vasco HDP 0 (DNB @1.30)',
+        'อ้างอิงราคาจริงในแอป 1xBet (เอเชียนแฮนดิแคปมีเฉพาะราคาควบ .25 / .75 ไม่มี -0.5)',
+        'ส่วนต่าง xG กว้างสุดของวัน: Vasco 1.84 vs Internacional 0.95 (+0.89 xG Gap)',
+        'ตัวเต็ง 1xBet: กด 1 (-0.75) ค่าน้ำ @1.741 | ตัวเซฟแท็บเดียวกัน: กด 1 (-0.25) @1.403',
       ],
       generatedBy: 'VERIFIED_CALENDAR',
       asianHandicap: {
-        selection: 'Vasco da Gama -0.5',
+        selection: 'Vasco da Gama -0.75',
         teamSide: 'HOME',
-        line: -0.5,
-        lineLabel: '-0.5 (ต่อครึ่งลูก)',
-        odds: 1.68,
-        coverProbability: 68.5,
-        expectedValue: 15.1,
+        line: -0.75,
+        lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
+        odds: 1.741,
+        coverProbability: 62.5,
+        expectedValue: 10.8,
         xgGap: 0.89,
-        winRuleThai: 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100% (ไม่ต้องลุ้นสกอร์เป๊ะ)',
-        backupAlternative: 'Vasco da Gama HDP 0 (DNB @1.30) หรือ Over 1.5 (@1.32)',
+        winRuleThai: 'ชนะ 2 ลูกขึ้นไป กินเต็ม 100% / ชนะ 1 ลูก กินครึ่ง +50%',
+        backupAlternative: 'Vasco da Gama -0.25 [กด 1 (-0.25) @1.403] หรือ Over 1.5 (@1.32)',
       },
     },
     '2026-11-20': {
@@ -700,14 +701,14 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
       kickoffTime: 'คืนวันศุกร์ 20 พ.ย. 03:00 น. (beIN SPORTS / 1xBet)',
       venue: 'San Mamés, Bilbao',
       dateText: 'วันศุกร์ 20 พฤศจิกายน 2026',
-      badge: '🏆 ASIAN HANDICAP ซุปเปอร์โพย • Athletic Bilbao -0.75',
+      badge: '🏆 ASIAN HANDICAP 1xBet • Athletic Bilbao -0.75 [1 (-0.75)]',
       consensusRate: 99.1,
       primaryScore: '2-0',
       primaryOdds: 1.76,
       expectedValue: 18.4,
       backupScore: '1-0',
-      backupOdds: 1.48,
-      safeOption: 'Athletic Bilbao HDP -0.5 (@1.48) หรือ Over 1.5 (@1.30)',
+      backupOdds: 1.44,
+      safeOption: 'Athletic Bilbao -0.25 [กด 1 (-0.25) @1.44] หรือ Over 1.5 (@1.30)',
       calibrationError: 0.4,
       brierScore: 0.031,
       poissonPeak: 69.2,
@@ -731,24 +732,25 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
         form: ['L', 'L', 'D', 'L', 'W'],
         expectedGoals: 0.68,
       },
-      analysisRationale: 'เปิดสัปดาห์ลีกยุโรปคืนวันศุกร์ 20 พ.ย. 03:00 น.: แอธเลติก บิลเบา ที่ซาน มาเมส เกมรับแกร่งมาก พบ เอสปันญ่อล ที่เกมเยือนยิงน้อย (xG 1.76 vs 0.68 ส่วนต่าง +1.08) เหมาะวาง Asian Handicap Athletic Bilbao -0.75 (@1.76) ชนะ 1 ลูกกินครึ่ง ชนะ 2 ลูกกินเต็ม',
+      analysisRationale:
+        'เปิดสัปดาห์ลีกยุโรปคืนวันศุกร์ 20 พ.ย. 03:00 น.: แอธเลติก บิลเบา ที่ซาน มาเมส เกมรับแกร่งมาก พบ เอสปันญ่อล ที่เกมเยือนยิงน้อย (xG 1.76 vs 0.68 ส่วนต่าง +1.08) ในแอป 1xBet หมวด เอเชียนแฮนดิแคป เลือก 1 (-0.75) (@1.76) ชนะ 1 ลูกกินครึ่ง ชนะ 2 ลูกกินเต็ม',
       keyReasons: [
         'โปรแกรมจริง La Liga วันศุกร์ 20 พ.ย. 2026 เวลา 03:00 น.',
         'บิลเบาในบ้าน xG เหนือกว่า +1.08 (1.76 vs 0.68) คาดเบียดชนะ 1-0 หรือ 2-0',
-        'ตัวเต็ง AH: Athletic Bilbao -0.75 (@1.76) | ตัวเซฟ: Bilbao -0.5 (@1.48)',
+        'ตัวเต็ง 1xBet AH: กด 1 (-0.75) (@1.76) | ตัวเซฟแท็บเดียวกัน: กด 1 (-0.25) (@1.44)',
       ],
       generatedBy: 'VERIFIED_CALENDAR',
       asianHandicap: {
         selection: 'Athletic Bilbao -0.75',
         teamSide: 'HOME',
         line: -0.75,
-        lineLabel: '-0.75 (ต่อครึ่งควบลูก)',
+        lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
         odds: 1.76,
         coverProbability: 69.2,
         expectedValue: 18.4,
         xgGap: 1.08,
         winRuleThai: 'ชนะ 2 ลูกกินเต็ม 100% / ชนะ 1 ลูกกินครึ่ง +50%',
-        backupAlternative: 'Athletic Bilbao -0.5 (@1.48) หรือ Over 1.5',
+        backupAlternative: 'Athletic Bilbao -0.25 [กด 1 (-0.25) @1.44] หรือ Over 1.5',
       },
     },
     '2026-11-21': {
@@ -760,14 +762,14 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
       kickoffTime: 'เสาร์ 21 พ.ย. 22:00 น. (True Premier / 1xBet)',
       venue: 'Villa Park, Birmingham',
       dateText: 'วันเสาร์ 21 พฤศจิกายน 2026',
-      badge: '🏆 ASIAN HANDICAP ซุปเปอร์โพย • Aston Villa -0.75',
+      badge: '🏆 ASIAN HANDICAP 1xBet • Aston Villa -0.75 [1 (-0.75)]',
       consensusRate: 99.0,
       primaryScore: '2-0',
       primaryOdds: 1.74,
       expectedValue: 17.6,
       backupScore: '1-0',
-      backupOdds: 1.46,
-      safeOption: 'Aston Villa -0.5 (@1.46) หรือ Over 1.5 (@1.28)',
+      backupOdds: 1.42,
+      safeOption: 'Aston Villa -0.25 [กด 1 (-0.25) @1.42] หรือ Over 1.5 (@1.28)',
       calibrationError: 0.4,
       brierScore: 0.032,
       poissonPeak: 68.8,
@@ -791,24 +793,25 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
         form: ['L', 'D', 'L', 'W', 'L'],
         expectedGoals: 0.74,
       },
-      analysisRationale: 'พรีเมียร์ลีกวันเสาร์ 21 พ.ย. 22:00 น.: แอสตัน วิลล่า เล่นในวิลล่า พาร์ค คุมจังหวะเกมได้แน่นอน พบ ซันเดอร์แลนด์ (xG 1.82 vs 0.74 ส่วนต่าง +1.08) เลี่ยงคู่ดาร์บี้นิวคาสเซิล-อาร์เซน่อล วาง Aston Villa -0.75 (@1.74)',
+      analysisRationale:
+        'พรีเมียร์ลีกวันเสาร์ 21 พ.ย. 22:00 น.: แอสตัน วิลล่า เล่นในวิลล่า พาร์ค คุมจังหวะเกมได้แน่นอน พบ ซันเดอร์แลนด์ (xG 1.82 vs 0.74 ส่วนต่าง +1.08) เลี่ยงคู่ดาร์บี้นิวคาสเซิล-อาร์เซน่อล ใน 1xBet หมวด เอเชียนแฮนดิแคป เลือก 1 (-0.75) (@1.74)',
       keyReasons: [
         'โปรแกรมจริง Premier League วันเสาร์ 21 พ.ย. 2026 เวลา 22:00 น.',
         'ส่วนต่าง +1.08 xG (1.82 vs 0.74) วิลล่าในบ้านแกร่งและคลีนชีตสูง',
-        'ตัวเต็ง AH: Aston Villa -0.75 (@1.74) | ตัวเซฟ: Villa -0.5 (@1.46)',
+        'ตัวเต็ง 1xBet AH: กด 1 (-0.75) (@1.74) | ตัวเซฟแท็บเดียวกัน: กด 1 (-0.25) (@1.42)',
       ],
       generatedBy: 'VERIFIED_CALENDAR',
       asianHandicap: {
         selection: 'Aston Villa -0.75',
         teamSide: 'HOME',
         line: -0.75,
-        lineLabel: '-0.75 (ต่อครึ่งควบลูก)',
+        lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
         odds: 1.74,
         coverProbability: 68.8,
         expectedValue: 17.6,
         xgGap: 1.08,
         winRuleThai: 'ชนะ 2 ลูกกินเต็ม 100% / ชนะ 1 ลูกกินครึ่ง +50%',
-        backupAlternative: 'Aston Villa -0.5 (@1.46) หรือ Over 1.5',
+        backupAlternative: 'Aston Villa -0.25 [กด 1 (-0.25) @1.42] หรือ Over 1.5',
       },
     },
     '2026-11-22': {
@@ -820,14 +823,14 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
       kickoffTime: 'อาทิตย์ 22 พ.ย. 21:00 น. (1xBet)',
       venue: 'Allianz Stadium, Turin',
       dateText: 'วันอาทิตย์ 22 พฤศจิกายน 2026',
-      badge: '🏆 ASIAN HANDICAP ซุปเปอร์โพย • Juventus -0.75',
+      badge: '🏆 ASIAN HANDICAP 1xBet • Juventus -0.75 [1 (-0.75)]',
       consensusRate: 99.2,
       primaryScore: '2-0',
       primaryOdds: 1.68,
       expectedValue: 16.5,
       backupScore: '1-0',
-      backupOdds: 1.42,
-      safeOption: 'Juventus -0.5 (@1.42) หรือ Over 1.5 (@1.30)',
+      backupOdds: 1.38,
+      safeOption: 'Juventus -0.25 [กด 1 (-0.25) @1.38] หรือ Over 1.5 (@1.30)',
       calibrationError: 0.4,
       brierScore: 0.030,
       poissonPeak: 70.1,
@@ -851,24 +854,25 @@ function getVerifiedSeedPicks(): Record<string, ServerDailyPick> {
         form: ['L', 'L', 'D', 'L', 'L'],
         expectedGoals: 0.62,
       },
-      analysisRationale: 'เซเรีย อา วันอาทิตย์ 22 พ.ย. 21:00 น.: ยูเวนตุส ในบ้านเกมรับเหนียวแน่นที่สุดในลีก พบ เวเนเซีย (xG 1.74 vs 0.62 ส่วนต่าง +1.12) วางตัวเต็ง Asian Handicap Juventus -0.75 (@1.68) ลุ้นกินครึ่งถึงกินเต็มแบบไม่ต้องเสี่ยงสกอร์เป๊ะ',
+      analysisRationale:
+        'เซเรีย อา วันอาทิตย์ 22 พ.ย. 21:00 น.: ยูเวนตุส ในบ้านเกมรับเหนียวแน่นที่สุดในลีก พบ เวเนเซีย (xG 1.74 vs 0.62 ส่วนต่าง +1.12) ใน 1xBet หมวด เอเชียนแฮนดิแคป เลือก 1 (-0.75) (@1.68) ลุ้นกินครึ่งถึงกินเต็มแบบไม่ต้องเสี่ยงสกอร์เป๊ะ',
       keyReasons: [
         'โปรแกรมจริง Serie A วันอาทิตย์ 22 พ.ย. 2026 เวลา 21:00 น.',
         'ส่วนต่าง +1.12 xG (1.74 vs 0.62) ยูเวนตุสมีลุ้นคลีนชีตสูงมาก',
-        'ตัวเต็ง AH: Juventus -0.75 (@1.68) | ตัวเซฟ: Juventus -0.5 (@1.42)',
+        'ตัวเต็ง 1xBet AH: กด 1 (-0.75) (@1.68) | ตัวเซฟแท็บเดียวกัน: กด 1 (-0.25) (@1.38)',
       ],
       generatedBy: 'VERIFIED_CALENDAR',
       asianHandicap: {
         selection: 'Juventus -0.75',
         teamSide: 'HOME',
         line: -0.75,
-        lineLabel: '-0.75 (ต่อครึ่งควบลูก)',
+        lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
         odds: 1.68,
         coverProbability: 70.1,
         expectedValue: 16.5,
         xgGap: 1.12,
         winRuleThai: 'ชนะ 2 ลูกกินเต็ม 100% / ชนะ 1 ลูกกินครึ่ง +50%',
-        backupAlternative: 'Juventus -0.5 (@1.42) หรือ Over 1.5',
+        backupAlternative: 'Juventus -0.25 [กด 1 (-0.25) @1.38] หรือ Over 1.5',
       },
     },
   };
@@ -1183,6 +1187,19 @@ function escapeTelegramHtml(text: string): string {
     .replace(/>/g, '&gt;');
 }
 
+function formatServerAhOdds(odds: number): string {
+  if (!Number.isFinite(odds)) return '1.74';
+  const rounded3 = Number(odds.toFixed(3));
+  return Math.round(rounded3 * 100) === Math.round(rounded3 * 1000) / 10
+    ? rounded3.toFixed(2)
+    : rounded3.toFixed(3);
+}
+
+function formatServer1xBetButton(teamSide: 'HOME' | 'AWAY', line: number): string {
+  const num = teamSide === 'AWAY' ? '2' : '1';
+  return `${num} (${line})`;
+}
+
 function resolveServerAsianHandicap(pick: ServerDailyPick) {
   if (pick.asianHandicap) {
     return pick.asianHandicap;
@@ -1190,41 +1207,42 @@ function resolveServerAsianHandicap(pick: ServerDailyPick) {
   const [predH, predA] = (pick.primaryScore || '2-0').split('-').map((n) => parseInt(n, 10) || 0);
   const isAwayFav = predA > predH || pick.awayTeam.expectedGoals > pick.homeTeam.expectedGoals + 0.15;
   const favTeam = isAwayFav ? pick.awayTeam.name : pick.homeTeam.name;
+  const teamSide: 'HOME' | 'AWAY' = isAwayFav ? 'AWAY' : 'HOME';
   const xgGap = Number(Math.abs(pick.homeTeam.expectedGoals - pick.awayTeam.expectedGoals).toFixed(2));
-  const line = xgGap >= 1.1 ? -0.75 : xgGap < 0.5 ? -0.25 : -0.5;
+  // 1xBet "เอเชียนแฮนดิแคป" menu strictly uses quarter lines (.25 / .75)
+  const line = xgGap >= 0.75 ? -0.75 : -0.25;
+  const btn = formatServer1xBetButton(teamSide, line);
   const lineLabel =
     line === -0.75
-      ? '-0.75 (ต่อครึ่งควบลูก)'
-      : line === -0.25
-      ? '-0.25 (ต่อเสมอควบครึ่ง)'
-      : '-0.5 (ต่อครึ่งลูก)';
+      ? `-0.75 (ครึ่งควบลูก • กด ${btn} ใน 1xBet)`
+      : `-0.25 (เสมอควบครึ่ง • กด ${btn} ใน 1xBet)`;
   const winRuleThai =
     line === -0.75
-      ? 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง (+50%)'
-      : line === -0.25
-      ? 'ชนะกินเต็ม / เสมอเสียครึ่ง (เซฟทุน 50%)'
-      : 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100%';
-  const odds = pick.primaryOdds <= 2.5 ? pick.primaryOdds : 1.68;
+      ? 'ชนะ 2 ลูกขึ้นไป กินเต็ม 100% / ชนะ 1 ลูก กินครึ่ง +50%'
+      : 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100% / เสมอเสียครึ่ง (คืนทุน 50%)';
+  const odds = pick.primaryOdds <= 2.5 ? pick.primaryOdds : 1.741;
   return {
     selection: `${favTeam} ${line > 0 ? `+${line}` : line}`,
-    teamSide: (isAwayFav ? 'AWAY' : 'HOME') as 'HOME' | 'AWAY',
+    teamSide,
     line,
     lineLabel,
     odds,
-    coverProbability: pick.poissonPeak > 40 ? pick.poissonPeak : 68.5,
-    expectedValue: 15.1,
+    coverProbability: pick.poissonPeak > 40 ? pick.poissonPeak : 62.5,
+    expectedValue: 10.8,
     xgGap,
     winRuleThai,
-    backupAlternative: pick.safeOption || `${favTeam} HDP 0 (DNB) / Over 1.5`,
+    backupAlternative: pick.safeOption || `${favTeam} -0.25 (${formatServer1xBetButton(teamSide, -0.25)}) หรือ Over 1.5`,
   };
 }
 
 export function formatDailySuperPickTelegramMessage(pick: ServerDailyPick, appUrl = DEFAULT_APP_URL): string {
   const ah = resolveServerAsianHandicap(pick);
+  const oddsStr = formatServerAhOdds(ah.odds);
+  const btnLabel = formatServer1xBetButton(ah.teamSide, ah.line);
   const cleanBet100 = Math.round(100 * ah.odds);
   const totalXg = pick.homeTeam.expectedGoals + pick.awayTeam.expectedGoals;
 
-  return `🏆 <b>[ScorePulse AH] ซุปเปอร์โพย Asian Handicap (คัดเดี่ยว 1 คู่ที่ดีที่สุด)</b>
+  return `🏆 <b>[ScorePulse AH] ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคป (คัดเดี่ยว 1 คู่)</b>
 ━━━━━━━━━━━━━━━━━━━━
 📅 ${escapeTelegramHtml(pick.dateText)}
 ⚽ <b>คู่เอกอันดับ 1:</b> ${escapeTelegramHtml(pick.matchTitle)}
@@ -1232,19 +1250,19 @@ export function formatDailySuperPickTelegramMessage(pick: ServerDailyPick, appUr
 🏟️ สนาม: ${escapeTelegramHtml(pick.venue)}
 ⏰ คิกออฟ: ${escapeTelegramHtml(pick.kickoffTime)}
 
-🎯 <b>ตัวเต็ง ASIAN HANDICAP (HDP):</b>
-▶ <b>วางเดิมพัน:</b> <code>${escapeTelegramHtml(ah.selection)}</code> (1xBet <b>@${ah.odds.toFixed(2)}</b>)
-▶ <b>ราคา:</b> ${escapeTelegramHtml(ah.lineLabel)} — ${escapeTelegramHtml(ah.winRuleThai)}
-▶ <b>โอกาสเข้าเป้า (Cover Prob):</b> <b>${ah.coverProbability.toFixed(1)}%</b> | EV: <b>+${ah.expectedValue.toFixed(1)}%</b>
+🎯 <b>กดตามจริงใน 1xBet (เวลาปกติ → เอเชียนแฮนดิแคป):</b>
+▶ <b>ปุ่ม 1xBet:</b> <code>${escapeTelegramHtml(btnLabel)}</code> (${escapeTelegramHtml(ah.selection)} ค่าน้ำ <b>@${oddsStr}</b>)
+▶ <b>กติการาคา:</b> ${escapeTelegramHtml(ah.winRuleThai)}
+▶ <b>โอกาสได้เงิน (Cover Prob):</b> <b>${ah.coverProbability.toFixed(1)}%</b> | EV: <b>+${ah.expectedValue.toFixed(1)}%</b>
 📋 สลิปอ้างอิง: <code>${escapeTelegramHtml(pick.slipNumber)}</code> (100 ฿ รับ ${cleanBet100} ฿)
 
-🛡️ <b>ทางเลือกเซฟตี้ &amp; สกอร์คาดการณ์ประกอบ:</b>
+🛡️ <b>ทางเลือกเซฟตี้ในแท็บเดียวกัน &amp; สกอร์คาดการณ์:</b>
 ▶ เซฟตี้: ${escapeTelegramHtml(ah.backupAlternative)}
-▶ สกอร์คาดการณ์: <b>${escapeTelegramHtml(pick.primaryScore)}</b> (ไม่ต้องลุ้นสกอร์เป๊ะ กินตามราคาต่อรอง)
+▶ สกอร์คาดการณ์: <b>${escapeTelegramHtml(pick.primaryScore)}</b> (ไม่ต้องลุ้นสกอร์เป๊ะ กินตามราคาควบ)
 
 📊 <b>ข้อมูลคัดกรอง xG (ส่วนต่าง +${ah.xgGap.toFixed(2)} xG):</b>
 ✓ ${escapeTelegramHtml(pick.homeTeam.name)} <b>${pick.homeTeam.expectedGoals.toFixed(2)}</b> vs ${escapeTelegramHtml(pick.awayTeam.name)} <b>${pick.awayTeam.expectedGoals.toFixed(2)}</b> (รวม ${totalXg.toFixed(2)})
-✓ สถิติ HDP -0.5 ย้อนหลัง 1 เดือน: <b>67.7% (+10.6% ROI สูงสุด)</b> | Consensus: <b>${pick.consensusRate.toFixed(1)}%</b>
+✓ สถิติ HDP ย้อนหลัง 1 เดือน: <b>67.7% (+10.6% ROI สูงสุด)</b> | Consensus: <b>${pick.consensusRate.toFixed(1)}%</b>
 ━━━━━━━━━━━━━━━━━━━━
 📲 ดูบทวิเคราะห์และสถิติ 1 เดือนเต็ม:
 ${escapeTelegramHtml(appUrl)}`;
@@ -1435,10 +1453,10 @@ async function resolveFuturePickWithSearch(dateKey: string, excludeMatchTitle?: 
 
   if (ai) {
     try {
-      const prompt = `ค้นหาตารางฟุตบอลแข่งขันจริงประจำวันที่ ${dateKey} (เวลาประเทศไทย) จาก Google Search เปรียบเทียบทุกคู่สำคัญแล้วคัดเลือก "ซุปเปอร์โพย Asian Handicap คู่เอกอันดับ 1 เพียง 1 คู่" ที่มั่นใจและผลวิเคราะห์ดีที่สุดตามเกณฑ์ต่อไปนี้:
+      const prompt = `ค้นหาตารางฟุตบอลแข่งขันจริงประจำวันที่ ${dateKey} (เวลาประเทศไทย) จาก Google Search เปรียบเทียบทุกคู่สำคัญแล้วคัดเลือก "ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคป คู่เอกอันดับ 1 เพียง 1 คู่" ตามเกณฑ์ต่อไปนี้:
 1. ห้ามเลือกคู่เดิมซ้ำกับเมื่อวาน (${excludeMatchTitle || 'ไม่มี'})
 2. เลือกคู่ที่มีความได้เปรียบเชิงสถิติ xG และอันดับ/แรงจูงใจชัดเจนที่สุด (ส่วนต่าง xG ระหว่าง +0.65 ถึง +1.25)
-3. เลือกหน้าเดิมพัน Asian Handicap ที่คุ้มค่าที่สุด (-0.5 หรือ -0.75 หรือ -0.25) ค่าน้ำช่วง 1.62 - 1.98 และโอกาสเข้าเป้า >= 62%
+3. ข้อบังคับ 1xBet สำคัญมาก: หมวด "เอเชียนแฮนดิแคป" ของ 1xBet ใช้เฉพาะราคาควบจุดทศนิยม .25 หรือ .75 เท่านั้น (-0.75, -0.25, -1.25, +0.25, +0.75) ห้ามใช้ราคา -0.5 หรือ -1.0 เด็ดขาด! คัดราคาช่วงค่าน้ำ 1.62 - 1.98 และโอกาสเข้าเป้า >= 62%
 4. ตอบกลับมาเป็น JSON เท่านั้นในรูปแบบ:
 {
   "matchTitle": "Home Team vs Away Team",
@@ -1449,14 +1467,14 @@ async function resolveFuturePickWithSearch(dateKey: string, excludeMatchTitle?: 
   "league": "League Name & Emoji",
   "venue": "Stadium Name, City",
   "kickoffTimeThai": "คืนนี้ HH:mm น. (แข่งจริง)",
-  "ahSelection": "Home Team -0.5",
+  "ahSelection": "Home Team -0.75",
   "ahTeamSide": "HOME",
-  "ahLine": -0.5,
-  "ahLineLabel": "-0.5 (ต่อครึ่งลูก)",
-  "ahOdds": 1.72,
-  "coverProbability": 67.5,
+  "ahLine": -0.75,
+  "ahLineLabel": "-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)",
+  "ahOdds": 1.74,
+  "coverProbability": 64.5,
   "primaryScore": "2-0",
-  "safeOption": "Home Team HDP 0 (DNB) หรือ Over 1.5 ประตู",
+  "safeOption": "Home Team -0.25 [กด 1 (-0.25)] หรือ Over 1.5 ประตู",
   "homeXg": 1.84,
   "awayXg": 0.88,
   "rationaleThai": "เหตุผลการคัดเลือกเป็นอันดับ 1 ของวัน พร้อมสรุปฟอร์ม อันดับ และสถิติ xG ภาษาไทย 2-3 บรรทัด"
@@ -1482,22 +1500,30 @@ async function resolveFuturePickWithSearch(dateKey: string, excludeMatchTitle?: 
         const homeXg = Number(parsed.homeXg) || 1.82;
         const awayXg = Number(parsed.awayXg) || 0.88;
         const xgGap = Number(Math.abs(homeXg - awayXg).toFixed(2));
-        const ahLine = typeof parsed.ahLine === 'number' ? parsed.ahLine : -0.5;
-        const ahOdds = Number(parsed.ahOdds) || 1.70;
-        const coverProb = Math.max(60.0, Number(parsed.coverProbability) || 66.5);
+        // Enforce 1xBet quarter-line compliance (.25 / .75 only — convert any -0.5 returned by AI to -0.75 or -0.25)
+        let ahLine = typeof parsed.ahLine === 'number' ? parsed.ahLine : -0.75;
+        if (Math.abs(ahLine % 0.5) < 0.01) {
+          ahLine = xgGap >= 0.75 ? -0.75 : -0.25;
+        }
+        const ahOdds = Number(parsed.ahOdds) || 1.74;
+        const coverProb = Math.max(60.0, Number(parsed.coverProbability) || 64.5);
         const ev = Number((((coverProb / 100) * ahOdds - 1) * 100).toFixed(1));
         const teamSide: 'HOME' | 'AWAY' = parsed.ahTeamSide === 'AWAY' ? 'AWAY' : 'HOME';
         const favName = teamSide === 'AWAY' ? parsed.awayName : parsed.homeName;
-        const ahSelection = parsed.ahSelection || `${favName} ${ahLine > 0 ? `+${ahLine}` : ahLine}`;
+        const btnLabel = formatServer1xBetButton(teamSide, ahLine);
+        const ahSelection = `${favName} ${ahLine > 0 ? `+${ahLine}` : ahLine}`;
         const ahLineLabel =
-          parsed.ahLineLabel ||
-          (ahLine === -0.75 ? '-0.75 (ต่อครึ่งควบลูก)' : ahLine === -0.25 ? '-0.25 (ต่อเสมอควบครึ่ง)' : `${ahLine} (ต่อครึ่งลูก)`);
+          ahLine === -0.75
+            ? `-0.75 (ครึ่งควบลูก • กด ${btnLabel} ใน 1xBet)`
+            : ahLine === -0.25
+            ? `-0.25 (เสมอควบครึ่ง • กด ${btnLabel} ใน 1xBet)`
+            : `${ahLine} (เอเชียนแฮนดิแคป • กด ${btnLabel} ใน 1xBet)`;
         const winRuleThai =
           ahLine === -0.75
-            ? 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง (+50%)'
+            ? 'ชนะ 2 ลูกขึ้นไป กินเต็ม 100% / ชนะ 1 ลูก กินครึ่ง +50%'
             : ahLine === -0.25
-            ? 'ชนะกินเต็ม / เสมอเสียครึ่ง (เซฟทุน 50%)'
-            : 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100%';
+            ? 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100% / เสมอเสียครึ่ง (คืนทุน 50%)'
+            : 'คิดผลตามราคาควบเอเชียนแฮนดิแคป 1xBet';
 
         return {
           id: `daily-pick-ah-auto-${dateKey}`,
@@ -1738,7 +1764,7 @@ export async function runAutomatedPipelineTick(
 
     if (bkk.isAfter0600 || forceSync) {
       const ahPick = resolveServerAsianHandicap(activePick);
-      const expectedIssueSummary = `ปล่อยซุปเปอร์โพย AH รอบ 06:00 น. (${opKey}): ${ahPick.selection} (@${ahPick.odds.toFixed(2)})`;
+      const expectedIssueSummary = `ปล่อยซุปเปอร์โพย 1xBet รอบ 06:00 น. (${opKey}): ${ahPick.selection} [ปุ่ม ${formatServer1xBetButton(ahPick.teamSide, ahPick.line)} @${formatServerAhOdds(ahPick.odds)}]`;
       if (state.pipeline.issueDoneForDate !== opKey || state.pipeline.issueSummary !== expectedIssueSummary || forceSync) {
         state.pipeline.issueDoneForDate = opKey;
         state.pipeline.issueDoneAt = bkk.formattedTime;

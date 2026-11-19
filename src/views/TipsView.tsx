@@ -131,7 +131,7 @@ export const TipsView: React.FC<TipsViewProps> = ({
                     <span className="text-slate-400 text-[10px] hidden sm:inline">(โบนัส 130%)</span>
                   </div>
                   <div className="text-[10px] text-sky-300 mt-0.5">
-                    ซุปเปอร์โพย HDP วันนี้ (Vasco da Gama -0.5 @1.68): <span className="font-mono font-bold text-white">1X-VASINT-19</span> &bull; คลิกดูวิธีใส่รหัสใน 1xBet
+                    ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคปวันนี้ (Vasco da Gama -0.75 / กด 1 (-0.75) @1.741): <span className="font-mono font-bold text-white">1X-VASINT-19</span> &bull; คลิกดูวิธีใส่รหัสใน 1xBet
                   </div>
                 </div>
               </div>

@@ -469,13 +469,15 @@ export const MarketStrategyAnalytics: React.FC<MarketStrategyAnalyticsProps> = (
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
           <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
-            <div className="font-bold text-amber-400">1. สายกำไรสม่ำเสมอ 1 เดือน: HDP -0.5 / HDP 0</div>
+            <div className="font-bold text-amber-400">1. สายกำไรสม่ำเสมอ 1 เดือน: HDP (ชนะเต็ม / เอเชียนแฮนดิแคป)</div>
             <p className="text-slate-300 leading-relaxed">
-              ตลอด {rows.length} นัด <strong className="text-white">HDP -0.5 (ชนะเต็ม)</strong> ทำกำไรดีสุด{' '}
+              ตลอด {rows.length} นัด <strong className="text-white">HDP -0.5 (เทียบเท่าชนะเต็ม)</strong> ทำกำไรดีสุด{' '}
               <strong className="text-emerald-400 font-mono">{formatBaht(hdp05Summary.netProfit)}</strong>{' '}
               (ROI {hdp05Summary.roiPct > 0 ? `+${hdp05Summary.roiPct}%` : `${hdp05Summary.roiPct}%`} &middot; เข้า {hdp05Summary.hitRate}%)
-              ส่วน <strong className="text-white">HDP 0 (เสมอคืนทุน)</strong> ได้{' '}
-              <strong className="text-white font-mono">{formatBaht(hdp0Summary.netProfit)}</strong> (แพ้ติดสุดแค่ {hdp0Summary.maxLosingStreak} นัด)
+              <span className="block text-[11px] text-sky-300 mt-1">
+                * หมายเหตุ 1xBet: ในแท็บ <strong>“เอเชียนแฮนดิแคป”</strong> จริงจะมีเฉพาะราคาควบ{' '}
+                <code className="font-mono">-0.25 / -0.75</code> (7 วันหลังสุด -0.25 เข้า 6/7 = 85.7% เช่นกัน)
+              </span>
             </p>
           </div>
 
@@ -506,7 +508,7 @@ export const MarketStrategyAnalytics: React.FC<MarketStrategyAnalyticsProps> = (
             ตารางตรวจผลรายคู่ย้อนหลัง ({rows.length} นัด)
           </h2>
           <p className="text-[11px] text-slate-400">
-            ตรวจสอบได้ทีละนัดว่าผลสกอร์จริงชนะหรือแพ้ในแต่ละตลาด (✅ = ชนะ, ➖ = เสมอคืนทุน, ❌ = เสีย)
+            ตรวจสอบได้ทีละนัดว่าผลสกอร์จริงชนะหรือแพ้ในแต่ละตลาด (✅ = ชนะ, ➖ = เสมอคืนทุน, ❌ = เสีย) &middot; HDP -0.5 = แฮนดิแคปปกติ/ชนะตรง (ส่วนใน 1xBet “เอเชียนแฮนดิแคป” ใช้ -0.25/-0.75)
           </p>
         </div>
 

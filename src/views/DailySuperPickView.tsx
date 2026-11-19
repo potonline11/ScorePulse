@@ -65,6 +65,8 @@ import {
   resolveAsianHandicapPick,
   settleAsianHandicapFromScore,
   inferHistoricalAhSide,
+  formatOneXBetAhButton,
+  formatAhOdds,
   DAILY_SCREENING_CANDIDATES_NOV19,
 } from '../utils/asianHandicap';
 import { Match, CorrectScorePrediction, DailySuperPick } from '../types/soccer';
@@ -424,8 +426,9 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
   const handleQuickAddPrimaryToSlip = () => {
     soundManager.playTap();
+    const ahBtn = formatOneXBetAhButton(ahPick.teamSide, ahPick.line);
     const ahPred: CorrectScorePrediction = {
-      score: ahPick.selection,
+      score: `${ahPick.selection} [${ahBtn}]`,
       homeGoals: 0,
       awayGoals: 0,
       rawProbability: ahPick.coverProbability,
@@ -436,7 +439,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
       rank: 1,
     };
     onAddToBetSlip(matchObj, ahPred);
-    showToast(`🏆 เพิ่มซุปเปอร์โพย AH: ${ahPick.selection} (@${ahPick.odds.toFixed(2)}) ลงบิล 1xBet แล้ว`);
+    showToast(`🏆 เพิ่มซุปเปอร์โพย 1xBet: ${ahBtn} (${ahPick.selection} @${formatAhOdds(ahPick.odds)}) ลงบิลแล้ว`);
   };
 
   const handleAddHedgeToSlip = (hedge: { selection: string; odds: number; market: string }) => {
@@ -453,18 +456,20 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
       rank: 99,
     };
     onAddToBetSlip(matchObj, hedgePred);
-    showToast(`🛡️ เพิ่มแผนเสริม: ${hedge.selection} (@${hedge.odds}) ลงในบิล 1xBet แล้ว`);
+    showToast(`🛡️ เพิ่มแผนเสริม: ${hedge.selection} (@${formatAhOdds(hedge.odds)}) ลงในบิล 1xBet แล้ว`);
   };
 
   const handleApplyDualShieldStrategy = () => {
     soundManager.playTap();
     handleQuickAddPrimaryToSlip();
-    const safeHedge = pick.blindSpotAudit?.recommendedHedges[0] || {
-      market: `แผนคุ้มครองทุน (${ahPick.backupAlternative})`,
-      selection: ahPick.backupAlternative || `${pick.homeTeam.name} HDP 0 (DNB)`,
-      odds: 1.32,
-      reason: 'คุ้มครองเงินต้น 70/30',
-    };
+    const safeBtn = formatOneXBetAhButton(ahPick.teamSide, -0.25);
+    const safeHedge = pick.blindSpotAudit?.recommendedHedges[1] ||
+      pick.blindSpotAudit?.recommendedHedges[0] || {
+        market: `ตัวเซฟแท็บเดียวกัน (${safeBtn})`,
+        selection: `${ahPick.selection.replace(/\s[-+]?\d+(\.\d+)?$/, '')} -0.25 [${safeBtn}]`,
+        odds: 1.403,
+        reason: 'ชนะกินเต็ม 100% / เสมอเสียครึ่งเดียว',
+      };
     handleAddHedgeToSlip(safeHedge);
     showToast(`🛡️ จัดพอร์ต 70:30 สำเร็จ: เพิ่ม ${ahPick.selection} + ${safeHedge.selection} ลงบิล 1xBet แล้ว`);
   };
@@ -520,7 +525,8 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
   const evaluateHistoryAh = (h: (typeof displayedHistory)[number]) => {
     const side = inferHistoricalAhSide(h.matchTitle, h.predictedScore);
-    const settled = settleAsianHandicapFromScore(h.actualScore, side.teamSide, -0.5);
+    // Evaluate against real 1xBet quarter-line Asian Handicap (-0.25)
+    const settled = settleAsianHandicapFromScore(h.actualScore, side.teamSide, -0.25);
     return { side, settled };
   };
   const recent7AhWins = recent7.filter((h) => (evaluateHistoryAh(h).settled?.profitFactor ?? 0) > 0).length;
@@ -761,7 +767,10 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               </div>
               <div className="text-slate-200 text-[10px] mt-0.5 line-clamp-2">
                 {serverEngine?.pipeline?.issueSummary ||
-                  `ปล่อยซุปเปอร์โพย AH วันนี้: ${todayOperationalPick.matchTitle} (${resolveAsianHandicapPick(todayOperationalPick).selection})`}
+                  (() => {
+                    const todayAh = resolveAsianHandicapPick(todayOperationalPick);
+                    return `ปล่อยซุปเปอร์โพย 1xBet วันนี้: ${todayOperationalPick.matchTitle} (${todayAh.selection} [${formatOneXBetAhButton(todayAh.teamSide, todayAh.line)}])`;
+                  })()}
               </div>
             </div>
 
@@ -1205,13 +1214,13 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           </div>
         </div>
 
-        {/* Primary Asian Handicap Super Pick Box (ซุปเปอร์โพย AH คัดเดี่ยว 1 คู่ที่ดีที่สุด) */}
+        {/* Primary Asian Handicap Super Pick Box (ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคป คัดเดี่ยว 1 คู่) */}
         <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-[#0e2638] to-blue-950/60 border-2 border-emerald-400/80 shadow-xl space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap text-[11px]">
                 <span className="font-black uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 to-emerald-400 px-2.5 py-0.5 rounded">
-                  🏆 ซุปเปอร์โพย ASIAN HANDICAP (คัดเดี่ยว 1 คู่)
+                  🏆 ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคป (คัดเดี่ยว 1 คู่)
                 </span>
                 <span className="font-mono font-bold text-emerald-300 tabular-nums">
                   Cover Prob {ahPick.coverProbability}% &middot; xG Gap +{ahPick.xgGap.toFixed(2)}
@@ -1229,25 +1238,33 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 )}
               </div>
 
-              {/* Crisp No-Wrap Primary AH Display */}
+              {/* Crisp No-Wrap Primary AH Display + Exact 1xBet Button Pill */}
               <div className="flex flex-wrap items-center gap-2.5 mt-2.5">
                 <div className="px-4 py-2 rounded-xl bg-slate-950/90 border border-emerald-400/60 shadow-inner inline-flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight whitespace-nowrap tabular-nums">
-                    {ahPick.selection}
-                  </span>
-                  <span className="text-[11px] font-semibold text-emerald-300 mt-0.5">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight whitespace-nowrap tabular-nums">
+                      {ahPick.selection}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-lg bg-amber-400 text-slate-950 font-mono font-black text-xs whitespace-nowrap shadow">
+                      ปุ่ม 1xBet: {formatOneXBetAhButton(ahPick.teamSide, ahPick.line)}
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-emerald-300 mt-1">
                     {ahPick.lineLabel} &middot; {ahPick.winRuleThai}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-xs sm:text-sm font-bold text-amber-400 font-mono whitespace-nowrap bg-amber-400/10 px-2.5 py-1.5 rounded-lg border border-amber-400/30 tabular-nums">
-                    ค่าน้ำ 1xBet: @{ahPick.odds.toFixed(2)}
+                    ค่าน้ำ 1xBet: @{formatAhOdds(ahPick.odds)}
                   </span>
                   <span className="text-xs font-black text-emerald-300 bg-emerald-950/80 px-2.5 py-1.5 rounded-lg border border-emerald-500/40 whitespace-nowrap tabular-nums">
                     EV +{ahPick.expectedValue}%
                   </span>
                 </div>
+              </div>
+              <div className="text-[10px] text-sky-300/90 mt-1.5 font-medium">
+                📲 วิธีหาใน 1xBet: ค้นหาคู่ <strong className="text-white">{pick.matchTitle}</strong> &rarr; แถบ <strong className="text-white">เวลาปกติ</strong> &rarr; หมวด <strong className="text-emerald-300">เอเชียนแฮนดิแคป</strong> &rarr; กดปุ่ม <strong className="text-amber-300 font-mono">{formatOneXBetAhButton(ahPick.teamSide, ahPick.line)}</strong> (ราคา 1xBet เป็นราคาควบ .25/.75)
               </div>
             </div>
 
@@ -1256,7 +1273,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-black text-xs transition-all active:scale-95 shadow-lg shadow-emerald-500/25 cursor-pointer shrink-0 w-full sm:w-auto whitespace-nowrap"
             >
               <Plus className="w-4 h-4 stroke-[3]" />
-              <span>ใส่บิล AH 1xBet ทันที</span>
+              <span>ใส่บิล 1xBet ({formatOneXBetAhButton(ahPick.teamSide, ahPick.line)})</span>
             </button>
           </div>
 
@@ -1265,14 +1282,14 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           </p>
 
           {/* Daily Screening Comparison Matrix (shown on today's Nov 19 pick so user sees why Top 1 won) */}
-          {pick.id === 'super-thursday-19' && (
+          {pick.id === SUPER_PICK_THURSDAY_19.id && (
             <div className="pt-2.5 border-t border-slate-800/80 space-y-2">
               <div className="flex items-center justify-between flex-wrap gap-1 text-[11px]">
                 <span className="font-bold text-sky-300">
-                  📋 ตารางคัดกรองคู่บอลวันนี้ (คัด 1 คู่ที่ดีที่สุดจาก 3 คู่เต็งประจำวัน)
+                  📋 ตารางคัดกรองคู่บอลวันนี้ (คัด 1 คู่ที่ดีที่สุดจาก 3 คู่เต็งประจำวัน &bull; ราคาจริง 1xBet)
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">
-                  เกณฑ์คัด: xG Gap กว้างสุด + ฟอร์มเหย้า/เยือน
+                  เกณฑ์คัด: xG Gap กว้างสุด + ราคาควบ .25/.75 จริงใน 1xBet
                 </span>
               </div>
               <div className="divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-950/80 overflow-hidden text-[11px]">
@@ -1305,7 +1322,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       <span className={cand.isSelectedTopPick ? 'text-amber-300 font-black' : 'text-slate-400'}>
                         {cand.recommendedLine}
                       </span>
-                      <span className="text-sky-300 font-bold">@{cand.odds.toFixed(2)}</span>
+                      <span className="text-sky-300 font-bold">@{formatAhOdds(cand.odds)}</span>
                     </div>
                   </div>
                 ))}
@@ -1314,24 +1331,28 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           )}
         </div>
 
-        {/* Secondary Reference Options (สกอร์อ้างอิง & แผนประกันทุน) */}
+        {/* Secondary Reference Options (ทางเลือกเซฟตี้แท็บเดียวกัน & สกอร์อ้างอิงจาก xG) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
           {/* Safe Backup Alternative */}
           <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[10px] text-slate-400 font-semibold">ทางเลือกปลอดภัยเสริม (DNB / Over 1.5)</div>
+              <div className="text-[10px] text-slate-400 font-semibold">
+                ตัวเซฟในแท็บเดียวกัน (1xBet: {formatOneXBetAhButton(ahPick.teamSide, -0.25)} / Over 1.5)
+              </div>
               <div className="text-xs font-bold text-emerald-400 mt-0.5 truncate">
                 {ahPick.backupAlternative}
               </div>
             </div>
             <button
-              onClick={() =>
+              onClick={() => {
+                const safeBtn = formatOneXBetAhButton(ahPick.teamSide, -0.25);
+                const safeOdds = pick.backupOdds && pick.backupOdds <= 2.2 ? pick.backupOdds : 1.403;
                 handleAddHedgeToSlip({
-                  market: 'ทางเลือกปลอดภัย',
+                  market: `ตัวเซฟ 1xBet ${safeBtn}`,
                   selection: ahPick.backupAlternative.split(' หรือ ')[0],
-                  odds: 1.32,
-                })
-              }
+                  odds: safeOdds,
+                });
+              }}
               className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold transition-all shrink-0 cursor-pointer"
               title="เพิ่มทางเลือกปลอดภัยลงบิล"
             >
@@ -1342,31 +1363,25 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           {/* Secondary Correct Score Reference */}
           <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-2">
             <div>
-              <div className="text-[10px] text-slate-400 font-semibold">สกอร์อ้างอิงจาก xG (ความเสี่ยงสูง - เล่นน้อย)</div>
+              <div className="text-[10px] text-slate-400 font-semibold">สกอร์อ้างอิงจากโมเดล xG (ใช้ดูแนวโน้ม — ไม่ต้องแทงสกอร์เป๊ะ)</div>
               <div className="text-sm font-black text-slate-200 font-mono mt-0.5 whitespace-nowrap tabular-nums">
-                สกอร์ {pick.primaryScore} <span className="text-amber-400 font-bold text-xs">@{pick.primaryOdds.toFixed(2)}</span>
+                คาดการณ์ {pick.primaryScore}{' '}
+                <span className="text-sky-400 font-bold text-xs">
+                  (xG {pick.homeTeam.expectedGoals.toFixed(2)}–{pick.awayTeam.expectedGoals.toFixed(2)})
+                </span>
                 <span className="text-slate-500 text-xs ml-2">สำรอง {pick.backupScore}</span>
               </div>
             </div>
             <button
-              onClick={() => {
-                soundManager.playTap();
-                const [hGoals, aGoals] = pick.primaryScore.split('-').map(Number);
-                onAddToBetSlip(matchObj, {
-                  score: pick.primaryScore,
-                  homeGoals: isNaN(hGoals) ? 2 : hGoals,
-                  awayGoals: isNaN(aGoals) ? 0 : aGoals,
-                  rawProbability: 14.5,
-                  calibratedProbability: 16.2,
-                  odds1xBet: pick.primaryOdds,
-                  expectedValue: pick.expectedValue,
-                  isValueBet: true,
-                  rank: 2,
-                });
-                showToast(`🎯 เพิ่มสกอร์อ้างอิง ${pick.primaryScore} ลงบิล 1xBet แล้ว`);
-              }}
+              onClick={() =>
+                handleAddHedgeToSlip({
+                  market: 'Over 1.5 ประตู (เซฟตี้)',
+                  selection: 'Over 1.5 ประตู',
+                  odds: 1.32,
+                })
+              }
               className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-bold transition-all shrink-0 cursor-pointer"
-              title="เพิ่มสกอร์อ้างอิงลงบิล"
+              title="เพิ่ม Over 1.5 เซฟตี้ลงบิล"
             >
               <Plus className="w-3.5 h-3.5" />
             </button>
@@ -1380,21 +1395,21 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-amber-400 text-slate-950 shadow-md">
                   <ShieldCheck className="w-4 h-4 fill-slate-950" />
-                  <span>Asian Handicap Core + Dual-Shield 70:30</span>
+                  <span>1xBet Asian Handicap + Dual-Shield 70:30</span>
                 </span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                   Win Rate 67.7%–85.7%
                 </span>
               </div>
               <h3 className="text-sm font-black text-white pt-1">
-                คู่ {pick.matchTitle}: วางหลัก {ahPick.selection} (@{ahPick.odds.toFixed(2)}) แบ่งพอร์ตปลอดภัย 70:30
+                คู่ {pick.matchTitle}: กด {formatOneXBetAhButton(ahPick.teamSide, ahPick.line)} ({ahPick.selection} @{formatAhOdds(ahPick.odds)}) แบ่งพอร์ต 70:30
               </h3>
             </div>
 
             <button
               onClick={handleApplyDualShieldStrategy}
               className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 hover:from-emerald-300 text-slate-950 font-black text-xs shadow-lg shadow-emerald-400/30 flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95 shrink-0 whitespace-nowrap"
-              title="ใส่ทั้ง Asian Handicap หลัก และ แผนเสริมปลอดภัยลงบิล"
+              title="ใส่ทั้ง Asian Handicap หลัก และ ตัวเซฟแท็บเดียวกันลงบิล"
             >
               <Zap className="w-4 h-4 fill-slate-950" />
               <span>⚡ จัดพอร์ต 70:30 ลงบิลทันที</span>
@@ -1403,8 +1418,11 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
           <div className="p-3.5 rounded-2xl bg-slate-950/85 border border-emerald-500/30 text-xs space-y-2.5">
             <div className="text-slate-300 leading-relaxed text-[11px]">
-              <strong className="text-amber-300 block mb-1">💡 เหตุผลจากสถิติจริง 1 เดือน:</strong>
-              ทีมต่อชนะขาดหรือเฉือน 2-1, 4-0, 7-0 ทำให้สกอร์ตรง 2-0 พลาดถึง 0/7 ในรอบ 7 วัน แต่ตลาด <strong>Asian Handicap (-0.5)</strong> เข้าเป้าถึง <strong>6/7 วัน (85.7%)</strong> จึงแนะนำเดินเงินหลัก <strong>70% ที่ {ahPick.selection} (@{ahPick.odds.toFixed(2)})</strong> และกัน <strong>30% เสริมแผนประกัน/Over 1.5</strong>
+              <strong className="text-amber-300 block mb-1">💡 ยึดตามหน้ากระดานจริง 1xBet (เอเชียนแฮนดิแคปใช้ราคา .25 / .75):</strong>
+              7 วันหลังสุดสกอร์ตรง 2-0 หลุดเพราะทีมต่อยิงเฉือนหรือถล่ม (2-1, 4-0, 7-0) แต่ราคาควบ 1xBet{' '}
+              <strong>Asian Handicap (-0.25)</strong> เข้าเป้าถึง <strong>6/7 วัน (85.7%)</strong> จึงแนะนำเดินเงินหลัก{' '}
+              <strong>70% ที่ {formatOneXBetAhButton(ahPick.teamSide, ahPick.line)} (@{formatAhOdds(ahPick.odds)})</strong>{' '}
+              และกัน <strong>30% เซฟด้วย {formatOneXBetAhButton(ahPick.teamSide, -0.25)} หรือ Over 1.5</strong>
             </div>
 
             {/* 3 Pillars of Protection (Dynamic per match) */}
@@ -1413,17 +1431,17 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 ? pick.blindSpotAudit.recommendedHedges.slice(0, 2)
                 : [
                     {
-                      market: 'ซุปเปอร์โพยหลัก (70% ทุน)',
+                      market: `ซุปเปอร์โพยหลัก (${formatOneXBetAhButton(ahPick.teamSide, ahPick.line)})`,
                       selection: ahPick.selection,
                       odds: ahPick.odds,
                       reason: ahPick.winRuleThai,
                       hedgeRatio: 'หลัก 70%',
                     },
                     {
-                      market: 'แผนเสริมปลอดภัย (30% ทุน)',
+                      market: `ตัวเซฟ (${formatOneXBetAhButton(ahPick.teamSide, -0.25)})`,
                       selection: ahPick.backupAlternative.split(' หรือ ')[0],
-                      odds: 1.32,
-                      reason: 'ช่วยเซฟทุนกรณีจบเสมอหรือสกอร์เฉือน',
+                      odds: 1.403,
+                      reason: 'ชนะ 1 ลูกกินเต็ม 100% / เสมอเสียครึ่งเดียว',
                       hedgeRatio: 'เสริม 30%',
                     },
                   ]
@@ -1436,7 +1454,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     </div>
                     <div className="font-black text-white text-xs truncate">{hedge.market}</div>
                     <div className="text-[11px] text-amber-400 font-bold font-mono">
-                      {hedge.selection} (@{hedge.odds.toFixed(2)})
+                      {hedge.selection} (@{formatAhOdds(hedge.odds)})
                     </div>
                     <p className="text-[10px] text-slate-400 mt-1">{hedge.reason}</p>
                   </div>
@@ -1445,7 +1463,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     className="mt-2 w-full py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[10px] font-black flex items-center justify-center gap-1 cursor-pointer transition-all"
                   >
                     <Plus className="w-3 h-3 stroke-[3]" />
-                    <span>ใส่บิล (@{hedge.odds.toFixed(2)})</span>
+                    <span>ใส่บิล (@{formatAhOdds(hedge.odds)})</span>
                   </button>
                 </div>
               ))}
@@ -1453,15 +1471,15 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold mb-1">
-                    <span>สูตร 70/30 AH Focus</span>
+                    <span>สูตร 70/30 1xBet AH</span>
                     <span className="text-amber-400">พอร์ตทำกำไร</span>
                   </div>
-                  <div className="font-black text-white text-xs">วางหลัก AH + แผนเซฟ</div>
+                  <div className="font-black text-white text-xs">กดตามแท็บเอเชียนแฮนดิแคป</div>
                   <div className="text-[11px] text-emerald-400 font-bold truncate">
-                    {ahPick.selection} (70%) + เซฟ (30%)
+                    {formatOneXBetAhButton(ahPick.teamSide, ahPick.line)} (70%) + {formatOneXBetAhButton(ahPick.teamSide, -0.25)} (30%)
                   </div>
                   <p className="text-[10px] text-slate-400 mt-1">
-                    เน้นเก็บกินเต็มเมื่อชนะ 1 ลูกขึ้นไป ลดความผันผวนจากผลสกอร์ 2-1 หรือยิงทะลุ 4-0
+                    1 (-0.75) ได้กำไรครึ่งเมื่อชนะ 1 ลูก และกินเต็มเมื่อชนะ 2+ ส่วน 1 (-0.25) กินเต็มทุกผลชนะ
                   </p>
                 </div>
                 <button
@@ -1702,7 +1720,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 <div className="text-[9px] text-slate-400">
                   {promoConfig.customBookingCode
                     ? 'ใส่ที่ "ดาวน์โหลดคูปอง" ใน 1xBet'
-                    : `ใน 1xBet แนะนำค้นหา "${pick.matchTitle}" เลือก ${ahPick.selection}`}
+                    : `ใน 1xBet: เวลาปกติ → เอเชียนแฮนดิแคป → กด ${formatOneXBetAhButton(ahPick.teamSide, ahPick.line)}`}
                 </div>
               </div>
 
@@ -1719,14 +1737,14 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
         </div>
       </div>
 
-      {/* 7-Day Verified Track Record Section (HDP -0.5 vs Legacy CS Audit) */}
+      {/* 7-Day Verified Track Record Section (1xBet Quarter-Line -0.25 vs Legacy CS Audit) */}
       <div className="rounded-2xl bg-[#0f172a] border border-slate-800 p-4 space-y-3 shadow-md">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <History className="w-4 h-4 text-emerald-400" />
             <div>
               <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
-                <span>สถิติผลงานย้อนหลังจริง (Asian Handicap vs สกอร์ตรงเดิม)</span>
+                <span>สถิติผลงานย้อนหลังจริง (1xBet เอเชียนแฮนดิแคป -0.25 vs สกอร์ตรงเดิม)</span>
               </h3>
               <p className="text-[10px] text-slate-400">วัดผลจากสกอร์จบ 90 นาทีจริง 100% ตัดรอบอัตโนมัติ 05:00 น.</p>
             </div>
@@ -1735,7 +1753,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           {/* Win Rate Badge */}
           <div className="text-right tabular-nums">
             <div className="text-xs font-black font-mono text-emerald-400">
-              ตลาด HDP -0.5 (7 วันล่าสุด): เข้าเป้า {recent7AhWins}/{recent7.length} วัน ({recent7AhRate}%)
+              1xBet เอเชียนแฮนดิแคป -0.25 (7 วันล่าสุด): เข้าเป้า {recent7AhWins}/{recent7.length} วัน ({recent7AhRate}%)
             </div>
             <div className="text-[10px] text-slate-400 font-mono">
               รวมทั้งหมด: HDP {totalAhWins}/{displayedHistory.length} วัน ({totalAhRate}%) &middot; สกอร์ตรงเดิม {winCount}/{displayedHistory.length} วัน ({winRate}%)
@@ -1780,7 +1798,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       {h.matchTitle}
                     </div>
                     <div className="text-[10px] text-slate-400 font-mono truncate tabular-nums">
-                      HDP: <strong className="text-amber-300">{side.favTeam} -0.5</strong> &middot; จบจริง:{' '}
+                      1xBet AH: <strong className="text-amber-300">{side.favTeam} -0.25 ({formatOneXBetAhButton(side.teamSide, -0.25)})</strong> &middot; จบจริง:{' '}
                       <strong className={isAhWin ? 'text-emerald-300' : 'text-rose-300'}>{h.actualScore}</strong>{' '}
                       <span className="text-slate-500">(สกอร์เดิม {h.predictedScore} {isCsWin ? '🎯' : '❌'})</span>
                     </div>

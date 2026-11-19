@@ -17,8 +17,28 @@ export interface AsianHandicapCandidate {
 }
 
 /**
+ * Formats exact 1xBet Asian Handicap button label as displayed in 1xBet app:
+ * e.g. teamSide='HOME', line=-0.75 -> "1 (-0.75)"
+ */
+export function formatOneXBetAhButton(teamSide: 'HOME' | 'AWAY', line: number): string {
+  const teamNum = teamSide === 'AWAY' ? '2' : '1';
+  return `${teamNum} (${line})`;
+}
+
+/**
+ * Preserves 3-decimal 1xBet odds like 1.741 or 1.403 cleanly while keeping 2-decimal odds as x.xx.
+ */
+export function formatAhOdds(odds: number): string {
+  if (!Number.isFinite(odds)) return '1.74';
+  const rounded3 = Number(odds.toFixed(3));
+  return Math.round(rounded3 * 100) === Math.round(rounded3 * 1000) / 10
+    ? rounded3.toFixed(2)
+    : rounded3.toFixed(3);
+}
+
+/**
  * Screening comparison for Thursday 19 Nov 2026 (Brasileirão Série A Round 35)
- * Demonstrates why Vasco da Gama -0.5 ranks #1 out of all scheduled matches today.
+ * Uses real 1xBet "เอเชียนแฮนดิแคป" quarter lines (-0.25 / -0.75 / -1.25).
  */
 export const DAILY_SCREENING_CANDIDATES_NOV19: AsianHandicapCandidate[] = [
   {
@@ -26,22 +46,23 @@ export const DAILY_SCREENING_CANDIDATES_NOV19: AsianHandicapCandidate[] = [
     matchTitle: 'Vasco da Gama vs Internacional',
     league: 'Brasileirão Série A',
     kickoffThai: '05:30 น. (เช้ามืด 20 พ.ย.)',
-    recommendedLine: 'Vasco da Gama -0.5',
-    odds: 1.68,
+    recommendedLine: 'Vasco da Gama -0.75 [ปุ่ม 1 (-0.75)]',
+    odds: 1.741,
     homeXg: 1.84,
     awayXg: 0.95,
     xgGap: 0.89,
-    winProbability: 57,
+    winProbability: 62.5,
     confidenceScore: 98.8,
     isSelectedTopPick: true,
-    verdictThai: 'อันดับ 1 คู่เอก HDP: เจ้าบ้านชนะ 2 นัดติด (อันดับ 11, 44 แต้ม) เจออินเตอร์ฯ อันดับ 16 โซนตกชั้น ส่วนต่าง +0.89 xG คุ้มค่าที่สุด',
+    verdictThai:
+      'อันดับ 1 คู่เอก 1xBet เอเชียนแฮนดิแคป: กดปุ่ม 1 (-0.75) ค่าน้ำจริง @1.741 (ชนะ 2+ กินเต็ม / ชนะ 1 ลูกกินครึ่ง) เหนือกว่า 1 (-0.25) @1.403 ที่ค่าน้ำต่ำเกิน',
   },
   {
     id: 'cand-saopaulo-fluminense',
     matchTitle: 'São Paulo vs Fluminense',
     league: 'Brasileirão Série A',
     kickoffThai: '07:30 น. (เช้า 20 พ.ย.)',
-    recommendedLine: 'São Paulo -0.25',
+    recommendedLine: 'São Paulo -0.25 [ปุ่ม 1 (-0.25)]',
     odds: 1.98,
     homeXg: 1.46,
     awayXg: 1.17,
@@ -49,14 +70,15 @@ export const DAILY_SCREENING_CANDIDATES_NOV19: AsianHandicapCandidate[] = [
     winProbability: 43,
     confidenceScore: 71.4,
     isSelectedTopPick: false,
-    verdictThai: 'คัดออก (xG ต่างน้อยเกินไป +0.29): ฟลูมิเนนเซ่อยู่อันดับ 4 ลุ้นตั๋วลิเบร์ตาโดเรส เสี่ยงออกเสมอ 1-1 สูง',
+    verdictThai:
+      'คัดออก (xG ต่างน้อยเกินไป +0.29): ฟลูมิเนนเซ่อยู่อันดับ 4 ลุ้นตั๋วลิเบร์ตาโดเรส เสี่ยงออกเสมอ 1-1 สูง',
   },
   {
     id: 'cand-vitoria-bragantino',
     matchTitle: 'Vitória vs RB Bragantino',
     league: 'Brasileirão Série A',
     kickoffThai: '05:30 น. (เช้ามืด 20 พ.ย.)',
-    recommendedLine: 'RB Bragantino -0.25',
+    recommendedLine: 'RB Bragantino -0.25 [ปุ่ม 2 (-0.25)]',
     odds: 1.96,
     homeXg: 1.24,
     awayXg: 1.48,
@@ -64,7 +86,8 @@ export const DAILY_SCREENING_CANDIDATES_NOV19: AsianHandicapCandidate[] = [
     winProbability: 42,
     confidenceScore: 68.5,
     isSelectedTopPick: false,
-    verdictThai: 'คัดออก (เสี่ยงบอลเปลี่ยนโค้ช): วิตอเรียเพิ่งเปลี่ยนกุนซือใหม่เล่นในบ้านหนีตกชั้น ความผันผวนสูง',
+    verdictThai:
+      'คัดออก (เสี่ยงบอลเปลี่ยนโค้ช): วิตอเรียเพิ่งเปลี่ยนกุนซือใหม่เล่นในบ้านหนีตกชั้น ความผันผวนสูง',
   },
 ];
 
@@ -81,33 +104,29 @@ export function resolveAsianHandicapPick(pick: DailySuperPick): AsianHandicapPic
   const awayXg = pick.awayTeam?.expectedGoals ?? 0.85;
   const isAwayFav = predA > predH || awayXg > homeXg + 0.15;
   const favTeam = isAwayFav ? pick.awayTeam.name : pick.homeTeam.name;
+  const teamSide: 'HOME' | 'AWAY' = isAwayFav ? 'AWAY' : 'HOME';
   const xgGap = Number(Math.abs(homeXg - awayXg).toFixed(2));
 
-  let line = -0.5;
-  let lineLabel = '-0.5 (ต่อครึ่งลูก)';
-  let odds = 1.68;
-  let winRuleThai = 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100% (เสมอ/แพ้ เสียเต็ม)';
-  let coverProbability = 64.5;
+  // 1xBet "เอเชียนแฮนดิแคป" tab strictly uses quarter lines (.25 / .75) — never -0.5
+  let line = -0.75;
+  let lineLabel = `-0.75 (ครึ่งควบลูก • กด ${formatOneXBetAhButton(teamSide, -0.75)} ใน 1xBet)`;
+  let odds = 1.741;
+  let winRuleThai = 'ชนะ 2 ลูกขึ้นไป กินเต็ม 100% / ชนะ 1 ลูก กินครึ่ง +50%';
+  let coverProbability = 62.5;
 
-  if (xgGap >= 1.1) {
-    line = -0.75;
-    lineLabel = '-0.75 (ครึ่งควบลูก)';
-    odds = 1.76;
-    winRuleThai = 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง (+50%)';
-    coverProbability = 68.2;
-  } else if (xgGap < 0.5) {
+  if (xgGap < 0.75) {
     line = -0.25;
-    lineLabel = '-0.25 (เสมอควบครึ่ง)';
-    odds = 1.82;
-    winRuleThai = 'ชนะกินเต็ม / เสมอเสียครึ่ง (เซฟทุน 50%)';
-    coverProbability = 63.0;
+    lineLabel = `-0.25 (เสมอควบครึ่ง • กด ${formatOneXBetAhButton(teamSide, -0.25)} ใน 1xBet)`;
+    odds = 1.62;
+    winRuleThai = 'ชนะ 1 ลูกขึ้นไป กินเต็ม 100% / เสมอเสียครึ่ง (คืนทุน 50%)';
+    coverProbability = 64.0;
   }
 
   const expectedValue = Number((((coverProbability / 100) * odds - 1) * 100).toFixed(1));
 
   return {
     selection: `${favTeam} ${line > 0 ? `+${line}` : line}`,
-    teamSide: isAwayFav ? 'AWAY' : 'HOME',
+    teamSide,
     line,
     lineLabel,
     odds,
@@ -115,7 +134,7 @@ export function resolveAsianHandicapPick(pick: DailySuperPick): AsianHandicapPic
     expectedValue: Math.max(8.4, expectedValue),
     xgGap,
     winRuleThai,
-    backupAlternative: `${favTeam} HDP 0 (DNB เสมอคืนทุน) หรือ Over 1.5`,
+    backupAlternative: `${favTeam} -0.25 (${formatOneXBetAhButton(teamSide, -0.25)}) หรือ Over 1.5`,
   };
 }
 
@@ -123,11 +142,12 @@ export type AhSettlementOutcome = 'WIN' | 'HALF_WIN' | 'PUSH' | 'HALF_LOSS' | 'L
 
 /**
  * Computes exact Asian Handicap settlement from final match score.
+ * Uses 1xBet quarter-line (-0.25 default for historical audit).
  */
 export function settleAsianHandicapFromScore(
   actualScore: string,
   teamSide: 'HOME' | 'AWAY' = 'HOME',
-  line: number = -0.5
+  line: number = -0.25
 ): { outcome: AhSettlementOutcome; labelThai: string; shortBadge: string; profitFactor: number } | null {
   const parts = (actualScore || '').split('-').map((n) => parseInt(n.trim(), 10));
   if (parts.length !== 2 || parts.some((n) => Number.isNaN(n))) {
@@ -153,7 +173,7 @@ export function settleAsianHandicapFromScore(
 }
 
 /**
- * Infers which side the historical pick recommended (for transparent HDP -0.5 audit on settled picks).
+ * Infers which side the historical pick recommended (for transparent 1xBet -0.25 quarter-line audit on settled picks).
  */
 export function inferHistoricalAhSide(matchTitle: string, predictedScore: string): {
   favTeam: string;
