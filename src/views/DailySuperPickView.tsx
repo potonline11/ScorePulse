@@ -68,6 +68,10 @@ import {
   formatOneXBetAhButton,
   formatAhOdds,
   DAILY_SCREENING_CANDIDATES_NOV19,
+  evaluateOneXBetCriteria,
+  screenMatchesBy1xBetCriteria,
+  VASCO_1XBET_BOARD_NOV19,
+  OneXBetPoolPick,
 } from '../utils/asianHandicap';
 import { Match, CorrectScorePrediction, DailySuperPick } from '../types/soccer';
 import {
@@ -101,6 +105,8 @@ import {
   Activity,
   Layers,
   Globe,
+  Shuffle,
+  RotateCcw,
 } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { DailyUpdateScheduleModal } from '../components/DailyUpdateScheduleModal';
@@ -180,6 +186,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isBlindSpotExpanded, setIsBlindSpotExpanded] = useState<boolean>(true);
   const [isForceSyncing, setIsForceSyncing] = useState<boolean>(false);
+  const [rolledPoolPick, setRolledPoolPick] = useState<OneXBetPoolPick | null>(null);
   const [lastSyncTime, setLastSyncTime] = useState<string>(() => {
     return getBangkokTime().formattedTime;
   });
@@ -401,6 +408,15 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
     ? (SUPER_PICKS_LIST.find((p) => p.id === selectedPickId) || todayOperationalPick)
     : todayOperationalPick;
   const ahPick = resolveAsianHandicapPick(pick);
+  const ah1xBetAudit = evaluateOneXBetCriteria({
+    teamSide: ahPick.teamSide,
+    line: ahPick.line,
+    odds: ahPick.odds,
+    coverProbability: ahPick.coverProbability,
+    xgGap: ahPick.xgGap,
+    hasSameTabSafety: true,
+  });
+  const poolScreenResult = screenMatchesBy1xBetCriteria(matches);
   const activeTabInfo = dynamicDateTabs.find((t) => t.pickId === pick.id) || dynamicDateTabs[0];
   const matchObj = matches.find((m) => m.id === pick.matchId) || matches[0];
   const promoCodeBonus = promoConfig.promoCode || 'SCORE95';
@@ -440,6 +456,39 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
     };
     onAddToBetSlip(matchObj, ahPred);
     showToast(`🏆 เพิ่มซุปเปอร์โพย 1xBet: ${ahBtn} (${ahPick.selection} @${formatAhOdds(ahPick.odds)}) ลงบิลแล้ว`);
+  };
+
+  const handleRoll1xBetCandidate = () => {
+    soundManager.playTap();
+    const candidates = poolScreenResult.qualified;
+    if (candidates.length === 0) {
+      showToast('⚠️ ยังไม่มีคู่ใดในตารางผ่านเกณฑ์ 1xBet ครบทั้ง 5 ข้อ');
+      return;
+    }
+    const filtered =
+      candidates.length > 1 && rolledPoolPick
+        ? candidates.filter((c) => c.matchTitle !== rolledPoolPick.matchTitle)
+        : candidates;
+    const chosen = filtered[Math.floor(Math.random() * filtered.length)];
+    setRolledPoolPick(chosen);
+    showToast(`🎲 สุ่มคัดผ่านเกณฑ์ 1xBet 5/5: ${chosen.matchTitle} (${chosen.buttonLabel} @${formatAhOdds(chosen.odds)})`);
+  };
+
+  const handleAddRolledPoolPickToSlip = (candidate: OneXBetPoolPick) => {
+    soundManager.playTap();
+    const ahPred: CorrectScorePrediction = {
+      score: `${candidate.favTeam} ${candidate.line} [${candidate.buttonLabel}]`,
+      homeGoals: 0,
+      awayGoals: 0,
+      rawProbability: candidate.coverProbability,
+      calibratedProbability: candidate.coverProbability,
+      odds1xBet: candidate.odds,
+      expectedValue: candidate.expectedValuePct,
+      isValueBet: true,
+      rank: 2,
+    };
+    onAddToBetSlip(candidate.match, ahPred);
+    showToast(`✅ เพิ่มคู่สุ่มเกณฑ์ 1xBet: ${candidate.buttonLabel} (@${formatAhOdds(candidate.odds)}) ลงบิลแล้ว`);
   };
 
   const handleAddHedgeToSlip = (hedge: { selection: string; odds: number; market: string }) => {
@@ -1281,15 +1330,115 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
             {pick.analysisRationale}
           </p>
 
-          {/* Daily Screening Comparison Matrix (shown on today's Nov 19 pick so user sees why Top 1 won) */}
+          {/* 5-Point 1xBet Selection Gate Checklist */}
+          <div className="pt-2.5 border-t border-emerald-500/20 space-y-2">
+            <div className="flex items-center justify-between flex-wrap gap-2 text-[11px]">
+              <span className="font-bold text-amber-300 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>เงื่อนไขคัดเลือกอิงกระดานจริง 1xBet (5-Point Gate)</span>
+              </span>
+              <div className="flex items-center gap-2 font-mono text-[10px] tabular-nums">
+                <span className="text-slate-300">
+                  1xBet Implied <strong className="text-white">{ah1xBetAudit.impliedProbPct}%</strong> vs โมเดล{' '}
+                  <strong className="text-emerald-300">{ahPick.coverProbability}%</strong>
+                </span>
+                <span
+                  className={`px-2 py-0.5 rounded font-black ${
+                    ah1xBetAudit.allPassed
+                      ? 'bg-emerald-400 text-slate-950'
+                      : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'
+                  }`}
+                >
+                  ผ่าน {ah1xBetAudit.passedCount}/{ah1xBetAudit.totalCount} ข้อ &bull; Edge{' '}
+                  {ah1xBetAudit.edgeOver1xBetPct >= 0
+                    ? `+${ah1xBetAudit.edgeOver1xBetPct}`
+                    : ah1xBetAudit.edgeOver1xBetPct}
+                  %
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1.5 text-[10px]">
+              {ah1xBetAudit.checks.map((chk, idx) => (
+                <div
+                  key={chk.id}
+                  className={`p-2 rounded-xl border ${
+                    chk.passed
+                      ? 'bg-emerald-950/35 border-emerald-500/35 text-emerald-100'
+                      : 'bg-rose-950/35 border-rose-500/35 text-rose-200'
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-1 font-bold">
+                    <span className="truncate">
+                      {idx + 1}. {chk.titleThai}
+                    </span>
+                    <span className={chk.passed ? 'text-emerald-400 shrink-0' : 'text-rose-400 shrink-0'}>
+                      {chk.passed ? '✓' : '✗'}
+                    </span>
+                  </div>
+                  <div className="text-[9px] text-slate-300 mt-1 leading-snug">{chk.detailThai}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Daily Screening Comparison Matrix & Real 1xBet Board Lines (shown on today's Nov 19 pick) */}
           {pick.id === SUPER_PICK_THURSDAY_19.id && (
-            <div className="pt-2.5 border-t border-slate-800/80 space-y-2">
+            <div className="pt-2.5 border-t border-slate-800/80 space-y-3">
+              {/* Real 1xBet Vasco 3-Line Board Comparison */}
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between flex-wrap gap-1 text-[11px]">
+                  <span className="font-bold text-amber-300">
+                    🎯 เทียบ 3 ราคาบนหน้า 1xBet จริง (Vasco da Gama &bull; แถบ เวลาปกติ &rarr; เอเชียนแฮนดิแคป)
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">คัดเฉพาะค่าน้ำ @1.65–@1.98</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px]">
+                  {VASCO_1XBET_BOARD_NOV19.map((opt) => (
+                    <div
+                      key={opt.buttonLabel}
+                      className={`p-2.5 rounded-xl border ${
+                        opt.status === 'PASSED_#1'
+                          ? 'bg-emerald-950/45 border-emerald-400/70 shadow-md'
+                          : opt.status === 'SAFETY_ONLY'
+                          ? 'bg-sky-950/30 border-sky-500/40'
+                          : 'bg-slate-950/70 border-slate-800 opacity-75'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-1.5 font-mono">
+                        <span className="font-black text-xs text-white">{opt.buttonLabel}</span>
+                        <span className="text-amber-300 font-bold tabular-nums">@{formatAhOdds(opt.odds)}</span>
+                      </div>
+                      <div className="flex items-center justify-between gap-1 mt-1 text-[9px] font-mono tabular-nums">
+                        <span className="text-slate-400">Implied {opt.impliedProbPct}%</span>
+                        <span
+                          className={`px-1.5 py-0.5 rounded font-black ${
+                            opt.status === 'PASSED_#1'
+                              ? 'bg-emerald-400 text-slate-950'
+                              : opt.status === 'SAFETY_ONLY'
+                              ? 'bg-sky-500/20 text-sky-300'
+                              : 'bg-rose-500/20 text-rose-300'
+                          }`}
+                        >
+                          {opt.status === 'PASSED_#1'
+                            ? '#1 ผ่าน 5/5'
+                            : opt.status === 'SAFETY_ONLY'
+                            ? 'ตัวเซฟ 30%'
+                            : 'คัดออก'}
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-slate-300 mt-1 leading-snug">{opt.reasonThai}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex items-center justify-between flex-wrap gap-1 text-[11px]">
                 <span className="font-bold text-sky-300">
-                  📋 ตารางคัดกรองคู่บอลวันนี้ (คัด 1 คู่ที่ดีที่สุดจาก 3 คู่เต็งประจำวัน &bull; ราคาจริง 1xBet)
+                  📋 ตารางคัดกรองคู่บอลวันนี้ (คัด 1 คู่ที่ดีที่สุดจาก 3 คู่เต็งประจำวัน &bull; เกณฑ์จริง 1xBet)
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">
-                  เกณฑ์คัด: xG Gap กว้างสุด + ราคาควบ .25/.75 จริงใน 1xBet
+                  xG Gap กว้างสุด + ชนะ Implied Prob 1xBet (&ge;+3.5%)
                 </span>
               </div>
               <div className="divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-950/80 overflow-hidden text-[11px]">
@@ -1304,12 +1453,12 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       <div className="flex items-center gap-2 flex-wrap">
                         <span
                           className={`font-black font-mono text-[10px] px-1.5 py-0.5 rounded ${
-                            cand.isSelectedTopPick
+                            cand.passes1xBetGate
                               ? 'bg-emerald-400 text-slate-950'
                               : 'bg-slate-800 text-slate-400'
                           }`}
                         >
-                          {cand.isSelectedTopPick ? '#1 SELECTED' : 'ELIMINATED'}
+                          {cand.passes1xBetGate ? '#1 ผ่าน 1xBet 5/5' : 'ไม่ผ่านเกณฑ์'}
                         </span>
                         <span className="font-bold text-white">{cand.matchTitle}</span>
                         <span className="text-slate-400 font-mono text-[10px] tabular-nums">
@@ -1318,9 +1467,17 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       </div>
                       <p className="text-[10px] text-slate-300 mt-1">{cand.verdictThai}</p>
                     </div>
-                    <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums">
+                    <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums text-[10px]">
+                      <span className="text-slate-400">Implied {cand.impliedProbPct}%</span>
+                      <span
+                        className={
+                          cand.edgeOver1xBetPct >= 3.5 ? 'text-emerald-300 font-bold' : 'text-rose-400 font-bold'
+                        }
+                      >
+                        Edge {cand.edgeOver1xBetPct >= 0 ? `+${cand.edgeOver1xBetPct}` : cand.edgeOver1xBetPct}%
+                      </span>
                       <span className={cand.isSelectedTopPick ? 'text-amber-300 font-black' : 'text-slate-400'}>
-                        {cand.recommendedLine}
+                        {cand.buttonLabel}
                       </span>
                       <span className="text-sky-300 font-bold">@{formatAhOdds(cand.odds)}</span>
                     </div>
@@ -1329,6 +1486,78 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               </div>
             </div>
           )}
+
+          {/* Interactive 1xBet Criteria Random Match Selector */}
+          <div className="pt-2.5 border-t border-slate-800/80 space-y-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-300">
+                  <Shuffle className="w-3.5 h-3.5 text-amber-400" />
+                  <span>🎲 สุ่มคัดคู่จากตาราง (อิงเกณฑ์ 1xBet 5 ข้ออัตโนมัติ)</span>
+                </div>
+                <p className="text-[10px] text-slate-400 mt-0.5 font-mono tabular-nums">
+                  กรองจากตารางแข่งขันทั้งหมด: ผ่านเกณฑ์ 1xBet {poolScreenResult.qualified.length}/
+                  {poolScreenResult.totalEvaluated} คู่ &bull; ตัดคู่น้ำต่ำ/ความเสี่ยงสูงออก{' '}
+                  {poolScreenResult.rejectedCount} คู่
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5 shrink-0">
+                <button
+                  onClick={handleRoll1xBetCandidate}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-[11px] transition-all active:scale-95 cursor-pointer shadow"
+                >
+                  <Shuffle className="w-3.5 h-3.5" />
+                  <span>สุ่มเลือกคู่ที่ผ่านเกณฑ์ 1xBet</span>
+                </button>
+                {rolledPoolPick && (
+                  <button
+                    onClick={() => {
+                      soundManager.playTap();
+                      setRolledPoolPick(null);
+                    }}
+                    className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-[10px] transition-all cursor-pointer"
+                    title="ล้างผลการสุ่ม"
+                  >
+                    <RotateCcw className="w-3 h-3" />
+                    <span>รีเซ็ต</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {rolledPoolPick && (
+              <div className="p-3 rounded-xl bg-slate-950/90 border border-amber-400/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+                <div className="min-w-0 space-y-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2 py-0.5 rounded bg-emerald-400 text-slate-950 font-black font-mono text-[10px]">
+                      ผ่านเกณฑ์ 1xBet {rolledPoolPick.audit.passedCount}/{rolledPoolPick.audit.totalCount}
+                    </span>
+                    <span className="font-bold text-white">{rolledPoolPick.matchTitle}</span>
+                    <span className="text-[10px] text-slate-400">{rolledPoolPick.league}</span>
+                  </div>
+                  <div className="flex items-center gap-2 flex-wrap font-mono text-[11px] tabular-nums">
+                    <span className="px-2 py-0.5 rounded bg-amber-400/15 text-amber-300 border border-amber-400/40 font-black">
+                      ปุ่ม 1xBet: {rolledPoolPick.buttonLabel}
+                    </span>
+                    <span className="text-sky-300 font-bold">@{formatAhOdds(rolledPoolPick.odds)}</span>
+                    <span className="text-slate-300">
+                      Implied {rolledPoolPick.impliedProbPct}% vs โมเดล {rolledPoolPick.coverProbability}%
+                    </span>
+                    <span className="text-emerald-300 font-bold">
+                      Edge +{rolledPoolPick.edgeOver1xBetPct}% &bull; EV +{rolledPoolPick.expectedValuePct}%
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleAddRolledPoolPickToSlip(rolledPoolPick)}
+                  className="flex items-center justify-center gap-1 px-3 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-black text-[11px] transition-all active:scale-95 cursor-pointer shrink-0"
+                >
+                  <Plus className="w-3.5 h-3.5 stroke-[3]" />
+                  <span>ใส่บิล 1xBet</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Secondary Reference Options (ทางเลือกเซฟตี้แท็บเดียวกัน & สกอร์อ้างอิงจาก xG) */}

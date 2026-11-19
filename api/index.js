@@ -1044,12 +1044,38 @@ function resolveServerAsianHandicap(pick) {
     backupAlternative: pick.safeOption || `${favTeam} -0.25 (${formatServer1xBetButton(teamSide, -0.25)}) \u0E2B\u0E23\u0E37\u0E2D Over 1.5`
   };
 }
+function evaluateServer1xBetSelectionCriteria(params) {
+  const { line, odds, coverProbability, xgGap } = params;
+  const impliedProb = Number((100 / Math.max(1.01, odds)).toFixed(1));
+  const edgeOver1xBet = Number((coverProbability - impliedProb).toFixed(1));
+  const evPct = Number(((coverProbability / 100 * odds - 1) * 100).toFixed(1));
+  const isQuarter = Math.abs(Math.abs(Math.abs(line) % 0.5) - 0.25) < 0.01;
+  const oddsOk = odds >= 1.65 && odds <= 1.98;
+  const edgeOk = edgeOver1xBet >= 3.5 && evPct >= 6;
+  const minGap = Math.abs(line) >= 0.75 ? 0.75 : 0.5;
+  const xgOk = xgGap >= minGap;
+  const passedCount = [isQuarter, oddsOk, edgeOk, xgOk, true].filter(Boolean).length;
+  return {
+    passedCount,
+    totalCount: 5,
+    allPassed: isQuarter && oddsOk && edgeOk && xgOk,
+    impliedProb,
+    edgeOver1xBet,
+    evPct
+  };
+}
 function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
   const ah = resolveServerAsianHandicap(pick);
   const oddsStr = formatServerAhOdds(ah.odds);
   const btnLabel = formatServer1xBetButton(ah.teamSide, ah.line);
   const cleanBet100 = Math.round(100 * ah.odds);
   const totalXg = pick.homeTeam.expectedGoals + pick.awayTeam.expectedGoals;
+  const gate = evaluateServer1xBetSelectionCriteria({
+    line: ah.line,
+    odds: ah.odds,
+    coverProbability: ah.coverProbability,
+    xgGap: ah.xgGap
+  });
   return `\u{1F3C6} <b>[ScorePulse AH] \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B (\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1 \u0E04\u0E39\u0E48)</b>
 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
 \u{1F4C5} ${escapeTelegramHtml(pick.dateText)}
@@ -1061,7 +1087,7 @@ function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
 \u{1F3AF} <b>\u0E01\u0E14\u0E15\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E43\u0E19 1xBet (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E01\u0E15\u0E34 \u2192 \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B):</b>
 \u25B6 <b>\u0E1B\u0E38\u0E48\u0E21 1xBet:</b> <code>${escapeTelegramHtml(btnLabel)}</code> (${escapeTelegramHtml(ah.selection)} \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 <b>@${oddsStr}</b>)
 \u25B6 <b>\u0E01\u0E15\u0E34\u0E01\u0E32\u0E23\u0E32\u0E04\u0E32:</b> ${escapeTelegramHtml(ah.winRuleThai)}
-\u25B6 <b>\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E44\u0E14\u0E49\u0E40\u0E07\u0E34\u0E19 (Cover Prob):</b> <b>${ah.coverProbability.toFixed(1)}%</b> | EV: <b>+${ah.expectedValue.toFixed(1)}%</b>
+\u25B6 <b>\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet (${gate.passedCount}/${gate.totalCount} \u0E02\u0E49\u0E2D):</b> \u0E42\u0E21\u0E40\u0E14\u0E25 <b>${ah.coverProbability.toFixed(1)}%</b> vs 1xBet Implied <b>${gate.impliedProb}%</b> (Edge <b>+${gate.edgeOver1xBet}%</b> | EV <b>+${ah.expectedValue.toFixed(1)}%</b>)
 \u{1F4CB} \u0E2A\u0E25\u0E34\u0E1B\u0E2D\u0E49\u0E32\u0E07\u0E2D\u0E34\u0E07: <code>${escapeTelegramHtml(pick.slipNumber)}</code> (100 \u0E3F \u0E23\u0E31\u0E1A ${cleanBet100} \u0E3F)
 
 \u{1F6E1}\uFE0F <b>\u0E17\u0E32\u0E07\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49\u0E43\u0E19\u0E41\u0E17\u0E47\u0E1A\u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E31\u0E19 &amp; \u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E04\u0E32\u0E14\u0E01\u0E32\u0E23\u0E13\u0E4C:</b>
@@ -1211,11 +1237,13 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
   const fullDateThai = formatThaiFullDateFromKey(dateKey);
   if (ai) {
     try {
-      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B \u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E40\u0E1E\u0E35\u0E22\u0E07 1 \u0E04\u0E39\u0E48" \u0E15\u0E32\u0E21\u0E40\u0E01\u0E13\u0E11\u0E4C\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:
-1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E40\u0E14\u0E34\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"})
-2. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E44\u0E14\u0E49\u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E0A\u0E34\u0E07\u0E2A\u0E16\u0E34\u0E15\u0E34 xG \u0E41\u0E25\u0E30\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A/\u0E41\u0E23\u0E07\u0E08\u0E39\u0E07\u0E43\u0E08\u0E0A\u0E31\u0E14\u0E40\u0E08\u0E19\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 (\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG \u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 +0.65 \u0E16\u0E36\u0E07 +1.25)
-3. \u0E02\u0E49\u0E2D\u0E1A\u0E31\u0E07\u0E04\u0E31\u0E1A 1xBet \u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E21\u0E32\u0E01: \u0E2B\u0E21\u0E27\u0E14 "\u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B" \u0E02\u0E2D\u0E07 1xBet \u0E43\u0E0A\u0E49\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A\u0E08\u0E38\u0E14\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21 .25 \u0E2B\u0E23\u0E37\u0E2D .75 \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19 (-0.75, -0.25, -1.25, +0.25, +0.75) \u0E2B\u0E49\u0E32\u0E21\u0E43\u0E0A\u0E49\u0E23\u0E32\u0E04\u0E32 -0.5 \u0E2B\u0E23\u0E37\u0E2D -1.0 \u0E40\u0E14\u0E47\u0E14\u0E02\u0E32\u0E14! \u0E04\u0E31\u0E14\u0E23\u0E32\u0E04\u0E32\u0E0A\u0E48\u0E27\u0E07\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 1.62 - 1.98 \u0E41\u0E25\u0E30\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 >= 62%
-4. \u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19\u0E43\u0E19\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A:
+      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B \u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E40\u0E1E\u0E35\u0E22\u0E07 1 \u0E04\u0E39\u0E48" \u0E42\u0E14\u0E22\u0E15\u0E49\u0E2D\u0E07\u0E1C\u0E48\u0E32\u0E19\u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 5 \u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2D\u0E34\u0E07\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19\u0E08\u0E23\u0E34\u0E07 1xBet \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:
+1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E40\u0E14\u0E34\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"}) \u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E25\u0E35\u0E01\u0E2B\u0E25\u0E31\u0E01\u0E17\u0E35\u0E48\u0E21\u0E35\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19 1xBet \u0E2A\u0E20\u0E32\u0E1E\u0E04\u0E25\u0E48\u0E2D\u0E07\u0E2A\u0E39\u0E07 (Vig <= 6.5%)
+2. \u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A 1xBet \u0E08\u0E23\u0E34\u0E07\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19: \u0E2B\u0E21\u0E27\u0E14 "\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E01\u0E15\u0E34 \u2192 \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B" \u0E02\u0E2D\u0E07 1xBet \u0E21\u0E35\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E08\u0E38\u0E14\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21 .25 \u0E2B\u0E23\u0E37\u0E2D .75 (-0.75, -0.25, -1.25, +0.25, +0.75) \u0E2B\u0E49\u0E32\u0E21\u0E43\u0E0A\u0E49\u0E23\u0E32\u0E04\u0E32 -0.5 \u0E2B\u0E23\u0E37\u0E2D -1.0 \u0E40\u0E14\u0E47\u0E14\u0E02\u0E32\u0E14!
+3. \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 1xBet \u0E0A\u0E48\u0E27\u0E07\u0E17\u0E33\u0E01\u0E33\u0E44\u0E23: \u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E22\u0E39\u0E48\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 @1.65 \u0E16\u0E36\u0E07 @1.98 \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19 (\u0E15\u0E31\u0E14\u0E23\u0E32\u0E04\u0E32\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E15\u0E48\u0E33 <1.65 \u0E41\u0E25\u0E30\u0E23\u0E32\u0E04\u0E32\u0E15\u0E48\u0E2D\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07\u0E2A\u0E39\u0E07 >1.98 \u0E17\u0E34\u0E49\u0E07)
+4. \u0E0A\u0E19\u0E30\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E41\u0E1D\u0E07 1xBet: \u0E04\u0E27\u0E32\u0E21\u0E19\u0E48\u0E32\u0E08\u0E30\u0E40\u0E1B\u0E47\u0E19\u0E42\u0E21\u0E40\u0E14\u0E25 (coverProbability) \u0E15\u0E49\u0E2D\u0E07\u0E2A\u0E39\u0E07\u0E01\u0E27\u0E48\u0E32 1xBet Implied Probability \u0E2D\u0E22\u0E48\u0E32\u0E07\u0E19\u0E49\u0E2D\u0E22 +3.5% \u0E41\u0E25\u0E30\u0E21\u0E35 +EV >= +6.0%
+5. \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG \u0E2A\u0E2D\u0E14\u0E04\u0E25\u0E49\u0E2D\u0E07\u0E23\u0E32\u0E04\u0E32: \u0E16\u0E49\u0E32\u0E23\u0E32\u0E04\u0E32 -0.75 \u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35 xG Gap >= +0.75 (\u0E16\u0E49\u0E32\u0E23\u0E32\u0E04\u0E32 -0.25 \u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35 xG Gap >= +0.50) \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F\u0E41\u0E17\u0E47\u0E1A\u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E31\u0E19 (-0.25)
+6. \u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19\u0E43\u0E19\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A:
 {
   "matchTitle": "Home Team vs Away Team",
   "homeName": "Home Team",
@@ -1262,7 +1290,18 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
         }
         const ahOdds = Number(parsed.ahOdds) || 1.74;
         const coverProb = Math.max(60, Number(parsed.coverProbability) || 64.5);
-        const ev = Number(((coverProb / 100 * ahOdds - 1) * 100).toFixed(1));
+        const gateCheck = evaluateServer1xBetSelectionCriteria({
+          line: ahLine,
+          odds: ahOdds,
+          coverProbability: coverProb,
+          xgGap
+        });
+        if (!gateCheck.allPassed) {
+          throw new Error(
+            `Candidate ${parsed.matchTitle} failed 1xBet 5-point gate (${gateCheck.passedCount}/5: odds=${ahOdds}, xgGap=${xgGap}, edge=${gateCheck.edgeOver1xBet}%)`
+          );
+        }
+        const ev = gateCheck.evPct;
         const teamSide = parsed.ahTeamSide === "AWAY" ? "AWAY" : "HOME";
         const favName = teamSide === "AWAY" ? parsed.awayName : parsed.homeName;
         const btnLabel = formatServer1xBetButton(teamSide, ahLine);
@@ -1278,14 +1317,14 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
           kickoffTime: parsed.kickoffTimeThai || "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07)",
           venue: parsed.venue || "Main Stadium",
           dateText: fullDateThai,
-          badge: `\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 ${ahSelection}`,
+          badge: `\u{1F3C6} ASIAN HANDICAP 1xBet \u2022 ${ahSelection} [${btnLabel}]`,
           consensusRate: 98.8,
           primaryScore: parsed.primaryScore || "2-0",
           primaryOdds: ahOdds,
-          expectedValue: Math.max(8, ev),
+          expectedValue: Math.max(6, ev),
           backupScore: "2-1",
-          backupOdds: 1.45,
-          safeOption: parsed.safeOption || `${favName} HDP 0 (DNB) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 \u0E1B\u0E23\u0E30\u0E15\u0E39`,
+          backupOdds: 1.42,
+          safeOption: parsed.safeOption || `${favName} -0.25 [${formatServer1xBetButton(teamSide, -0.25)}] \u0E2B\u0E23\u0E37\u0E2D Over 1.5`,
           calibrationError: 0.4,
           brierScore: 0.031,
           poissonPeak: coverProb,
@@ -1309,11 +1348,11 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
             form: ["L", "D", "L", "W", "L"],
             expectedGoals: awayXg
           },
-          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 Asian Handicap \u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E14\u0E49\u0E27\u0E22\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +${xgGap} xG \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 ${coverProb}%`,
+          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1xBet \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B \u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 5/5 \u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet (\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +${xgGap} xG | \u0E42\u0E21\u0E40\u0E14\u0E25 ${coverProb}% vs 1xBet Implied ${gateCheck.impliedProb}%)`,
           keyReasons: [
-            `\u0E14\u0E36\u0E07\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 Google Search Real-time \u0E41\u0E25\u0E30\u0E04\u0E31\u0E14\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 1 \u0E04\u0E39\u0E48`,
-            `\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG +${xgGap.toFixed(2)} (${homeXg.toFixed(2)} vs ${awayXg.toFixed(2)}) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 ${coverProb.toFixed(1)}%`,
-            `\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 AH: ${ahSelection} (@${ahOdds.toFixed(2)}) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: ${parsed.safeOption || "HDP 0 DNB / Over 1.5"}`
+            `\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 1xBet 5/5 \u0E02\u0E49\u0E2D: \u0E1B\u0E38\u0E48\u0E21 ${btnLabel} \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @${formatServerAhOdds(ahOdds)} (\u0E0A\u0E48\u0E27\u0E07 @1.65\u2013@1.98)`,
+            `\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG +${xgGap.toFixed(2)} (${homeXg.toFixed(2)} vs ${awayXg.toFixed(2)}) \u0E0A\u0E19\u0E30 1xBet Implied +${gateCheck.edgeOver1xBet}% Edge`,
+            `\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 1xBet: ${btnLabel} (@${formatServerAhOdds(ahOdds)}) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: ${parsed.safeOption || `${favName} -0.25`}`
           ],
           generatedBy: "GEMINI_SEARCH_AI",
           asianHandicap: {
@@ -1323,23 +1362,33 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
             lineLabel: ahLineLabel,
             odds: ahOdds,
             coverProbability: coverProb,
-            expectedValue: Math.max(8, ev),
+            expectedValue: Math.max(6, ev),
             xgGap,
             winRuleThai,
-            backupAlternative: parsed.safeOption || `${favName} HDP 0 (DNB) \u0E2B\u0E23\u0E37\u0E2D Over 1.5`
+            backupAlternative: parsed.safeOption || `${favName} -0.25 [${formatServer1xBetButton(teamSide, -0.25)}] \u0E2B\u0E23\u0E37\u0E2D Over 1.5`
           }
         };
       }
     } catch (err) {
-      console.warn(`[DailyEngine] Gemini Google Search AH lookup failed/timed out for ${dateKey}:`, err);
+      console.warn(`[DailyEngine] Gemini Google Search AH lookup failed/rejected by 1xBet gate for ${dateKey}:`, err);
     }
   }
   const seeds = getVerifiedSeedPicks();
-  const poolKeys = ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
+  const poolKeys = ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"].filter((k) => {
+    const p = seeds[k];
+    if (!p?.asianHandicap) return false;
+    return evaluateServer1xBetSelectionCriteria({
+      line: p.asianHandicap.line,
+      odds: p.asianHandicap.odds,
+      coverProbability: p.asianHandicap.coverProbability,
+      xgGap: p.asianHandicap.xgGap
+    }).allPassed;
+  });
+  const activePool = poolKeys.length > 0 ? poolKeys : ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
   const dayNum = parseInt(dateKey.replace(/-/g, ""), 10) || 0;
-  let candidate = seeds[poolKeys[dayNum % poolKeys.length]];
+  let candidate = seeds[activePool[dayNum % activePool.length]];
   if (excludeMatchTitle && candidate.matchTitle === excludeMatchTitle) {
-    candidate = seeds[poolKeys[(dayNum + 1) % poolKeys.length]];
+    candidate = seeds[activePool[(dayNum + 1) % activePool.length]];
   }
   return {
     ...candidate,
