@@ -132,8 +132,8 @@ export interface BetSlipItem {
   homeTeam: string;
   awayTeam: string;
   league: string;
-  betType: 'CORRECT_SCORE' | 'OVER_UNDER' | '1X2';
-  selection: string; // e.g. "Correct Score 2-1"
+  betType: 'ASIAN_HANDICAP' | 'CORRECT_SCORE' | 'OVER_UNDER' | '1X2';
+  selection: string; // e.g. "Vasco da Gama -0.5" or "Correct Score 2-1"
   odds: number;
   stake: number;
   potentialReturn: number;
@@ -177,6 +177,19 @@ export interface BlindSpotAudit {
     reason: string;
     hedgeRatio: string;
   }[];
+}
+
+export interface AsianHandicapPick {
+  selection: string;      // e.g. "Vasco da Gama -0.5"
+  teamSide: 'HOME' | 'AWAY';
+  line: number;           // e.g. -0.5, -0.75, -0.25, 0
+  lineLabel: string;      // e.g. "-0.5 (ต่อครึ่งลูก)"
+  odds: number;           // e.g. 1.68
+  coverProbability: number; // e.g. 68.5 (%)
+  expectedValue: number;  // e.g. +15.1 (%)
+  xgGap: number;          // e.g. +0.89
+  winRuleThai: string;    // e.g. "ชนะ 1 ลูกขึ้นไป กินเต็ม 100%"
+  backupAlternative: string;
 }
 
 export interface DailySuperPick {
@@ -223,6 +236,7 @@ export interface DailySuperPick {
   analysisRationale: string;
   keyReasons: string[];
   bookingCode1xBet: string;
+  asianHandicap?: AsianHandicapPick;
   blindSpotAudit?: BlindSpotAudit;
   tenSourceConsensus?: TenSourceConsensusAudit;
   slipNumber?: string;

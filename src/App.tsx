@@ -20,6 +20,7 @@ import { LiveStreamView } from './views/LiveStreamView';
 import { AiChatDrawer } from './views/AiChatDrawer';
 import { PromoCodeModal } from './components/PromoCodeModal';
 import { TelegramNotificationModal } from './components/TelegramNotificationModal';
+import { resolveAsianHandicapPick } from './utils/asianHandicap';
 import { soundManager } from './utils/audio';
 
 export default function App() {
@@ -115,17 +116,32 @@ export default function App() {
     );
   };
 
-  // Add Correct Score prediction to 1xBet Bet Slip
+  // Add Correct Score, Asian Handicap, or Hedge prediction to 1xBet Bet Slip
   const handleAddToBetSlip = (match: Match, prediction: CorrectScorePrediction) => {
+    const rawSelection = (prediction.score || '').trim();
+    const isExactScore = /^\d+-\d+$/.test(rawSelection);
+    const isAh = !isExactScore && /(-0\.25|-0\.5|-0\.75|-1\.0|-1\.5|\+0\.25|\+0\.5|HDP|DNB)/i.test(rawSelection);
+    const isOu = !isExactScore && !isAh && /(Over|Under)/i.test(rawSelection);
+
+    const betType: BetSlipItem['betType'] = isExactScore
+      ? 'CORRECT_SCORE'
+      : isAh
+      ? 'ASIAN_HANDICAP'
+      : isOu
+      ? 'OVER_UNDER'
+      : '1X2';
+
+    const selection = isExactScore ? `Correct Score ${rawSelection}` : rawSelection;
+
     const newItem: BetSlipItem = {
-      id: `slip-${match.id}-${prediction.score}-${Date.now()}`,
+      id: `slip-${match.id}-${rawSelection}-${Date.now()}`,
       matchId: match.id,
       matchTitle: `${match.homeTeam.name} vs ${match.awayTeam.name}`,
       homeTeam: match.homeTeam.name,
       awayTeam: match.awayTeam.name,
       league: match.league,
-      betType: 'CORRECT_SCORE',
-      selection: `Correct Score ${prediction.score}`,
+      betType,
+      selection,
       odds: prediction.odds1xBet,
       stake: 200,
       potentialReturn: Math.round(200 * prediction.odds1xBet),
@@ -345,14 +361,15 @@ export default function App() {
       {(() => {
         const todayId = getActiveDailyPickId(new Date());
         const todayPick = SUPER_PICKS_LIST.find((p) => p.id === todayId) || SUPER_PICKS_LIST[0];
+        const todayAh = todayPick ? resolveAsianHandicapPick(todayPick) : null;
         return (
           <PromoCodeModal
             isOpen={isPromoModalOpen}
             onClose={() => setIsPromoModalOpen(false)}
-            bookingCode={todayPick?.bookingCode1xBet || '1X-FRATUR-15'}
+            bookingCode={todayPick?.bookingCode1xBet || '1X-VASINT-19'}
             activeMatchTitle={todayPick?.matchTitle}
-            activeScore={todayPick?.primaryScore}
-            activeOdds={todayPick?.primaryOdds}
+            activeScore={todayAh?.selection || todayPick?.primaryScore}
+            activeOdds={todayAh?.odds || todayPick?.primaryOdds}
           />
         );
       })()}

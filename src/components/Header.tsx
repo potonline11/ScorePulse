@@ -93,17 +93,17 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          {/* Quick Super Pick 100% Consensus Button */}
+          {/* Quick Asian Handicap Super Pick Button */}
           {onSelectSuperPick && (
             <button
               onClick={onSelectSuperPick}
-              className="flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-amber-600/20 hover:from-amber-500/30 hover:to-amber-600/30 border border-amber-500/40 text-amber-300 text-[11px] sm:text-xs font-bold transition-all active:scale-95 cursor-pointer shadow-sm shadow-amber-500/10 whitespace-nowrap"
-              title="โพยเต็ง 1 ชัวร์สุดวันละคู่ (รับรอง 100 สถาบันสถิติสากล & 10 ปัจจัยตรงกัน 100%)"
+              className="flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-emerald-500/20 hover:from-amber-500/30 hover:to-emerald-500/30 border border-amber-500/40 text-amber-300 text-[11px] sm:text-xs font-bold transition-all active:scale-95 cursor-pointer shadow-sm shadow-amber-500/10 whitespace-nowrap"
+              title="ซุปเปอร์โพย Asian Handicap คัดเดี่ยว 1 คู่ที่ดีที่สุดของวัน"
             >
               <span>👑</span>
-              <span className="hidden sm:inline">โพยชัวร์</span>
+              <span className="hidden sm:inline">ซุปเปอร์ HDP</span>
               <span className="text-[10px] font-mono bg-emerald-400 text-slate-950 font-black px-1 rounded shadow-sm">
-                100%
+                TOP 1
               </span>
             </button>
           )}

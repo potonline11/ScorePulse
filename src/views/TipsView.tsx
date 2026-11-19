@@ -3,6 +3,7 @@ import { Match, CorrectScorePrediction } from '../types/soccer';
 import { Target, TrendingUp, Sparkles, Plus, Check, ChevronRight, BarChart3, ShieldCheck, Flame, Award, Layers, Gift } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { DailySuperPickView } from './DailySuperPickView';
+import { MarketStrategyAnalytics } from '../components/MarketStrategyAnalytics';
 
 interface TipsViewProps {
   matches: Match[];
@@ -19,7 +20,7 @@ export const TipsView: React.FC<TipsViewProps> = ({
   betSlipMatchIds,
   onOpenPromoModal,
 }) => {
-  const [viewMode, setViewMode] = useState<'superpick' | 'all'>('superpick');
+  const [viewMode, setViewMode] = useState<'superpick' | 'strategy' | 'all'>('superpick');
   const [selectedLeague, setSelectedLeague] = useState<string>('all');
 
   const leagues = [
@@ -47,22 +48,37 @@ export const TipsView: React.FC<TipsViewProps> = ({
 
   return (
     <div className="space-y-4">
-      {/* Top Main Mode Segmented Switch: Super Pick 95%+ vs All Matches */}
+      {/* Top Main Mode Segmented Switch: Super Pick vs 1-Month Strategy Backtest vs All Matches */}
       <div className="p-4 pb-0">
-        <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-slate-900/90 rounded-2xl border border-amber-500/30 shadow-lg shadow-black/40">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 p-1.5 bg-slate-900/90 rounded-2xl border border-amber-500/30 shadow-lg shadow-black/40">
           <button
             onClick={() => {
               soundManager.playTap();
               setViewMode('superpick');
             }}
-            className={`py-2.5 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+            className={`py-2.5 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap ${
               viewMode === 'superpick'
                 ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md shadow-amber-500/30'
                 : 'text-amber-300 hover:text-white'
             }`}
           >
-            <Award className="w-4 h-4 fill-current" />
-            <span>โพยเด็ด 100% (100 สถาบันสถิติสากล)</span>
+            <Award className="w-4 h-4 fill-current shrink-0" />
+            <span>ซุปเปอร์โพย HDP (คัดเดี่ยว 1 คู่)</span>
+          </button>
+
+          <button
+            onClick={() => {
+              soundManager.playTap();
+              setViewMode('strategy');
+            }}
+            className={`py-2.5 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap ${
+              viewMode === 'strategy'
+                ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/30'
+                : 'text-emerald-300 hover:text-white'
+            }`}
+          >
+            <BarChart3 className="w-4 h-4 shrink-0" />
+            <span>สถิติ 1 เดือน (HDP / X2 / Over)</span>
           </button>
 
           <button
@@ -70,26 +86,29 @@ export const TipsView: React.FC<TipsViewProps> = ({
               soundManager.playTap();
               setViewMode('all');
             }}
-            className={`py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+            className={`py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap ${
               viewMode === 'all'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Layers className="w-4 h-4" />
-            <span>วิเคราะห์สกอร์ทุกลีก ({matches.length})</span>
+            <Layers className="w-4 h-4 shrink-0" />
+            <span>วิเคราะห์รายคู่ทั้งหมด ({matches.length})</span>
           </button>
         </div>
       </div>
 
-      {/* Render Daily Super Pick View */}
+      {/* Render Daily Super Pick View / 1-Month Market Strategy Analytics / All Matches */}
       {viewMode === 'superpick' ? (
         <DailySuperPickView
           onAddToBetSlip={onAddToBetSlip}
           onSelectMatch={onSelectMatch}
           matches={matches}
           onOpenPromoModal={onOpenPromoModal}
+          onOpenStrategyStats={() => setViewMode('strategy')}
         />
+      ) : viewMode === 'strategy' ? (
+        <MarketStrategyAnalytics onJumpToTodayPick={() => setViewMode('superpick')} />
       ) : (
         <div className="p-4 space-y-5 pb-24">
           {/* Quick 1xBet Promo Code Alert Bar */}
@@ -112,7 +131,7 @@ export const TipsView: React.FC<TipsViewProps> = ({
                     <span className="text-slate-400 text-[10px] hidden sm:inline">(โบนัส 130%)</span>
                   </div>
                   <div className="text-[10px] text-sky-300 mt-0.5">
-                    รหัสจองคูปองบอลคืนนี้ (เซบีย่า vs โอซาซูน่า): <span className="font-mono font-bold text-white">1X-SEV20</span> &bull; คลิกดูวิธีใส่รหัสใน 1xBet ให้ผ่านฉลุย
+                    ซุปเปอร์โพย HDP วันนี้ (Vasco da Gama -0.5 @1.68): <span className="font-mono font-bold text-white">1X-VASINT-19</span> &bull; คลิกดูวิธีใส่รหัสใน 1xBet
                   </div>
                 </div>
               </div>

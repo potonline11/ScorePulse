@@ -72,6 +72,11 @@ interface EngineStateSummary {
     slipNumber: string;
     dateText: string;
     poissonPeak: number;
+    asianHandicap?: {
+      selection: string;
+      odds: number;
+      lineLabel?: string;
+    };
   };
   pipeline: {
     settleDoneForDate?: string;
@@ -632,8 +637,12 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                 </div>
                 <div className="text-slate-300 mt-0.5 line-clamp-2">
                   {engineState?.activePick
-                    ? `${engineState.activePick.matchTitle} (${engineState.activePick.primaryScore} @${engineState.activePick.primaryOdds.toFixed(2)})`
-                    : 'กำลังโหลดโพยวันนี้...'}
+                    ? `${engineState.activePick.matchTitle} (${
+                        engineState.activePick.asianHandicap?.selection || engineState.activePick.primaryScore
+                      } @${(
+                        engineState.activePick.asianHandicap?.odds || engineState.activePick.primaryOdds
+                      ).toFixed(2)})`
+                    : 'กำลังโหลดซุปเปอร์โพยวันนี้...'}
                 </div>
               </div>
 
@@ -888,7 +897,9 @@ export const TelegramNotificationModal: React.FC<TelegramNotificationModalProps>
                   className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#229ED9] to-sky-600 hover:from-sky-400 hover:to-sky-500 disabled:opacity-40 text-slate-950 font-black text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-[#229ED9]/20 active:scale-95"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>ส่งโพยวันนี้ ({engineState?.activePick?.primaryScore || '1-0'}) เข้ากลุ่มทันที</span>
+                  <span>
+                    ส่งซุปเปอร์โพย ({engineState?.activePick?.asianHandicap?.selection || engineState?.activePick?.primaryScore || 'HDP'}) เข้ากลุ่มทันที
+                  </span>
                 </button>
               </div>
 

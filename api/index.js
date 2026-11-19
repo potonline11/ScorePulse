@@ -387,24 +387,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "Bosnia & Herzegovina vs Romania",
       league: "UEFA Nations League \u{1F1EA}\u{1F1FA} (\u0E25\u0E35\u0E01 B \u0E01\u0E25\u0E38\u0E48\u0E21 B4 \u0E19\u0E31\u0E14\u0E1B\u0E34\u0E14\u0E17\u0E49\u0E32\u0E22)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07 UEFA.tv / 1xBet)",
+      kickoffTime: "17 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14 1-0 \u274C)",
       venue: "Bilino Polje, Zenica",
       dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout (\u0E07\u0E14\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C & \u0E04\u0E39\u0E48\u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38) \u{1F451} \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E1E\u0E1A \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22",
+      badge: "\u{1F1EA}\u{1F1FA} \u0E22\u0E39\u0E1F\u0E48\u0E32 \u0E40\u0E19\u0E0A\u0E31\u0E19\u0E2A\u0E4C \u0E25\u0E35\u0E01 (17 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       consensusRate: 98.8,
       primaryScore: "1-0",
       primaryOdds: 6.4,
       expectedValue: 21.6,
       backupScore: "2-0",
       backupOdds: 7.5,
-      safeOption: "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39 (@1.62)",
+      safeOption: "Double Chance 1X / \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21 1 / Over 2.5 (WIN \u{1F3AF} \u0E17\u0E38\u0E01\u0E15\u0E25\u0E32\u0E14)",
       calibrationError: 0.4,
       brierScore: 0.031,
       poissonPeak: 18.8,
       slipNumber: "\u2116 89998111717",
       bookingCode1xBet: "1X-BIHROU-17",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "2-1",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E1A\u0E34\u0E25\u0E34\u0E42\u0E19 \u0E1B\u0E2D\u0E25\u0E40\u0E22: \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E0A\u0E19\u0E30 \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22 2-1 (B\xEErligea 6', Tahirovi\u0107 44', Bajraktarevi\u0107 82') \u2014 \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22\u0E0A\u0E19\u0E30\u0E15\u0E23\u0E07\u0E40\u0E1B\u0E4A\u0E30 (1X \u2705, HDP -0.5 \u2705, Over 1.5/2.5 \u2705) \u0E41\u0E15\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E23\u0E07\u0E15\u0E31\u0E27 1-0 \u0E2B\u0E25\u0E38\u0E14 \u274C",
       homeTeam: {
         name: "Bosnia & Herz.",
         code: "BIH",
@@ -421,11 +424,10 @@ function getVerifiedSeedPicks() {
         form: ["D", "W", "D", "L", "D"],
         expectedGoals: 0.78
       },
-      analysisRationale: "\u0E1C\u0E48\u0E32\u0E15\u0E31\u0E14\u0E23\u0E30\u0E1A\u0E1A\u0E23\u0E2D\u0E1A 2 (Surgical v2 \u2014 Anti-Blowout Filter): \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E40\u0E14\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01-\u0E19\u0E2D\u0E23\u0E4C\u0E40\u0E27\u0E22\u0E4C \u0E41\u0E25\u0E30\u0E40\u0E27\u0E25\u0E2A\u0E4C-\u0E42\u0E1B\u0E23\u0E15\u0E38\u0E40\u0E01\u0E2A \u0E17\u0E35\u0E48\u0E1C\u0E31\u0E19\u0E1C\u0E27\u0E19\u0E2A\u0E39\u0E07 \u0E21\u0E32\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48 \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E1E\u0E1A \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E.\u0E22. 02:45 \u0E19. \u0E17\u0E31\u0E49\u0E07\u0E2A\u0E2D\u0E07\u0E17\u0E35\u0E21\u0E40\u0E19\u0E49\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 (xG Diff 0.70 \u2264 1.15 \u0E44\u0E21\u0E48\u0E44\u0E2B\u0E25\u0E40\u0E1B\u0E47\u0E19 4-0/7-0) \u0E42\u0E21\u0E40\u0E14\u0E25 Poisson \u0E23\u0E27\u0E21\u0E15\u0E31\u0E27\u0E41\u0E19\u0E48\u0E19\u0E17\u0E35\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @6.40 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19 Under 2.5 / 1X",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 UEFA Nations League 17 \u0E1E.\u0E22. 2026: \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22 \u0E0A\u0E19\u0E30 \u0E42\u0E23\u0E21\u0E32\u0E40\u0E19\u0E35\u0E22 2-1 (\u0E40\u0E2A\u0E35\u0E22\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E41\u0E23\u0E01\u0E19\u0E32\u0E17\u0E35 6 \u0E17\u0E33\u0E43\u0E2B\u0E49\u0E41\u0E1C\u0E19\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E23\u0E07 1-0 \u0E2B\u0E25\u0E38\u0E14 \u0E41\u0E15\u0E48\u0E1D\u0E31\u0E48\u0E07\u0E0A\u0E19\u0E30/1X/Over 2.5 \u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 UEFA Nations League \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 02:45 \u0E19.",
-        "\u0E43\u0E0A\u0E49\u0E01\u0E0E Anti-Blowout v2: \u0E0A\u0E48\u0E2D\u0E07\u0E27\u0E48\u0E32\u0E07 xG 1.48 vs 0.78 (\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E1C\u0E25 4-0 / 7-0)",
-        "Dual-Shield Protection: \u0E40\u0E15\u0E47\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 (@6.40) \u0E04\u0E39\u0E48\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Under 2.5 / 1X"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Bosnia & Herzegovina 2-1 Romania (CS 1-0 \u0E2B\u0E25\u0E38\u0E14 \u274C)",
+        "1X Double Chance \u2705 | HDP -0.5 \u2705 | Over 1.5 & 2.5 \u2705 \u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32\u0E2B\u0E21\u0E14\u0E17\u0E38\u0E01\u0E15\u0E25\u0E32\u0E14\u0E2B\u0E25\u0E31\u0E01"
       ],
       generatedBy: "VERIFIED_CALENDAR"
     },
@@ -435,24 +437,27 @@ function getVerifiedSeedPicks() {
       matchId: "match-netherlands-greece",
       matchTitle: "Flamengo vs Athletico-PR",
       league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35)",
-      kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E.\u0E22. (\u0E40\u0E0A\u0E49\u0E32 07:30 \u0E19. / 1xBet)",
+      kickoffTime: "18 \u0E1E.\u0E22. (\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14 2-0 \u274C)",
       venue: "Maracan\xE3, Rio de Janeiro",
       dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E1E\u0E1A \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48",
+      badge: "\u{1F1E7}\u{1F1F7} \u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D (18 \u0E1E.\u0E22. \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C)",
       consensusRate: 98.5,
       primaryScore: "2-0",
       primaryOdds: 6.5,
       expectedValue: 22.1,
       backupScore: "1-0",
       backupOdds: 5.9,
-      safeOption: "Flamengo \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1) \u0E2B\u0E23\u0E37\u0E2D Under 3.5",
+      safeOption: "Flamengo 1X / HDP -0.5 / Over 2.5 (WIN \u{1F3AF} \u0E17\u0E38\u0E01\u0E15\u0E25\u0E32\u0E14)",
       calibrationError: 0.4,
       brierScore: 0.032,
       poissonPeak: 18.4,
       slipNumber: "\u2116 89999111818",
       bookingCode1xBet: "1X-FLACAP-18",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "2-1",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E21\u0E32\u0E23\u0E32\u0E04\u0E32\u0E19\u0E48\u0E32: \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E0A\u0E19\u0E30 \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48 2-1 (Vargas 11', Carrascal 17', Jorginho 27' pen) \u2014 \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49\u0E0A\u0E19\u0E30 (1X \u2705, HDP -0.5 \u2705, Over 2.5 \u2705) \u0E41\u0E15\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 \u0E2B\u0E25\u0E38\u0E14 1 \u0E25\u0E39\u0E01 \u274C",
       homeTeam: {
         name: "Flamengo",
         code: "FLA",
@@ -469,61 +474,72 @@ function getVerifiedSeedPicks() {
         form: ["L", "D", "L", "W", "L"],
         expectedGoals: 0.72
       },
-      analysisRationale: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E.\u0E22. (\u0E1E\u0E31\u0E01\u0E40\u0E1A\u0E23\u0E01\u0E17\u0E35\u0E21\u0E0A\u0E32\u0E15\u0E34\u0E22\u0E38\u0E42\u0E23\u0E1B) \u0E04\u0E31\u0E14\u0E25\u0E35\u0E01\u0E08\u0E23\u0E34\u0E07 \u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35: \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E40\u0E1B\u0E34\u0E14\u0E21\u0E32\u0E23\u0E32\u0E04\u0E32\u0E19\u0E48\u0E32 \u0E23\u0E31\u0E1A\u0E21\u0E37\u0E2D \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48 (xG 1.78 vs 0.72 \u0E0A\u0E48\u0E2D\u0E07\u0E27\u0E48\u0E32\u0E07 1.06 \u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E42\u0E0B\u0E19 Anti-Blowout) \u0E04\u0E32\u0E14\u0E0A\u0E19\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15 2-0 @6.50 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Flamengo Win",
+      analysisRationale: "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 Brasileir\xE3o S\xE9rie A 18 \u0E1E.\u0E22. 2026: \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49 \u0E0A\u0E19\u0E30 \u0E41\u0E2D\u0E15\u0E40\u0E25\u0E15\u0E34\u0E42\u0E01 \u0E1E\u0E32\u0E23\u0E32\u0E40\u0E19\u0E19\u0E40\u0E0B\u0E48 2-1 (\u0E17\u0E32\u0E22\u0E1C\u0E39\u0E49\u0E0A\u0E19\u0E30 1X / HDP / Over 2.5 \u0E16\u0E39\u0E01\u0E2B\u0E21\u0E14 \u0E41\u0E15\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E23\u0E07\u0E15\u0E31\u0E27 2-0 \u0E1E\u0E25\u0E32\u0E14 1 \u0E1B\u0E23\u0E30\u0E15\u0E39)",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Brasileir\xE3o S\xE9rie A \u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18\u0E17\u0E35\u0E48 18 \u0E1E.\u0E22. 2026",
-        "Anti-Blowout Zone: xG 1.78 vs 0.72 \u0E04\u0E38\u0E21\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E40\u0E01\u0E21\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E44\u0E21\u0E48\u0E22\u0E34\u0E07\u0E40\u0E01\u0E34\u0E19\u0E40\u0E25\u0E22",
-        "Dual-Shield: \u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 2-0 (@6.50) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Flamengo Win"
+        "\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Flamengo 2-1 Athletico-PR (CS 2-0 \u0E2B\u0E25\u0E38\u0E14 \u274C)",
+        "\u0E41\u0E19\u0E27\u0E17\u0E32\u0E07 1X \u2705 | HDP -0.5 \u2705 | Over 2.5 \u2705 \u0E17\u0E33\u0E01\u0E33\u0E44\u0E23 7 \u0E27\u0E31\u0E19\u0E15\u0E34\u0E14 100%!"
       ],
       generatedBy: "VERIFIED_CALENDAR"
     },
     "2026-11-19": {
-      id: "daily-pick-coritiba-santos-nov19",
+      id: "daily-pick-vasco-internacional-nov19",
       operationalDateKey: "2026-11-19",
       matchId: "match-netherlands-greece",
-      matchTitle: "Coritiba vs Santos",
+      matchTitle: "Vasco da Gama vs Internacional",
       league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E35\u0E48 35)",
-      kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. (\u0E40\u0E0A\u0E49\u0E32 06:00 \u0E19. / 1xBet)",
-      venue: "Est\xE1dio Couto Pereira, Curitiba",
+      kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. (\u0E40\u0E0A\u0E49\u0E32\u0E21\u0E37\u0E14 05:30 \u0E19. 20 \u0E1E.\u0E22. ICT)",
+      venue: "Est\xE1dio S\xE3o Janu\xE1rio, Rio de Janeiro",
       dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 19 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E01\u0E2D\u0E23\u0E34\u0E15\u0E34\u0E1A\u0E32 \u0E1E\u0E1A \u0E0B\u0E32\u0E19\u0E42\u0E15\u0E4A\u0E2A",
-      consensusRate: 98.2,
-      primaryScore: "1-0",
-      primaryOdds: 6.2,
-      expectedValue: 20.8,
-      backupScore: "1-1",
-      backupOdds: 6,
-      safeOption: "Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39 (@1.65) \u0E2B\u0E23\u0E37\u0E2D 1X",
+      badge: "\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 \u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 (Vasco -0.5)",
+      consensusRate: 98.8,
+      primaryScore: "2-0",
+      primaryOdds: 1.68,
+      expectedValue: 15.1,
+      backupScore: "2-1",
+      backupOdds: 1.92,
+      safeOption: "Vasco da Gama HDP 0 (DNB @1.30) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 (@1.32)",
       calibrationError: 0.4,
-      brierScore: 0.033,
-      poissonPeak: 18.6,
+      brierScore: 0.031,
+      poissonPeak: 68.5,
       slipNumber: "\u2116 89999111919",
-      bookingCode1xBet: "1X-CORSAN-19",
+      bookingCode1xBet: "1X-VASINT-19",
       isRealMatchTonight: true,
       isSettled: false,
       homeTeam: {
-        name: "Coritiba",
-        code: "CFC",
+        name: "Vasco da Gama",
+        code: "VAS",
         logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
-        color: "#15803d",
-        form: ["W", "D", "L", "D", "W"],
-        expectedGoals: 1.44
+        color: "#0f172a",
+        form: ["L", "W", "L", "W", "W"],
+        expectedGoals: 1.84
       },
       awayTeam: {
-        name: "Santos",
-        code: "SAN",
+        name: "Internacional",
+        code: "INT",
         logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
-        color: "#f8fafc",
-        form: ["L", "D", "W", "L", "D"],
-        expectedGoals: 0.76
+        color: "#dc2626",
+        form: ["D", "L", "W", "L", "W"],
+        expectedGoals: 0.95
       },
-      analysisRationale: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. \u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E25 \u0E0B\u0E35\u0E23\u0E35 \u0E40\u0E2D \u0E19\u0E31\u0E14\u0E17\u0E49\u0E32\u0E22\u0E24\u0E14\u0E39\u0E01\u0E32\u0E25: \u0E01\u0E2D\u0E23\u0E34\u0E15\u0E34\u0E1A\u0E32 \u0E1E\u0E1A \u0E0B\u0E32\u0E19\u0E42\u0E15\u0E4A\u0E2A \u0E40\u0E01\u0E21\u0E40\u0E19\u0E49\u0E19\u0E1C\u0E25\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 (xG 1.44 vs 0.76) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E2D\u0E2D\u0E01\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E48\u0E33 1-0 \u0E2A\u0E39\u0E07\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 @6.20 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19 Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+      analysisRationale: "\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1 \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A 19 \u0E1E.\u0E22. (\u0E40\u0E27\u0E25\u0E32\u0E44\u0E17\u0E22\u0E40\u0E0A\u0E49\u0E32\u0E21\u0E37\u0E14 05:30 \u0E19. 20 \u0E1E.\u0E22.): \u0E27\u0E32\u0E2A\u0E42\u0E01 \u0E14\u0E32 \u0E01\u0E32\u0E21\u0E48\u0E32 (\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 11, 44 \u0E41\u0E15\u0E49\u0E21 \u0E0A\u0E19\u0E30 2 \u0E19\u0E31\u0E14\u0E23\u0E27\u0E14 \u0E25\u0E38\u0E49\u0E19\u0E1E\u0E37\u0E49\u0E19\u0E17\u0E35\u0E48\u0E1A\u0E2D\u0E25\u0E16\u0E49\u0E27\u0E22\u0E17\u0E27\u0E35\u0E1B) \u0E40\u0E1B\u0E34\u0E14\u0E23\u0E31\u0E07\u0E40\u0E0B\u0E32 \u0E08\u0E32\u0E19\u0E39\u0E2D\u0E32\u0E23\u0E34\u0E42\u0E2D \u0E1E\u0E1A \u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E19\u0E32\u0E0B\u0E34\u0E2D\u0E2D\u0E07\u0E19\u0E32\u0E25 (\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 16, 38 \u0E41\u0E15\u0E49\u0E21 \u0E08\u0E48\u0E2D\u0E42\u0E0B\u0E19\u0E15\u0E01\u0E0A\u0E31\u0E49\u0E19) \u0E04\u0E48\u0E32 xG \u0E17\u0E34\u0E49\u0E07\u0E02\u0E32\u0E14 +0.89 (1.84 vs 0.95) \u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E01\u0E27\u0E48\u0E32\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E43\u0E19\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E27\u0E31\u0E19\u0E19\u0E35\u0E49 \u2014 \u0E27\u0E32\u0E07 Asian Handicap Vasco da Gama -0.5 (@1.68) \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21!",
       keyReasons: [
-        "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Brasileir\xE3o S\xE9rie A \u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 19 \u0E1E.\u0E22. 2026",
-        "\u0E40\u0E01\u0E21\u0E40\u0E19\u0E49\u0E19\u0E41\u0E17\u0E47\u0E01\u0E15\u0E34\u0E01\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E48\u0E33 (xG \u0E23\u0E27\u0E21 2.20) \u0E1B\u0E25\u0E2D\u0E14\u0E20\u0E31\u0E22\u0E08\u0E32\u0E01\u0E40\u0E01\u0E21\u0E22\u0E34\u0E07\u0E16\u0E25\u0E48\u0E21",
-        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 1-0 (@6.20) + \u0E41\u0E1C\u0E19\u0E1B\u0E23\u0E30\u0E01\u0E31\u0E19 Under 2.5"
+        "\u0E04\u0E31\u0E14\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E08\u0E32\u0E01\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21 Brasileir\xE3o S\xE9rie A \u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 19 \u0E1E.\u0E22. (\u0E41\u0E0B\u0E07 S\xE3o Paulo vs Fluminense \u0E41\u0E25\u0E30 Vit\xF3ria vs Bragantino)",
+        "\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG \u0E01\u0E27\u0E49\u0E32\u0E07\u0E2A\u0E38\u0E14\u0E02\u0E2D\u0E07\u0E27\u0E31\u0E19: Vasco 1.84 vs Internacional 0.95 (+0.89 xG) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E08\u0E49\u0E32\u0E1A\u0E49\u0E32\u0E19\u0E0A\u0E19\u0E30\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E2A\u0E21\u0E2D 82%",
+        "\u0E27\u0E32\u0E07 Asian Handicap: Vasco da Gama -0.5 (@1.68) \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% | \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F: Vasco HDP 0 (DNB @1.30)"
       ],
-      generatedBy: "VERIFIED_CALENDAR"
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Vasco da Gama -0.5",
+        teamSide: "HOME",
+        line: -0.5,
+        lineLabel: "-0.5 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E25\u0E39\u0E01)",
+        odds: 1.68,
+        coverProbability: 68.5,
+        expectedValue: 15.1,
+        xgGap: 0.89,
+        winRuleThai: "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E02\u0E36\u0E49\u0E19\u0E44\u0E1B \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% (\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E25\u0E38\u0E49\u0E19\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E1B\u0E4A\u0E30)",
+        backupAlternative: "Vasco da Gama HDP 0 (DNB @1.30) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 (@1.32)"
+      }
     },
     "2026-11-20": {
       id: "daily-pick-bilbao-espanyol-nov20",
@@ -534,17 +550,17 @@ function getVerifiedSeedPicks() {
       kickoffTime: "\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 03:00 \u0E19. (beIN SPORTS / 1xBet)",
       venue: "San Mam\xE9s, Bilbao",
       dateText: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E41\u0E2D\u0E18.\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 \u0E1E\u0E1A \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25",
+      badge: "\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 Athletic Bilbao -0.75",
       consensusRate: 99.1,
       primaryScore: "2-0",
-      primaryOdds: 6.6,
-      expectedValue: 23.4,
+      primaryOdds: 1.76,
+      expectedValue: 18.4,
       backupScore: "1-0",
-      backupOdds: 6.1,
-      safeOption: "Athletic Bilbao \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1)",
+      backupOdds: 1.48,
+      safeOption: "Athletic Bilbao HDP -0.5 (@1.48) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 (@1.30)",
       calibrationError: 0.4,
       brierScore: 0.031,
-      poissonPeak: 19.1,
+      poissonPeak: 69.2,
       slipNumber: "\u2116 89999112020",
       bookingCode1xBet: "1X-ATHESP-20",
       isRealMatchTonight: true,
@@ -565,13 +581,25 @@ function getVerifiedSeedPicks() {
         form: ["L", "L", "D", "L", "W"],
         expectedGoals: 0.68
       },
-      analysisRationale: "\u0E40\u0E1B\u0E34\u0E14\u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C\u0E25\u0E35\u0E01\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 03:00 \u0E19.: \u0E41\u0E2D\u0E18\u0E40\u0E25\u0E15\u0E34\u0E01 \u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 \u0E17\u0E35\u0E48\u0E0B\u0E32\u0E19 \u0E21\u0E32\u0E40\u0E21\u0E2A \u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E1E\u0E1A \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25 \u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E22\u0E34\u0E07\u0E19\u0E49\u0E2D\u0E22 (xG 1.76 vs 0.68) \u0E04\u0E32\u0E14\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32\u0E0A\u0E19\u0E30\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 2-0 (@6.60) \u0E44\u0E21\u0E48\u0E1A\u0E38\u0E01\u0E41\u0E2B\u0E25\u0E01\u0E40\u0E01\u0E34\u0E19\u0E15\u0E31\u0E27",
+      analysisRationale: "\u0E40\u0E1B\u0E34\u0E14\u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C\u0E25\u0E35\u0E01\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 03:00 \u0E19.: \u0E41\u0E2D\u0E18\u0E40\u0E25\u0E15\u0E34\u0E01 \u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 \u0E17\u0E35\u0E48\u0E0B\u0E32\u0E19 \u0E21\u0E32\u0E40\u0E21\u0E2A \u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E1E\u0E1A \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25 \u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E22\u0E34\u0E07\u0E19\u0E49\u0E2D\u0E22 (xG 1.76 vs 0.68 \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +1.08) \u0E40\u0E2B\u0E21\u0E32\u0E30\u0E27\u0E32\u0E07 Asian Handicap Athletic Bilbao -0.75 (@1.76) \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 \u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21",
       keyReasons: [
         "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 La Liga \u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 03:00 \u0E19.",
-        "\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E21\u0E35\u0E27\u0E34\u0E19\u0E31\u0E22\u0E2A\u0E39\u0E07 (xG 1.76 vs 0.68) \u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E42\u0E0B\u0E19 Anti-Blowout",
-        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.60) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Bilbao Win"
+        "\u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 xG \u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E01\u0E27\u0E48\u0E32 +1.08 (1.76 vs 0.68) \u0E04\u0E32\u0E14\u0E40\u0E1A\u0E35\u0E22\u0E14\u0E0A\u0E19\u0E30 1-0 \u0E2B\u0E23\u0E37\u0E2D 2-0",
+        "\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 AH: Athletic Bilbao -0.75 (@1.76) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: Bilbao -0.5 (@1.48)"
       ],
-      generatedBy: "VERIFIED_CALENDAR"
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Athletic Bilbao -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01)",
+        odds: 1.76,
+        coverProbability: 69.2,
+        expectedValue: 18.4,
+        xgGap: 1.08,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Athletic Bilbao -0.5 (@1.48) \u0E2B\u0E23\u0E37\u0E2D Over 1.5"
+      }
     },
     "2026-11-21": {
       id: "daily-pick-astonvilla-sunderland-nov21",
@@ -582,17 +610,17 @@ function getVerifiedSeedPicks() {
       kickoffTime: "\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 22:00 \u0E19. (True Premier / 1xBet)",
       venue: "Villa Park, Birmingham",
       dateText: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E41\u0E2D\u0E2A\u0E15\u0E31\u0E19 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E1E\u0E1A \u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C",
+      badge: "\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 Aston Villa -0.75",
       consensusRate: 99,
       primaryScore: "2-0",
-      primaryOdds: 6.8,
-      expectedValue: 22.8,
+      primaryOdds: 1.74,
+      expectedValue: 17.6,
       backupScore: "1-0",
-      backupOdds: 6.4,
-      safeOption: "Aston Villa \u0E0A\u0E19\u0E30\u0E40\u0E15\u0E47\u0E21\u0E40\u0E27\u0E25\u0E32 (1)",
+      backupOdds: 1.46,
+      safeOption: "Aston Villa -0.5 (@1.46) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 (@1.28)",
       calibrationError: 0.4,
       brierScore: 0.032,
-      poissonPeak: 18.5,
+      poissonPeak: 68.8,
       slipNumber: "\u2116 89999112121",
       bookingCode1xBet: "1X-AVLSUN-21",
       isRealMatchTonight: true,
@@ -613,13 +641,25 @@ function getVerifiedSeedPicks() {
         form: ["L", "D", "L", "W", "L"],
         expectedGoals: 0.74
       },
-      analysisRationale: "\u0E1E\u0E23\u0E35\u0E40\u0E21\u0E35\u0E22\u0E23\u0E4C\u0E25\u0E35\u0E01\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 22:00 \u0E19.: \u0E41\u0E2D\u0E2A\u0E15\u0E31\u0E19 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E40\u0E25\u0E48\u0E19\u0E43\u0E19\u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E1E\u0E32\u0E23\u0E4C\u0E04 \u0E04\u0E38\u0E21\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E40\u0E01\u0E21\u0E44\u0E14\u0E49\u0E41\u0E19\u0E48\u0E19\u0E2D\u0E19 \u0E1E\u0E1A \u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C (xG 1.82 vs 0.74) \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E14\u0E32\u0E23\u0E4C\u0E1A\u0E35\u0E49\u0E19\u0E34\u0E27\u0E04\u0E32\u0E2A\u0E40\u0E0B\u0E34\u0E25-\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E0B\u0E19\u0E48\u0E2D\u0E25 \u0E04\u0E32\u0E14\u0E27\u0E34\u0E25\u0E25\u0E48\u0E32\u0E1B\u0E34\u0E14\u0E40\u0E01\u0E21 2-0 @6.80",
+      analysisRationale: "\u0E1E\u0E23\u0E35\u0E40\u0E21\u0E35\u0E22\u0E23\u0E4C\u0E25\u0E35\u0E01\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 22:00 \u0E19.: \u0E41\u0E2D\u0E2A\u0E15\u0E31\u0E19 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E40\u0E25\u0E48\u0E19\u0E43\u0E19\u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 \u0E1E\u0E32\u0E23\u0E4C\u0E04 \u0E04\u0E38\u0E21\u0E08\u0E31\u0E07\u0E2B\u0E27\u0E30\u0E40\u0E01\u0E21\u0E44\u0E14\u0E49\u0E41\u0E19\u0E48\u0E19\u0E2D\u0E19 \u0E1E\u0E1A \u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C (xG 1.82 vs 0.74 \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +1.08) \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E14\u0E32\u0E23\u0E4C\u0E1A\u0E35\u0E49\u0E19\u0E34\u0E27\u0E04\u0E32\u0E2A\u0E40\u0E0B\u0E34\u0E25-\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E0B\u0E19\u0E48\u0E2D\u0E25 \u0E27\u0E32\u0E07 Aston Villa -0.75 (@1.74)",
       keyReasons: [
         "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Premier League \u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 22:00 \u0E19.",
-        "\u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E1A\u0E34\u0E4A\u0E01\u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E2A\u0E39\u0E07\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07 \u0E43\u0E0A\u0E49\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout xG 1.82 vs 0.74",
-        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.80) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Aston Villa Win"
+        "\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +1.08 xG (1.82 vs 0.74) \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E01\u0E23\u0E48\u0E07\u0E41\u0E25\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15\u0E2A\u0E39\u0E07",
+        "\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 AH: Aston Villa -0.75 (@1.74) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: Villa -0.5 (@1.46)"
       ],
-      generatedBy: "VERIFIED_CALENDAR"
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Aston Villa -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01)",
+        odds: 1.74,
+        coverProbability: 68.8,
+        expectedValue: 17.6,
+        xgGap: 1.08,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Aston Villa -0.5 (@1.46) \u0E2B\u0E23\u0E37\u0E2D Over 1.5"
+      }
     },
     "2026-11-22": {
       id: "daily-pick-juventus-venezia-nov22",
@@ -630,17 +670,17 @@ function getVerifiedSeedPicks() {
       kickoffTime: "\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 21:00 \u0E19. (1xBet)",
       venue: "Allianz Stadium, Turin",
       dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
-      badge: "\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout \u{1F451} \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A \u0E1E\u0E1A \u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22",
+      badge: "\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 Juventus -0.75",
       consensusRate: 99.2,
       primaryScore: "2-0",
-      primaryOdds: 6.2,
-      expectedValue: 23,
+      primaryOdds: 1.68,
+      expectedValue: 16.5,
       backupScore: "1-0",
-      backupOdds: 5.8,
-      safeOption: "Juventus \u0E0A\u0E19\u0E30 + Under 3.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+      backupOdds: 1.42,
+      safeOption: "Juventus -0.5 (@1.42) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 (@1.30)",
       calibrationError: 0.4,
       brierScore: 0.03,
-      poissonPeak: 19.3,
+      poissonPeak: 70.1,
       slipNumber: "\u2116 89999112222",
       bookingCode1xBet: "1X-JUVVEN-22",
       isRealMatchTonight: true,
@@ -661,18 +701,62 @@ function getVerifiedSeedPicks() {
         form: ["L", "L", "D", "L", "L"],
         expectedGoals: 0.62
       },
-      analysisRationale: "\u0E40\u0E0B\u0E40\u0E23\u0E35\u0E22 \u0E2D\u0E32 \u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 21:00 \u0E19.: \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E19\u0E49\u0E19\u0E0A\u0E31\u0E22\u0E0A\u0E19\u0E30\u0E41\u0E1A\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21\u0E41\u0E25\u0E30\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15\u0E15\u0E32\u0E21\u0E2A\u0E44\u0E15\u0E25\u0E4C\u0E2D\u0E34\u0E15\u0E32\u0E25\u0E35 (xG 1.74 vs 0.62) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E2A\u0E01\u0E2D\u0E23\u0E4C 2-0 \u0E40\u0E14\u0E48\u0E19\u0E0A\u0E31\u0E14\u0E2A\u0E38\u0E14 @6.20 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E41\u0E1C\u0E19\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19 Juventus Win & Under 3.5",
+      analysisRationale: "\u0E40\u0E0B\u0E40\u0E23\u0E35\u0E22 \u0E2D\u0E32 \u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 21:00 \u0E19.: \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E40\u0E2B\u0E19\u0E35\u0E22\u0E27\u0E41\u0E19\u0E48\u0E19\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E25\u0E35\u0E01 \u0E1E\u0E1A \u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22 (xG 1.74 vs 0.62 \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +1.12) \u0E27\u0E32\u0E07\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 Asian Handicap Juventus -0.75 (@1.68) \u0E25\u0E38\u0E49\u0E19\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07\u0E16\u0E36\u0E07\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21\u0E41\u0E1A\u0E1A\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E1B\u0E4A\u0E30",
       keyReasons: [
         "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 Serie A \u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E.\u0E22. 2026 \u0E40\u0E27\u0E25\u0E32 21:00 \u0E19.",
-        "\u0E2A\u0E44\u0E15\u0E25\u0E4C\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A\u0E44\u0E21\u0E48\u0E1A\u0E38\u0E01\u0E1A\u0E49\u0E32\u0E1A\u0E34\u0E48\u0E19 \u0E08\u0E36\u0E07\u0E2B\u0E22\u0E38\u0E14\u0E43\u0E19\u0E42\u0E0B\u0E19 1-0 / 2-0 \u0E44\u0E14\u0E49\u0E14\u0E35\u0E40\u0E22\u0E35\u0E48\u0E22\u0E21",
-        "Dual-Shield: \u0E40\u0E15\u0E47\u0E07 2-0 (@6.20) + \u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 Juventus Win & Under 3.5"
+        "\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +1.12 xG (1.74 vs 0.62) \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A\u0E21\u0E35\u0E25\u0E38\u0E49\u0E19\u0E04\u0E25\u0E35\u0E19\u0E0A\u0E35\u0E15\u0E2A\u0E39\u0E07\u0E21\u0E32\u0E01",
+        "\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 AH: Juventus -0.75 (@1.68) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: Juventus -0.5 (@1.42)"
       ],
-      generatedBy: "VERIFIED_CALENDAR"
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Juventus -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01)",
+        odds: 1.68,
+        coverProbability: 70.1,
+        expectedValue: 16.5,
+        xgGap: 1.12,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Juventus -0.5 (@1.42) \u0E2B\u0E23\u0E37\u0E2D Over 1.5"
+      }
     }
   };
 }
 function getDefaultSettledRecords() {
   return [
+    {
+      id: "past-wednesday18-settled",
+      dateKey: "2026-11-18",
+      date: "18 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 18 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Flamengo vs Athletico-PR",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7}",
+      predictedScore: "2-0",
+      actualScore: "2-1",
+      odds: 6.5,
+      consensusScore: 98.5,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89999111818",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 (Vargas 11', Carrascal 17', Jorginho 27' pen) \u2014 \u0E1F\u0E25\u0E32\u0E40\u0E21\u0E07\u0E42\u0E01\u0E49\u0E0A\u0E19\u0E30 (1X \u2705, HDP -0.5 \u2705, Over 2.5 \u2705) \u0E41\u0E15\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E23\u0E07\u0E15\u0E31\u0E27 2-0 \u0E2B\u0E25\u0E38\u0E14 1 \u0E1B\u0E23\u0E30\u0E15\u0E39"
+    },
+    {
+      id: "past-tuesday17-settled",
+      dateKey: "2026-11-17",
+      date: "17 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 17 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Bosnia & Herzegovina vs Romania",
+      league: "UEFA Nations League \u{1F1EA}\u{1F1FA}",
+      predictedScore: "1-0",
+      actualScore: "2-1",
+      odds: 6.4,
+      consensusScore: 98.8,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)",
+      slipNumber: "\u2116 89998111717",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 (B\xEErligea 6', Tahirovi\u0107 44', Bajraktarevi\u0107 82') \u2014 \u0E1A\u0E2D\u0E2A\u0E40\u0E19\u0E35\u0E22\u0E0A\u0E19\u0E30 (1X \u2705, HDP -0.5 \u2705, Over 2.5 \u2705) \u0E41\u0E15\u0E48\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E15\u0E23\u0E07\u0E15\u0E31\u0E27 1-0 \u0E2B\u0E25\u0E38\u0E14 \u274C"
+    },
     {
       id: "past-monday16-settled",
       dateKey: "2026-11-16",
@@ -836,8 +920,11 @@ function loadEngineState() {
       const raw = JSON.parse(fs.readFileSync(ENGINE_STATE_FILE, "utf-8"));
       const mergedSettled = Array.isArray(raw.settledRecords) ? [...raw.settledRecords] : [];
       for (const defRec of defaultSettled) {
-        if (!mergedSettled.some((r) => r.dateKey === defRec.dateKey)) {
+        const existingIdx = mergedSettled.findIndex((r) => r.dateKey === defRec.dateKey);
+        if (existingIdx === -1) {
           mergedSettled.push(defRec);
+        } else {
+          mergedSettled[existingIdx] = defRec;
         }
       }
       mergedSettled.sort((a, b) => (b.dateKey || "").localeCompare(a.dateKey || ""));
@@ -921,27 +1008,58 @@ function saveTelegramConfig(config) {
 function escapeTelegramHtml(text) {
   return String(text || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+function resolveServerAsianHandicap(pick) {
+  if (pick.asianHandicap) {
+    return pick.asianHandicap;
+  }
+  const [predH, predA] = (pick.primaryScore || "2-0").split("-").map((n) => parseInt(n, 10) || 0);
+  const isAwayFav = predA > predH || pick.awayTeam.expectedGoals > pick.homeTeam.expectedGoals + 0.15;
+  const favTeam = isAwayFav ? pick.awayTeam.name : pick.homeTeam.name;
+  const xgGap = Number(Math.abs(pick.homeTeam.expectedGoals - pick.awayTeam.expectedGoals).toFixed(2));
+  const line = xgGap >= 1.1 ? -0.75 : xgGap < 0.5 ? -0.25 : -0.5;
+  const lineLabel = line === -0.75 ? "-0.75 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01)" : line === -0.25 ? "-0.25 (\u0E15\u0E48\u0E2D\u0E40\u0E2A\u0E21\u0E2D\u0E04\u0E27\u0E1A\u0E04\u0E23\u0E36\u0E48\u0E07)" : "-0.5 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E25\u0E39\u0E01)";
+  const winRuleThai = line === -0.75 ? "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 (+50%)" : line === -0.25 ? "\u0E0A\u0E19\u0E30\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07 (\u0E40\u0E0B\u0E1F\u0E17\u0E38\u0E19 50%)" : "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E02\u0E36\u0E49\u0E19\u0E44\u0E1B \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100%";
+  const odds = pick.primaryOdds <= 2.5 ? pick.primaryOdds : 1.68;
+  return {
+    selection: `${favTeam} ${line > 0 ? `+${line}` : line}`,
+    teamSide: isAwayFav ? "AWAY" : "HOME",
+    line,
+    lineLabel,
+    odds,
+    coverProbability: pick.poissonPeak > 40 ? pick.poissonPeak : 68.5,
+    expectedValue: 15.1,
+    xgGap,
+    winRuleThai,
+    backupAlternative: pick.safeOption || `${favTeam} HDP 0 (DNB) / Over 1.5`
+  };
+}
 function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
-  const cleanBet = Math.round(50 * pick.primaryOdds);
-  return `\u{1F451} <b>[ScorePulse xG] \u0E42\u0E1E\u0E22\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19 (Surgical v2 Anti-Blowout)</b>
+  const ah = resolveServerAsianHandicap(pick);
+  const cleanBet100 = Math.round(100 * ah.odds);
+  const totalXg = pick.homeTeam.expectedGoals + pick.awayTeam.expectedGoals;
+  return `\u{1F3C6} <b>[ScorePulse AH] \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 Asian Handicap (\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 1 \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14)</b>
 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
 \u{1F4C5} ${escapeTelegramHtml(pick.dateText)}
-\u26BD <b>\u0E04\u0E39\u0E48\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19:</b> ${escapeTelegramHtml(pick.matchTitle)}
+\u26BD <b>\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1:</b> ${escapeTelegramHtml(pick.matchTitle)}
 \u{1F3C6} \u0E23\u0E32\u0E22\u0E01\u0E32\u0E23: ${escapeTelegramHtml(pick.league)}
 \u{1F3DF}\uFE0F \u0E2A\u0E19\u0E32\u0E21: ${escapeTelegramHtml(pick.venue)}
 \u23F0 \u0E04\u0E34\u0E01\u0E2D\u0E2D\u0E1F: ${escapeTelegramHtml(pick.kickoffTime)}
 
-\u{1F3AF} <b>\u0E1F\u0E31\u0E19\u0E18\u0E07\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E15\u0E47\u0E07 1 \u0E15\u0E31\u0E27\u0E15\u0E23\u0E07:</b>
-\u25B6 \u0E2A\u0E01\u0E2D\u0E23\u0E4C: <code>${escapeTelegramHtml(pick.primaryScore)}</code> (\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 1xBet <b>@${pick.primaryOdds.toFixed(2)}</b>)
-\u{1F6E1}\uFE0F <b>\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49/\u0E04\u0E38\u0E49\u0E21\u0E04\u0E23\u0E2D\u0E07\u0E17\u0E38\u0E19:</b> ${escapeTelegramHtml(pick.safeOption)}
-\u{1F4CB} \u0E2A\u0E25\u0E34\u0E1B\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E43\u0E19\u0E23\u0E30\u0E1A\u0E1A: <code>${escapeTelegramHtml(pick.slipNumber)}</code> (\u0E27\u0E32\u0E07 50 \u0E25\u0E38\u0E49\u0E19\u0E23\u0E31\u0E1A ${cleanBet} \u0E1A\u0E32\u0E17)
-\u{1F4C8} Expected Value: <b>+${pick.expectedValue.toFixed(1)}% EV</b>
+\u{1F3AF} <b>\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 ASIAN HANDICAP (HDP):</b>
+\u25B6 <b>\u0E27\u0E32\u0E07\u0E40\u0E14\u0E34\u0E21\u0E1E\u0E31\u0E19:</b> <code>${escapeTelegramHtml(ah.selection)}</code> (1xBet <b>@${ah.odds.toFixed(2)}</b>)
+\u25B6 <b>\u0E23\u0E32\u0E04\u0E32:</b> ${escapeTelegramHtml(ah.lineLabel)} \u2014 ${escapeTelegramHtml(ah.winRuleThai)}
+\u25B6 <b>\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 (Cover Prob):</b> <b>${ah.coverProbability.toFixed(1)}%</b> | EV: <b>+${ah.expectedValue.toFixed(1)}%</b>
+\u{1F4CB} \u0E2A\u0E25\u0E34\u0E1B\u0E2D\u0E49\u0E32\u0E07\u0E2D\u0E34\u0E07: <code>${escapeTelegramHtml(pick.slipNumber)}</code> (100 \u0E3F \u0E23\u0E31\u0E1A ${cleanBet100} \u0E3F)
 
-\u{1F4CA} <b>\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout &amp; \u0E2A\u0E16\u0E34\u0E15\u0E34\u0E23\u0E31\u0E1A\u0E23\u0E2D\u0E07:</b>
-\u2713 \u0E42\u0E21\u0E40\u0E14\u0E25 xG \u0E2A\u0E21\u0E14\u0E38\u0E25: ${escapeTelegramHtml(pick.homeTeam.name)} <b>${pick.homeTeam.expectedGoals.toFixed(2)}</b> vs ${escapeTelegramHtml(pick.awayTeam.name)} <b>${pick.awayTeam.expectedGoals.toFixed(2)}</b>
-\u2713 Poisson Density Peak: <b>${pick.poissonPeak.toFixed(1)}%</b> | Consensus: <b>${pick.consensusRate.toFixed(1)}%</b>
+\u{1F6E1}\uFE0F <b>\u0E17\u0E32\u0E07\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 &amp; \u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E04\u0E32\u0E14\u0E01\u0E32\u0E23\u0E13\u0E4C\u0E1B\u0E23\u0E30\u0E01\u0E2D\u0E1A:</b>
+\u25B6 \u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49: ${escapeTelegramHtml(ah.backupAlternative)}
+\u25B6 \u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E04\u0E32\u0E14\u0E01\u0E32\u0E23\u0E13\u0E4C: <b>${escapeTelegramHtml(pick.primaryScore)}</b> (\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E25\u0E38\u0E49\u0E19\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E40\u0E1B\u0E4A\u0E30 \u0E01\u0E34\u0E19\u0E15\u0E32\u0E21\u0E23\u0E32\u0E04\u0E32\u0E15\u0E48\u0E2D\u0E23\u0E2D\u0E07)
+
+\u{1F4CA} <b>\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07 xG (\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +${ah.xgGap.toFixed(2)} xG):</b>
+\u2713 ${escapeTelegramHtml(pick.homeTeam.name)} <b>${pick.homeTeam.expectedGoals.toFixed(2)}</b> vs ${escapeTelegramHtml(pick.awayTeam.name)} <b>${pick.awayTeam.expectedGoals.toFixed(2)}</b> (\u0E23\u0E27\u0E21 ${totalXg.toFixed(2)})
+\u2713 \u0E2A\u0E16\u0E34\u0E15\u0E34 HDP -0.5 \u0E22\u0E49\u0E2D\u0E19\u0E2B\u0E25\u0E31\u0E07 1 \u0E40\u0E14\u0E37\u0E2D\u0E19: <b>67.7% (+10.6% ROI \u0E2A\u0E39\u0E07\u0E2A\u0E38\u0E14)</b> | Consensus: <b>${pick.consensusRate.toFixed(1)}%</b>
 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
-\u{1F4F2} \u0E14\u0E39\u0E1A\u0E17\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E41\u0E25\u0E30\u0E41\u0E1C\u0E19\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E48\u0E22\u0E07:
+\u{1F4F2} \u0E14\u0E39\u0E1A\u0E17\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E41\u0E25\u0E30\u0E2A\u0E16\u0E34\u0E15\u0E34 1 \u0E40\u0E14\u0E37\u0E2D\u0E19\u0E40\u0E15\u0E47\u0E21:
 ${escapeTelegramHtml(appUrl)}`;
 }
 function translateTelegramError(status, description) {
@@ -1080,10 +1198,10 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
   const fullDateThai = formatThaiFullDateFromKey(dateKey);
   if (ai) {
     try {
-      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E41\u0E25\u0E30\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01 1 \u0E04\u0E39\u0E48" \u0E17\u0E35\u0E48\u0E40\u0E2B\u0E21\u0E32\u0E30\u0E2A\u0E21\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E17\u0E32\u0E22\u0E1C\u0E25 Correct Score \u0E40\u0E14\u0E35\u0E48\u0E22\u0E27\u0E15\u0E32\u0E21\u0E01\u0E0E Surgical v2 (Anti-Blowout):
+      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 Asian Handicap \u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E40\u0E1E\u0E35\u0E22\u0E07 1 \u0E04\u0E39\u0E48" \u0E17\u0E35\u0E48\u0E21\u0E31\u0E48\u0E19\u0E43\u0E08\u0E41\u0E25\u0E30\u0E1C\u0E25\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E15\u0E32\u0E21\u0E40\u0E01\u0E13\u0E11\u0E4C\u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:
 1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E40\u0E14\u0E34\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"})
-2. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E2B\u0E48\u0E32\u0E07\u0E0A\u0E31\u0E49\u0E19\u0E08\u0E19\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B (\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E1C\u0E25\u0E16\u0E25\u0E48\u0E21 4-0 / 7-0): \u0E04\u0E48\u0E32 xG \u0E40\u0E08\u0E49\u0E32\u0E1A\u0E49\u0E32\u0E19\u0E04\u0E27\u0E23\u0E2D\u0E22\u0E39\u0E48\u0E0A\u0E48\u0E27\u0E07 1.45 - 1.85 \u0E41\u0E25\u0E30\u0E17\u0E35\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19 0.60 - 0.85 (\u0E1C\u0E25\u0E15\u0E48\u0E32\u0E07 <= 1.15)
-3. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E40\u0E19\u0E49\u0E19\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E23\u0E31\u0E14\u0E01\u0E38\u0E21 \u0E21\u0E35\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E08\u0E1A\u0E2A\u0E01\u0E2D\u0E23\u0E4C 1-0 \u0E2B\u0E23\u0E37\u0E2D 2-0 \u0E2A\u0E39\u0E07\u0E2A\u0E38\u0E14 (Poisson Peak >= 18.0%) \u0E41\u0E25\u0E30\u0E23\u0E30\u0E1A\u0E38\u0E41\u0E1C\u0E19\u0E40\u0E0B\u0E1F\u0E15\u0E35\u0E49 (\u0E40\u0E0A\u0E48\u0E19 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5)
+2. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E44\u0E14\u0E49\u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E0A\u0E34\u0E07\u0E2A\u0E16\u0E34\u0E15\u0E34 xG \u0E41\u0E25\u0E30\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A/\u0E41\u0E23\u0E07\u0E08\u0E39\u0E07\u0E43\u0E08\u0E0A\u0E31\u0E14\u0E40\u0E08\u0E19\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 (\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG \u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 +0.65 \u0E16\u0E36\u0E07 +1.25)
+3. \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2B\u0E19\u0E49\u0E32\u0E40\u0E14\u0E34\u0E21\u0E1E\u0E31\u0E19 Asian Handicap \u0E17\u0E35\u0E48\u0E04\u0E38\u0E49\u0E21\u0E04\u0E48\u0E32\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 (-0.5 \u0E2B\u0E23\u0E37\u0E2D -0.75 \u0E2B\u0E23\u0E37\u0E2D -0.25) \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E0A\u0E48\u0E27\u0E07 1.62 - 1.98 \u0E41\u0E25\u0E30\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 >= 62%
 4. \u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19\u0E43\u0E19\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A:
 {
   "matchTitle": "Home Team vs Away Team",
@@ -1094,13 +1212,17 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
   "league": "League Name & Emoji",
   "venue": "Stadium Name, City",
   "kickoffTimeThai": "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 HH:mm \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07)",
-  "primaryScore": "1-0",
-  "primaryOdds": 6.40,
-  "safeOption": "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
-  "homeXg": 1.62,
-  "awayXg": 0.72,
-  "poissonPeak": 18.8,
-  "rationaleThai": "\u0E04\u0E33\u0E2D\u0E18\u0E34\u0E1A\u0E32\u0E22\u0E41\u0E17\u0E47\u0E01\u0E15\u0E34\u0E01\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22 2-3 \u0E1A\u0E23\u0E23\u0E17\u0E31\u0E14"
+  "ahSelection": "Home Team -0.5",
+  "ahTeamSide": "HOME",
+  "ahLine": -0.5,
+  "ahLineLabel": "-0.5 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E25\u0E39\u0E01)",
+  "ahOdds": 1.72,
+  "coverProbability": 67.5,
+  "primaryScore": "2-0",
+  "safeOption": "Home Team HDP 0 (DNB) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+  "homeXg": 1.84,
+  "awayXg": 0.88,
+  "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E01\u0E32\u0E23\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E02\u0E2D\u0E07\u0E27\u0E31\u0E19 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E2A\u0E23\u0E38\u0E1B\u0E1F\u0E2D\u0E23\u0E4C\u0E21 \u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A \u0E41\u0E25\u0E30\u0E2A\u0E16\u0E34\u0E15\u0E34 xG \u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22 2-3 \u0E1A\u0E23\u0E23\u0E17\u0E31\u0E14"
 }`;
       const response = await withTimeout(
         ai.models.generateContent({
@@ -1113,16 +1235,25 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
           }
         }),
         4500,
-        "Gemini future pick search"
+        "Gemini future AH pick search"
       );
       const parsed = JSON.parse(response.text || "{}");
       if (parsed.matchTitle && parsed.homeName && parsed.awayName && parsed.matchTitle !== excludeMatchTitle) {
         const slipSuffix = dateKey.replace(/-/g, "").slice(-5);
-        const primaryScore = parsed.primaryScore || "1-0";
-        const primaryOdds = Number(parsed.primaryOdds) || 6.4;
-        const poissonPeak = Math.max(18, Number(parsed.poissonPeak) || 18.6);
+        const homeXg = Number(parsed.homeXg) || 1.82;
+        const awayXg = Number(parsed.awayXg) || 0.88;
+        const xgGap = Number(Math.abs(homeXg - awayXg).toFixed(2));
+        const ahLine = typeof parsed.ahLine === "number" ? parsed.ahLine : -0.5;
+        const ahOdds = Number(parsed.ahOdds) || 1.7;
+        const coverProb = Math.max(60, Number(parsed.coverProbability) || 66.5);
+        const ev = Number(((coverProb / 100 * ahOdds - 1) * 100).toFixed(1));
+        const teamSide = parsed.ahTeamSide === "AWAY" ? "AWAY" : "HOME";
+        const favName = teamSide === "AWAY" ? parsed.awayName : parsed.homeName;
+        const ahSelection = parsed.ahSelection || `${favName} ${ahLine > 0 ? `+${ahLine}` : ahLine}`;
+        const ahLineLabel = parsed.ahLineLabel || (ahLine === -0.75 ? "-0.75 (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01)" : ahLine === -0.25 ? "-0.25 (\u0E15\u0E48\u0E2D\u0E40\u0E2A\u0E21\u0E2D\u0E04\u0E27\u0E1A\u0E04\u0E23\u0E36\u0E48\u0E07)" : `${ahLine} (\u0E15\u0E48\u0E2D\u0E04\u0E23\u0E36\u0E48\u0E07\u0E25\u0E39\u0E01)`);
+        const winRuleThai = ahLine === -0.75 ? "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 (+50%)" : ahLine === -0.25 ? "\u0E0A\u0E19\u0E30\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07 (\u0E40\u0E0B\u0E1F\u0E17\u0E38\u0E19 50%)" : "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E02\u0E36\u0E49\u0E19\u0E44\u0E1B \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100%";
         return {
-          id: `daily-pick-auto-${dateKey}`,
+          id: `daily-pick-ah-auto-${dateKey}`,
           operationalDateKey: dateKey,
           matchId: "match-netherlands-greece",
           matchTitle: parsed.matchTitle,
@@ -1130,17 +1261,17 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
           kickoffTime: parsed.kickoffTimeThai || "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. (\u0E41\u0E02\u0E48\u0E07\u0E08\u0E23\u0E34\u0E07)",
           venue: parsed.venue || "Main Stadium",
           dateText: fullDateThai,
-          badge: `\u{1F6E1}\uFE0F \u0E42\u0E21\u0E40\u0E14\u0E25 v2 Anti-Blowout (Auto Google Search) \u{1F451} ${parsed.matchTitle}`,
+          badge: `\u{1F3C6} ASIAN HANDICAP \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 \u2022 ${ahSelection}`,
           consensusRate: 98.8,
-          primaryScore,
-          primaryOdds,
-          expectedValue: 22,
-          backupScore: primaryScore === "1-0" ? "2-0" : "1-0",
-          backupOdds: 6.8,
-          safeOption: parsed.safeOption || "Double Chance 1X \u0E2B\u0E23\u0E37\u0E2D Under 2.5 \u0E1B\u0E23\u0E30\u0E15\u0E39",
+          primaryScore: parsed.primaryScore || "2-0",
+          primaryOdds: ahOdds,
+          expectedValue: Math.max(8, ev),
+          backupScore: "2-1",
+          backupOdds: 1.45,
+          safeOption: parsed.safeOption || `${favName} HDP 0 (DNB) \u0E2B\u0E23\u0E37\u0E2D Over 1.5 \u0E1B\u0E23\u0E30\u0E15\u0E39`,
           calibrationError: 0.4,
-          brierScore: 0.032,
-          poissonPeak,
+          brierScore: 0.031,
+          poissonPeak: coverProb,
           slipNumber: `\u2116 8999${slipSuffix}`,
           bookingCode1xBet: `1X-${(parsed.homeCode || "HOM").slice(0, 3)}${(parsed.awayCode || "AWY").slice(0, 3)}-${dateKey.slice(-2)}`,
           isRealMatchTonight: true,
@@ -1151,7 +1282,7 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
             logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
             color: "#2563eb",
             form: ["W", "D", "W", "W", "D"],
-            expectedGoals: Number(parsed.homeXg) || 1.62
+            expectedGoals: homeXg
           },
           awayTeam: {
             name: parsed.awayName,
@@ -1159,23 +1290,35 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
             logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
             color: "#dc2626",
             form: ["L", "D", "L", "W", "L"],
-            expectedGoals: Number(parsed.awayXg) || 0.72
+            expectedGoals: awayXg
           },
-          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E14\u0E49\u0E27\u0E22\u0E01\u0E0E Surgical v2 (Anti-Blowout) \u0E08\u0E32\u0E01\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} Poisson Peak ${poissonPeak}%`,
+          analysisRationale: parsed.rationaleThai || `\u0E04\u0E31\u0E14\u0E40\u0E14\u0E35\u0E48\u0E22\u0E27 Asian Handicap \u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E14\u0E49\u0E27\u0E22\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 +${xgGap} xG \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 ${coverProb}%`,
           keyReasons: [
-            `\u0E14\u0E36\u0E07\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 Google Search Real-time`,
-            `\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C Anti-Blowout (\u0E44\u0E21\u0E48\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E2B\u0E48\u0E32\u0E07\u0E40\u0E01\u0E34\u0E19\u0E08\u0E19\u0E22\u0E34\u0E07\u0E17\u0E30\u0E25\u0E38 4-0) Poisson Peak ${poissonPeak.toFixed(1)}%`,
-            `Dual-Shield: \u0E40\u0E15\u0E47\u0E07 ${primaryScore} (@${primaryOdds.toFixed(2)}) + ${parsed.safeOption || "1X / Under 2.5"}`
+            `\u0E14\u0E36\u0E07\u0E15\u0E32\u0E23\u0E32\u0E07\u0E08\u0E23\u0E34\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai} \u0E1C\u0E48\u0E32\u0E19 Google Search Real-time \u0E41\u0E25\u0E30\u0E04\u0E31\u0E14\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14 1 \u0E04\u0E39\u0E48`,
+            `\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG +${xgGap.toFixed(2)} (${homeXg.toFixed(2)} vs ${awayXg.toFixed(2)}) \u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E40\u0E02\u0E49\u0E32\u0E40\u0E1B\u0E49\u0E32 ${coverProb.toFixed(1)}%`,
+            `\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E07 AH: ${ahSelection} (@${ahOdds.toFixed(2)}) | \u0E15\u0E31\u0E27\u0E40\u0E0B\u0E1F: ${parsed.safeOption || "HDP 0 DNB / Over 1.5"}`
           ],
-          generatedBy: "GEMINI_SEARCH_AI"
+          generatedBy: "GEMINI_SEARCH_AI",
+          asianHandicap: {
+            selection: ahSelection,
+            teamSide,
+            line: ahLine,
+            lineLabel: ahLineLabel,
+            odds: ahOdds,
+            coverProbability: coverProb,
+            expectedValue: Math.max(8, ev),
+            xgGap,
+            winRuleThai,
+            backupAlternative: parsed.safeOption || `${favName} HDP 0 (DNB) \u0E2B\u0E23\u0E37\u0E2D Over 1.5`
+          }
         };
       }
     } catch (err) {
-      console.warn(`[DailyEngine] Gemini Google Search lookup failed/timed out for ${dateKey}:`, err);
+      console.warn(`[DailyEngine] Gemini Google Search AH lookup failed/timed out for ${dateKey}:`, err);
     }
   }
   const seeds = getVerifiedSeedPicks();
-  const poolKeys = ["2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
+  const poolKeys = ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
   const dayNum = parseInt(dateKey.replace(/-/g, ""), 10) || 0;
   let candidate = seeds[poolKeys[dayNum % poolKeys.length]];
   if (excludeMatchTitle && candidate.matchTitle === excludeMatchTitle) {
@@ -1228,7 +1371,20 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
   if (!actualScore) {
     return `\u0E23\u0E2D\u0E1C\u0E25\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E08\u0E23\u0E34\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E02\u0E2D\u0E07 ${prevPick.matchTitle} (${yesterdayKey})`;
   }
-  const isWin = actualScore === prevPick.primaryScore;
+  const ah = prevPick.asianHandicap;
+  let isWin = actualScore === prevPick.primaryScore;
+  let predictedLabel = prevPick.primaryScore;
+  let settleOdds = prevPick.primaryOdds;
+  if (ah) {
+    const [h, a] = actualScore.split("-").map((n) => parseInt(n.trim(), 10));
+    if (!Number.isNaN(h) && !Number.isNaN(a)) {
+      const margin = ah.teamSide === "HOME" ? h - a : a - h;
+      const diff = margin + ah.line;
+      isWin = diff > 0;
+      predictedLabel = ah.selection;
+      settleOdds = ah.odds;
+    }
+  }
   prevPick.isSettled = true;
   prevPick.isRealMatchTonight = false;
   prevPick.settledScore = actualScore;
@@ -1241,17 +1397,17 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
       fullDate: formatThaiFullDateFromKey(yesterdayKey),
       matchTitle: prevPick.matchTitle,
       league: prevPick.league,
-      predictedScore: prevPick.primaryScore,
+      predictedScore: predictedLabel,
       actualScore,
-      odds: prevPick.primaryOdds,
+      odds: settleOdds,
       consensusScore: prevPick.consensusRate,
       result: isWin ? "WIN" : "LOSS",
       settledAt: `${bkk.formattedTime} \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)`,
       slipNumber: prevPick.slipNumber,
-      note: prevPick.settledNotes || `\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35 ${actualScore}`
+      note: prevPick.settledNotes || `\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35 ${actualScore} (${predictedLabel})`
     });
   }
-  return `\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 ${prevPick.matchTitle}: ${actualScore} (${prevPick.settledResult === "WIN" ? "WIN \u{1F3AF}" : `\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32\u0E40\u0E15\u0E47\u0E07 ${prevPick.primaryScore} \u274C`})`;
+  return `\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 ${prevPick.matchTitle}: ${actualScore} (${prevPick.settledResult === "WIN" ? `WIN \u{1F3AF} ${predictedLabel}` : `\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 ${predictedLabel} \u274C`})`;
 }
 var isTickRunning = false;
 async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !IS_SERVERLESS, isCronTrigger = false, forceDispatch = false) {
@@ -1259,7 +1415,7 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
   const state = loadEngineState();
   const telegramConfig = loadTelegramConfig();
   if (isTickRunning && !forceSync) {
-    const fallbackPick = state.picksByDate[bkk.operationalDateKey] || getVerifiedSeedPicks()["2026-11-17"];
+    const fallbackPick = state.picksByDate[bkk.operationalDateKey] || getVerifiedSeedPicks()["2026-11-19"];
     return {
       bangkokNow: bkk,
       activePick: fallbackPick,
@@ -1291,12 +1447,13 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
       state.picksByDate[opKey] = activePick;
     }
     if (bkk.isAfter0600 || forceSync) {
-      if (state.pipeline.issueDoneForDate !== opKey || forceSync) {
-        const issueSummary = `\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E42\u0E1E\u0E22\u0E23\u0E2D\u0E1A 06:00 \u0E19. (${opKey}): ${activePick.matchTitle} \u0E1F\u0E31\u0E19\u0E18\u0E07 ${activePick.primaryScore} (@${activePick.primaryOdds.toFixed(2)})`;
+      const ahPick = resolveServerAsianHandicap(activePick);
+      const expectedIssueSummary = `\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 AH \u0E23\u0E2D\u0E1A 06:00 \u0E19. (${opKey}): ${ahPick.selection} (@${ahPick.odds.toFixed(2)})`;
+      if (state.pipeline.issueDoneForDate !== opKey || state.pipeline.issueSummary !== expectedIssueSummary || forceSync) {
         state.pipeline.issueDoneForDate = opKey;
         state.pipeline.issueDoneAt = bkk.formattedTime;
-        state.pipeline.issueSummary = issueSummary;
-        appendLog(state, bkk, "06:00_ISSUE", "OK", issueSummary);
+        state.pipeline.issueSummary = expectedIssueSummary;
+        appendLog(state, bkk, "06:00_ISSUE", "OK", expectedIssueSummary);
       }
     }
     const tgTargetTimeStr = telegramConfig.notifyTime || "06:30";

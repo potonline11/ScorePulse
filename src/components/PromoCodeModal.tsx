@@ -401,7 +401,7 @@ export const PromoCodeModal: React.FC<PromoCodeModalProps> = ({
                       {hasRealBookingCode ? 'รหัสคูปอง 1xBet จริงวันนี้' : 'รหัสอ้างอิงในระบบ ScorePulse'}
                     </span>
                     <h3 className="text-sm font-black text-white mt-1">
-                      {activeMatchTitle} &bull; สกอร์ {activeScore} (@{activeOdds.toFixed(2)})
+                      {activeMatchTitle} &bull; {/^\d+-\d+$/.test(activeScore) ? `สกอร์ ${activeScore}` : activeScore} (@{activeOdds.toFixed(2)})
                     </h3>
                   </div>
                 </div>
@@ -475,7 +475,11 @@ export const PromoCodeModal: React.FC<PromoCodeModalProps> = ({
                       2
                     </span>
                     <div>
-                      <strong className="text-white">เลื่อนหาหมวด &ldquo;คะแนนที่ถูกต้อง (Correct Score)&rdquo;</strong>
+                      <strong className="text-white">
+                        {/^\d+-\d+$/.test(activeScore)
+                          ? 'เลื่อนหาหมวด “คะแนนที่ถูกต้อง (Correct Score)”'
+                          : 'เลื่อนหาหมวด “แฮนดิแคปเอเชีย (Asian Handicap)”'}
+                      </strong>
                     </div>
                   </div>
 
@@ -484,7 +488,12 @@ export const PromoCodeModal: React.FC<PromoCodeModalProps> = ({
                       3
                     </span>
                     <div>
-                      <strong className="text-white">กดเลือกสกอร์ {activeScore}</strong> (ค่าน้ำประมาณ @{activeOdds.toFixed(2)}) แล้วใส่จำนวนเงินวางเดิมพัน (50 บาท) ได้ทันที
+                      <strong className="text-white">
+                        {/^\d+-\d+$/.test(activeScore)
+                          ? `กดเลือกสกอร์ ${activeScore}`
+                          : `กดเลือกต่อ/รอง ${activeScore}`}
+                      </strong>{' '}
+                      (ค่าน้ำประมาณ @{activeOdds.toFixed(2)}) แล้วใส่จำนวนเงินวางเดิมพันได้ทันที
                     </div>
                   </div>
                 </div>
