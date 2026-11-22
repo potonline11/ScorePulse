@@ -192,6 +192,43 @@ export interface AsianHandicapPick {
   backupAlternative: string;
 }
 
+export interface AsianHandicapStep2Leg {
+  legNumber: 1 | 2;
+  matchId: string;
+  matchTitle: string;
+  homeName: string;
+  awayName: string;
+  league: string;
+  kickoffTime: string;
+  venue: string;
+  homeXg: number;
+  awayXg: number;
+  xgGap: number;
+  selection: string;       // e.g. "Santos -0.75"
+  teamSide: 'HOME' | 'AWAY';
+  line: number;            // .25 / .75 real 1xBet quarter line
+  buttonLabel: string;     // e.g. "1 (-0.75)"
+  safetyButtonLabel: string; // e.g. "1 (-0.25)"
+  odds: number;            // e.g. 1.84
+  impliedProbPct: number;  // e.g. 54.3
+  coverProbability: number; // e.g. 66.8
+  edgeOver1xBetPct: number; // e.g. 12.5
+  expectedValuePct: number; // e.g. 22.9
+  winRuleThai: string;
+  rationaleThai: string;
+}
+
+export interface AsianHandicapStep2Pick {
+  mode: 'AH_STEP_2';
+  legs: [AsianHandicapStep2Leg, AsianHandicapStep2Leg];
+  combinedOdds: number;        // e.g. 1.84 * 1.82 = 3.349
+  halfWinCombinedOdds: number; // 1 full win + 1 half win multiplier
+  combinedCoverProb: number;   // leg1Prob * leg2Prob
+  combinedExpectedValue: number;
+  step2RuleSummaryThai: string;
+  halfWinNoteThai: string;
+}
+
 export interface DailySuperPick {
   id: string;
   matchId: string;
@@ -237,6 +274,7 @@ export interface DailySuperPick {
   keyReasons: string[];
   bookingCode1xBet: string;
   asianHandicap?: AsianHandicapPick;
+  ahStep2?: AsianHandicapStep2Pick;
   blindSpotAudit?: BlindSpotAudit;
   tenSourceConsensus?: TenSourceConsensusAudit;
   slipNumber?: string;

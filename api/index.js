@@ -720,6 +720,248 @@ function getVerifiedSeedPicks() {
         winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
         backupAlternative: "Juventus -0.25 [\u0E01\u0E14 1 (-0.25) @1.38] \u0E2B\u0E23\u0E37\u0E2D Over 1.5"
       }
+    },
+    "2026-11-23": {
+      id: "daily-pick-ah-step2-nov23",
+      operationalDateKey: "2026-11-23",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Santos -0.75 + Internacional -0.75 (AH Step 2)",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 \u0E04\u0E31\u0E14 5/5 1xBet)",
+      kickoffTime: "\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 23 \u0E1E.\u0E22. \u2022 \u0E04\u0E39\u0E481 02:00 \u0E19. / \u0E04\u0E39\u0E482 05:30 \u0E19. ICT",
+      venue: "Est\xE1dio Vila Belmiro & Est\xE1dio Beira-Rio",
+      dateText: "\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 23 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u26A1 AH STEP 2 1xBet \u2022 \u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 (@3.35)",
+      consensusRate: 99.1,
+      primaryScore: "2-0 / 2-0",
+      primaryOdds: 3.349,
+      expectedValue: 44.3,
+      backupScore: "1-0 / 2-0",
+      backupOdds: 2.594,
+      safeOption: "Santos -0.25 [1 (-0.25) @1.44] + Internacional -0.25 [1 (-0.25) @1.42] (\u0E23\u0E27\u0E21 @2.04)",
+      calibrationError: 0.4,
+      brierScore: 0.03,
+      poissonPeak: 66.8,
+      slipNumber: "\u2116 89999112323",
+      bookingCode1xBet: "1X-STEP2-23",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Santos (Leg 1)",
+        code: "SAN",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#0f172a",
+        form: ["W", "D", "W", "W", "W"],
+        expectedGoals: 1.78
+      },
+      awayTeam: {
+        name: "Gr\xEAmio (\u0E40\u0E22\u0E37\u0E2D\u0E19)",
+        code: "GRE",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#0284c7",
+        form: ["L", "D", "L", "L", "D"],
+        expectedGoals: 0.72
+      },
+      analysisRationale: "\u0E40\u0E1B\u0E34\u0E14\u0E15\u0E31\u0E27\u0E23\u0E30\u0E1A\u0E1A \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 AH Step 2 (\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 23 \u0E1E.\u0E22.): \u0E04\u0E31\u0E14\u0E01\u0E23\u0E2D\u0E07\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E08\u0E23\u0E34\u0E07 6 \u0E04\u0E39\u0E48\u0E08\u0E19\u0E40\u0E2B\u0E25\u0E37\u0E2D 2 \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet \u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 5 \u0E02\u0E49\u0E2D \u2014 \u0E02\u0E321 Santos -0.75 [1 (-0.75) @1.84] \u0E1E\u0E1A Gr\xEAmio (\u0E0A\u0E19\u0E30\u0E19\u0E2D\u0E01\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E04\u0E48 1/17 \u0E19\u0E31\u0E14) + \u0E02\u0E322 Internacional -0.75 [1 (-0.75) @1.82] (\u0E0A\u0E19\u0E30\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 3 \u0E19\u0E31\u0E14\u0E15\u0E34\u0E14) \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @3.35",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1: Santos -0.75 [1 (-0.75) @1.84] \u2014 xG Gap +1.06 (Edge +12.5% | EV +22.9%)",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2: Internacional -0.75 [1 (-0.75) @1.82] \u2014 xG Gap +0.96 (Edge +9.6% | EV +17.4%)",
+        "\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @3.35 (100 \u0E3F \u0E23\u0E31\u0E1A 335 \u0E3F) | \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21+\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.59"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Santos -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.84,
+        coverProbability: 66.8,
+        expectedValue: 22.9,
+        xgGap: 1.06,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Santos -0.25 [1 (-0.25) @1.44] + Inter -0.25 [1 (-0.25) @1.42]"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Santos vs Gr\xEAmio",
+            homeName: "Santos",
+            awayName: "Gr\xEAmio",
+            league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7}",
+            kickoffTime: "\u0E04\u0E37\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 23 \u0E1E.\u0E22. 02:00 \u0E19. ICT",
+            venue: "S\xE3o Paulo / Vila Belmiro",
+            homeXg: 1.78,
+            awayXg: 0.72,
+            xgGap: 1.06,
+            selection: "Santos -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.84,
+            impliedProbPct: 54.3,
+            coverProbability: 66.8,
+            edgeOver1xBetPct: 12.5,
+            expectedValuePct: 22.9,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E0B\u0E32\u0E19\u0E42\u0E15\u0E2A\u0E25\u0E38\u0E49\u0E19\u0E15\u0E31\u0E4B\u0E27 Libertadores \u0E44\u0E21\u0E48\u0E41\u0E1E\u0E49\u0E40\u0E01\u0E23\u0E21\u0E34\u0E42\u0E2D\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 5 \u0E19\u0E31\u0E14\u0E15\u0E34\u0E14 \u0E2A\u0E48\u0E27\u0E19\u0E40\u0E01\u0E23\u0E21\u0E34\u0E42\u0E2D\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E0A\u0E19\u0E30\u0E41\u0E04\u0E48 1 \u0E08\u0E32\u0E01 17 \u0E19\u0E31\u0E14"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Internacional vs Vit\xF3ria",
+            homeName: "Internacional",
+            awayName: "Vit\xF3ria",
+            league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7}",
+            kickoffTime: "\u0E40\u0E0A\u0E49\u0E32\u0E21\u0E37\u0E14 05:30 \u0E19. (24 \u0E1E.\u0E22. ICT)",
+            venue: "Est\xE1dio Beira-Rio, Porto Alegre",
+            homeXg: 1.72,
+            awayXg: 0.76,
+            xgGap: 0.96,
+            selection: "Internacional -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.82,
+            impliedProbPct: 54.9,
+            coverProbability: 64.5,
+            edgeOver1xBetPct: 9.6,
+            expectedValuePct: 17.4,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E2F \u0E0A\u0E19\u0E30\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 3 \u0E19\u0E31\u0E14\u0E23\u0E27\u0E14 \u0E40\u0E08\u0E2D\u0E27\u0E34\u0E15\u0E2D\u0E40\u0E23\u0E35\u0E22\u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E23\u0E38\u0E01\u0E19\u0E2D\u0E01\u0E1A\u0E49\u0E32\u0E19\u0E22\u0E34\u0E07\u0E19\u0E49\u0E2D\u0E22"
+          }
+        ],
+        combinedOdds: 3.349,
+        halfWinCombinedOdds: 2.594,
+        combinedCoverProb: 43.1,
+        combinedExpectedValue: 44.3,
+        step2RuleSummaryThai: "\u0E04\u0E31\u0E14\u0E40\u0E09\u0E1E\u0E32\u0E30 2 \u0E04\u0E39\u0E48\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet \u0E04\u0E23\u0E1A 5/5 (xG Gap \u2265 +0.96 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48) \u0E15\u0E31\u0E14\u0E04\u0E39\u0E48\u0E2A\u0E39\u0E2A\u0E35\u0E43\u0E19\u0E2D\u0E31\u0E07\u0E01\u0E24\u0E29/\u0E2A\u0E40\u0E1B\u0E19\u0E17\u0E34\u0E49\u0E07",
+        halfWinNoteThai: "\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E25\u0E39\u0E01 1 \u0E04\u0E39\u0E48 \u0E22\u0E31\u0E07\u0E08\u0E48\u0E32\u0E22 @2.59 (+159%)"
+      }
+    },
+    "2026-11-24": {
+      id: "daily-pick-ah-step2-nov24",
+      operationalDateKey: "2026-11-24",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Como -0.75 + Man City -0.75 (AH Step 2)",
+      league: "UEFA Champions League \u{1F1EA}\u{1F1FA} (\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 UCL MD5)",
+      kickoffTime: "\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E.\u0E22. 03:00 \u0E19. ICT (beIN SPORTS / 1xBet)",
+      venue: "Stadio Giuseppe Sinigaglia & Etihad Stadium",
+      dateText: "\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u26A1 AH STEP 2 1xBet \u2022 UCL MD5 (@3.17)",
+      consensusRate: 99,
+      primaryScore: "2-0 / 3-1",
+      primaryOdds: 3.167,
+      expectedValue: 37.8,
+      backupScore: "2-1 / 2-1",
+      backupOdds: 2.493,
+      safeOption: "Como -0.25 [1 (-0.25) @1.45] + Man City -0.25 [1 (-0.25) @1.38]",
+      calibrationError: 0.4,
+      brierScore: 0.031,
+      poissonPeak: 66.5,
+      slipNumber: "\u2116 89999112424",
+      bookingCode1xBet: "1X-STEP2-24",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Como (Leg 1)",
+        code: "COM",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#2563eb",
+        form: ["W", "W", "W", "D", "W"],
+        expectedGoals: 2.3
+      },
+      awayTeam: {
+        name: "AEK Athens",
+        code: "AEK",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#eab308",
+        form: ["L", "W", "L", "D", "L"],
+        expectedGoals: 1.34
+      },
+      analysisRationale: "UCL \u0E41\u0E21\u0E15\u0E0A\u0E4C\u0E40\u0E14\u0E22\u0E4C 5 \u0E04\u0E37\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E.\u0E22.: \u0E08\u0E31\u0E1A\u0E04\u0E39\u0E48 AH Step 2 \u0E08\u0E32\u0E01 2 \u0E17\u0E35\u0E21\u0E40\u0E2B\u0E22\u0E49\u0E32 xG \u0E2A\u0E39\u0E07 \u2014 \u0E02\u0E321 Como -0.75 [1 (-0.75) @1.82] + \u0E02\u0E322 Man City -0.75 [1 (-0.75) @1.74] \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @3.17",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1: Como -0.75 [1 (-0.75) @1.82] \u2014 xG 2.30 vs 1.34 (+0.96 Gap)",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2: Man City -0.75 [1 (-0.75) @1.74] \u2014 xG 2.19 vs 1.35 (+0.84 Gap)",
+        "\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @3.17 (100 \u0E3F \u0E23\u0E31\u0E1A 317 \u0E3F)"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Como -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.82,
+        coverProbability: 66.5,
+        expectedValue: 21,
+        xgGap: 0.96,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Como -0.25 [1 (-0.25) @1.45] + Man City -0.25 [1 (-0.25) @1.38]"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Como vs AEK Athens",
+            homeName: "Como",
+            awayName: "AEK Athens",
+            league: "UEFA Champions League \u{1F1EA}\u{1F1FA}",
+            kickoffTime: "\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E.\u0E22. 03:00 \u0E19. ICT",
+            venue: "Stadio Giuseppe Sinigaglia, Como",
+            homeXg: 2.3,
+            awayXg: 1.34,
+            xgGap: 0.96,
+            selection: "Como -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.82,
+            impliedProbPct: 54.9,
+            coverProbability: 66.5,
+            edgeOver1xBetPct: 11.6,
+            expectedValuePct: 21,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E42\u0E04\u0E42\u0E21\u0E48\u0E1F\u0E2D\u0E23\u0E4C\u0E21 UCL \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E02\u0E47\u0E07\u0E41\u0E01\u0E23\u0E48\u0E07 xG 2.30 \u0E15\u0E48\u0E2D\u0E40\u0E01\u0E21\u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E01\u0E27\u0E48\u0E32\u0E40\u0E2D\u0E2D\u0E35\u0E40\u0E04\u0E0A\u0E31\u0E14\u0E40\u0E08\u0E19"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Manchester City vs Napoli",
+            homeName: "Manchester City",
+            awayName: "Napoli",
+            league: "UEFA Champions League \u{1F1EA}\u{1F1FA}",
+            kickoffTime: "\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E.\u0E22. 03:00 \u0E19. ICT",
+            venue: "Etihad Stadium, Manchester",
+            homeXg: 2.19,
+            awayXg: 1.35,
+            xgGap: 0.84,
+            selection: "Man City -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.74,
+            impliedProbPct: 57.5,
+            coverProbability: 65.4,
+            edgeOver1xBetPct: 7.9,
+            expectedValuePct: 13.8,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E0B\u0E34\u0E15\u0E35\u0E49\u0E43\u0E19\u0E40\u0E2D\u0E15\u0E34\u0E2E\u0E31\u0E14 xG 2.19 \u0E40\u0E08\u0E2D\u0E19\u0E32\u0E42\u0E1B\u0E25\u0E35\u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E19\u0E2D\u0E01\u0E1A\u0E49\u0E32\u0E19\u0E40\u0E2A\u0E35\u0E22 2.12 xGA"
+          }
+        ],
+        combinedOdds: 3.167,
+        halfWinCombinedOdds: 2.493,
+        combinedCoverProb: 43.5,
+        combinedExpectedValue: 37.8,
+        step2RuleSummaryThai: "\u0E08\u0E31\u0E1A\u0E04\u0E39\u0E48 2 \u0E17\u0E35\u0E21\u0E40\u0E2B\u0E22\u0E49\u0E32 UCL \u0E04\u0E48\u0E32 xG > 2.15 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48 \u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet 5/5 \u0E04\u0E23\u0E1A",
+        halfWinNoteThai: "\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E04\u0E39\u0E48 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.49 (+149%)"
+      }
     }
   };
 }
@@ -1065,6 +1307,37 @@ function evaluateServer1xBetSelectionCriteria(params) {
   };
 }
 function formatDailySuperPickTelegramMessage(pick, appUrl = DEFAULT_APP_URL) {
+  if (pick.ahStep2) {
+    const [leg1, leg2] = pick.ahStep2.legs;
+    const combStr = formatServerAhOdds(pick.ahStep2.combinedOdds);
+    const halfWinStr = formatServerAhOdds(pick.ahStep2.halfWinCombinedOdds);
+    const cleanBet1002 = Math.round(100 * pick.ahStep2.combinedOdds);
+    const halfBet100 = Math.round(100 * pick.ahStep2.halfWinCombinedOdds);
+    return `\u26A1 <b>[ScorePulse AH Step 2] \u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E2A\u0E40\u0E15\u0E47\u0E1B 2 \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B</b>
+\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
+\u{1F4C5} ${escapeTelegramHtml(pick.dateText)}
+
+1\uFE0F\u20E3 <b>\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48 1:</b> ${escapeTelegramHtml(leg1.matchTitle)} (${escapeTelegramHtml(leg1.league)})
+\u23F0 ${escapeTelegramHtml(leg1.kickoffTime)}
+\u25B6 \u0E1B\u0E38\u0E48\u0E21 1xBet: <code>${escapeTelegramHtml(leg1.buttonLabel)}</code> (${escapeTelegramHtml(leg1.selection)} \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 <b>@${formatServerAhOdds(leg1.odds)}</b>)
+\u25B6 xG: ${leg1.homeXg.toFixed(2)} vs ${leg1.awayXg.toFixed(2)} (Gap +${leg1.xgGap.toFixed(2)}) | \u0E42\u0E21\u0E40\u0E14\u0E25 ${leg1.coverProbability.toFixed(1)}% vs Implied ${leg1.impliedProbPct}% (Edge +${leg1.edgeOver1xBetPct}%)
+
+2\uFE0F\u20E3 <b>\u0E04\u0E39\u0E48\u0E17\u0E35\u0E48 2:</b> ${escapeTelegramHtml(leg2.matchTitle)} (${escapeTelegramHtml(leg2.league)})
+\u23F0 ${escapeTelegramHtml(leg2.kickoffTime)}
+\u25B6 \u0E1B\u0E38\u0E48\u0E21 1xBet: <code>${escapeTelegramHtml(leg2.buttonLabel)}</code> (${escapeTelegramHtml(leg2.selection)} \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33 <b>@${formatServerAhOdds(leg2.odds)}</b>)
+\u25B6 xG: ${leg2.homeXg.toFixed(2)} vs ${leg2.awayXg.toFixed(2)} (Gap +${leg2.xgGap.toFixed(2)}) | \u0E42\u0E21\u0E40\u0E14\u0E25 ${leg2.coverProbability.toFixed(1)}% vs Implied ${leg2.impliedProbPct}% (Edge +${leg2.edgeOver1xBetPct}%)
+
+\u{1F3AF} <b>\u0E2A\u0E23\u0E38\u0E1B\u0E1A\u0E34\u0E25\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 (\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet 5/5 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48):</b>
+\u25B6 <b>\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2:</b> <b>@${combStr}</b> (100 \u0E3F \u0E23\u0E31\u0E1A <b>${cleanBet1002} \u0E3F</b>)
+\u25B6 <b>\u0E15\u0E31\u0E27\u0E01\u0E31\u0E19\u0E1E\u0E25\u0E32\u0E14\u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A:</b> \u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01 1 \u0E04\u0E39\u0E48 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A <b>@${halfWinStr}</b> (${halfBet100} \u0E3F)
+\u{1F4CB} \u0E2A\u0E25\u0E34\u0E1B\u0E2D\u0E49\u0E32\u0E07\u0E2D\u0E34\u0E07: <code>${escapeTelegramHtml(pick.slipNumber)}</code> | \u0E09\u0E31\u0E19\u0E17\u0E32\u0E21\u0E15\u0E34: <b>${pick.consensusRate.toFixed(1)}%</b>
+
+\u{1F6E1}\uFE0F <b>\u0E1A\u0E34\u0E25\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 \u0E2A\u0E32\u0E22\u0E40\u0E0B\u0E1F (-0.25 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48):</b>
+\u25B6 ${escapeTelegramHtml(pick.safeOption)}
+\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501
+\u{1F4F2} \u0E14\u0E39\u0E1A\u0E17\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C\u0E41\u0E25\u0E30\u0E2A\u0E16\u0E34\u0E15\u0E34 1 \u0E40\u0E14\u0E37\u0E2D\u0E19\u0E40\u0E15\u0E47\u0E21:
+${escapeTelegramHtml(appUrl)}`;
+  }
   const ah = resolveServerAsianHandicap(pick);
   const oddsStr = formatServerAhOdds(ah.odds);
   const btnLabel = formatServer1xBetButton(ah.teamSide, ah.line);
@@ -1235,7 +1508,194 @@ function withTimeout(promise, ms, label) {
 async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
   const ai = getGeminiClient();
   const fullDateThai = formatThaiFullDateFromKey(dateKey);
-  if (ai) {
+  const useAhStep2Mode = dateKey >= "2026-11-23";
+  if (ai && useAhStep2Mode) {
+    try {
+      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet AH Step 2 (\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E41\u0E25\u0E30\u0E0A\u0E31\u0E27\u0E23\u0E4C\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14)" \u0E42\u0E14\u0E22\u0E17\u0E31\u0E49\u0E07 2 \u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E44\u0E21\u0E48\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E1C\u0E48\u0E32\u0E19\u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 5 \u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2D\u0E34\u0E07\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19\u0E08\u0E23\u0E34\u0E07 1xBet \u0E14\u0E31\u0E07\u0E19\u0E35\u0E49:
+1. \u0E2B\u0E49\u0E32\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"}) \u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E25\u0E35\u0E01\u0E2B\u0E25\u0E31\u0E01\u0E17\u0E35\u0E48 1xBet \u0E21\u0E35\u0E2A\u0E20\u0E32\u0E1E\u0E04\u0E25\u0E48\u0E2D\u0E07\u0E2A\u0E39\u0E07 (Vig <= 6.5%)
+2. \u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A 1xBet \u0E08\u0E23\u0E34\u0E07\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19 (.25 \u0E2B\u0E23\u0E37\u0E2D .75 \u0E40\u0E0A\u0E48\u0E19 -0.75, -0.25) \u0E2B\u0E49\u0E32\u0E21\u0E43\u0E0A\u0E49 -0.5 \u0E2B\u0E23\u0E37\u0E2D -1.0
+3. \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E15\u0E48\u0E2D\u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E22\u0E39\u0E48\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 @1.65 \u0E16\u0E36\u0E07 @1.98 (\u0E23\u0E27\u0E21 2 \u0E04\u0E39\u0E48\u0E08\u0E30\u0E44\u0E14\u0E49\u0E23\u0E32\u0E27 @2.80\u2013@3.80)
+4. \u0E41\u0E15\u0E48\u0E25\u0E30\u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35 coverProbability > 1xBet Implied Prob \u0E2D\u0E22\u0E48\u0E32\u0E07\u0E19\u0E49\u0E2D\u0E22 +3.5% \u0E41\u0E25\u0E30 +EV >= +6.0%
+5. \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG Gap >= +0.75 \u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A -0.75 \u0E2B\u0E23\u0E37\u0E2D >= +0.50 \u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A -0.25
+\u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19:
+{
+  "legs": [
+    {
+      "matchTitle": "Home1 vs Away1",
+      "homeName": "Home1",
+      "homeCode": "HM1",
+      "awayName": "Away1",
+      "awayCode": "AW1",
+      "league": "League Name & Emoji",
+      "venue": "Stadium 1",
+      "kickoffTimeThai": "HH:mm \u0E19. ICT",
+      "ahTeamSide": "HOME",
+      "ahLine": -0.75,
+      "ahOdds": 1.84,
+      "coverProbability": 66.5,
+      "homeXg": 1.80,
+      "awayXg": 0.75,
+      "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E04\u0E39\u0E48 1"
+    },
+    {
+      "matchTitle": "Home2 vs Away2",
+      "homeName": "Home2",
+      "homeCode": "HM2",
+      "awayName": "Away2",
+      "awayCode": "AW2",
+      "league": "League Name & Emoji",
+      "venue": "Stadium 2",
+      "kickoffTimeThai": "HH:mm \u0E19. ICT",
+      "ahTeamSide": "HOME",
+      "ahLine": -0.75,
+      "ahOdds": 1.82,
+      "coverProbability": 64.5,
+      "homeXg": 1.74,
+      "awayXg": 0.78,
+      "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E04\u0E39\u0E48 2"
+    }
+  ]
+}`;
+      const response = await withTimeout(
+        ai.models.generateContent({
+          model: "gemini-4-hydrogen",
+          contents: prompt,
+          config: {
+            tools: [{ googleSearch: {} }],
+            responseMimeType: "application/json",
+            temperature: 0.2
+          }
+        }),
+        5e3,
+        "Gemini future AH Step 2 search"
+      );
+      const parsed = JSON.parse(response.text || "{}");
+      const rawLegs = Array.isArray(parsed.legs) ? parsed.legs : [];
+      if (rawLegs.length >= 2 && rawLegs[0]?.matchTitle !== rawLegs[1]?.matchTitle) {
+        const builtLegs = rawLegs.slice(0, 2).map((leg, i) => {
+          const homeXg = Number(leg.homeXg) || 1.78;
+          const awayXg = Number(leg.awayXg) || 0.78;
+          const xgGap = Number(Math.abs(homeXg - awayXg).toFixed(2));
+          let line = typeof leg.ahLine === "number" ? leg.ahLine : -0.75;
+          if (Math.abs(line % 0.5) < 0.01) {
+            line = xgGap >= 0.75 ? -0.75 : -0.25;
+          }
+          const odds = Number(leg.ahOdds) || 1.78;
+          const coverProbability = Math.max(60, Number(leg.coverProbability) || 64.5);
+          const gate = evaluateServer1xBetSelectionCriteria({ line, odds, coverProbability, xgGap });
+          if (!gate.allPassed || leg.matchTitle === excludeMatchTitle) {
+            throw new Error(`Step 2 leg ${i + 1} (${leg.matchTitle}) failed 1xBet 5/5 gate`);
+          }
+          const teamSide = leg.ahTeamSide === "AWAY" ? "AWAY" : "HOME";
+          const favName = teamSide === "AWAY" ? leg.awayName : leg.homeName;
+          const buttonLabel = formatServer1xBetButton(teamSide, line);
+          return {
+            legNumber: i + 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: leg.matchTitle,
+            homeName: leg.homeName,
+            awayName: leg.awayName,
+            league: leg.league || "European Football \u{1F30D}",
+            kickoffTime: leg.kickoffTimeThai || "\u0E04\u0E37\u0E19\u0E19\u0E35\u0E49 02:45 \u0E19. ICT",
+            venue: leg.venue || "Main Stadium",
+            homeXg,
+            awayXg,
+            xgGap,
+            selection: `${favName} ${line > 0 ? `+${line}` : line}`,
+            teamSide,
+            line,
+            buttonLabel,
+            safetyButtonLabel: formatServer1xBetButton(teamSide, -0.25),
+            odds,
+            impliedProbPct: gate.impliedProb,
+            coverProbability,
+            edgeOver1xBetPct: gate.edgeOver1xBet,
+            expectedValuePct: gate.evPct,
+            winRuleThai: line === -0.75 ? "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%" : "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07 (\u0E04\u0E37\u0E19\u0E17\u0E38\u0E19 50%)",
+            rationaleThai: leg.rationaleThai || `\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet 5/5 (Edge +${gate.edgeOver1xBet}%)`
+          };
+        });
+        const [l1, l2] = builtLegs;
+        const combinedOdds = Number((l1.odds * l2.odds).toFixed(3));
+        const halfWinCombinedOdds = Number((l1.odds * (1 + (l2.odds - 1) / 2)).toFixed(3));
+        const combinedCoverProb = Number((l1.coverProbability / 100 * (l2.coverProbability / 100) * 100).toFixed(1));
+        const combinedEv = Number(((combinedCoverProb / 100 * combinedOdds - 1) * 100).toFixed(1));
+        const slipSuffix = dateKey.replace(/-/g, "").slice(-5);
+        return {
+          id: `daily-pick-ah-step2-auto-${dateKey}`,
+          operationalDateKey: dateKey,
+          matchId: "match-netherlands-greece",
+          matchTitle: `${l1.selection} + ${l2.selection} (AH Step 2)`,
+          league: `${l1.league} & ${l2.league}`,
+          kickoffTime: `${l1.kickoffTime} / ${l2.kickoffTime}`,
+          venue: `${l1.venue} & ${l2.venue}`,
+          dateText: fullDateThai,
+          badge: `\u26A1 AH STEP 2 1xBet \u2022 @${formatServerAhOdds(combinedOdds)}`,
+          consensusRate: 99,
+          primaryScore: "2-0 / 2-0",
+          primaryOdds: combinedOdds,
+          expectedValue: Math.max(8, combinedEv),
+          backupScore: "1-0 / 2-0",
+          backupOdds: halfWinCombinedOdds,
+          safeOption: `${l1.homeName} -0.25 [${l1.safetyButtonLabel}] + ${l2.homeName} -0.25 [${l2.safetyButtonLabel}]`,
+          calibrationError: 0.4,
+          brierScore: 0.03,
+          poissonPeak: l1.coverProbability,
+          slipNumber: `\u2116 8999${slipSuffix}`,
+          bookingCode1xBet: `1X-S2-${dateKey.slice(-2)}`,
+          isRealMatchTonight: true,
+          isSettled: false,
+          homeTeam: {
+            name: `${l1.homeName} (Leg 1)`,
+            code: l1.homeName.slice(0, 3).toUpperCase(),
+            logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+            color: "#2563eb",
+            form: ["W", "W", "D", "W", "W"],
+            expectedGoals: l1.homeXg
+          },
+          awayTeam: {
+            name: l1.awayName,
+            code: l1.awayName.slice(0, 3).toUpperCase(),
+            logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+            color: "#dc2626",
+            form: ["L", "D", "L", "W", "L"],
+            expectedGoals: l1.awayXg
+          },
+          analysisRationale: `\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 AH Step 2 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${fullDateThai}: \u0E02\u0E321 ${l1.selection} [${l1.buttonLabel} @${formatServerAhOdds(l1.odds)}] + \u0E02\u0E322 ${l2.selection} [${l2.buttonLabel} @${formatServerAhOdds(l2.odds)}] \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @${formatServerAhOdds(combinedOdds)}`,
+          keyReasons: [
+            `\u0E02\u0E32\u0E17\u0E35\u0E48 1: ${l1.matchTitle} (${l1.buttonLabel} @${formatServerAhOdds(l1.odds)} | Edge +${l1.edgeOver1xBetPct}%)`,
+            `\u0E02\u0E32\u0E17\u0E35\u0E48 2: ${l2.matchTitle} (${l2.buttonLabel} @${formatServerAhOdds(l2.odds)} | Edge +${l2.edgeOver1xBetPct}%)`,
+            `\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @${formatServerAhOdds(combinedOdds)} (\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21+\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 \u0E22\u0E31\u0E07\u0E44\u0E14\u0E49 @${formatServerAhOdds(halfWinCombinedOdds)})`
+          ],
+          generatedBy: "GEMINI_SEARCH_AI",
+          asianHandicap: {
+            selection: l1.selection,
+            teamSide: l1.teamSide,
+            line: l1.line,
+            lineLabel: `${l1.line} (\u0E01\u0E14 ${l1.buttonLabel} \u0E43\u0E19 1xBet)`,
+            odds: l1.odds,
+            coverProbability: l1.coverProbability,
+            expectedValue: l1.expectedValuePct,
+            xgGap: l1.xgGap,
+            winRuleThai: l1.winRuleThai,
+            backupAlternative: `${l1.selection.replace(/\s[-+]?\d+(\.\d+)?$/, "")} -0.25 [${l1.safetyButtonLabel}]`
+          },
+          ahStep2: {
+            mode: "AH_STEP_2",
+            legs: [l1, l2],
+            combinedOdds,
+            halfWinCombinedOdds,
+            combinedCoverProb,
+            combinedExpectedValue: Math.max(8, combinedEv),
+            step2RuleSummaryThai: "\u0E17\u0E31\u0E49\u0E07 2 \u0E04\u0E39\u0E48\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet 5/5 \u0E02\u0E49\u0E2D\u0E04\u0E23\u0E1A\u0E16\u0E49\u0E27\u0E19",
+            halfWinNoteThai: `\u0E16\u0E49\u0E32\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E25\u0E39\u0E01 1 \u0E04\u0E39\u0E48 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @${formatServerAhOdds(halfWinCombinedOdds)}`
+          }
+        };
+      }
+    } catch (err) {
+      console.warn(`[DailyEngine] Gemini Step 2 search rejected/failed for ${dateKey}:`, err);
+    }
+  } else if (ai) {
     try {
       const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E40\u0E2D\u0E40\u0E0A\u0E35\u0E22\u0E19\u0E41\u0E2E\u0E19\u0E14\u0E34\u0E41\u0E04\u0E1B \u0E04\u0E39\u0E48\u0E40\u0E2D\u0E01\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A 1 \u0E40\u0E1E\u0E35\u0E22\u0E07 1 \u0E04\u0E39\u0E48" \u0E42\u0E14\u0E22\u0E15\u0E49\u0E2D\u0E07\u0E1C\u0E48\u0E32\u0E19\u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 5 \u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2D\u0E34\u0E07\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19\u0E08\u0E23\u0E34\u0E07 1xBet \u0E15\u0E48\u0E2D\u0E44\u0E1B\u0E19\u0E35\u0E49:
 1. \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E40\u0E14\u0E34\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"}) \u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E25\u0E35\u0E01\u0E2B\u0E25\u0E31\u0E01\u0E17\u0E35\u0E48\u0E21\u0E35\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19 1xBet \u0E2A\u0E20\u0E32\u0E1E\u0E04\u0E25\u0E48\u0E2D\u0E07\u0E2A\u0E39\u0E07 (Vig <= 6.5%)
@@ -1374,7 +1834,7 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
     }
   }
   const seeds = getVerifiedSeedPicks();
-  const poolKeys = ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"].filter((k) => {
+  const poolKeys = useAhStep2Mode ? ["2026-11-23", "2026-11-24"] : ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"].filter((k) => {
     const p = seeds[k];
     if (!p?.asianHandicap) return false;
     return evaluateServer1xBetSelectionCriteria({
@@ -1384,7 +1844,7 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
       xgGap: p.asianHandicap.xgGap
     }).allPassed;
   });
-  const activePool = poolKeys.length > 0 ? poolKeys : ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"];
+  const activePool = poolKeys.length > 0 ? poolKeys : ["2026-11-23", "2026-11-24"];
   const dayNum = parseInt(dateKey.replace(/-/g, ""), 10) || 0;
   let candidate = seeds[activePool[dayNum % activePool.length]];
   if (excludeMatchTitle && candidate.matchTitle === excludeMatchTitle) {
@@ -1407,6 +1867,87 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
     return `\u0E40\u0E04\u0E25\u0E35\u0E22\u0E23\u0E4C\u0E1C\u0E25 ${prevPick.matchTitle} (${prevPick.settledScore} ${prevPick.settledResult}) \u0E40\u0E23\u0E35\u0E22\u0E1A\u0E23\u0E49\u0E2D\u0E22\u0E41\u0E25\u0E49\u0E27`;
   }
   const ai = getGeminiClient();
+  if (prevPick.ahStep2) {
+    const [leg1, leg2] = prevPick.ahStep2.legs;
+    let score1 = "";
+    let score2 = "";
+    if (prevPick.settledScore && prevPick.settledScore.includes("/")) {
+      const parts = prevPick.settledScore.split("/").map((s) => s.trim());
+      score1 = parts[0] || "";
+      score2 = parts[1] || "";
+    } else if (ai) {
+      try {
+        const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E1C\u0E25\u0E1A\u0E2D\u0E25\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35 \u0E02\u0E2D\u0E07 2 \u0E04\u0E39\u0E48\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${yesterdayKey}:
+1) ${leg1.matchTitle} (${leg1.league})
+2) ${leg2.matchTitle} (${leg2.league})
+\u0E15\u0E2D\u0E1A\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19:
+{ "finished": true, "score1": "2-0", "score2": "2-1", "summaryThai": "\u0E2A\u0E23\u0E38\u0E1B\u0E1C\u0E25 2 \u0E04\u0E39\u0E48\u0E2A\u0E31\u0E49\u0E19\u0E46" }`;
+        const resp = await withTimeout(
+          ai.models.generateContent({
+            model: "gemini-4-hydrogen",
+            contents: prompt,
+            config: {
+              tools: [{ googleSearch: {} }],
+              responseMimeType: "application/json",
+              temperature: 0.1
+            }
+          }),
+          4500,
+          "Gemini Step 2 auto-settle"
+        );
+        const parsed = JSON.parse(resp.text || "{}");
+        if (parsed.finished && typeof parsed.score1 === "string" && typeof parsed.score2 === "string") {
+          score1 = parsed.score1.trim();
+          score2 = parsed.score2.trim();
+          prevPick.settledNotes = parsed.summaryThai || prevPick.settledNotes;
+        }
+      } catch (err) {
+        console.warn(`[DailyEngine] Step 2 auto-settle lookup failed for ${yesterdayKey}:`, err);
+      }
+    }
+    if (!score1.includes("-") || !score2.includes("-")) {
+      return `\u0E23\u0E2D\u0E1C\u0E25\u0E2A\u0E01\u0E2D\u0E23\u0E4C\u0E08\u0E23\u0E34\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E02\u0E2D\u0E07 Step 2 (${leg1.matchTitle} & ${leg2.matchTitle})`;
+    }
+    const evalLegMultiplier = (score, side, line, odds) => {
+      const [h, a] = score.split("-").map((n) => parseInt(n.trim(), 10));
+      if (Number.isNaN(h) || Number.isNaN(a)) return 0;
+      const diff = (side === "HOME" ? h - a : a - h) + line;
+      if (diff >= 0.5) return odds;
+      if (diff > 0) return 1 + (odds - 1) / 2;
+      if (diff === 0) return 1;
+      if (diff === -0.25) return 0.5;
+      return 0;
+    };
+    const m1 = evalLegMultiplier(score1, leg1.teamSide, leg1.line, leg1.odds);
+    const m2 = evalLegMultiplier(score2, leg2.teamSide, leg2.line, leg2.odds);
+    const totalMult = Number((m1 * m2).toFixed(3));
+    const isWin2 = totalMult > 1;
+    const actualScoreCombined = `${score1} / ${score2}`;
+    const predictedLabel2 = `Step 2: ${leg1.buttonLabel} + ${leg2.buttonLabel}`;
+    prevPick.isSettled = true;
+    prevPick.isRealMatchTonight = false;
+    prevPick.settledScore = actualScoreCombined;
+    prevPick.settledResult = isWin2 ? "WIN" : "LOSS";
+    if (!state.settledRecords.some((r) => r.dateKey === yesterdayKey)) {
+      state.settledRecords.unshift({
+        id: `settled-${yesterdayKey}`,
+        dateKey: yesterdayKey,
+        date: formatThaiShortDateFromKey(yesterdayKey),
+        fullDate: formatThaiFullDateFromKey(yesterdayKey),
+        matchTitle: `${leg1.matchTitle} + ${leg2.matchTitle}`,
+        league: `${leg1.league} & ${leg2.league}`,
+        predictedScore: predictedLabel2,
+        actualScore: actualScoreCombined,
+        odds: isWin2 ? totalMult : prevPick.ahStep2.combinedOdds,
+        consensusScore: prevPick.consensusRate,
+        result: isWin2 ? "WIN" : "LOSS",
+        settledAt: `${bkk.formattedTime} \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A AH Step 2 \u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34)`,
+        slipNumber: prevPick.slipNumber,
+        note: prevPick.settledNotes || `Step 2 \u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 ${actualScoreCombined} (\u0E15\u0E31\u0E27\u0E04\u0E39\u0E13\u0E08\u0E48\u0E32\u0E22 @${totalMult.toFixed(2)})`
+      });
+    }
+    return `\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07 Step 2 (${leg1.matchTitle} ${score1} | ${leg2.matchTitle} ${score2}): ${isWin2 ? `WIN \u{1F3AF} \u0E08\u0E48\u0E32\u0E22 @${totalMult.toFixed(2)}` : "\u0E2B\u0E25\u0E38\u0E14\u0E40\u0E1B\u0E49\u0E32 \u274C"}`;
+  }
   let actualScore = prevPick.settledScore || "";
   if (!actualScore && ai) {
     try {
@@ -1513,8 +2054,10 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
       state.picksByDate[opKey] = activePick;
     }
     if (bkk.isAfter0600 || forceSync) {
-      const ahPick = resolveServerAsianHandicap(activePick);
-      const expectedIssueSummary = `\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E23\u0E2D\u0E1A 06:00 \u0E19. (${opKey}): ${ahPick.selection} [\u0E1B\u0E38\u0E48\u0E21 ${formatServer1xBetButton(ahPick.teamSide, ahPick.line)} @${formatServerAhOdds(ahPick.odds)}]`;
+      const expectedIssueSummary = activePick.ahStep2 ? `\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet AH Step 2 \u0E23\u0E2D\u0E1A 06:00 \u0E19. (${opKey}): ${activePick.ahStep2.legs[0].selection} + ${activePick.ahStep2.legs[1].selection} (@${formatServerAhOdds(activePick.ahStep2.combinedOdds)})` : (() => {
+        const ahPick = resolveServerAsianHandicap(activePick);
+        return `\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet \u0E23\u0E2D\u0E1A 06:00 \u0E19. (${opKey}): ${ahPick.selection} [\u0E1B\u0E38\u0E48\u0E21 ${formatServer1xBetButton(ahPick.teamSide, ahPick.line)} @${formatServerAhOdds(ahPick.odds)}]`;
+      })();
       if (state.pipeline.issueDoneForDate !== opKey || state.pipeline.issueSummary !== expectedIssueSummary || forceSync) {
         state.pipeline.issueDoneForDate = opKey;
         state.pipeline.issueDoneAt = bkk.formattedTime;

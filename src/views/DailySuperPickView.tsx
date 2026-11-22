@@ -19,6 +19,8 @@ import {
   SUPER_PICK_FRIDAY_20,
   SUPER_PICK_SATURDAY_21,
   SUPER_PICK_SUNDAY_22,
+  SUPER_PICK_MONDAY_23,
+  SUPER_PICK_TUESDAY_24,
   SUPER_PICK_MONDAY_16,
   SUPER_PICK_SUNDAY_15,
   SUPER_PICK_SATURDAY_14,
@@ -68,8 +70,10 @@ import {
   formatOneXBetAhButton,
   formatAhOdds,
   DAILY_SCREENING_CANDIDATES_NOV19,
+  DAILY_SCREENING_CANDIDATES_NOV23,
   evaluateOneXBetCriteria,
   screenMatchesBy1xBetCriteria,
+  rollStep2PairFromMatches,
   VASCO_1XBET_BOARD_NOV19,
   OneXBetPoolPick,
 } from '../utils/asianHandicap';
@@ -187,6 +191,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   const [isBlindSpotExpanded, setIsBlindSpotExpanded] = useState<boolean>(true);
   const [isForceSyncing, setIsForceSyncing] = useState<boolean>(false);
   const [rolledPoolPick, setRolledPoolPick] = useState<OneXBetPoolPick | null>(null);
+  const [rolledStep2Pair, setRolledStep2Pair] = useState<ReturnType<typeof rollStep2PairFromMatches>>(null);
   const [lastSyncTime, setLastSyncTime] = useState<string>(() => {
     return getBangkokTime().formattedTime;
   });
@@ -442,6 +447,40 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
   const handleQuickAddPrimaryToSlip = () => {
     soundManager.playTap();
+    if (pick.ahStep2) {
+      pick.ahStep2.legs.forEach((leg) => {
+        const legMatch: Match = {
+          ...matchObj,
+          id: `${pick.id}-leg-${leg.legNumber}`,
+          league: leg.league,
+          homeTeam: {
+            ...matchObj.homeTeam,
+            name: leg.homeName,
+          },
+          awayTeam: {
+            ...matchObj.awayTeam,
+            name: leg.awayName,
+          },
+        };
+        const legPred: CorrectScorePrediction = {
+          score: `${leg.selection} [${leg.buttonLabel}]`,
+          homeGoals: 0,
+          awayGoals: 0,
+          rawProbability: leg.coverProbability,
+          calibratedProbability: leg.coverProbability,
+          odds1xBet: leg.odds,
+          expectedValue: leg.expectedValuePct,
+          isValueBet: true,
+          rank: leg.legNumber,
+        };
+        onAddToBetSlip(legMatch, legPred);
+      });
+      showToast(
+        `⚡ เพิ่มบิล AH Step 2 (2 คู่ @${formatAhOdds(pick.ahStep2.combinedOdds)}): ${pick.ahStep2.legs[0].buttonLabel} + ${pick.ahStep2.legs[1].buttonLabel} ลงสลิป 1xBet แล้ว`
+      );
+      return;
+    }
+
     const ahBtn = formatOneXBetAhButton(ahPick.teamSide, ahPick.line);
     const ahPred: CorrectScorePrediction = {
       score: `${ahPick.selection} [${ahBtn}]`,
@@ -471,7 +510,43 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
         : candidates;
     const chosen = filtered[Math.floor(Math.random() * filtered.length)];
     setRolledPoolPick(chosen);
-    showToast(`🎲 สุ่มคัดผ่านเกณฑ์ 1xBet 5/5: ${chosen.matchTitle} (${chosen.buttonLabel} @${formatAhOdds(chosen.odds)})`);
+    showToast(`🎲 สุ่มคัดเดี่ยวผ่านเกณฑ์ 1xBet 5/5: ${chosen.matchTitle} (${chosen.buttonLabel} @${formatAhOdds(chosen.odds)})`);
+  };
+
+  const handleRollStep2Candidate = () => {
+    soundManager.playTap();
+    const nextPair = rollStep2PairFromMatches(matches, rolledStep2Pair?.pairKey);
+    if (!nextPair) {
+      showToast('⚠️ ต้องมีอย่างน้อย 2 คู่ในตารางที่ผ่านเกณฑ์ 1xBet 5/5 เพื่อจัดสเต็ป 2');
+      return;
+    }
+    setRolledStep2Pair(nextPair);
+    showToast(
+      `⚡ สุ่มคัด AH Step 2 (2 คู่ 5/5): ${nextPair.legs[0].buttonLabel} + ${nextPair.legs[1].buttonLabel} รวม @${formatAhOdds(nextPair.combinedOdds)}`
+    );
+  };
+
+  const handleAddRolledStep2ToSlip = (pair: NonNullable<ReturnType<typeof rollStep2PairFromMatches>>) => {
+    soundManager.playTap();
+    pair.legs.forEach((leg, idx) => {
+      const legMatch: Match = {
+        ...leg.match,
+        id: `rolled-step2-${leg.match.id}-leg${idx + 1}`,
+      };
+      const legPred: CorrectScorePrediction = {
+        score: `${leg.favTeam} ${leg.line} [${leg.buttonLabel}]`,
+        homeGoals: 0,
+        awayGoals: 0,
+        rawProbability: leg.coverProbability,
+        calibratedProbability: leg.coverProbability,
+        odds1xBet: leg.odds,
+        expectedValue: leg.expectedValuePct,
+        isValueBet: true,
+        rank: idx + 1,
+      };
+      onAddToBetSlip(legMatch, legPred);
+    });
+    showToast(`⚡ เพิ่มสเต็ป 2 (2 คู่ @${formatAhOdds(pair.combinedOdds)}) ลงบิล 1xBet แล้ว`);
   };
 
   const handleAddRolledPoolPickToSlip = (candidate: OneXBetPoolPick) => {
@@ -510,6 +585,10 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
   const handleApplyDualShieldStrategy = () => {
     soundManager.playTap();
+    if (pick.ahStep2) {
+      handleQuickAddPrimaryToSlip();
+      return;
+    }
     handleQuickAddPrimaryToSlip();
     const safeBtn = formatOneXBetAhButton(ahPick.teamSide, -0.25);
     const safeHedge = pick.blindSpotAudit?.recommendedHedges[1] ||
@@ -817,6 +896,10 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               <div className="text-slate-200 text-[10px] mt-0.5 line-clamp-2">
                 {serverEngine?.pipeline?.issueSummary ||
                   (() => {
+                    if (todayOperationalPick.ahStep2) {
+                      const s2 = todayOperationalPick.ahStep2;
+                      return `ปล่อยซุปเปอร์โพย 1xBet AH Step 2 วันนี้: ${s2.legs[0].selection} + ${s2.legs[1].selection} (@${formatAhOdds(s2.combinedOdds)})`;
+                    }
                     const todayAh = resolveAsianHandicapPick(todayOperationalPick);
                     return `ปล่อยซุปเปอร์โพย 1xBet วันนี้: ${todayOperationalPick.matchTitle} (${todayAh.selection} [${formatOneXBetAhButton(todayAh.teamSide, todayAh.line)}])`;
                   })()}
@@ -885,23 +968,35 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     soundManager.playTap();
                     setSelectedPickId(tab.pickId);
                     setUserSelectedManualPick(true);
-                    setRolloverState(tab.badgeVariant === 'today' ? 'PRE_MATCH' : 'SETTLED');
+                    setRolloverState(
+                      tab.badgeVariant === 'today' || tab.badgeVariant === 'tomorrow' ? 'PRE_MATCH' : 'SETTLED'
+                    );
                     showToast(`📅 ${tab.tabLabel}: ${tab.subLabel}`);
                   }}
                   className={`p-2 rounded-xl text-left text-xs font-bold transition-all border cursor-pointer ${
                     isSelected
                       ? tab.badgeVariant === 'today'
                         ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-md ring-2 ring-emerald-400/40'
+                        : tab.badgeVariant === 'tomorrow'
+                        ? 'bg-violet-500 text-white border-violet-300 shadow-md ring-2 ring-violet-400/40'
                         : 'bg-amber-400 text-slate-950 border-amber-300 shadow-md ring-2 ring-amber-400/40'
+                      : tab.badgeVariant === 'tomorrow'
+                      ? 'bg-violet-950/35 text-violet-100 border-violet-500/40 hover:border-violet-400'
                       : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-700'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span>{tab.tabLabel}</span>
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="truncate">{tab.tabLabel}</span>
                     <span
-                      className={`text-[10px] px-1.5 py-0.5 rounded font-black ${
+                      className={`text-[10px] px-1.5 py-0.5 rounded font-black shrink-0 ${
                         tab.badgeVariant === 'today'
-                          ? 'bg-emerald-400/20 text-emerald-950 border border-emerald-400/40'
+                          ? isSelected
+                            ? 'bg-emerald-950/20 text-emerald-950 border border-emerald-900/30'
+                            : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                          : tab.badgeVariant === 'tomorrow'
+                          ? isSelected
+                            ? 'bg-white/20 text-white border border-white/30'
+                            : 'bg-violet-500/30 text-violet-200 border border-violet-400/40'
                           : tab.badgeVariant === 'win'
                           ? 'bg-emerald-600 text-white'
                           : 'bg-sky-600 text-white'
@@ -910,7 +1005,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       {tab.badgeLabel}
                     </span>
                   </div>
-                  <div className="text-[10px] opacity-80 truncate font-normal mt-0.5">
+                  <div className="text-[10px] opacity-85 truncate font-normal mt-0.5">
                     {tab.subLabel}
                   </div>
                 </button>
@@ -1009,17 +1104,24 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               ? settleAsianHandicapFromScore(item.settledScore || '', itemAh.teamSide, itemAh.line)
               : null;
             const itemAhWon = (itemAhSettled?.profitFactor ?? 0) > 0;
+            const isStep2 = Boolean(item.ahStep2);
             return (
               <button
                 key={item.id}
                 onClick={() => {
                   soundManager.playTap();
                   setSelectedPickId(item.id);
+                  setRolloverState(item.isSettled ? 'SETTLED' : 'PRE_MATCH');
+                  setUserSelectedManualPick(true);
                   setCopiedCode(false);
                 }}
                 className={`p-3 rounded-2xl border text-left transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-gradient-to-br from-amber-950/60 via-[#131d33] to-slate-900 border-amber-400/90 shadow-lg shadow-amber-500/20'
+                    ? isStep2
+                      ? 'bg-gradient-to-br from-violet-950/70 via-[#131d33] to-slate-900 border-violet-400/90 shadow-lg shadow-violet-500/20'
+                      : 'bg-gradient-to-br from-amber-950/60 via-[#131d33] to-slate-900 border-amber-400/90 shadow-lg shadow-amber-500/20'
+                    : isStep2
+                    ? 'bg-violet-950/20 border-violet-500/35 hover:border-violet-400/70 text-slate-300'
                     : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 text-slate-400'
                 }`}
               >
@@ -1030,7 +1132,9 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     </span>
                     {item.id === todayOperationalPick.id ? (
                       <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-gradient-to-r from-amber-400 to-emerald-400 text-slate-950 shadow-sm whitespace-nowrap">
-                        👑 วันนี้ #1 AH ({itemAh.line > 0 ? `+${itemAh.line}` : itemAh.line})
+                        {item.ahStep2
+                          ? `⚡ วันนี้ Step 2 (@${formatAhOdds(item.ahStep2.combinedOdds)})`
+                          : `👑 วันนี้ #1 AH (${itemAh.line > 0 ? `+${itemAh.line}` : itemAh.line})`}
                       </span>
                     ) : item.isSettled ? (
                       <span
@@ -1046,6 +1150,10 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                           ? `🎯 WIN ${item.settledScore || item.primaryScore}`
                           : `❌ จบ ${item.settledScore || '-'}`}
                       </span>
+                    ) : item.ahStep2 ? (
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-violet-500/25 text-violet-200 border border-violet-400/50 whitespace-nowrap">
+                        ⚡ {item.dateText.replace('วัน', '').replace(' พฤศจิกายน 2026', ' พ.ย.')} (AH Step 2)
+                      </span>
                     ) : (
                       <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40 whitespace-nowrap">
                         📅 {item.dateText.replace('วัน', '').replace(' พฤศจิกายน 2026', ' พ.ย.')} (AH ล่วงหน้า)
@@ -1056,8 +1164,14 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 </div>
 
                 <div className="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] gap-1">
-                  <span className="font-mono text-amber-400 font-black truncate">{itemAh.selection}</span>
-                  <span className="font-mono text-sky-400 font-bold shrink-0 tabular-nums">@{itemAh.odds.toFixed(2)}</span>
+                  <span className={`font-mono font-black truncate ${item.ahStep2 ? 'text-violet-300' : 'text-amber-400'}`}>
+                    {item.ahStep2
+                      ? `${item.ahStep2.legs[0].selection} + ${item.ahStep2.legs[1].selection}`
+                      : itemAh.selection}
+                  </span>
+                  <span className="font-mono text-sky-400 font-bold shrink-0 tabular-nums">
+                    @{item.ahStep2 ? formatAhOdds(item.ahStep2.combinedOdds) : itemAh.odds.toFixed(2)}
+                  </span>
                 </div>
               </button>
             );
@@ -1094,50 +1208,80 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           <span className="text-amber-400 font-semibold">{pick.kickoffTime}</span>
         </div>
 
-        {/* Matchup Card with Team Logos */}
-        <div className="rounded-2xl bg-slate-950/80 border border-slate-800 p-4 my-3 backdrop-blur-md">
-          <div className="grid grid-cols-5 items-center gap-2 sm:gap-3 text-center">
-            {/* Home */}
-            <div className="col-span-2 flex flex-col items-center">
-              <TeamLogoBadge
-                name={pick.homeTeam.name}
-                code={pick.homeTeam.code}
-                color={pick.homeTeam.color}
-                logoUrl={pick.homeTeam.logo}
-              />
-              <span className="text-xs sm:text-sm font-extrabold text-white truncate max-w-[130px]">
-                {pick.homeTeam.name}
-              </span>
-              <span className="text-[11px] text-sky-400 font-mono font-bold mt-0.5">
-                xG ในบ้าน {pick.homeTeam.expectedGoals}
-              </span>
-            </div>
+        {/* Matchup Card with Team Logos (Single vs AH Step 2 2-Leg) */}
+        {pick.ahStep2 ? (
+          <div className="rounded-2xl bg-slate-950/85 border border-violet-500/40 p-3.5 my-3 backdrop-blur-md grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {pick.ahStep2.legs.map((leg) => (
+              <div
+                key={leg.legNumber}
+                className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-2"
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5 text-[10px]">
+                    <span className="px-1.5 py-0.5 rounded bg-violet-500 text-white font-black">
+                      คู่ที่ {leg.legNumber}
+                    </span>
+                    <span className="text-slate-400 truncate">{leg.league}</span>
+                  </div>
+                  <div className="text-sm font-black text-white mt-1 truncate">{leg.matchTitle}</div>
+                  <div className="text-[10px] text-amber-300 font-mono mt-0.5">
+                    ⏰ {leg.kickoffTime} &bull; xG {leg.homeXg.toFixed(2)} vs {leg.awayXg.toFixed(2)} (+{leg.xgGap.toFixed(2)})
+                  </div>
+                </div>
+                <div className="text-right shrink-0 font-mono">
+                  <div className="px-2 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-black text-xs">
+                    {leg.buttonLabel}
+                  </div>
+                  <div className="text-amber-300 font-black text-xs mt-1 tabular-nums">@{formatAhOdds(leg.odds)}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl bg-slate-950/80 border border-slate-800 p-4 my-3 backdrop-blur-md">
+            <div className="grid grid-cols-5 items-center gap-2 sm:gap-3 text-center">
+              {/* Home */}
+              <div className="col-span-2 flex flex-col items-center">
+                <TeamLogoBadge
+                  name={pick.homeTeam.name}
+                  code={pick.homeTeam.code}
+                  color={pick.homeTeam.color}
+                  logoUrl={pick.homeTeam.logo}
+                />
+                <span className="text-xs sm:text-sm font-extrabold text-white truncate max-w-[130px]">
+                  {pick.homeTeam.name}
+                </span>
+                <span className="text-[11px] text-sky-400 font-mono font-bold mt-0.5">
+                  xG ในบ้าน {pick.homeTeam.expectedGoals}
+                </span>
+              </div>
 
-            {/* VS Center */}
-            <div className="col-span-1 flex flex-col items-center">
-              <span className="text-xs font-extrabold text-slate-500 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
-                VS
-              </span>
-              <span className="text-[10px] text-amber-400 font-bold mt-1">คู่อันดับ 1</span>
-            </div>
+              {/* VS Center */}
+              <div className="col-span-1 flex flex-col items-center">
+                <span className="text-xs font-extrabold text-slate-500 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
+                  VS
+                </span>
+                <span className="text-[10px] text-amber-400 font-bold mt-1">คู่อันดับ 1</span>
+              </div>
 
-            {/* Away */}
-            <div className="col-span-2 flex flex-col items-center">
-              <TeamLogoBadge
-                name={pick.awayTeam.name}
-                code={pick.awayTeam.code}
-                color={pick.awayTeam.color}
-                logoUrl={pick.awayTeam.logo}
-              />
-              <span className="text-xs sm:text-sm font-extrabold text-white truncate max-w-[130px]">
-                {pick.awayTeam.name}
-              </span>
-              <span className="text-[11px] text-sky-400 font-mono font-bold mt-0.5">
-                xG นอกบ้าน {pick.awayTeam.expectedGoals}
-              </span>
+              {/* Away */}
+              <div className="col-span-2 flex flex-col items-center">
+                <TeamLogoBadge
+                  name={pick.awayTeam.name}
+                  code={pick.awayTeam.code}
+                  color={pick.awayTeam.color}
+                  logoUrl={pick.awayTeam.logo}
+                />
+                <span className="text-xs sm:text-sm font-extrabold text-white truncate max-w-[130px]">
+                  {pick.awayTeam.name}
+                </span>
+                <span className="text-[11px] text-sky-400 font-mono font-bold mt-0.5">
+                  xG นอกบ้าน {pick.awayTeam.expectedGoals}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Multi-Source 100% Consensus Breakdown Gauge (100-Source & 10-Factor Engine) */}
         <div className="rounded-2xl bg-gradient-to-r from-slate-900/95 via-[#0e1933] to-slate-900/95 border-2 border-emerald-500/50 p-4 space-y-3 shadow-lg">
@@ -1210,29 +1354,37 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               <div className="flex items-center justify-between flex-wrap gap-1.5">
                 <span className="text-[11px] font-black text-amber-300 flex items-center gap-1.5">
                   <Ticket className="w-3.5 h-3.5 text-amber-400" />
-                  <span>รหัสอ้างอิงบิลเดี่ยว 1xBet: {pick.slipNumber}</span>
+                  <span>รหัสอ้างอิงบิล 1xBet: {pick.slipNumber}</span>
                 </span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
                   <Check className="w-3 h-3" />
-                  <span>คัดเดี่ยวอันดับ 1</span>
+                  <span>{pick.ahStep2 ? 'AH Step 2 (2 คู่)' : 'คัดเดี่ยวอันดับ 1'}</span>
                 </span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-slate-800/80 text-[11px]">
                 <div>
                   <span className="text-slate-400 block text-[10px]">คู่แข่งขัน:</span>
-                  <strong className="text-white font-mono">{pick.matchTitle}</strong>
+                  <strong className="text-white font-mono truncate block">{pick.matchTitle}</strong>
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px]">ตลาดหลัก (Asian HDP):</span>
-                  <strong className="text-amber-400 font-mono text-xs">{ahPick.selection}</strong>
+                  <strong className="text-amber-400 font-mono text-xs">
+                    {pick.ahStep2
+                      ? `${pick.ahStep2.legs[0].buttonLabel} × ${pick.ahStep2.legs[1].buttonLabel}`
+                      : ahPick.selection}
+                  </strong>
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px]">ค่าน้ำ 1xBet:</span>
-                  <strong className="text-emerald-400 font-mono text-xs tabular-nums">@{ahPick.odds.toFixed(2)}</strong>
+                  <strong className="text-emerald-400 font-mono text-xs tabular-nums">
+                    @{pick.ahStep2 ? formatAhOdds(pick.ahStep2.combinedOdds) : ahPick.odds.toFixed(2)}
+                  </strong>
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px]">ทุน 100 ฿ รับคืน:</span>
-                  <strong className="text-sky-300 font-mono text-xs tabular-nums">{(100 * ahPick.odds).toFixed(0)} ฿</strong>
+                  <strong className="text-sky-300 font-mono text-xs tabular-nums">
+                    {(100 * (pick.ahStep2 ? pick.ahStep2.combinedOdds : ahPick.odds)).toFixed(0)} ฿
+                  </strong>
                 </div>
               </div>
             </div>
@@ -1263,7 +1415,109 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           </div>
         </div>
 
-        {/* Primary Asian Handicap Super Pick Box (ซุปเปอร์โพย 1xBet เอเชียนแฮนดิแคป คัดเดี่ยว 1 คู่) */}
+        {/* Primary Asian Handicap Super Pick Box (Step 2 for >= Nov 23, Single AH for <= Nov 22) */}
+        {pick.ahStep2 ? (
+          <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-violet-950/70 via-[#111c3a] to-emerald-950/60 border-2 border-violet-400/80 shadow-xl space-y-3.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="min-w-0 space-y-1">
+                <div className="flex items-center gap-2 flex-wrap text-[11px]">
+                  <span className="font-black uppercase tracking-wider text-white bg-gradient-to-r from-violet-600 to-emerald-500 px-2.5 py-0.5 rounded shadow">
+                    ⚡ ซุปเปอร์โพย 1xBet AH Step 2 (สเต็ป 2 คัด 5/5)
+                  </span>
+                  <span className="font-mono font-black text-amber-300 bg-amber-400/15 px-2 py-0.5 rounded border border-amber-400/40 tabular-nums">
+                    ค่าน้ำรวม @{formatAhOdds(pick.ahStep2.combinedOdds)}
+                  </span>
+                  <span className="font-mono font-bold text-emerald-300 tabular-nums">
+                    EV +{pick.ahStep2.combinedExpectedValue}%
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-300 leading-relaxed">
+                  {pick.ahStep2.step2RuleSummaryThai}
+                </p>
+              </div>
+
+              <button
+                onClick={handleQuickAddPrimaryToSlip}
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-violet-500 via-fuchsia-500 to-emerald-400 hover:brightness-110 text-white font-black text-xs transition-all active:scale-95 shadow-lg shadow-violet-500/25 cursor-pointer shrink-0 w-full sm:w-auto whitespace-nowrap"
+              >
+                <Zap className="w-4 h-4 fill-white" />
+                <span>ใส่บิลสเต็ป 2 (2 คู่ @{formatAhOdds(pick.ahStep2.combinedOdds)})</span>
+              </button>
+            </div>
+
+            {/* Side-by-side 2 Legs */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {pick.ahStep2.legs.map((leg) => (
+                <div
+                  key={leg.legNumber}
+                  className="p-3.5 rounded-2xl bg-slate-950/90 border border-emerald-500/40 space-y-2 shadow-inner"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="px-2 py-0.5 rounded bg-violet-500/25 text-violet-200 border border-violet-400/40 font-black text-[10px]">
+                      คู่ที่ {leg.legNumber} &bull; ผ่านเกณฑ์ 1xBet 5/5 ✓
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">{leg.kickoffTime}</span>
+                  </div>
+
+                  <div>
+                    <div className="text-xs text-slate-400 font-semibold">{leg.league}</div>
+                    <div className="text-base font-black text-white">{leg.matchTitle}</div>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 flex-wrap p-2 rounded-xl bg-slate-900/90 border border-slate-800">
+                    <div>
+                      <div className="text-sm font-black text-amber-300 font-mono">{leg.selection}</div>
+                      <div className="text-[10px] text-emerald-300 font-semibold">{leg.winRuleThai}</div>
+                    </div>
+                    <div className="text-right font-mono">
+                      <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-xs">
+                        ปุ่ม {leg.buttonLabel}
+                      </span>
+                      <div className="text-xs font-black text-sky-300 mt-1 tabular-nums">@{formatAhOdds(leg.odds)}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-[10px] font-mono tabular-nums text-slate-300">
+                    <span>
+                      xG {leg.homeXg.toFixed(2)}–{leg.awayXg.toFixed(2)} (Gap +{leg.xgGap.toFixed(2)})
+                    </span>
+                    <span className="text-emerald-300 font-bold">
+                      Implied {leg.impliedProbPct}% vs {leg.coverProbability}% (+{leg.edgeOver1xBetPct}% Edge)
+                    </span>
+                  </div>
+
+                  <p className="text-[11px] text-slate-300 leading-snug border-t border-slate-800/80 pt-1.5">
+                    {leg.rationaleThai}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Combined Payout & Half-Win Cushion Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono tabular-nums">
+              <div className="p-2.5 rounded-xl bg-emerald-950/50 border border-emerald-500/40 flex items-center justify-between">
+                <span className="text-[11px] text-emerald-200 font-sans font-bold">✅ ชนะขาด 2+ ทั้งคู่</span>
+                <span className="font-black text-emerald-300">
+                  @{formatAhOdds(pick.ahStep2.combinedOdds)} ({Math.round(100 * pick.ahStep2.combinedOdds)} ฿/100)
+                </span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-sky-950/50 border border-sky-500/40 flex items-center justify-between">
+                <span className="text-[11px] text-sky-200 font-sans font-bold">🛡️ ชนะขาด 1 + ชนะ 1 ลูก</span>
+                <span className="font-black text-sky-300">
+                  @{formatAhOdds(pick.ahStep2.halfWinCombinedOdds)} ({Math.round(100 * pick.ahStep2.halfWinCombinedOdds)} ฿/100)
+                </span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between">
+                <span className="text-[11px] text-slate-300 font-sans font-bold">📲 ขั้นตอนแทงใน 1xBet</span>
+                <span className="font-bold text-amber-300 text-[10px]">กด 2 คู่เข้า สลิปพนัน (สเต็ป)</span>
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-200 leading-relaxed pt-2 border-t border-violet-500/30">
+              {pick.analysisRationale}
+            </p>
+          </div>
+        ) : (
         <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-[#0e2638] to-blue-950/60 border-2 border-emerald-400/80 shadow-xl space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="min-w-0">
@@ -1486,14 +1740,72 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               </div>
             </div>
           )}
+        </div>
+        )}
 
-          {/* Interactive 1xBet Criteria Random Match Selector */}
-          <div className="pt-2.5 border-t border-slate-800/80 space-y-2">
+          {/* Nov 23 6-Match Screening Matrix (shown on Monday 23 Nov AH Step 2 Launch Pick) */}
+          {pick.id === SUPER_PICK_MONDAY_23.id && (
+            <div className="mt-4 p-4 rounded-2xl bg-slate-950/85 border border-violet-500/40 space-y-2.5">
+              <div className="flex items-center justify-between flex-wrap gap-1 text-[11px]">
+                <span className="font-bold text-violet-300">
+                  📋 ตารางคัดกรองวันจันทร์ 23 พ.ย. (6 คู่จริงทั่วโลก &rarr; คัด 2 คู่ชัวร์สุดเข้า AH Step 2)
+                </span>
+                <span className="text-[10px] text-slate-400 font-mono">
+                  เรียงตาม Edge เหนือ 1xBet + ส่วนต่าง xG Gap
+                </span>
+              </div>
+              <div className="divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-900/70 overflow-hidden text-[11px]">
+                {DAILY_SCREENING_CANDIDATES_NOV23.map((cand) => (
+                  <div
+                    key={cand.id}
+                    className={`p-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+                      cand.isSelectedTopPick ? 'bg-emerald-950/30' : cand.passes1xBetGate ? 'bg-sky-950/15' : 'opacity-70'
+                    }`}
+                  >
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span
+                          className={`font-black font-mono text-[10px] px-1.5 py-0.5 rounded ${
+                            cand.isSelectedTopPick
+                              ? 'bg-emerald-400 text-slate-950'
+                              : cand.passes1xBetGate
+                              ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
+                              : 'bg-slate-800 text-slate-400'
+                          }`}
+                        >
+                          {cand.isSelectedTopPick ? '✓ ติด Step 2' : cand.passes1xBetGate ? 'สำรอง #3' : 'คัดออก'}
+                        </span>
+                        <span className="font-bold text-white">{cand.matchTitle}</span>
+                        <span className="text-slate-400 text-[10px]">{cand.kickoffThai}</span>
+                        <span className="text-slate-400 font-mono text-[10px] tabular-nums">
+                          xG {cand.homeXg.toFixed(2)}–{cand.awayXg.toFixed(2)} (Gap +{cand.xgGap.toFixed(2)})
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-slate-300 mt-1">{cand.verdictThai}</p>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums text-[10px]">
+                      <span className="text-slate-400">Implied {cand.impliedProbPct}%</span>
+                      <span className={cand.edgeOver1xBetPct >= 3.5 ? 'text-emerald-300 font-bold' : 'text-rose-400 font-bold'}>
+                        Edge {cand.edgeOver1xBetPct >= 0 ? `+${cand.edgeOver1xBetPct}` : cand.edgeOver1xBetPct}%
+                      </span>
+                      <span className={cand.isSelectedTopPick ? 'text-amber-300 font-black' : 'text-slate-400'}>
+                        {cand.buttonLabel}
+                      </span>
+                      <span className="text-sky-300 font-bold">@{formatAhOdds(cand.odds)}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Interactive 1xBet Criteria Random Match Selector (Supports AH Step 2 & Single AH) */}
+          <div className="mt-4 p-4 rounded-2xl bg-slate-900/75 border border-slate-800 space-y-2.5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <div className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-300">
                   <Shuffle className="w-3.5 h-3.5 text-amber-400" />
-                  <span>🎲 สุ่มคัดคู่จากตาราง (อิงเกณฑ์ 1xBet 5 ข้ออัตโนมัติ)</span>
+                  <span>🎲 สุ่มคัดคู่จากตาราง (โหมด AH Step 2 &amp; เดี่ยว 1xBet 5 ข้อ)</span>
                 </div>
                 <p className="text-[10px] text-slate-400 mt-0.5 font-mono tabular-nums">
                   กรองจากตารางแข่งขันทั้งหมด: ผ่านเกณฑ์ 1xBet {poolScreenResult.qualified.length}/
@@ -1501,19 +1813,27 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                   {poolScreenResult.rejectedCount} คู่
                 </p>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
+              <div className="flex items-center flex-wrap gap-1.5 shrink-0">
+                <button
+                  onClick={handleRollStep2Candidate}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-violet-500 to-emerald-400 hover:brightness-110 text-white font-black text-[11px] transition-all active:scale-95 cursor-pointer shadow"
+                >
+                  <Zap className="w-3.5 h-3.5" />
+                  <span>สุ่ม AH Step 2 (2 คู่ 5/5)</span>
+                </button>
                 <button
                   onClick={handleRoll1xBetCandidate}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-[11px] transition-all active:scale-95 cursor-pointer shadow"
                 >
                   <Shuffle className="w-3.5 h-3.5" />
-                  <span>สุ่มเลือกคู่ที่ผ่านเกณฑ์ 1xBet</span>
+                  <span>สุ่มเดี่ยว 1 คู่</span>
                 </button>
-                {rolledPoolPick && (
+                {(rolledPoolPick || rolledStep2Pair) && (
                   <button
                     onClick={() => {
                       soundManager.playTap();
                       setRolledPoolPick(null);
+                      setRolledStep2Pair(null);
                     }}
                     className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-[10px] transition-all cursor-pointer"
                     title="ล้างผลการสุ่ม"
@@ -1524,6 +1844,42 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 )}
               </div>
             </div>
+
+            {rolledStep2Pair && (
+              <div className="p-3 rounded-xl bg-slate-950/95 border border-violet-400/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+                <div className="min-w-0 space-y-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2 py-0.5 rounded bg-violet-500 text-white font-black font-mono text-[10px]">
+                      ⚡ สุ่ม Step 2 (ผ่าน 5/5 ทั้ง 2 คู่)
+                    </span>
+                    <span className="font-mono font-black text-amber-300 tabular-nums">
+                      รวม @{formatAhOdds(rolledStep2Pair.combinedOdds)}
+                    </span>
+                    <span className="text-[10px] font-mono text-sky-300 tabular-nums">
+                      (กรณีชนะขาด+ชนะ 1 ลูก ยังได้ @{formatAhOdds(rolledStep2Pair.scenarios.oneFullOneHalfWinOdds)})
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] pt-1">
+                    {rolledStep2Pair.legs.map((leg, i) => (
+                      <div key={leg.matchTitle} className="p-2 rounded-lg bg-slate-900 border border-slate-800 font-mono">
+                        <span className="text-slate-400">#{i + 1}</span>{' '}
+                        <strong className="text-white font-sans">{leg.matchTitle}</strong>{' '}
+                        <span className="text-amber-300 font-black">{leg.buttonLabel}</span>{' '}
+                        <span className="text-sky-300">@{formatAhOdds(leg.odds)}</span>{' '}
+                        <span className="text-emerald-300">(+{leg.edgeOver1xBetPct}%)</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleAddRolledStep2ToSlip(rolledStep2Pair)}
+                  className="flex items-center justify-center gap-1 px-3 py-2 rounded-xl bg-gradient-to-r from-violet-500 to-emerald-400 hover:brightness-110 text-white font-black text-[11px] transition-all active:scale-95 cursor-pointer shrink-0"
+                >
+                  <Plus className="w-3.5 h-3.5 stroke-[3]" />
+                  <span>ใส่บิล Step 2</span>
+                </button>
+              </div>
+            )}
 
             {rolledPoolPick && (
               <div className="p-3 rounded-xl bg-slate-950/90 border border-amber-400/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
@@ -1558,7 +1914,6 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
               </div>
             )}
           </div>
-        </div>
 
         {/* Secondary Reference Options (ทางเลือกเซฟตี้แท็บเดียวกัน & สกอร์อ้างอิงจาก xG) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
@@ -1631,7 +1986,9 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 </span>
               </div>
               <h3 className="text-sm font-black text-white pt-1">
-                คู่ {pick.matchTitle}: กด {formatOneXBetAhButton(ahPick.teamSide, ahPick.line)} ({ahPick.selection} @{formatAhOdds(ahPick.odds)}) แบ่งพอร์ต 70:30
+                {pick.ahStep2
+                  ? `สเต็ป 2: ${pick.ahStep2.legs[0].buttonLabel} + ${pick.ahStep2.legs[1].buttonLabel} (รวม @${formatAhOdds(pick.ahStep2.combinedOdds)}) แบ่งพอร์ต 70:30`
+                  : `คู่ ${pick.matchTitle}: กด ${formatOneXBetAhButton(ahPick.teamSide, ahPick.line)} (${ahPick.selection} @${formatAhOdds(ahPick.odds)}) แบ่งพอร์ต 70:30`}
               </h3>
             </div>
 
@@ -1949,6 +2306,8 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                 <div className="text-[9px] text-slate-400">
                   {promoConfig.customBookingCode
                     ? 'ใส่ที่ "ดาวน์โหลดคูปอง" ใน 1xBet'
+                    : pick.ahStep2
+                    ? `ใน 1xBet สเต็ป 2: กด ${pick.ahStep2.legs[0].buttonLabel} + ${pick.ahStep2.legs[1].buttonLabel} รวม @${formatAhOdds(pick.ahStep2.combinedOdds)}`
                     : `ใน 1xBet: เวลาปกติ → เอเชียนแฮนดิแคป → กด ${formatOneXBetAhButton(ahPick.teamSide, ahPick.line)}`}
                 </div>
               </div>

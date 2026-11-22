@@ -291,6 +291,145 @@ export const DAILY_SCREENING_CANDIDATES_NOV19: AsianHandicapCandidate[] = [
 ];
 
 /**
+ * Full 6-match screening matrix for Monday 23 Nov 2026 (AH Step 2 launch day)
+ * Ranks every real fixture through the 5-point 1xBet selection gate.
+ */
+export const DAILY_SCREENING_CANDIDATES_NOV23: AsianHandicapCandidate[] = [
+  {
+    id: 'cand-nov23-santos-gremio',
+    matchTitle: 'Santos vs Grêmio',
+    league: 'Brasileirão Série A',
+    kickoffThai: '02:00 น. (คืนจันทร์ 23 พ.ย.)',
+    recommendedLine: 'Santos -0.75 [ปุ่ม 1 (-0.75)]',
+    lineValue: -0.75,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.75)',
+    odds: 1.84,
+    homeXg: 1.78,
+    awayXg: 0.72,
+    xgGap: 1.06,
+    winProbability: 66.8,
+    impliedProbPct: 54.3,
+    edgeOver1xBetPct: 12.5,
+    confidenceScore: 99.1,
+    isSelectedTopPick: true,
+    passes1xBetGate: true,
+    verdictThai:
+      'ผ่านเกณฑ์ 1xBet 5/5 ข้อ (ขาที่ 1 Step 2): เกรมิโอนอกบ้านชนะแค่ 1 จาก 17 นัด · ซานโตสในบ้านไม่แพ้เกรมิโอ 5 นัดติด (+1.06 xG Gap)',
+  },
+  {
+    id: 'cand-nov23-inter-vitoria',
+    matchTitle: 'Internacional vs Vitória',
+    league: 'Brasileirão Série A',
+    kickoffThai: '05:30 น. (เช้ามืด 24 พ.ย.)',
+    recommendedLine: 'Internacional -0.75 [ปุ่ม 1 (-0.75)]',
+    lineValue: -0.75,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.75)',
+    odds: 1.82,
+    homeXg: 1.72,
+    awayXg: 0.76,
+    xgGap: 0.96,
+    winProbability: 64.5,
+    impliedProbPct: 54.9,
+    edgeOver1xBetPct: 9.6,
+    confidenceScore: 98.7,
+    isSelectedTopPick: true,
+    passes1xBetGate: true,
+    verdictThai:
+      'ผ่านเกณฑ์ 1xBet 5/5 ข้อ (ขาที่ 2 Step 2): อินเตอร์ฯ ชนะในบ้าน 3 นัดรวด กดดันหนีตกชั้น · วิตอเรียนอกบ้านเกมรุกฝืด (+0.96 xG Gap)',
+  },
+  {
+    id: 'cand-nov23-monza-fiorentina',
+    matchTitle: 'Monza vs Fiorentina',
+    league: 'Serie A',
+    kickoffThai: '02:45 น. (คืนจันทร์ 23 พ.ย.)',
+    recommendedLine: 'Fiorentina -0.25 [ปุ่ม 2 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'AWAY',
+    buttonLabel: '2 (-0.25)',
+    odds: 1.72,
+    homeXg: 0.98,
+    awayXg: 1.58,
+    xgGap: 0.6,
+    winProbability: 62.0,
+    impliedProbPct: 58.1,
+    edgeOver1xBetPct: 3.9,
+    confidenceScore: 91.2,
+    isSelectedTopPick: false,
+    passes1xBetGate: true,
+    verdictThai:
+      'ตัวสำรองอันดับ 3 (ผ่านเกณฑ์ -0.25): มอนซ่าแพ้ 4 นัดติด แต่ฟิออฯ เพิ่งเสมอ 2-2 สองนัดซ้อนและเสีย 25 ประตูเท่ากัน Edge น้อยกว่า 2 คู่หลัก',
+  },
+  {
+    id: 'cand-nov23-ittihad-pakhtakor',
+    matchTitle: 'Al-Ittihad vs Pakhtakor',
+    league: 'AFC Champions League Elite',
+    kickoffThai: '01:15 น. (คืนจันทร์ 23 พ.ย.)',
+    recommendedLine: 'Al-Ittihad -1.25 [ปุ่ม 1 (-1.25)]',
+    lineValue: -1.25,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-1.25)',
+    odds: 1.88,
+    homeXg: 2.05,
+    awayXg: 0.92,
+    xgGap: 1.13,
+    winProbability: 52.0,
+    impliedProbPct: 53.2,
+    edgeOver1xBetPct: -1.2,
+    confidenceScore: 76.4,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก: ราคา 1X2 แค่ @1.30 ทำให้กระดาน 1xBet บังคับต่อ -1.25/-1.50 (ชนะ 1 ลูกเสียครึ่ง/เต็ม) ส่วน -0.75 ค่าน้ำต่ำกว่า @1.65',
+  },
+  {
+    id: 'cand-nov23-brentford-everton',
+    matchTitle: 'Brentford vs Everton',
+    league: 'Premier League',
+    kickoffThai: '03:00 น. (คืนจันทร์ 23 พ.ย.)',
+    recommendedLine: 'Brentford -0.25 [ปุ่ม 1 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.25)',
+    odds: 1.92,
+    homeXg: 1.32,
+    awayXg: 1.24,
+    xgGap: 0.08,
+    winProbability: 46.5,
+    impliedProbPct: 52.1,
+    edgeOver1xBetPct: -5.6,
+    confidenceScore: 67.2,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก (ไม่ผ่าน xG Gap): เบรนท์ฟอร์ดขาด Igor Thiago ติดโทษแบน เจอเอฟเวอร์ตันชนะ 3 นัดติด สูสีเกินไป (xG Gap +0.08 < 0.50)',
+  },
+  {
+    id: 'cand-nov23-levante-elche',
+    matchTitle: 'Levante vs Elche',
+    league: 'La Liga',
+    kickoffThai: '03:00 น. (คืนจันทร์ 23 พ.ย.)',
+    recommendedLine: 'Levante -0.25 [ปุ่ม 1 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.25)',
+    odds: 1.94,
+    homeXg: 1.28,
+    awayXg: 1.12,
+    xgGap: 0.16,
+    winProbability: 44.0,
+    impliedProbPct: 51.5,
+    edgeOver1xBetPct: -7.5,
+    confidenceScore: 64.0,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก: ศึกลุ้นหนีตกชั้นอันดับ 18 พบ 19 เลบานเต้ไม่ชนะในลีก 3 นัดติด ความผันผวนสูง (xG Gap +0.16)',
+  },
+];
+
+/**
  * Screens matches from the fixture pool using all 5 strict 1xBet rules,
  * returning qualified picks (for transparent ranking or criteria-anchored random pick rotation).
  */
@@ -358,6 +497,70 @@ export function screenMatchesBy1xBetCriteria(
 
   qualified.sort((a, b) => b.edgeOver1xBetPct - a.edgeOver1xBetPct || b.xgGap - a.xgGap);
   return { qualified, rejectedCount, totalEvaluated: matches.length };
+}
+
+export interface Step2PayoutScenarios {
+  fullWinOdds: number;
+  oneFullOneHalfWinOdds: number;
+  bothHalfWinOdds: number;
+  oneFullOneHalfLossOdds: number;
+}
+
+/**
+ * Exact 1xBet Asian Handicap Step 2 parlay payout multipliers including quarter-line half-win/half-loss.
+ */
+export function computeStep2Scenarios(odds1: number, odds2: number): Step2PayoutScenarios {
+  const half1 = 1 + (odds1 - 1) / 2;
+  const half2 = 1 + (odds2 - 1) / 2;
+  return {
+    fullWinOdds: Number((odds1 * odds2).toFixed(3)),
+    oneFullOneHalfWinOdds: Number((odds1 * half2).toFixed(3)),
+    bothHalfWinOdds: Number((half1 * half2).toFixed(3)),
+    oneFullOneHalfLossOdds: Number((odds1 * 0.5).toFixed(3)),
+  };
+}
+
+/**
+ * Picks a random 2-leg AH Step 2 combination exclusively from 1xBet-qualified fixtures.
+ */
+export function rollStep2PairFromMatches(
+  matches: Match[],
+  excludePairKey?: string
+): {
+  pairKey: string;
+  legs: [OneXBetPoolPick, OneXBetPoolPick];
+  combinedOdds: number;
+  scenarios: Step2PayoutScenarios;
+  totalEvaluated: number;
+  qualifiedCount: number;
+  rejectedCount: number;
+} | null {
+  const { qualified, rejectedCount, totalEvaluated } = screenMatchesBy1xBetCriteria(matches);
+  if (qualified.length < 2) return null;
+
+  const combos: Array<{ a: OneXBetPoolPick; b: OneXBetPoolPick; key: string }> = [];
+  for (let i = 0; i < qualified.length; i++) {
+    for (let j = i + 1; j < qualified.length; j++) {
+      const a = qualified[i];
+      const b = qualified[j];
+      combos.push({ a, b, key: `${a.matchTitle}__${b.matchTitle}` });
+    }
+  }
+
+  const eligible =
+    combos.length > 1 && excludePairKey ? combos.filter((c) => c.key !== excludePairKey) : combos;
+  const chosen = eligible[Math.floor(Math.random() * eligible.length)];
+  const scenarios = computeStep2Scenarios(chosen.a.odds, chosen.b.odds);
+
+  return {
+    pairKey: chosen.key,
+    legs: [chosen.a, chosen.b],
+    combinedOdds: scenarios.fullWinOdds,
+    scenarios,
+    totalEvaluated,
+    qualifiedCount: qualified.length,
+    rejectedCount,
+  };
 }
 
 export function resolveAsianHandicapPick(pick: DailySuperPick): AsianHandicapPick {
