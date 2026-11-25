@@ -21,6 +21,10 @@ import {
   SUPER_PICK_SUNDAY_22,
   SUPER_PICK_MONDAY_23,
   SUPER_PICK_TUESDAY_24,
+  SUPER_PICK_WEDNESDAY_25,
+  SUPER_PICK_THURSDAY_26,
+  SUPER_PICK_FRIDAY_27,
+  SUPER_PICK_SATURDAY_28,
   SUPER_PICK_MONDAY_16,
   SUPER_PICK_SUNDAY_15,
   SUPER_PICK_SATURDAY_14,
@@ -31,6 +35,12 @@ import {
   SUPER_PICK_MONDAY_9,
   SUPER_PICK_SUNDAY_8,
   SUPER_PICK_SATURDAY_7,
+  SETTLED_TUESDAY_24_RECORD,
+  SETTLED_MONDAY_23_RECORD,
+  SETTLED_SUNDAY_22_RECORD,
+  SETTLED_SATURDAY_21_RECORD,
+  SETTLED_FRIDAY_20_RECORD,
+  SETTLED_THURSDAY_19_RECORD,
   SETTLED_WEDNESDAY_18_RECORD,
   SETTLED_TUESDAY_17_RECORD,
   SETTLED_MONDAY_16_RECORD,
@@ -71,6 +81,7 @@ import {
   formatAhOdds,
   DAILY_SCREENING_CANDIDATES_NOV19,
   DAILY_SCREENING_CANDIDATES_NOV23,
+  DAILY_SCREENING_CANDIDATES_NOV25,
   evaluateOneXBetCriteria,
   screenMatchesBy1xBetCriteria,
   rollStep2PairFromMatches,
@@ -604,6 +615,12 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
   // Dynamic history starting from server-settled records & all verified settled days (most recent first)
   const baseHistory = [
+    SETTLED_TUESDAY_24_RECORD,
+    SETTLED_MONDAY_23_RECORD,
+    SETTLED_SUNDAY_22_RECORD,
+    SETTLED_SATURDAY_21_RECORD,
+    SETTLED_FRIDAY_20_RECORD,
+    SETTLED_THURSDAY_19_RECORD,
     SETTLED_WEDNESDAY_18_RECORD,
     SETTLED_TUESDAY_17_RECORD,
     SETTLED_MONDAY_16_RECORD,
@@ -652,14 +669,30 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
   const winRate = Math.round((winCount / Math.max(1, displayedHistory.length)) * 100);
 
   const evaluateHistoryAh = (h: (typeof displayedHistory)[number]) => {
+    const isStep2Record =
+      (h.predictedScore && h.predictedScore.startsWith('Step 2')) ||
+      (h.actualScore && h.actualScore.includes('/'));
     const side = inferHistoricalAhSide(h.matchTitle, h.predictedScore);
+    if (isStep2Record) {
+      return {
+        side,
+        settled: null,
+        isStep2Record: true,
+        isAhWin: h.result === 'WIN',
+      };
+    }
     // Evaluate against real 1xBet quarter-line Asian Handicap (-0.25)
     const settled = settleAsianHandicapFromScore(h.actualScore, side.teamSide, -0.25);
-    return { side, settled };
+    return {
+      side,
+      settled,
+      isStep2Record: false,
+      isAhWin: (settled?.profitFactor ?? 0) > 0,
+    };
   };
-  const recent7AhWins = recent7.filter((h) => (evaluateHistoryAh(h).settled?.profitFactor ?? 0) > 0).length;
+  const recent7AhWins = recent7.filter((h) => evaluateHistoryAh(h).isAhWin).length;
   const recent7AhRate = Number(((recent7AhWins / Math.max(1, recent7.length)) * 100).toFixed(1));
-  const totalAhWins = displayedHistory.filter((h) => (evaluateHistoryAh(h).settled?.profitFactor ?? 0) > 0).length;
+  const totalAhWins = displayedHistory.filter((h) => evaluateHistoryAh(h).isAhWin).length;
   const totalAhRate = Number(((totalAhWins / Math.max(1, displayedHistory.length)) * 100).toFixed(1));
 
   const formatDigits = (num: number) => num.toString().padStart(2, '0');
@@ -1017,8 +1050,11 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
 
       {/* Match Settle Review Banner (If Settled) */}
       {(pick.isSettled || rolloverState === 'SETTLED') && (() => {
-        const settledAh = settleAsianHandicapFromScore(pick.settledScore || '', ahPick.teamSide, ahPick.line);
-        const ahWon = (settledAh?.profitFactor ?? 0) > 0;
+        const isStep2Settled = Boolean(pick.ahStep2) || (pick.settledScore?.includes('/') ?? false);
+        const settledAh = !isStep2Settled
+          ? settleAsianHandicapFromScore(pick.settledScore || '', ahPick.teamSide, ahPick.line)
+          : null;
+        const ahWon = isStep2Settled ? pick.settledResult === 'WIN' : (settledAh?.profitFactor ?? 0) > 0;
         const isWin = ahWon || pick.settledResult === 'WIN';
         return (
           <div
@@ -1038,14 +1074,18 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                   <>
                     <CheckCircle2 className="w-4 h-4 stroke-[3]" />
                     <span>
-                      สรุปผลจริง: {pick.matchTitle} จบ {pick.settledScore || 'WIN'} &middot; HDP {ahPick.selection} ({settledAh?.labelThai || 'WIN'})
+                      {isStep2Settled
+                        ? `สรุปผลจริง AH Step 2: ${pick.matchTitle} จบ ${pick.settledScore || 'WIN'} ✅`
+                        : `สรุปผลจริง: ${pick.matchTitle} จบ ${pick.settledScore || 'WIN'} · HDP ${ahPick.selection} (${settledAh?.labelThai || 'WIN'})`}
                     </span>
                   </>
                 ) : (
                   <>
                     <AlertOctagon className="w-4 h-4 stroke-[3]" />
                     <span>
-                      สรุปผลจริง: {pick.matchTitle} จบ {pick.settledScore || '-'} &middot; HDP {ahPick.selection} พลาด ❌
+                      {isStep2Settled
+                        ? `สรุปผลจริง AH Step 2: ${pick.matchTitle} จบ ${pick.settledScore || '-'} ❌`
+                        : `สรุปผลจริง: ${pick.matchTitle} จบ ${pick.settledScore || '-'} · HDP ${ahPick.selection} พลาด ❌`}
                     </span>
                   </>
                 )}
@@ -1057,7 +1097,9 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     : 'text-rose-300 bg-rose-950/60 border-rose-500/30'
                 }`}
               >
-                {ahWon
+                {isStep2Settled
+                  ? `Step 2 @${formatAhOdds(pick.ahStep2?.combinedOdds || pick.primaryOdds)}: ${isWin ? 'WIN 🎯' : 'LOSS ❌'}`
+                  : ahWon
                   ? `HDP @${ahPick.odds.toFixed(2)}: WIN ✅ (สกอร์ตรงเดิม ${pick.primaryScore} พลาด ❌)`
                   : pick.settledResult === 'WIN'
                   ? `สลิปเดี่ยว 1xBet @${pick.primaryOdds.toFixed(2)}: WIN 🎯`
@@ -1100,11 +1142,12 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           {SUPER_PICKS_LIST.map((item) => {
             const isSelected = item.id === selectedPickId;
             const itemAh = resolveAsianHandicapPick(item);
-            const itemAhSettled = item.isSettled
-              ? settleAsianHandicapFromScore(item.settledScore || '', itemAh.teamSide, itemAh.line)
-              : null;
-            const itemAhWon = (itemAhSettled?.profitFactor ?? 0) > 0;
             const isStep2 = Boolean(item.ahStep2);
+            const itemAhSettled =
+              item.isSettled && !isStep2 && !item.settledScore?.includes('/')
+                ? settleAsianHandicapFromScore(item.settledScore || '', itemAh.teamSide, itemAh.line)
+                : null;
+            const itemAhWon = isStep2 ? item.settledResult === 'WIN' : (itemAhSettled?.profitFactor ?? 0) > 0;
             return (
               <button
                 key={item.id}
@@ -1144,7 +1187,9 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                             : 'bg-rose-500/20 text-rose-300 border-rose-500/40'
                         }`}
                       >
-                        {itemAhSettled
+                        {isStep2
+                          ? `${item.settledResult === 'WIN' ? '✅' : '❌'} Step 2 ${item.settledScore || '-'}`
+                          : itemAhSettled
                           ? `FT ${item.settledScore} · HDP ${itemAhSettled.shortBadge}`
                           : item.settledResult === 'WIN'
                           ? `🎯 WIN ${item.settledScore || item.primaryScore}`
@@ -1742,6 +1787,96 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
           )}
         </div>
         )}
+
+          {/* Smart Guard v3.0 Post-Mortem & Nov 25 6-Match Screening Matrix */}
+          {pick.id === SUPER_PICK_WEDNESDAY_25.id && (
+            <div className="mt-4 space-y-3">
+              {/* Root-Cause Diagnosis & Smart Guard v3.0 Upgrade Card */}
+              <div className="p-4 rounded-2xl bg-gradient-to-br from-rose-950/35 via-slate-950/90 to-emerald-950/30 border border-emerald-500/50 space-y-2.5 text-xs">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <span className="font-black text-emerald-300 flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    <span>🛡️ วิเคราะห์สาเหตุหลุดติดๆ กัน &amp; อัปเกรดระบบ Smart Guard v3.0</span>
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] font-bold">
+                    PATCHED &amp; ACTIVE
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                  <div className="p-2.5 rounded-xl bg-rose-950/30 border border-rose-500/30 space-y-1">
+                    <div className="font-bold text-rose-300">🔍 2 สาเหตุที่ทำให้หลุดติดๆ กัน (19–24 พ.ย.)</div>
+                    <p className="text-slate-300 leading-relaxed">
+                      1) <strong>บั๊กรีไซเคิลโพยเก่า:</strong> Timeout สั้น + ไม่มี API Key บนเครื่องทำให้ระบบเผลอดึงคู่แพ้ 23 พ.ย. (Santos + Inter) กลับมาส่งซ้ำเช้า 25 พ.ย.
+                    </p>
+                    <p className="text-slate-300 leading-relaxed">
+                      2) <strong>จุดอ่อนสเต็ป -0.75 ล้วน &amp; ลีกเดียวกัน:</strong> จับคู่บราซิลซ้ำลีก (Santos เตะสนามกลาง MorumBIS 0-2 / Inter 2-5) และคืน UCL Como ชนะ 1-0 กินครึ่ง แต่ Man City เสมอ 2-2 ทำให้สเต็ปตายทั้งบิล
+                    </p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 space-y-1">
+                    <div className="font-bold text-emerald-300">⚙️ กฎใหม่ Smart Guard v3.0 (เริ่มใช้วันนี้ 25 พ.ย.)</div>
+                    <p className="text-slate-300 leading-relaxed">
+                      1) <strong>บังคับแยกคนละลีก (Cross-League):</strong> ห้ามจับ 2 คู่จากลีกเดียวกันเข้า Step 2 อีกเด็ดขาด (เช่น UCL + EFL / Bundesliga + Serie A)
+                    </p>
+                    <p className="text-slate-300 leading-relaxed">
+                      2) <strong>Hybrid -0.75 + ขาเซฟ -0.25 &amp; แบนทีมพิการ:</strong> เพิ่มขา -0.25 (ชนะ 1 ลูกกินเต็ม) ตัดทีมขาดตัวหลัก (Bayern), ต่อลึก -2.75 (Barça), สนามกลาง และแก้ระบบห้ามรีไซเคิลโพยเก่าแล้ว
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Nov 25 6-Match Screening Matrix */}
+              <div className="p-4 rounded-2xl bg-slate-950/85 border border-emerald-500/40 space-y-2.5">
+                <div className="flex items-center justify-between flex-wrap gap-1 text-[11px]">
+                  <span className="font-bold text-emerald-300">
+                    📋 ตารางคัดกรองวันพุธ 25 พ.ย. (Smart Guard v3.0 &bull; 6 คู่จริง &rarr; คัด 2 คู่ต่างลีกเข้า Step 2)
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">
+                    แบนทีมตัวเจ็บยกแผง / ต่อลึกเกิน -1.75 / จอมเสมอ
+                  </span>
+                </div>
+                <div className="divide-y divide-slate-800/80 rounded-xl border border-slate-800 bg-slate-900/70 overflow-hidden text-[11px]">
+                  {DAILY_SCREENING_CANDIDATES_NOV25.map((cand) => (
+                    <div
+                      key={cand.id}
+                      className={`p-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+                        cand.isSelectedTopPick ? 'bg-emerald-950/30' : 'opacity-70'
+                      }`}
+                    >
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span
+                            className={`font-black font-mono text-[10px] px-1.5 py-0.5 rounded ${
+                              cand.isSelectedTopPick
+                                ? 'bg-emerald-400 text-slate-950'
+                                : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                            }`}
+                          >
+                            {cand.isSelectedTopPick ? '✓ ติด Smart Guard Step 2' : 'แบน / คัดออก'}
+                          </span>
+                          <span className="font-bold text-white">{cand.matchTitle}</span>
+                          <span className="text-slate-400 text-[10px]">{cand.kickoffThai}</span>
+                          <span className="text-slate-400 font-mono text-[10px] tabular-nums">
+                            xG {cand.homeXg.toFixed(2)}–{cand.awayXg.toFixed(2)} (Gap +{cand.xgGap.toFixed(2)})
+                          </span>
+                        </div>
+                        <p className="text-[10px] text-slate-300 mt-1">{cand.verdictThai}</p>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums text-[10px]">
+                        <span className="text-slate-400">Implied {cand.impliedProbPct}%</span>
+                        <span className={cand.edgeOver1xBetPct >= 3.5 ? 'text-emerald-300 font-bold' : 'text-rose-400 font-bold'}>
+                          Edge {cand.edgeOver1xBetPct >= 0 ? `+${cand.edgeOver1xBetPct}` : cand.edgeOver1xBetPct}%
+                        </span>
+                        <span className={cand.isSelectedTopPick ? 'text-amber-300 font-black' : 'text-slate-400'}>
+                          {cand.buttonLabel}
+                        </span>
+                        <span className="text-sky-300 font-bold">@{formatAhOdds(cand.odds)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Nov 23 6-Match Screening Matrix (shown on Monday 23 Nov AH Step 2 Launch Pick) */}
           {pick.id === SUPER_PICK_MONDAY_23.id && (
@@ -2352,13 +2487,14 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
         {/* History List */}
         <div className="space-y-2">
           {displayedHistory.map((h, index) => {
-            const { side, settled } = evaluateHistoryAh(h);
-            const isAhWin = (settled?.profitFactor ?? 0) > 0;
+            const { side, settled, isStep2Record, isAhWin } = evaluateHistoryAh(h);
             const isCsWin = h.result === 'WIN';
             const isJustSettled =
               index === 0 ||
-              h.id === SETTLED_WEDNESDAY_18_RECORD.id ||
-              h.id === SETTLED_TUESDAY_17_RECORD.id;
+              h.id === SETTLED_TUESDAY_24_RECORD.id ||
+              h.id === SETTLED_MONDAY_23_RECORD.id ||
+              h.id === SETTLED_SUNDAY_22_RECORD.id ||
+              h.id === SETTLED_WEDNESDAY_18_RECORD.id;
 
             return (
               <div
@@ -2376,7 +2512,7 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                     <span className="text-[11px] font-mono font-bold text-slate-400 min-w-[42px]">{h.date}</span>
                     {isJustSettled && (
                       <span className={`text-[9px] font-bold ${isAhWin ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {isAhWin ? '✓ HDP เข้าเป้า' : '✗ พลิก'}
+                        {isAhWin ? '✓ เข้าเป้า' : '✗ หลุดเป้า'}
                       </span>
                     )}
                   </div>
@@ -2386,9 +2522,19 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                       {h.matchTitle}
                     </div>
                     <div className="text-[10px] text-slate-400 font-mono truncate tabular-nums">
-                      1xBet AH: <strong className="text-amber-300">{side.favTeam} -0.25 ({formatOneXBetAhButton(side.teamSide, -0.25)})</strong> &middot; จบจริง:{' '}
-                      <strong className={isAhWin ? 'text-emerald-300' : 'text-rose-300'}>{h.actualScore}</strong>{' '}
-                      <span className="text-slate-500">(สกอร์เดิม {h.predictedScore} {isCsWin ? '🎯' : '❌'})</span>
+                      {isStep2Record ? (
+                        <>
+                          1xBet Step 2: <strong className="text-violet-300">{h.predictedScore}</strong> &middot; จบจริง:{' '}
+                          <strong className={isAhWin ? 'text-emerald-300' : 'text-rose-300'}>{h.actualScore}</strong>{' '}
+                          <span className="text-slate-500">(@{formatAhOdds(h.odds)} {isAhWin ? '✅' : '❌'})</span>
+                        </>
+                      ) : (
+                        <>
+                          1xBet AH: <strong className="text-amber-300">{side.favTeam} -0.25 ({formatOneXBetAhButton(side.teamSide, -0.25)})</strong> &middot; จบจริง:{' '}
+                          <strong className={isAhWin ? 'text-emerald-300' : 'text-rose-300'}>{h.actualScore}</strong>{' '}
+                          <span className="text-slate-500">(โพย {h.predictedScore} {isCsWin ? '🎯' : '❌'})</span>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -2401,7 +2547,15 @@ export const DailySuperPickView: React.FC<DailySuperPickViewProps> = ({
                         : 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                     }`}
                   >
-                    {settled ? `HDP ${settled.shortBadge}` : isCsWin ? 'WIN 🎯' : 'LOSS'}
+                    {isStep2Record
+                      ? isAhWin
+                        ? 'STEP 2 WIN 🎯'
+                        : 'STEP 2 LOSS ❌'
+                      : settled
+                      ? `HDP ${settled.shortBadge}`
+                      : isCsWin
+                      ? 'WIN 🎯'
+                      : 'LOSS'}
                   </span>
                 </div>
               </div>

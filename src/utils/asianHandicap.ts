@@ -430,6 +430,145 @@ export const DAILY_SCREENING_CANDIDATES_NOV23: AsianHandicapCandidate[] = [
 ];
 
 /**
+ * Smart Guard v3.0 Full 6-Match Screening Matrix for Wednesday 25 Nov 2026 (UCL MD5 + EFL Championship)
+ * Enforces Cross-League Split, Hybrid -0.25/-0.75 Step 2, and Injury/Draw-Trap Filtering.
+ */
+export const DAILY_SCREENING_CANDIDATES_NOV25: AsianHandicapCandidate[] = [
+  {
+    id: 'cand-nov25-inter-stuttgart',
+    matchTitle: 'Inter Milan vs VfB Stuttgart',
+    league: 'UEFA Champions League',
+    kickoffThai: '03:00 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Inter Milan -0.75 [ปุ่ม 1 (-0.75)]',
+    lineValue: -0.75,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.75)',
+    odds: 1.69,
+    homeXg: 2.15,
+    awayXg: 0.78,
+    xgGap: 1.37,
+    winProbability: 69.0,
+    impliedProbPct: 59.2,
+    edgeOver1xBetPct: 9.8,
+    confidenceScore: 99.3,
+    isSelectedTopPick: true,
+    passes1xBetGate: true,
+    verdictThai:
+      'ผ่าน 5/5 Smart Guard v3.0 (ขาที่ 1 UCL): เลาตาโร่ มาร์ติเนซ ฟิตกลับมาลงตัวจริง ส่วนสตุ๊ตการ์ตขาด Angelo Stiller กองกลางหัวใจหลัก และเพิ่งแพ้กาลาตาซาราย 0-2 (+1.37 xG Gap)',
+  },
+  {
+    id: 'cand-nov25-stoke-millwall',
+    matchTitle: 'Stoke City vs Millwall',
+    league: 'EFL Championship',
+    kickoffThai: '02:45 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Stoke City -0.25 [ปุ่ม 1 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.25)',
+    odds: 1.85,
+    homeXg: 1.56,
+    awayXg: 0.78,
+    xgGap: 0.78,
+    winProbability: 64.5,
+    impliedProbPct: 54.1,
+    edgeOver1xBetPct: 10.4,
+    confidenceScore: 99.0,
+    isSelectedTopPick: true,
+    passes1xBetGate: true,
+    verdictThai:
+      'ผ่าน 5/5 Smart Guard v3.0 (ขาที่ 2 แยกต่างลีก): สโต๊ค ซิตี้ รองจ่าฝูงแชมเปียนชิพ (32 แต้ม) เปิดบ้านรับ มิลล์วอลล์ (อันดับ 16) ที่แพ้รวด 3 นัดและยิงไม่ได้เลย 3 เกมติด ต่อแค่ -0.25 ชนะ 1 ลูกกินเต็ม!',
+  },
+  {
+    id: 'cand-nov25-lille-bayern',
+    matchTitle: 'Lille vs Bayern Munich',
+    league: 'UEFA Champions League',
+    kickoffThai: '03:00 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Bayern -0.25 [ปุ่ม 2 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'AWAY',
+    buttonLabel: '2 (-0.25)',
+    odds: 1.82,
+    homeXg: 1.38,
+    awayXg: 1.44,
+    xgGap: 0.06,
+    winProbability: 48.0,
+    impliedProbPct: 54.9,
+    edgeOver1xBetPct: -6.9,
+    confidenceScore: 61.5,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'แบนโดย Smart Guard v3.0 (วิกฤตตัวเจ็บ): บาเยิร์นขาด Kane, Olise, Luis Díaz, Neuer และ Davies ตัวจริงหาย 5 ราย ลีลล์ในบ้านสู้ได้สบาย',
+  },
+  {
+    id: 'cand-nov25-sabah-barcelona',
+    matchTitle: 'Sabah vs Barcelona',
+    league: 'UEFA Champions League',
+    kickoffThai: '00:45 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Barcelona -2.75 [ปุ่ม 2 (-2.75)]',
+    lineValue: -2.75,
+    teamSide: 'AWAY',
+    buttonLabel: '2 (-2.75)',
+    odds: 1.90,
+    homeXg: 0.45,
+    awayXg: 2.35,
+    xgGap: 1.90,
+    winProbability: 47.0,
+    impliedProbPct: 52.6,
+    edgeOver1xBetPct: -5.6,
+    confidenceScore: 68.0,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก (ต่อลึกเกินเกณฑ์): บินไกลกว่า 4,000 กม. แถม Lamine Yamal บาดเจ็บ ราคา 1xBet ต่อลึก -2.75/-3.0 ต้องยิงห่าง 3–4 ลูก เสี่ยงเกินไป',
+  },
+  {
+    id: 'cand-nov25-burnley-birmingham',
+    matchTitle: 'Burnley vs Birmingham',
+    league: 'EFL Championship',
+    kickoffThai: '02:45 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Burnley -0.25 [ปุ่ม 1 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'HOME',
+    buttonLabel: '1 (-0.25)',
+    odds: 1.78,
+    homeXg: 1.32,
+    awayXg: 0.98,
+    xgGap: 0.34,
+    winProbability: 49.5,
+    impliedProbPct: 56.2,
+    edgeOver1xBetPct: -6.7,
+    confidenceScore: 66.2,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก (กับดักเสมอในบ้าน): เบิร์นลีย์เสมอใน Turf Moor ถึง 6 จาก 8 นัดหลังสุด เกมรุกฝืด xG Gap +0.34 ต่ำกว่าเกณฑ์ 0.50',
+  },
+  {
+    id: 'cand-nov25-brugge-liverpool',
+    matchTitle: 'Club Brugge vs Liverpool',
+    league: 'UEFA Champions League',
+    kickoffThai: '03:00 น. (คืนพุธ 25 พ.ย.)',
+    recommendedLine: 'Liverpool -0.25 [ปุ่ม 2 (-0.25)]',
+    lineValue: -0.25,
+    teamSide: 'AWAY',
+    buttonLabel: '2 (-0.25)',
+    odds: 1.76,
+    homeXg: 1.28,
+    awayXg: 1.56,
+    xgGap: 0.28,
+    winProbability: 51.0,
+    impliedProbPct: 56.8,
+    edgeOver1xBetPct: -5.8,
+    confidenceScore: 69.4,
+    isSelectedTopPick: false,
+    passes1xBetGate: false,
+    verdictThai:
+      'ตัดออก (เกมรับรั่วทั้งคู่): ทั้ง 2 ทีมมี 9 แต้มเท่ากันในตาราง UCL และลิเวอร์พูลยังไม่เคยเก็บคลีนชีตในรายการนี้เลย (0/4 นัด)',
+  },
+];
+
+/**
  * Screens matches from the fixture pool using all 5 strict 1xBet rules,
  * returning qualified picks (for transparent ranking or criteria-anchored random pick rotation).
  */
@@ -538,17 +677,25 @@ export function rollStep2PairFromMatches(
   const { qualified, rejectedCount, totalEvaluated } = screenMatchesBy1xBetCriteria(matches);
   if (qualified.length < 2) return null;
 
-  const combos: Array<{ a: OneXBetPoolPick; b: OneXBetPoolPick; key: string }> = [];
+  const allCombos: Array<{ a: OneXBetPoolPick; b: OneXBetPoolPick; key: string; crossLeague: boolean; hasSafetyAnchor: boolean }> = [];
   for (let i = 0; i < qualified.length; i++) {
     for (let j = i + 1; j < qualified.length; j++) {
       const a = qualified[i];
       const b = qualified[j];
-      combos.push({ a, b, key: `${a.matchTitle}__${b.matchTitle}` });
+      const crossLeague = a.league !== b.league;
+      const hasSafetyAnchor = a.line === -0.25 || b.line === -0.25;
+      allCombos.push({ a, b, key: `${a.matchTitle}__${b.matchTitle}`, crossLeague, hasSafetyAnchor });
     }
   }
 
+  // Smart Guard v3.0: strictly prefer Cross-League pairs (prevent correlated league wipeouts) and Hybrid -0.25 anchor when available
+  const crossLeagueCombos = allCombos.filter((c) => c.crossLeague);
+  const poolCombos = crossLeagueCombos.length > 0 ? crossLeagueCombos : allCombos;
+  const hybridCombos = poolCombos.filter((c) => c.hasSafetyAnchor);
+  const prioritized = hybridCombos.length > 0 ? hybridCombos : poolCombos;
+
   const eligible =
-    combos.length > 1 && excludePairKey ? combos.filter((c) => c.key !== excludePairKey) : combos;
+    prioritized.length > 1 && excludePairKey ? prioritized.filter((c) => c.key !== excludePairKey) : prioritized;
   const chosen = eligible[Math.floor(Math.random() * eligible.length)];
   const scenarios = computeStep2Scenarios(chosen.a.odds, chosen.b.odds);
 

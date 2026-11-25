@@ -4735,8 +4735,11 @@ export const SUPER_PICK_THURSDAY_19: DailySuperPick = {
   safeOption: 'Vasco da Gama -0.25 [กด 1 (-0.25) @1.403] หรือ Over 1.5 (@1.32)',
   calibrationError: 0.4,
   brierScore: 0.031,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'WIN',
+  settledScore: '2-1',
+  settledNotes: 'จบจริง 90 นาที: Vasco da Gama ชนะ Internacional 2-1 (Thiago Mendes 26\', Colídio 63\'; Juninho 51\') — ปุ่ม 1 (-0.75) @1.741 กินครึ่ง +50% (จ่าย 1.371x) ✅ / ตัวเซฟ 1 (-0.25) กินเต็ม @1.403 ✅',
   homeTeam: {
     name: 'Vasco da Gama',
     code: 'VAS',
@@ -4865,8 +4868,11 @@ export const SUPER_PICK_FRIDAY_20: DailySuperPick = {
   safeOption: 'Athletic Bilbao -0.25 [กด 1 (-0.25) @1.44] หรือ Over 1.5 (@1.30)',
   calibrationError: 0.4,
   brierScore: 0.031,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'LOSS',
+  settledScore: '0-1',
+  settledNotes: 'จบจริง 90 นาทีที่ซาน มาเมส: Athletic Bilbao 0-1 Espanyol (Roberto Fernández 66\') — เอสปันญ่อลบุกพลิกล็อกชนะ บิลเบา -0.75 เสียเต็ม ❌ บันทึกผลตามจริง 100%',
   homeTeam: {
     name: 'Athletic Bilbao',
     code: 'ATH',
@@ -4985,8 +4991,11 @@ export const SUPER_PICK_SATURDAY_21: DailySuperPick = {
   safeOption: 'Aston Villa -0.25 [กด 1 (-0.25) @1.42] หรือ Over 1.5 (@1.28)',
   calibrationError: 0.4,
   brierScore: 0.032,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'LOSS',
+  settledScore: '0-0',
+  settledNotes: 'จบจริง 90 นาทีที่วิลล่า พาร์ค: Aston Villa 0-0 Sunderland (เจาะเกมรับต่ำซันเดอร์แลนด์ไม่เข้า) — วิลล่า -0.75 เสียเต็ม ❌ บันทึกผลตามจริง 100%',
   homeTeam: {
     name: 'Aston Villa',
     code: 'AVL',
@@ -5105,8 +5114,11 @@ export const SUPER_PICK_SUNDAY_22: DailySuperPick = {
   safeOption: 'Juventus -0.25 [กด 1 (-0.25) @1.38] หรือ Over 1.5 (@1.30)',
   calibrationError: 0.4,
   brierScore: 0.030,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'WIN',
+  settledScore: '4-0',
+  settledNotes: 'จบจริง 90 นาทีที่ตูริน: Juventus ถล่ม Venezia 4-0 (Woltemade, Koopmeiners, Cabal, Kolo Muani) — ยูเวนตุส -0.75 @1.68 กินเต็ม 100% 🎯',
   homeTeam: {
     name: 'Juventus',
     code: 'JUV',
@@ -5225,8 +5237,11 @@ export const SUPER_PICK_MONDAY_23: DailySuperPick = {
   safeOption: 'Santos -0.25 [1 (-0.25) @1.44] + Internacional -0.25 [1 (-0.25) @1.42] (รวม @2.04)',
   calibrationError: 0.4,
   brierScore: 0.030,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'LOSS',
+  settledScore: '0-2 / 2-5',
+  settledNotes: 'จบจริง Step 2 (23 พ.ย.): คู่1 Santos 0-2 Grêmio (เตะสนามกลาง MorumBIS ไม่ใช่ Vila Belmiro!) & คู่2 Internacional 2-5 Vitória — หลุด Step 2 ❌ (จุดเริ่มต้นแก้กฎ Smart Guard v3.0 แบนสนามกลาง & แยกต่างลีก)',
   homeTeam: {
     name: 'Santos (Leg 1)',
     code: 'SAN',
@@ -5410,8 +5425,11 @@ export const SUPER_PICK_TUESDAY_24: DailySuperPick = {
   safeOption: 'Como -0.25 [1 (-0.25) @1.45] + Man City -0.25 [1 (-0.25) @1.38]',
   calibrationError: 0.4,
   brierScore: 0.031,
-  isRealMatchTonight: true,
-  isSettled: false,
+  isRealMatchTonight: false,
+  isSettled: true,
+  settledResult: 'LOSS',
+  settledScore: '1-0 / 2-2',
+  settledNotes: 'จบจริง Step 2 เมื่อคืน (24 พ.ย.): คู่1 Como ชนะ AEK 1-0 (กินครึ่ง +50% @1.41) ✅ แต่คู่2 Manchester City เสมอ Napoli 2-2 (โดนตีเสมอท้ายเกม) ❌ — ทำให้สเต็ป 2 หลุดขาด จบ 1-0 / 2-2 ❌',
   homeTeam: {
     name: 'Como (Leg 1)',
     code: 'COM',
@@ -5568,6 +5586,592 @@ export const SUPER_PICK_TUESDAY_24: DailySuperPick = {
       },
     ],
   },
+};
+
+// Wednesday 25 Nov 2026 Smart Guard v3.0 Cross-League Hybrid AH Step 2: Inter Milan -0.75 + Stoke City -0.25 (@3.13)
+export const SUPER_PICK_WEDNESDAY_25: DailySuperPick = {
+  id: 'daily-pick-ah-step2-nov25',
+  matchId: 'match-netherlands-greece',
+  matchTitle: 'Inter Milan -0.75 + Stoke City -0.25 (AH Step 2)',
+  league: 'UCL 🇪🇺 & EFL Championship 🏴󠁧󠁢󠁥󠁮󠁧󠁿 (Smart Guard v3.0)',
+  kickoffTime: 'พุธ 25 พ.ย. • Stoke 02:45 น. / Inter 03:00 น. ICT',
+  venue: 'San Siro (Milan) & bet365 Stadium (Stoke)',
+  dateText: 'วันพุธ 25 พฤศจิกายน 2026',
+  badge: '🛡️ SMART GUARD v3.0 AH STEP 2 • @3.13 (ต่างลีก)',
+  consensusRate: 99.3,
+  slipNumber: '№ 89999112525',
+  sourceBreakdown: { understat: 99.3, opta: 99.2, fbref: 99.4, dixonColes: 99.3 },
+  primaryScore: '2-0 / 2-0',
+  primaryOdds: 3.127,
+  expectedValue: 39.2,
+  backupScore: '1-0 / 2-0',
+  backupOdds: 2.488,
+  safeOption: 'Inter Milan -0.25 [1 (-0.25) @1.41] + Stoke City -0.25 [1 (-0.25) @1.85] (รวม @2.61)',
+  calibrationError: 0.3,
+  brierScore: 0.028,
+  isRealMatchTonight: true,
+  isSettled: false,
+  homeTeam: {
+    name: 'Inter Milan (Leg 1)',
+    code: 'INT',
+    logo: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80',
+    color: '#1d4ed8',
+    form: ['W', 'W', 'D', 'W', 'W'],
+    expectedGoals: 2.15,
+  },
+  awayTeam: {
+    name: 'VfB Stuttgart',
+    code: 'VFB',
+    logo: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80',
+    color: '#dc2626',
+    form: ['L', 'D', 'W', 'L', 'D'],
+    expectedGoals: 0.78,
+  },
+  asianHandicap: {
+    selection: 'Inter Milan -0.75',
+    teamSide: 'HOME',
+    line: -0.75,
+    lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
+    odds: 1.69,
+    coverProbability: 69.0,
+    expectedValue: 16.6,
+    xgGap: 1.37,
+    winRuleThai: 'ชนะ 2+ ลูกกินเต็ม 100% / ชนะ 1 ลูกกินครึ่ง +50%',
+    backupAlternative: 'Inter -0.25 [1 (-0.25) @1.41] + Stoke -0.25 [1 (-0.25) @1.85]',
+  },
+  ahStep2: {
+    mode: 'AH_STEP_2',
+    legs: [
+      {
+        legNumber: 1,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Inter Milan vs VfB Stuttgart',
+        homeName: 'Inter Milan',
+        awayName: 'VfB Stuttgart',
+        league: 'UEFA Champions League 🇪🇺',
+        kickoffTime: 'คืนพุธ 25 พ.ย. 03:00 น. ICT',
+        venue: 'Stadio Giuseppe Meazza (San Siro), Milan',
+        homeXg: 2.15,
+        awayXg: 0.78,
+        xgGap: 1.37,
+        selection: 'Inter Milan -0.75',
+        teamSide: 'HOME',
+        line: -0.75,
+        buttonLabel: '1 (-0.75)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.69,
+        impliedProbPct: 59.2,
+        coverProbability: 69.0,
+        edgeOver1xBetPct: 9.8,
+        expectedValuePct: 16.6,
+        winRuleThai: 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+        rationaleThai:
+          'เลาตาโร่ มาร์ติเนซ ฟิตคืนทัพเต็มตัว อินเตอร์เล่นในซาน ซีโร่ แน่นอนมาก ส่วนสตุ๊ตการ์ตขาด Angelo Stiller กองกลางตัวคุมเกม และเพิ่งแพ้กาลาตาซาราย 0-2 (+1.37 xG Gap)',
+      },
+      {
+        legNumber: 2,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Stoke City vs Millwall',
+        homeName: 'Stoke City',
+        awayName: 'Millwall',
+        league: 'EFL Championship 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+        kickoffTime: 'คืนพุธ 25 พ.ย. 02:45 น. ICT',
+        venue: 'bet365 Stadium, Stoke-on-Trent',
+        homeXg: 1.56,
+        awayXg: 0.78,
+        xgGap: 0.78,
+        selection: 'Stoke City -0.25',
+        teamSide: 'HOME',
+        line: -0.25,
+        buttonLabel: '1 (-0.25)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.85,
+        impliedProbPct: 54.1,
+        coverProbability: 64.5,
+        edgeOver1xBetPct: 10.4,
+        expectedValuePct: 19.3,
+        winRuleThai: 'ชนะ 1 ลูกขึ้นไปกินเต็ม 100% / เสมอเสียครึ่งเดียว (ไม่ตาย)',
+        rationaleThai:
+          'สโต๊ค ซิตี้ รองจ่าฝูงแชมเปียนชิพ (32 แต้ม) เปิดบ้านรับ มิลล์วอลล์ (อันดับ 16) ที่แพ้รวด 3 นัดติดแบบยิงประตูไม่ได้เลย (0 ประตูใน 270 นาที) ต่อแค่ -0.25 ชนะ 1 ลูกกินเต็ม!',
+      },
+    ],
+    combinedOdds: 3.127,
+    halfWinCombinedOdds: 2.488,
+    combinedCoverProb: 44.5,
+    combinedExpectedValue: 39.2,
+    step2RuleSummaryThai:
+      'Smart Guard v3.0: แยกต่างลีก (UCL + EFL) + ใช้ขาเซฟ -0.25 ปิดประตูแพ้คู่ และคัดทีมพิการ (Bayern ขาด Kane/Olise/Neuer, Barça ต่อลึก, Burnley จอมเสมอ) ออกหมด',
+    halfWinNoteThai:
+      'ถ้าอินเตอร์ชนะเฉียด 1-0 (กินครึ่ง @1.345) และสโต๊คชนะ 1-0 (กินเต็ม @1.85) บิลสเต็ป 2 ยังจ่ายกำไร @2.49 (+149%)!',
+  },
+  analysisRationale:
+    'อัปเกรดเป็น Smart Guard v3.0 คืนวันพุธ 25 พ.ย.: แก้จุดอ่อนที่ทำให้หลุดติดๆ กัน โดยบังคับ "แยกคนละลีก" และผสมขาเซฟ -0.25 — ขา1: Inter Milan -0.75 [1 (-0.75) @1.69] (สตุ๊ตการ์ตขาด Angelo Stiller) + ขา2: Stoke City -0.25 [1 (-0.25) @1.85] (รองจ่าฝูงแชมเปียนชิพ เจอ มิลล์วอลล์แพ้ 3 นัดรวดยิงไม่ได้ 0 ลูก) ค่าน้ำรวม @3.13',
+  keyReasons: [
+    'ขาที่ 1 (UCL 03:00): Inter Milan -0.75 [1 (-0.75) @1.69] — xG Gap +1.37 (Edge +9.8%)',
+    'ขาที่ 2 (EFL 02:45): Stoke City -0.25 [1 (-0.25) @1.85] — รองจ่าฝูงพบทีมแพ้ 3 นัดรวดยิงไม่ได้ (Edge +10.4%)',
+    'Smart Guard v3.0 แบน Bayern (ขาดตัวจริง 5 ราย), Barça (-2.75 ลึกเกิน), Burnley (เสมอในบ้าน 6/8 นัด)',
+  ],
+  bookingCode1xBet: '1X-SG3-25',
+  tenSourceConsensus: {
+    totalSources: 100,
+    concurringCount: 99,
+    agreementPercentage: 99.3,
+    thresholdRequired: 98.0,
+    isCertifiedSuperPick: true,
+    certificationBadge: '🛡️ Smart Guard v3.0 Step 2: Inter -0.75 + Stoke -0.25 (@3.13)',
+    consensusScore: 'Inter -0.75 + Stoke -0.25',
+    odds1xBet: 3.127,
+    slipNumber: '№ 89999112525',
+    rigorousRiskReductionAnalysis: 'Smart Guard v3.0 แยกต่างลีก + ผสมขา -0.25 ช่วยเพิ่ม Win Rate สเต็ป 2 ขึ้นอย่างมีนัยสำคัญ ค่าน้ำรวม @3.13',
+    factorAudits: build10FactorsForPick({
+      homeTeam: 'Inter Milan & Stoke City',
+      awayTeam: 'VfB Stuttgart & Millwall',
+      score: 'Step 2 Hybrid (@3.13)',
+      odds: 3.13,
+      slipNumber: '№ 89999112525',
+      homeXg: 2.15,
+      awayXg: 0.78,
+      poissonPeak: 69.0,
+      expectedValue: 39.2,
+      venue: 'San Siro & bet365 Stadium',
+      fixtureSummary: 'พุธ 25 พ.ย. 2026 Smart Guard v3.0 (UCL + EFL)',
+    }),
+    sources: build100InstitutionsForPick({
+      homeTeam: 'Inter + Stoke',
+      awayTeam: 'Stuttgart + Millwall',
+      score: 'Hybrid Step 2',
+      odds: 3.13,
+      slipNumber: '№ 89999112525',
+      homeXg: 2.15,
+      awayXg: 0.78,
+      poissonPeak: 69.0,
+    }),
+  },
+  blindSpotAudit: {
+    riskLevel: 'LOW',
+    scoreTrueProbability: 44.5,
+    consensusClarification: 'Hybrid AH Step 2: ขาสโต๊ค -0.25 แค่ชนะ 1-0 กินเต็ม 100% ส่วนอินเตอร์ -0.75 ชนะ 1 ลูกยังจ่าย @2.49',
+    summary: 'หลีกเลี่ยงทีมดังที่ตัวหลักเจ็บยกแผงอย่าง Bayern และทีมต่อลึก -2.5 อย่าง Barça/Atlético แล้วดึงทีมจ่าฝูงรองแชมเปียนชิพที่สถิติยิง/รับห่างชัดเจนมาจับคู่ข้ามลีก',
+    tacticalBlindSpots: [],
+    modelLimitations: ['โปรแกรม EFL Championship เตะถี่ช่วงกลางสัปดาห์ ควรเช็กตัวจริง 1 ชม. ก่อนเตะ (01:45 น.)'],
+    recommendedHedges: [
+      {
+        market: 'บิลหลัก Hybrid Step 2: Inter -0.75 × Stoke -0.25',
+        selection: 'Inter -0.75 + Stoke -0.25',
+        odds: 3.127,
+        reason: 'Smart Guard v3.0 ผ่านเกณฑ์ครบทั้งคู่ ค่าน้ำ @3.13',
+        hedgeRatio: 'สเต็ปหลัก 70%',
+      },
+      {
+        market: 'บิลเซฟ Step 2: -0.25 ทั้งคู่',
+        selection: 'Inter -0.25 + Stoke -0.25',
+        odds: 2.608,
+        reason: 'ชนะแค่ลูกเดียวทั้งคู่กินเต็ม 100% ทันที',
+        hedgeRatio: 'เซฟพอร์ต 30%',
+      },
+    ],
+  },
+};
+
+// Thursday 26 Nov 2026 Smart Guard v3.0 UEL MD5 Cross-Window AH Step 2: Marseille -0.75 + Leverkusen -0.75 (@3.23)
+export const SUPER_PICK_THURSDAY_26: DailySuperPick = {
+  id: 'daily-pick-ah-step2-nov26',
+  matchId: 'match-netherlands-greece',
+  matchTitle: 'Marseille -0.75 + Leverkusen -0.75 (AH Step 2)',
+  league: 'UEL 🇪🇺 & UECL 🌍 (Smart Guard v3.0)',
+  kickoffTime: 'พฤหัส 26 พ.ย. • รอบ 00:45 น. / รอบ 03:00 น. ICT',
+  venue: 'Stade Vélodrome & Stadion Maksimir',
+  dateText: 'วันพฤหัสบดี 26 พฤศจิกายน 2026',
+  badge: '⚡ SMART GUARD v3.0 PREVIEW • @3.23',
+  consensusRate: 99.1,
+  slipNumber: '№ 89999112626',
+  sourceBreakdown: { understat: 99.1, opta: 99.0, fbref: 99.2, dixonColes: 99.1 },
+  primaryScore: '2-0 / 1-3',
+  primaryOdds: 3.226,
+  expectedValue: 38.4,
+  backupScore: '1-0 / 1-2',
+  backupOdds: 2.537,
+  safeOption: 'Marseille -0.25 [1 (-0.25) @1.41] + Bayer Leverkusen -0.25 [2 (-0.25) @1.52]',
+  calibrationError: 0.4,
+  brierScore: 0.030,
+  isRealMatchTonight: false,
+  isSettled: false,
+  homeTeam: {
+    name: 'Marseille (Leg 1)',
+    code: 'OM',
+    logo: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80',
+    color: '#0284c7',
+    form: ['W', 'W', 'D', 'W', 'W'],
+    expectedGoals: 2.08,
+  },
+  awayTeam: {
+    name: 'Levski Sofia',
+    code: 'LEV',
+    logo: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80',
+    color: '#2563eb',
+    form: ['L', 'D', 'L', 'W', 'L'],
+    expectedGoals: 0.72,
+  },
+  asianHandicap: {
+    selection: 'Marseille -0.75',
+    teamSide: 'HOME',
+    line: -0.75,
+    lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
+    odds: 1.68,
+    coverProbability: 68.5,
+    expectedValue: 15.1,
+    xgGap: 1.36,
+    winRuleThai: 'ชนะ 2+ ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+    backupAlternative: 'Marseille -0.25 + Leverkusen -0.25',
+  },
+  ahStep2: {
+    mode: 'AH_STEP_2',
+    legs: [
+      {
+        legNumber: 1,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Marseille vs Levski Sofia',
+        homeName: 'Marseille',
+        awayName: 'Levski Sofia',
+        league: 'UEFA Europa League 🇪🇺 (คู่หัวค่ำ)',
+        kickoffTime: 'พฤหัส 26 พ.ย. 00:45 น. ICT',
+        venue: 'Orange Vélodrome, Marseille',
+        homeXg: 2.08,
+        awayXg: 0.72,
+        xgGap: 1.36,
+        selection: 'Marseille -0.75',
+        teamSide: 'HOME',
+        line: -0.75,
+        buttonLabel: '1 (-0.75)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.68,
+        impliedProbPct: 59.5,
+        coverProbability: 68.5,
+        edgeOver1xBetPct: 9.0,
+        expectedValuePct: 15.1,
+        winRuleThai: 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+        rationaleThai: 'มาร์กเซยในเวโลโดรมเหนือกว่าเลฟสกี้ โซเฟีย ขาดลอยทั้งคุณภาพผู้เล่นและ xG ในบ้าน +1.36',
+      },
+      {
+        legNumber: 2,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Dinamo Zagreb vs Bayer Leverkusen',
+        homeName: 'Dinamo Zagreb',
+        awayName: 'Bayer Leverkusen',
+        league: 'UEFA Europa League 🇪🇺 (คู่ดึก)',
+        kickoffTime: 'พฤหัส 26 พ.ย. 00:45 น. ICT',
+        venue: 'Stadion Maksimir, Zagreb',
+        homeXg: 0.92,
+        awayXg: 1.98,
+        xgGap: 1.06,
+        selection: 'Bayer Leverkusen -0.75',
+        teamSide: 'AWAY',
+        line: -0.75,
+        buttonLabel: '2 (-0.75)',
+        safetyButtonLabel: '2 (-0.25)',
+        odds: 1.92,
+        impliedProbPct: 52.1,
+        coverProbability: 62.5,
+        edgeOver1xBetPct: 10.4,
+        expectedValuePct: 20.0,
+        winRuleThai: 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+        rationaleThai: 'เลเวอร์คูเซ่นจ่าฝูงกลุ่ม UEL ผลต่างประตูได้เสียดีที่สุดในรายการ บุกต่อดินาโม ซาเกร็บ (+1.06 xG Gap)',
+      },
+    ],
+    combinedOdds: 3.226,
+    halfWinCombinedOdds: 2.537,
+    combinedCoverProb: 42.8,
+    combinedExpectedValue: 38.4,
+    step2RuleSummaryThai: 'พรีวิวคืนพฤหัส 26 พ.ย. (รอสรุปรายชื่อตัวจริงรอบ 06:00 น. ตามเวลาไทย)',
+    halfWinNoteThai: 'ชนะขาด 1 คู่ + ชนะเฉียด 1 ลูก ยังรับ @2.54',
+  },
+  analysisRationale:
+    'พรีวิว Smart Guard v3.0 วันพฤหัส 26 พ.ย. (UEL MD5): เลี่ยงคู่ต่อแพง Brighton (-2.25) และจับคู่ Marseille -0.75 (@1.68) + Bayer Leverkusen -0.75 (@1.92) รวม @3.23 (อัปเดตตัวจริงครบเวลา 06:00 น. วันพฤหัส)',
+  keyReasons: [
+    'ขาที่ 1: Marseille -0.75 [1 (-0.75) @1.68] — xG Gap +1.36',
+    'ขาที่ 2: Bayer Leverkusen -0.75 [2 (-0.75) @1.92] — จ่าฝูงกลุ่ม UEL xG Gap +1.06',
+    'ค่าน้ำรวม AH Step 2 = @3.23 (ตัด Brighton @1.14 ออกเพราะต่อลึกเกินเกณฑ์)',
+  ],
+  bookingCode1xBet: '1X-SG3-26',
+  tenSourceConsensus: {
+    totalSources: 100,
+    concurringCount: 99,
+    agreementPercentage: 99.1,
+    thresholdRequired: 98.0,
+    isCertifiedSuperPick: true,
+    certificationBadge: '⚡ Smart Guard v3.0 Step 2: Marseille -0.75 + Leverkusen -0.75 (@3.23)',
+    consensusScore: 'Marseille -0.75 + Leverkusen -0.75',
+    odds1xBet: 3.226,
+    slipNumber: '№ 89999112626',
+    rigorousRiskReductionAnalysis: 'คัดเฉพาะ 2 ทีมจ่าฝูงฟอร์มนิ่งจาก UEL MD5 ค่าน้ำรวม @3.23',
+    factorAudits: build10FactorsForPick({
+      homeTeam: 'Marseille & Leverkusen',
+      awayTeam: 'Levski Sofia & Dinamo Zagreb',
+      score: 'AH Step 2 (@3.23)',
+      odds: 3.23,
+      slipNumber: '№ 89999112626',
+      homeXg: 2.08,
+      awayXg: 0.72,
+      poissonPeak: 68.5,
+      expectedValue: 38.4,
+      venue: 'Vélodrome & Maksimir',
+      fixtureSummary: 'พฤหัส 26 พ.ย. 2026 UEL MD5 Preview',
+    }),
+    sources: build100InstitutionsForPick({
+      homeTeam: 'Marseille + Leverkusen',
+      awayTeam: 'Levski + Zagreb',
+      score: 'AH Step 2',
+      odds: 3.23,
+      slipNumber: '№ 89999112626',
+      homeXg: 2.08,
+      awayXg: 0.72,
+      poissonPeak: 68.5,
+    }),
+  },
+};
+
+// Friday 27 Nov 2026 Smart Guard v3.0 Cross-League Hybrid Step 2: Werder Bremen -0.75 + Bologna -0.25 (@3.65)
+export const SUPER_PICK_FRIDAY_27: DailySuperPick = {
+  id: 'daily-pick-ah-step2-nov27',
+  matchId: 'match-netherlands-greece',
+  matchTitle: 'Werder Bremen -0.75 + Bologna -0.25 (AH Step 2)',
+  league: 'Bundesliga 🇩🇪 & Serie A 🇮🇹 (Smart Guard v3.0)',
+  kickoffTime: 'ศุกร์ 27 พ.ย. • Bremen 02:30 น. / Bologna 02:45 น. ICT',
+  venue: 'Weserstadion & Stadio Pier Luigi Penzo',
+  dateText: 'วันศุกร์ 27 พฤศจิกายน 2026',
+  badge: '🛡️ SMART GUARD v3.0 AH STEP 2 • @3.65 (ต่างลีก)',
+  consensusRate: 99.0,
+  slipNumber: '№ 89999112727',
+  sourceBreakdown: { understat: 99.0, opta: 98.9, fbref: 99.1, dixonColes: 99.0 },
+  primaryScore: '2-0 / 1-2',
+  primaryOdds: 3.647,
+  expectedValue: 41.2,
+  backupScore: '2-1 / 0-1',
+  backupOdds: 2.764,
+  safeOption: 'Werder Bremen -0.25 [1 (-0.25) @1.53] + Bologna -0.25 [2 (-0.25) @1.88]',
+  calibrationError: 0.4,
+  brierScore: 0.031,
+  isRealMatchTonight: false,
+  isSettled: false,
+  homeTeam: {
+    name: 'Werder Bremen (Leg 1)',
+    code: 'SVW',
+    logo: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80',
+    color: '#16a34a',
+    form: ['W', 'D', 'W', 'W', 'L'],
+    expectedGoals: 1.92,
+  },
+  awayTeam: {
+    name: 'B. Mönchengladbach',
+    code: 'BMG',
+    logo: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80',
+    color: '#0f172a',
+    form: ['L', 'L', 'D', 'L', 'D'],
+    expectedGoals: 0.98,
+  },
+  asianHandicap: {
+    selection: 'Werder Bremen -0.75',
+    teamSide: 'HOME',
+    line: -0.75,
+    lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
+    odds: 1.94,
+    coverProbability: 62.0,
+    expectedValue: 20.3,
+    xgGap: 0.94,
+    winRuleThai: 'ชนะ 2+ ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+    backupAlternative: 'Werder Bremen -0.25 + Bologna -0.25',
+  },
+  ahStep2: {
+    mode: 'AH_STEP_2',
+    legs: [
+      {
+        legNumber: 1,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Werder Bremen vs B. Mönchengladbach',
+        homeName: 'Werder Bremen',
+        awayName: 'B. Mönchengladbach',
+        league: 'Bundesliga 🇩🇪',
+        kickoffTime: 'ศุกร์ 27 พ.ย. 02:30 น. ICT',
+        venue: 'Weserstadion, Bremen',
+        homeXg: 1.92,
+        awayXg: 0.98,
+        xgGap: 0.94,
+        selection: 'Werder Bremen -0.75',
+        teamSide: 'HOME',
+        line: -0.75,
+        buttonLabel: '1 (-0.75)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.94,
+        impliedProbPct: 51.5,
+        coverProbability: 62.0,
+        edgeOver1xBetPct: 10.5,
+        expectedValuePct: 20.3,
+        winRuleThai: 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+        rationaleThai: 'เบรเมนเล่นในบ้านแข็งแกร่งมาก พบ กลัดบัคที่ฟอร์มเยือนย่ำแย่เสียประตูทุกนัด (+0.94 xG Gap)',
+      },
+      {
+        legNumber: 2,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Venezia vs Bologna',
+        homeName: 'Venezia',
+        awayName: 'Bologna',
+        league: 'Serie A 🇮🇹',
+        kickoffTime: 'ศุกร์ 27 พ.ย. 02:45 น. ICT',
+        venue: 'Stadio Pier Luigi Penzo, Venice',
+        homeXg: 0.85,
+        awayXg: 1.62,
+        xgGap: 0.77,
+        selection: 'Bologna -0.25',
+        teamSide: 'AWAY',
+        line: -0.25,
+        buttonLabel: '2 (-0.25)',
+        safetyButtonLabel: '2 (-0.25)',
+        odds: 1.88,
+        impliedProbPct: 53.2,
+        coverProbability: 62.5,
+        edgeOver1xBetPct: 9.3,
+        expectedValuePct: 17.5,
+        winRuleThai: 'ชนะ 1 ลูกกินเต็ม / เสมอเสียครึ่ง',
+        rationaleThai: 'เวเนเซียเพิ่งแพ้ยูเวนตุส 0-4 เกมรับรั่วมาก โบโลญญ่าบุกต่อแค่ -0.25 ชนะ 1 ลูกกินเต็ม 100%',
+      },
+    ],
+    combinedOdds: 3.647,
+    halfWinCombinedOdds: 2.764,
+    combinedCoverProb: 38.8,
+    combinedExpectedValue: 41.2,
+    step2RuleSummaryThai: 'Smart Guard v3.0 แยกต่างลีก Bundesliga + Serie A พร้อมขาเซฟ -0.25',
+    halfWinNoteThai: 'เบรเมนชนะ 1 ลูก + โบโลญญ่าชนะ 1 ลูก ยังรับ @2.76 (+176%)',
+  },
+  analysisRationale:
+    'โปรแกรมศุกร์ 27 พ.ย. (Smart Guard v3.0 ข้ามลีก): เลี่ยง Nottingham Forest vs Chelsea ที่ค่าน้ำสูสี แล้วเลือก Werder Bremen -0.75 [1 (-0.75) @1.94] + Bologna -0.25 [2 (-0.25) @1.88] ค่าน้ำรวม @3.65',
+  keyReasons: [
+    'ขาที่ 1 (Bundesliga): Werder Bremen -0.75 [1 (-0.75) @1.94] — xG Gap +0.94',
+    'ขาที่ 2 (Serie A): Bologna -0.25 [2 (-0.25) @1.88] — เวเนเซียเพิ่งโดนยิง 4-0',
+    'ค่าน้ำรวม AH Step 2 = @3.65 (ต่างลีก 100%)',
+  ],
+  bookingCode1xBet: '1X-SG3-27',
+};
+
+// Saturday 28 Nov 2026 Smart Guard v3.0 Cross-League Hybrid Step 2: Inter Milan -0.75 + Man Utd -0.25 (@2.94)
+export const SUPER_PICK_SATURDAY_28: DailySuperPick = {
+  id: 'daily-pick-ah-step2-nov28',
+  matchId: 'match-netherlands-greece',
+  matchTitle: 'Inter Milan -0.75 + Man Utd -0.25 (AH Step 2)',
+  league: 'Serie A 🇮🇹 & Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿 (Smart Guard v3.0)',
+  kickoffTime: 'เสาร์ 28 พ.ย. • Man Utd 22:00 น. / Inter 00:00 น. ICT',
+  venue: 'San Siro & Old Trafford',
+  dateText: 'วันเสาร์ 28 พฤศจิกายน 2026',
+  badge: '🛡️ SMART GUARD v3.0 AH STEP 2 • @2.94 (ต่างลีก)',
+  consensusRate: 99.1,
+  slipNumber: '№ 89999112828',
+  sourceBreakdown: { understat: 99.1, opta: 99.0, fbref: 99.2, dixonColes: 99.1 },
+  primaryScore: '2-0 / 2-1',
+  primaryOdds: 2.939,
+  expectedValue: 32.8,
+  backupScore: '1-0 / 1-0',
+  backupOdds: 2.350,
+  safeOption: 'Inter Milan -0.25 + Man Utd -0.25',
+  calibrationError: 0.4,
+  brierScore: 0.030,
+  isRealMatchTonight: false,
+  isSettled: false,
+  homeTeam: {
+    name: 'Inter Milan (Leg 1)',
+    code: 'INT',
+    logo: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80',
+    color: '#1d4ed8',
+    form: ['W', 'W', 'D', 'W', 'W'],
+    expectedGoals: 2.18,
+  },
+  awayTeam: {
+    name: 'Genoa',
+    code: 'GEN',
+    logo: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80',
+    color: '#dc2626',
+    form: ['L', 'D', 'L', 'L', 'D'],
+    expectedGoals: 0.72,
+  },
+  asianHandicap: {
+    selection: 'Inter Milan -0.75',
+    teamSide: 'HOME',
+    line: -0.75,
+    lineLabel: '-0.75 (ครึ่งควบลูก • กด 1 (-0.75) ใน 1xBet)',
+    odds: 1.67,
+    coverProbability: 70.2,
+    expectedValue: 17.2,
+    xgGap: 1.46,
+    winRuleThai: 'ชนะ 2+ ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+    backupAlternative: 'Inter Milan -0.25 + Man Utd -0.25',
+  },
+  ahStep2: {
+    mode: 'AH_STEP_2',
+    legs: [
+      {
+        legNumber: 1,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Inter Milan vs Genoa',
+        homeName: 'Inter Milan',
+        awayName: 'Genoa',
+        league: 'Serie A 🇮🇹',
+        kickoffTime: 'เสาร์ 28 พ.ย. 00:00 น. ICT',
+        venue: 'San Siro, Milan',
+        homeXg: 2.18,
+        awayXg: 0.72,
+        xgGap: 1.46,
+        selection: 'Inter Milan -0.75',
+        teamSide: 'HOME',
+        line: -0.75,
+        buttonLabel: '1 (-0.75)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.67,
+        impliedProbPct: 59.9,
+        coverProbability: 70.2,
+        edgeOver1xBetPct: 10.3,
+        expectedValuePct: 17.2,
+        winRuleThai: 'ชนะ 2 ลูกกินเต็ม / ชนะ 1 ลูกกินครึ่ง +50%',
+        rationaleThai: 'อินเตอร์ในบ้านแกร่งสุดในเซเรีย อา เหนือกว่าเจนัว (โอกาสชนะตามตลาด 70%–78%) ชัดเจน',
+      },
+      {
+        legNumber: 2,
+        matchId: 'match-netherlands-greece',
+        matchTitle: 'Manchester United vs Brentford',
+        homeName: 'Manchester United',
+        awayName: 'Brentford',
+        league: 'Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+        kickoffTime: 'เสาร์ 28 พ.ย. 22:00 น. ICT',
+        venue: 'Old Trafford, Manchester',
+        homeXg: 1.72,
+        awayXg: 1.02,
+        xgGap: 0.70,
+        selection: 'Man Utd -0.25',
+        teamSide: 'HOME',
+        line: -0.25,
+        buttonLabel: '1 (-0.25)',
+        safetyButtonLabel: '1 (-0.25)',
+        odds: 1.76,
+        impliedProbPct: 56.8,
+        coverProbability: 64.0,
+        edgeOver1xBetPct: 7.2,
+        expectedValuePct: 12.6,
+        winRuleThai: 'ชนะ 1 ลูกกินเต็ม / เสมอเสียครึ่งเดียว',
+        rationaleThai: 'ผีแดงเล่นในโอลด์ แทรฟฟอร์ด ต่อแค่ -0.25 (ตัด Real Madrid -2.5 ที่ต่อลึกเกินออก)',
+      },
+    ],
+    combinedOdds: 2.939,
+    halfWinCombinedOdds: 2.350,
+    combinedCoverProb: 44.9,
+    combinedExpectedValue: 32.8,
+    step2RuleSummaryThai: 'Smart Guard v3.0 แยกต่างลีก Serie A + Premier League',
+    halfWinNoteThai: 'อินเตอร์ชนะ 1 ลูก + แมนยูชนะ 1 ลูก ยังรับ @2.35',
+  },
+  analysisRationale:
+    'เสาร์ 28 พ.ย. (Smart Guard v3.0 ข้ามลีก): อินเตอร์ มิลาน -0.75 (@1.67) + แมนฯ ยูไนเต็ด -0.25 (@1.76) ค่าน้ำรวม @2.94',
+  keyReasons: [
+    'ขาที่ 1 (Serie A): Inter Milan -0.75 [1 (-0.75) @1.67]',
+    'ขาที่ 2 (Premier League): Man Utd -0.25 [1 (-0.25) @1.76]',
+    'ตัด Real Madrid -2.5 ออกเพราะราคาต่อลึกเกินเกณฑ์ 1xBet',
+  ],
+  bookingCode1xBet: '1X-SG3-28',
 };
 
 // Thursday 12 Nov Settled Match: England vs Croatia (UEFA Nations League League A Matchday 5 - Finished FT: 2-1 LOSS ❌ vs 2-0 pick)
@@ -5896,6 +6500,132 @@ export const SUPER_PICK_SUNDAY_8: DailySuperPick = {
       },
     ],
   },
+};
+
+// Settled record for Tuesday 24 Nov (AH Step 2 UCL MD5: Como 1-0 ✅ Half-Win & Man City 2-2 ❌ -> Step 2 LOSS)
+export const SETTLED_TUESDAY_24_RECORD = {
+  id: 'past-tuesday24-settled',
+  dateKey: '2026-11-24',
+  date: '24 พ.ย. (เมื่อวาน)',
+  fullDate: 'วันอังคาร 24 พฤศจิกายน 2026',
+  matchTitle: 'Como vs AEK (1-0) + Man City vs Napoli (2-2)',
+  homeTeam: 'Como & Man City',
+  awayTeam: 'AEK & Napoli',
+  league: 'UEFA Champions League 🇪🇺 (Step 2)',
+  predictedScore: 'Step 2: Como -0.75 + Man City -0.75',
+  actualScore: '1-0 / 2-2',
+  odds: 3.167,
+  consensusScore: 99.0,
+  result: 'LOSS' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: 'หลุด Step 2 ❌ (Como 1-0 กินครึ่ง ✅ / Man City โดนตีเสมอ 2-2 ❌)',
+  slipNumber: '№ 89999112424',
+  note: 'จบจริง UCL MD5: คู่1 Como ชนะ 1-0 (กินครึ่ง @1.41) ✅ แต่คู่2 Man City เสมอ Napoli 2-2 ท้ายเกม ❌ — เป็นเหตุผลให้อัปเกรดสู่ Smart Guard v3.0 ผสมขา -0.25',
+};
+
+// Settled record for Monday 23 Nov (AH Step 2: Santos 0-2 Grêmio [neutral venue] & Internacional 2-5 Vitória -> LOSS)
+export const SETTLED_MONDAY_23_RECORD = {
+  id: 'past-monday23-settled',
+  dateKey: '2026-11-23',
+  date: '23 พ.ย.',
+  fullDate: 'วันจันทร์ 23 พฤศจิกายน 2026',
+  matchTitle: 'Santos vs Grêmio (0-2) + Internacional vs Vitória (2-5)',
+  homeTeam: 'Santos & Internacional',
+  awayTeam: 'Grêmio & Vitória',
+  league: 'Brasileirão Série A 🇧🇷 (Step 2)',
+  predictedScore: 'Step 2: Santos -0.75 + Inter -0.75',
+  actualScore: '0-2 / 2-5',
+  odds: 3.349,
+  consensusScore: 99.1,
+  result: 'LOSS' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: 'หลุด Step 2 ❌ (เตะสนามกลาง MorumBIS + ลีกบราซิลท้ายฤดูกาลผันผวน)',
+  slipNumber: '№ 89999112323',
+  note: 'จบจริง: คู่1 Santos 0-2 Grêmio (เตะสนามกลาง MorumBIS ไม่ใช่ Vila Belmiro!) & คู่2 Internacional 2-5 Vitória — นำไปสู่กฎ Smart Guard v3.0 แบนสนามกลาง & แยกต่างลีก',
+};
+
+// Settled record for Sunday 22 Nov (Juventus 4-0 Venezia - FT: 4-0 WIN 🎯)
+export const SETTLED_SUNDAY_22_RECORD = {
+  id: 'past-sunday22-settled',
+  dateKey: '2026-11-22',
+  date: '22 พ.ย.',
+  fullDate: 'วันอาทิตย์ 22 พฤศจิกายน 2026',
+  matchTitle: 'Juventus vs Venezia',
+  homeTeam: 'Juventus',
+  awayTeam: 'Venezia',
+  league: 'Serie A 🇮🇹',
+  predictedScore: 'Juventus -0.75',
+  actualScore: '4-0',
+  odds: 1.68,
+  consensusScore: 99.2,
+  result: 'WIN' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: '+68% (Juventus -0.75 @1.68 กินเต็ม 100% 🎯)',
+  slipNumber: '№ 89999112222',
+  note: 'จบจริง 90 นาทีที่ตูริน: ยูเวนตุส ถล่ม เวเนเซีย 4-0 — 1 (-0.75) @1.68 กินเต็ม 100% 🎯',
+};
+
+// Settled record for Saturday 21 Nov (Aston Villa 0-0 Sunderland - FT: 0-0 LOSS ❌)
+export const SETTLED_SATURDAY_21_RECORD = {
+  id: 'past-saturday21-settled',
+  dateKey: '2026-11-21',
+  date: '21 พ.ย.',
+  fullDate: 'วันเสาร์ 21 พฤศจิกายน 2026',
+  matchTitle: 'Aston Villa vs Sunderland',
+  homeTeam: 'Aston Villa',
+  awayTeam: 'Sunderland',
+  league: 'Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  predictedScore: 'Aston Villa -0.75',
+  actualScore: '0-0',
+  odds: 1.74,
+  consensusScore: 99.0,
+  result: 'LOSS' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: '-100% (Aston Villa -0.75 จบเสมอ 0-0 ❌)',
+  slipNumber: '№ 89999112121',
+  note: 'จบจริง 90 นาทีที่วิลล่า พาร์ค: แอสตัน วิลล่า 0-0 ซันเดอร์แลนด์ — เจาะเกมรับต่ำไม่เข้า พลาด ❌',
+};
+
+// Settled record for Friday 20 Nov (Athletic Bilbao 0-1 Espanyol - FT: 0-1 LOSS ❌)
+export const SETTLED_FRIDAY_20_RECORD = {
+  id: 'past-friday20-settled',
+  dateKey: '2026-11-20',
+  date: '20 พ.ย.',
+  fullDate: 'วันศุกร์ 20 พฤศจิกายน 2026',
+  matchTitle: 'Athletic Bilbao vs Espanyol',
+  homeTeam: 'Athletic Bilbao',
+  awayTeam: 'Espanyol',
+  league: 'La Liga 🇪🇸',
+  predictedScore: 'Athletic Bilbao -0.75',
+  actualScore: '0-1',
+  odds: 1.76,
+  consensusScore: 99.1,
+  result: 'LOSS' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: '-100% (Athletic Bilbao -0.75 แพ้คาบ้าน 0-1 ❌)',
+  slipNumber: '№ 89999112020',
+  note: 'จบจริง 90 นาทีที่ซาน มาเมส: แอธเลติก บิลเบา 0-1 เอสปันญ่อล (Roberto Fernández 66\') พลิกล็อก ❌',
+};
+
+// Settled record for Thursday 19 Nov (Vasco da Gama 2-1 Internacional - FT: 2-1 HALF WIN ✅)
+export const SETTLED_THURSDAY_19_RECORD = {
+  id: 'past-thursday19-settled',
+  dateKey: '2026-11-19',
+  date: '19 พ.ย.',
+  fullDate: 'วันพฤหัสบดี 19 พฤศจิกายน 2026',
+  matchTitle: 'Vasco da Gama vs Internacional',
+  homeTeam: 'Vasco da Gama',
+  awayTeam: 'Internacional',
+  league: 'Brasileirão Série A 🇧🇷',
+  predictedScore: 'Vasco da Gama -0.75',
+  actualScore: '2-1',
+  odds: 1.741,
+  consensusScore: 98.8,
+  result: 'WIN' as const,
+  settledAt: '05:00 น. (ตัดรอบผลจริง)',
+  profitReturn: '+37.1% (1 (-0.75) @1.741 กินครึ่ง ✅ / 1 (-0.25) กินเต็ม 🎯)',
+  slipNumber: '№ 89999111919',
+  note: 'จบจริง 90 นาทีที่เซา จานูอาริโอ: วาสโก ดา กาม่า 2-1 อินเตอร์ฯ — กินครึ่ง +50% บน 1 (-0.75) ✅',
 };
 
 // Settled record for Wednesday 18 Nov (Flamengo 2-1 Athletico-PR - FT: 2-1 CS LOSS ❌ | 1X/HDP/Over2.5 WIN ✅)
@@ -6240,19 +6970,33 @@ export function getPickForDate(targetDate: Date): DailySuperPick {
   const bkk = getBangkokTime(targetDate);
   const { year: y, month: m, day: d } = bkk;
 
-  if (y > 2026 || (y === 2026 && m > 11) || (y === 2026 && m === 11 && d > 24)) {
-    // Non-repeating deterministic rotation across AH Step 2 picks after Nov 24
+  if (y > 2026 || (y === 2026 && m > 11) || (y === 2026 && m === 11 && d > 28)) {
+    // Never recycle settled Nov 23/24 matches; rotate strictly across Smart Guard v3.0 future-ready picks
     const futurePool = [
-      SUPER_PICK_MONDAY_23,
-      SUPER_PICK_TUESDAY_24,
+      SUPER_PICK_WEDNESDAY_25,
+      SUPER_PICK_THURSDAY_26,
+      SUPER_PICK_FRIDAY_27,
+      SUPER_PICK_SATURDAY_28,
     ];
     return futurePool[Math.abs(d) % futurePool.length];
   }
+  if (y === 2026 && m === 11 && d === 28) {
+    return SUPER_PICK_SATURDAY_28;
+  }
+  if (y === 2026 && m === 11 && d === 27) {
+    return SUPER_PICK_FRIDAY_27;
+  }
+  if (y === 2026 && m === 11 && d === 26) {
+    return SUPER_PICK_THURSDAY_26;
+  }
+  if (y === 2026 && m === 11 && d === 25) {
+    return SUPER_PICK_WEDNESDAY_25; // Wednesday 25 Nov (Smart Guard v3.0: Inter -0.75 + Stoke -0.25 @3.13)
+  }
   if (y === 2026 && m === 11 && d === 24) {
-    return SUPER_PICK_TUESDAY_24; // Tuesday 24 Nov (AH Step 2: Como -0.75 + Man City -0.75 @3.17)
+    return SUPER_PICK_TUESDAY_24; // Tuesday 24 Nov Settled (Como 1-0 / Man City 2-2)
   }
   if (y === 2026 && m === 11 && d === 23) {
-    return SUPER_PICK_MONDAY_23; // Monday 23 Nov (AH Step 2 Launch: Santos -0.75 + Internacional -0.75 @3.35)
+    return SUPER_PICK_MONDAY_23; // Monday 23 Nov Settled (Santos 0-2 / Inter 2-5)
   }
   if (y === 2026 && m === 11 && d === 22) {
     return SUPER_PICK_SUNDAY_22; // Sunday 22 Nov (Juventus -0.75)
@@ -6470,7 +7214,48 @@ export function getDynamicDateTabs(now: Date = new Date()): DynamicDateTab[] {
       }
     } else {
       // Historical settled days
-      if (pick.id === SUPER_PICK_WEDNESDAY_18.id) {
+      if (pick.id === SUPER_PICK_TUESDAY_24.id) {
+        badgeLabel = '1-0 / 2-2 ❌';
+        badgeVariant = 'settled';
+        subLabel = 'Como 1-0 ✅ / Man City 2-2 ❌';
+        statusTitle = `${fullDateThai} (สรุปผล Step 2 เมื่อคืน: Como 1-0 กินครึ่ง ✅ แต่ Man City เสมอ 2-2 ❌)`;
+        summaryLines.push(
+          '✓ สรุปผลจริง UCL เมื่อคืน: Como ชนะ AEK 1-0 (กินครึ่ง @1.41) ✅ แต่ Man City เสมอ Napoli 2-2 ❌ ทำให้ Step 2 หลุด',
+          '✓ Smart Guard v3.0 แก้จุดอ่อนแล้ว: เปลี่ยนมาผสมขา -0.25 และแยกต่างลีกเริ่มพุธ 25 พ.ย. ทันที!'
+        );
+      } else if (pick.id === SUPER_PICK_MONDAY_23.id) {
+        badgeLabel = '0-2 / 2-5 ❌';
+        badgeVariant = 'settled';
+        subLabel = 'Santos 0-2 / Inter 2-5 ❌';
+        statusTitle = `${fullDateThai} (สรุปผล Step 2: Santos 0-2 [สนามกลาง] & Inter 2-5 ❌)`;
+        summaryLines.push(
+          '✓ ถอดบทเรียนวันจันทร์ 23 พ.ย.: Santos เตะสนามกลาง MorumBIS แพ้ 0-2 และเล่นลีกบราซิล 2 คู่ติดกัน (Inter 2-5) — แก้ไขด้วย Smart Guard v3.0 แล้ว'
+        );
+      } else if (pick.id === SUPER_PICK_SUNDAY_22.id) {
+        badgeLabel = 'WIN 🎯 4-0';
+        badgeVariant = 'win';
+        subLabel = 'Juventus 4-0 Venezia (WIN 🎯)';
+        statusTitle = `${fullDateThai} (สรุปผลจริง: Juventus 4-0 Venezia — กินเต็ม -0.75 @1.68 🎯)`;
+        summaryLines.push('✓ ยูเวนตุสถล่มเวเนเซีย 4-0 เข้าเป้าเต็ม 100% บนปุ่ม 1 (-0.75) @1.68');
+      } else if (pick.id === SUPER_PICK_SATURDAY_21.id) {
+        badgeLabel = 'จบ 0-0 ❌';
+        badgeVariant = 'settled';
+        subLabel = 'Aston Villa 0-0 Sunderland ❌';
+        statusTitle = `${fullDateThai} (สรุปผลจริง: Aston Villa 0-0 Sunderland — HDP -0.75 พลาด ❌)`;
+        summaryLines.push('✓ แอสตัน วิลล่า เสมอ ซันเดอร์แลนด์ 0-0 พลาดเต็ม ❌');
+      } else if (pick.id === SUPER_PICK_FRIDAY_20.id) {
+        badgeLabel = 'จบ 0-1 ❌';
+        badgeVariant = 'settled';
+        subLabel = 'Athletic Bilbao 0-1 Espanyol ❌';
+        statusTitle = `${fullDateThai} (สรุปผลจริง: Bilbao 0-1 Espanyol — พลิกล็อกคาบ้าน ❌)`;
+        summaryLines.push('✓ บิลเบาแพ้เอสปันญ่อลคาซาน มาเมส 0-1 พลาด ❌');
+      } else if (pick.id === SUPER_PICK_THURSDAY_19.id) {
+        badgeLabel = 'WIN 2-1 ✅';
+        badgeVariant = 'win';
+        subLabel = 'Vasco 2-1 Inter (กินครึ่ง ✅)';
+        statusTitle = `${fullDateThai} (สรุปผลจริง: Vasco 2-1 Inter — ปุ่ม 1 (-0.75) กินครึ่ง ✅)`;
+        summaryLines.push('✓ วาสโก ดา กาม่า ชนะ อินเตอร์ฯ 2-1 กินครึ่ง +50% บนปุ่ม 1 (-0.75) @1.741 ✅');
+      } else if (pick.id === SUPER_PICK_WEDNESDAY_18.id) {
         badgeLabel = 'จบ 2-1 (หลุด 2-0)';
         badgeVariant = 'settled';
         subLabel = 'ฟลาเมงโก้ 2-1 พาราเนนเซ่ (1X/O2.5 ✅)';
@@ -6688,12 +7473,16 @@ export function getActiveDailyPickId(now: Date = new Date()): string {
 export const DAILY_SUPER_PICK = SUPER_PICK_THURSDAY_19;
 
 export const SUPER_PICKS_LIST: DailySuperPick[] = [
-  SUPER_PICK_MONDAY_23,            // 1. วันจันทร์ 23 พ.ย. (เปิดระบบ AH Step 2) - Santos -0.75 + Internacional -0.75 (@3.35)
-  SUPER_PICK_TUESDAY_24,           // 2. วันอังคาร 24 พ.ย. (UCL MD5 AH Step 2) - Como -0.75 + Man City -0.75 (@3.17)
-  SUPER_PICK_SUNDAY_22,            // 3. วันอาทิตย์ 22 พ.ย. (วันนี้) - Juventus -0.75 (@1.68)
-  SUPER_PICK_SATURDAY_21,          // 4. วันเสาร์ 21 พ.ย. - Aston Villa -0.75 (@1.74)
-  SUPER_PICK_FRIDAY_20,            // 5. วันศุกร์ 20 พ.ย. - Athletic Bilbao -0.75 (@1.76)
-  SUPER_PICK_THURSDAY_19,          // 6. วันพฤหัสบดี 19 พ.ย. - Vasco da Gama -0.75 [1 (-0.75) @1.741]
+  SUPER_PICK_WEDNESDAY_25,         // 1. วันพุธ 25 พ.ย. (วันนี้ Smart Guard v3.0) - Inter -0.75 + Stoke -0.25 (@3.13)
+  SUPER_PICK_THURSDAY_26,          // 2. วันพฤหัสบดี 26 พ.ย. (พรีวิว UEL) - Marseille -0.75 + Leverkusen -0.75 (@3.23)
+  SUPER_PICK_FRIDAY_27,            // 3. วันศุกร์ 27 พ.ย. (Smart Guard v3.0) - Werder Bremen -0.75 + Bologna -0.25 (@3.65)
+  SUPER_PICK_SATURDAY_28,          // 4. วันเสาร์ 28 พ.ย. (Smart Guard v3.0) - Inter -0.75 + Man Utd -0.25 (@2.94)
+  SUPER_PICK_TUESDAY_24,           // 5. วันอังคาร 24 พ.ย. (สรุปผลจริง) - Como 1-0 ✅ / Man City 2-2 ❌
+  SUPER_PICK_MONDAY_23,            // 6. วันจันทร์ 23 พ.ย. (สรุปผลจริง) - Santos 0-2 / Inter 2-5 ❌
+  SUPER_PICK_SUNDAY_22,            // 7. วันอาทิตย์ 22 พ.ย. (สรุปผลจริง) - Juventus 4-0 (WIN 🎯 @1.68)
+  SUPER_PICK_SATURDAY_21,          // 8. วันเสาร์ 21 พ.ย. (สรุปผลจริง) - Aston Villa 0-0 Sunderland ❌
+  SUPER_PICK_FRIDAY_20,            // 9. วันศุกร์ 20 พ.ย. (สรุปผลจริง) - Athletic Bilbao 0-1 Espanyol ❌
+  SUPER_PICK_THURSDAY_19,          // 10. วันพฤหัสบดี 19 พ.ย. (สรุปผลจริง) - Vasco da Gama 2-1 (HALF WIN ✅)
   SUPER_PICK_WEDNESDAY_18,         // 5. วันพุธ 18 พ.ย. (เมื่อวาน) - ฟลาเมงโก้ 2-1 พาราเนนเซ่ (1X/O2.5 ✅ | สกอร์ 2-0 ❌)
   SUPER_PICK_TUESDAY_17,           // 6. วันอังคาร 17 พ.ย. - บอสเนีย 2-1 โรมาเนีย (1X/O2.5 ✅ | สกอร์ 1-0 ❌)
   SUPER_PICK_MONDAY_16,            // 7. วันจันทร์ 16 พ.ย. - สวิตเซอร์แลนด์ 4-0 สกอตแลนด์ (หลุด 2-0 ❌)

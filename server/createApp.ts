@@ -130,7 +130,6 @@ export function createApiApp() {
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
-          temperature: 0.7,
         },
       });
 
@@ -168,7 +167,7 @@ export function createApiApp() {
       });
 
       const timeoutPromise = new Promise<{ text?: string }>((_, reject) =>
-        setTimeout(() => reject(new Error('AI generation timed out')), 6000)
+        setTimeout(() => reject(new Error('AI generation timed out')), 12000)
       );
 
       const response = await Promise.race([geminiPromise, timeoutPromise]);

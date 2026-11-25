@@ -503,8 +503,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 62.5,
       slipNumber: "\u2116 89999111919",
       bookingCode1xBet: "1X-VASINT-19",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "WIN",
+      settledScore: "2-1",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Vasco da Gama 2-1 Internacional \u2014 \u0E1B\u0E38\u0E48\u0E21 1 (-0.75) @1.741 \u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50% (\u0E08\u0E48\u0E32\u0E22 1.371x) \u2705",
       homeTeam: {
         name: "Vasco da Gama",
         code: "VAS",
@@ -563,8 +566,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 69.2,
       slipNumber: "\u2116 89999112020",
       bookingCode1xBet: "1X-ATHESP-20",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "0-1",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35\u0E17\u0E35\u0E48\u0E0B\u0E32\u0E19 \u0E21\u0E32\u0E40\u0E21\u0E2A: Athletic Bilbao 0-1 Espanyol (Roberto Fern\xE1ndez 66') \u2014 \u0E1A\u0E34\u0E25\u0E40\u0E1A\u0E32 -0.75 \u0E40\u0E2A\u0E35\u0E22\u0E40\u0E15\u0E47\u0E21 \u274C",
       homeTeam: {
         name: "Athletic Bilbao",
         code: "ATH",
@@ -623,8 +629,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 68.8,
       slipNumber: "\u2116 89999112121",
       bookingCode1xBet: "1X-AVLSUN-21",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "0-0",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Aston Villa 0-0 Sunderland \u2014 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32 -0.75 \u0E40\u0E2A\u0E35\u0E22\u0E40\u0E15\u0E47\u0E21 \u274C",
       homeTeam: {
         name: "Aston Villa",
         code: "AVL",
@@ -683,8 +692,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 70.1,
       slipNumber: "\u2116 89999112222",
       bookingCode1xBet: "1X-JUVVEN-22",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "WIN",
+      settledScore: "4-0",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 90 \u0E19\u0E32\u0E17\u0E35: Juventus 4-0 Venezia \u2014 \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A -0.75 @1.68 \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% \u{1F3AF}",
       homeTeam: {
         name: "Juventus",
         code: "JUV",
@@ -743,8 +755,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 66.8,
       slipNumber: "\u2116 89999112323",
       bookingCode1xBet: "1X-STEP2-23",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "0-2 / 2-5",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 Step 2 (23 \u0E1E.\u0E22.): \u0E04\u0E39\u0E481 Santos 0-2 Gr\xEAmio (\u0E2A\u0E19\u0E32\u0E21\u0E01\u0E25\u0E32\u0E07 MorumBIS!) & \u0E04\u0E39\u0E482 Internacional 2-5 Vit\xF3ria \u2014 \u0E2B\u0E25\u0E38\u0E14 \u274C",
       homeTeam: {
         name: "Santos (Leg 1)",
         code: "SAN",
@@ -864,8 +879,11 @@ function getVerifiedSeedPicks() {
       poissonPeak: 66.5,
       slipNumber: "\u2116 89999112424",
       bookingCode1xBet: "1X-STEP2-24",
-      isRealMatchTonight: true,
-      isSettled: false,
+      isRealMatchTonight: false,
+      isSettled: true,
+      settledResult: "LOSS",
+      settledScore: "1-0 / 2-2",
+      settledNotes: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 UCL MD5 (24 \u0E1E.\u0E22.): Como 1-0 (\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 \u2705) / Man City 2-2 Napoli (\u0E42\u0E14\u0E19\u0E15\u0E35\u0E40\u0E2A\u0E21\u0E2D\u0E17\u0E49\u0E32\u0E22\u0E40\u0E01\u0E21 \u274C) \u2014 \u0E2B\u0E25\u0E38\u0E14 Step 2 \u274C",
       homeTeam: {
         name: "Como (Leg 1)",
         code: "COM",
@@ -960,13 +978,593 @@ function getVerifiedSeedPicks() {
         combinedCoverProb: 43.5,
         combinedExpectedValue: 37.8,
         step2RuleSummaryThai: "\u0E08\u0E31\u0E1A\u0E04\u0E39\u0E48 2 \u0E17\u0E35\u0E21\u0E40\u0E2B\u0E22\u0E49\u0E32 UCL \u0E04\u0E48\u0E32 xG > 2.15 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48 \u0E1C\u0E48\u0E32\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C 1xBet 5/5 \u0E04\u0E23\u0E1A",
-        halfWinNoteThai: "\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E04\u0E39\u0E48 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.49 (+149%)"
+        halfWinNoteThai: "\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E25\u0E39\u0E01 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.49 (+149%)"
+      }
+    },
+    "2026-11-25": {
+      id: "daily-pick-ah-step2-nov25",
+      operationalDateKey: "2026-11-25",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Inter Milan -0.75 + Stoke City -0.25 (AH Step 2)",
+      league: "UCL \u{1F1EA}\u{1F1FA} & EFL Championship \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F} (Smart Guard v3.0)",
+      kickoffTime: "\u0E1E\u0E38\u0E18 25 \u0E1E.\u0E22. \u2022 Stoke 02:45 \u0E19. / Inter 03:00 \u0E19. ICT",
+      venue: "San Siro (Milan) & bet365 Stadium (Stoke)",
+      dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 25 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F SMART GUARD v3.0 AH STEP 2 \u2022 @3.13 (\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01)",
+      consensusRate: 99.3,
+      primaryScore: "2-0 / 2-0",
+      primaryOdds: 3.127,
+      expectedValue: 39.2,
+      backupScore: "1-0 / 2-0",
+      backupOdds: 2.488,
+      safeOption: "Inter Milan -0.25 [1 (-0.25) @1.41] + Stoke City -0.25 [1 (-0.25) @1.85]",
+      calibrationError: 0.3,
+      brierScore: 0.028,
+      poissonPeak: 69,
+      slipNumber: "\u2116 89999112525",
+      bookingCode1xBet: "1X-SG3-25",
+      isRealMatchTonight: true,
+      isSettled: false,
+      homeTeam: {
+        name: "Inter Milan (Leg 1)",
+        code: "INT",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#1d4ed8",
+        form: ["W", "W", "D", "W", "W"],
+        expectedGoals: 2.15
+      },
+      awayTeam: {
+        name: "VfB Stuttgart",
+        code: "VFB",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#dc2626",
+        form: ["L", "D", "W", "L", "D"],
+        expectedGoals: 0.78
+      },
+      analysisRationale: "\u0E2D\u0E31\u0E1B\u0E40\u0E01\u0E23\u0E14\u0E40\u0E1B\u0E47\u0E19 Smart Guard v3.0 \u0E04\u0E37\u0E19\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18 25 \u0E1E.\u0E22.: \u0E41\u0E22\u0E01\u0E04\u0E19\u0E25\u0E30\u0E25\u0E35\u0E01\u0E41\u0E25\u0E30\u0E1C\u0E2A\u0E21\u0E02\u0E32\u0E40\u0E0B\u0E1F -0.25 \u2014 \u0E02\u0E321: Inter Milan -0.75 [1 (-0.75) @1.69] (\u0E2A\u0E15\u0E38\u0E4A\u0E15\u0E01\u0E32\u0E23\u0E4C\u0E15\u0E02\u0E32\u0E14 Angelo Stiller) + \u0E02\u0E322: Stoke City -0.25 [1 (-0.25) @1.85] (\u0E23\u0E2D\u0E07\u0E08\u0E48\u0E32\u0E1D\u0E39\u0E07\u0E41\u0E0A\u0E21\u0E40\u0E1B\u0E35\u0E22\u0E19\u0E0A\u0E34\u0E1E \u0E40\u0E08\u0E2D \u0E21\u0E34\u0E25\u0E25\u0E4C\u0E27\u0E2D\u0E25\u0E25\u0E4C\u0E41\u0E1E\u0E49 3 \u0E19\u0E31\u0E14\u0E23\u0E27\u0E14\u0E22\u0E34\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49 0 \u0E25\u0E39\u0E01) \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @3.13",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1 (UCL 03:00): Inter Milan -0.75 [1 (-0.75) @1.69] \u2014 xG Gap +1.37 (Edge +9.8%)",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2 (EFL 02:45): Stoke City -0.25 [1 (-0.25) @1.85] \u2014 \u0E21\u0E34\u0E25\u0E25\u0E4C\u0E27\u0E2D\u0E25\u0E25\u0E4C\u0E41\u0E1E\u0E49 3 \u0E19\u0E31\u0E14\u0E23\u0E27\u0E14 0 \u0E1B\u0E23\u0E30\u0E15\u0E39 (Edge +10.4%)",
+        "Smart Guard v3.0 \u0E41\u0E1A\u0E19 Bayern (\u0E02\u0E32\u0E14\u0E15\u0E31\u0E27\u0E08\u0E23\u0E34\u0E07 5 \u0E23\u0E32\u0E22), Bar\xE7a (-2.75 \u0E25\u0E36\u0E01\u0E40\u0E01\u0E34\u0E19), Burnley (\u0E40\u0E2A\u0E21\u0E2D\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 6/8 \u0E19\u0E31\u0E14)"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Inter Milan -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.69,
+        coverProbability: 69,
+        expectedValue: 16.6,
+        xgGap: 1.37,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Inter -0.25 [1 (-0.25) @1.41] + Stoke -0.25 [1 (-0.25) @1.85]"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Inter Milan vs VfB Stuttgart",
+            homeName: "Inter Milan",
+            awayName: "VfB Stuttgart",
+            league: "UEFA Champions League \u{1F1EA}\u{1F1FA}",
+            kickoffTime: "\u0E04\u0E37\u0E19\u0E1E\u0E38\u0E18 25 \u0E1E.\u0E22. 03:00 \u0E19. ICT",
+            venue: "Stadio Giuseppe Meazza (San Siro), Milan",
+            homeXg: 2.15,
+            awayXg: 0.78,
+            xgGap: 1.37,
+            selection: "Inter Milan -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.69,
+            impliedProbPct: 59.2,
+            coverProbability: 69,
+            edgeOver1xBetPct: 9.8,
+            expectedValuePct: 16.6,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E40\u0E25\u0E32\u0E15\u0E32\u0E42\u0E23\u0E48 \u0E21\u0E32\u0E23\u0E4C\u0E15\u0E34\u0E40\u0E19\u0E0B \u0E1F\u0E34\u0E15\u0E04\u0E37\u0E19\u0E17\u0E31\u0E1E \u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E43\u0E19\u0E0B\u0E32\u0E19 \u0E0B\u0E35\u0E42\u0E23\u0E48 \u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E2A\u0E48\u0E27\u0E19\u0E2A\u0E15\u0E38\u0E4A\u0E15\u0E01\u0E32\u0E23\u0E4C\u0E15\u0E02\u0E32\u0E14 Angelo Stiller (+1.37 xG Gap)"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Stoke City vs Millwall",
+            homeName: "Stoke City",
+            awayName: "Millwall",
+            league: "EFL Championship \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}",
+            kickoffTime: "\u0E04\u0E37\u0E19\u0E1E\u0E38\u0E18 25 \u0E1E.\u0E22. 02:45 \u0E19. ICT",
+            venue: "bet365 Stadium, Stoke-on-Trent",
+            homeXg: 1.56,
+            awayXg: 0.78,
+            xgGap: 0.78,
+            selection: "Stoke City -0.25",
+            teamSide: "HOME",
+            line: -0.25,
+            buttonLabel: "1 (-0.25)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.85,
+            impliedProbPct: 54.1,
+            coverProbability: 64.5,
+            edgeOver1xBetPct: 10.4,
+            expectedValuePct: 19.3,
+            winRuleThai: "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E02\u0E36\u0E49\u0E19\u0E44\u0E1B\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07\u0E40\u0E14\u0E35\u0E22\u0E27",
+            rationaleThai: "\u0E2A\u0E42\u0E15\u0E4A\u0E04\u0E23\u0E2D\u0E07\u0E08\u0E48\u0E32\u0E1D\u0E39\u0E07\u0E41\u0E0A\u0E21\u0E40\u0E1B\u0E35\u0E22\u0E19\u0E0A\u0E34\u0E1E \u0E40\u0E08\u0E2D\u0E21\u0E34\u0E25\u0E25\u0E4C\u0E27\u0E2D\u0E25\u0E25\u0E4C\u0E41\u0E1E\u0E49 3 \u0E19\u0E31\u0E14\u0E23\u0E27\u0E14\u0E41\u0E1A\u0E1A\u0E22\u0E34\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E40\u0E25\u0E22 \u0E15\u0E48\u0E2D -0.25 \u0E0A\u0E19\u0E30\u0E25\u0E39\u0E01\u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21!"
+          }
+        ],
+        combinedOdds: 3.127,
+        halfWinCombinedOdds: 2.488,
+        combinedCoverProb: 44.5,
+        combinedExpectedValue: 39.2,
+        step2RuleSummaryThai: "Smart Guard v3.0: \u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01 (UCL + EFL) + \u0E02\u0E32\u0E40\u0E0B\u0E1F -0.25 \u0E1B\u0E34\u0E14\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E15\u0E32\u0E22\u0E04\u0E39\u0E48 + \u0E41\u0E1A\u0E19\u0E17\u0E35\u0E21\u0E1E\u0E34\u0E01\u0E32\u0E23",
+        halfWinNoteThai: "\u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E0A\u0E19\u0E30 1-0 (\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07) + \u0E2A\u0E42\u0E15\u0E4A\u0E04\u0E0A\u0E19\u0E30 1-0 (\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21) \u0E22\u0E31\u0E07\u0E08\u0E48\u0E32\u0E22 @2.49 (+149%)"
+      }
+    },
+    "2026-11-26": {
+      id: "daily-pick-ah-step2-nov26",
+      operationalDateKey: "2026-11-26",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Marseille -0.75 + Leverkusen -0.75 (AH Step 2)",
+      league: "UEL \u{1F1EA}\u{1F1FA} & UECL \u{1F30D} (Smart Guard v3.0)",
+      kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 26 \u0E1E.\u0E22. \u2022 \u0E23\u0E2D\u0E1A 00:45 \u0E19. / \u0E23\u0E2D\u0E1A 03:00 \u0E19. ICT",
+      venue: "Stade V\xE9lodrome & Stadion Maksimir",
+      dateText: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 26 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u26A1 SMART GUARD v3.0 PREVIEW \u2022 @3.23",
+      consensusRate: 99.1,
+      primaryScore: "2-0 / 1-3",
+      primaryOdds: 3.226,
+      expectedValue: 38.4,
+      backupScore: "1-0 / 1-2",
+      backupOdds: 2.537,
+      safeOption: "Marseille -0.25 [1 (-0.25) @1.41] + Bayer Leverkusen -0.25 [2 (-0.25) @1.52]",
+      calibrationError: 0.4,
+      brierScore: 0.03,
+      poissonPeak: 68.5,
+      slipNumber: "\u2116 89999112626",
+      bookingCode1xBet: "1X-SG3-26",
+      isRealMatchTonight: false,
+      isSettled: false,
+      homeTeam: {
+        name: "Marseille (Leg 1)",
+        code: "OM",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#0284c7",
+        form: ["W", "W", "D", "W", "W"],
+        expectedGoals: 2.08
+      },
+      awayTeam: {
+        name: "Levski Sofia",
+        code: "LEV",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#2563eb",
+        form: ["L", "D", "L", "W", "L"],
+        expectedGoals: 0.72
+      },
+      analysisRationale: "\u0E1E\u0E23\u0E35\u0E27\u0E34\u0E27 Smart Guard v3.0 \u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A 26 \u0E1E.\u0E22. (UEL MD5): \u0E40\u0E25\u0E35\u0E48\u0E22\u0E07\u0E04\u0E39\u0E48\u0E15\u0E48\u0E2D\u0E41\u0E1E\u0E07 Brighton (-2.25) \u0E41\u0E25\u0E49\u0E27\u0E08\u0E31\u0E1A\u0E04\u0E39\u0E48 Marseille -0.75 (@1.68) + Bayer Leverkusen -0.75 (@1.92) \u0E23\u0E27\u0E21 @3.23",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1: Marseille -0.75 [1 (-0.75) @1.68] \u2014 xG Gap +1.36",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2: Bayer Leverkusen -0.75 [2 (-0.75) @1.92] \u2014 \u0E08\u0E48\u0E32\u0E1D\u0E39\u0E07\u0E01\u0E25\u0E38\u0E48\u0E21 UEL xG Gap +1.06",
+        "\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @3.23 (\u0E15\u0E31\u0E14 Brighton @1.14 \u0E2D\u0E2D\u0E01\u0E40\u0E1E\u0E23\u0E32\u0E30\u0E15\u0E48\u0E2D\u0E25\u0E36\u0E01\u0E40\u0E01\u0E34\u0E19\u0E40\u0E01\u0E13\u0E11\u0E4C)"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Marseille -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.68,
+        coverProbability: 68.5,
+        expectedValue: 15.1,
+        xgGap: 1.36,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Marseille -0.25 + Leverkusen -0.25"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Marseille vs Levski Sofia",
+            homeName: "Marseille",
+            awayName: "Levski Sofia",
+            league: "UEFA Europa League \u{1F1EA}\u{1F1FA} (\u0E04\u0E39\u0E48\u0E2B\u0E31\u0E27\u0E04\u0E48\u0E33)",
+            kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 26 \u0E1E.\u0E22. 00:45 \u0E19. ICT",
+            venue: "Orange V\xE9lodrome, Marseille",
+            homeXg: 2.08,
+            awayXg: 0.72,
+            xgGap: 1.36,
+            selection: "Marseille -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.68,
+            impliedProbPct: 59.5,
+            coverProbability: 68.5,
+            edgeOver1xBetPct: 9,
+            expectedValuePct: 15.1,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E21\u0E32\u0E23\u0E4C\u0E01\u0E40\u0E0B\u0E22\u0E43\u0E19\u0E40\u0E27\u0E42\u0E25\u0E42\u0E14\u0E23\u0E21\u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E01\u0E27\u0E48\u0E32\u0E40\u0E25\u0E1F\u0E2A\u0E01\u0E35\u0E49 \u0E42\u0E0B\u0E40\u0E1F\u0E35\u0E22 \u0E02\u0E32\u0E14\u0E25\u0E2D\u0E22\u0E17\u0E31\u0E49\u0E07\u0E04\u0E38\u0E13\u0E20\u0E32\u0E1E\u0E1C\u0E39\u0E49\u0E40\u0E25\u0E48\u0E19\u0E41\u0E25\u0E30 xG \u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19 +1.36"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Dinamo Zagreb vs Bayer Leverkusen",
+            homeName: "Dinamo Zagreb",
+            awayName: "Bayer Leverkusen",
+            league: "UEFA Europa League \u{1F1EA}\u{1F1FA} (\u0E04\u0E39\u0E48\u0E14\u0E36\u0E01)",
+            kickoffTime: "\u0E1E\u0E24\u0E2B\u0E31\u0E2A 26 \u0E1E.\u0E22. 00:45 \u0E19. ICT",
+            venue: "Stadion Maksimir, Zagreb",
+            homeXg: 0.92,
+            awayXg: 1.98,
+            xgGap: 1.06,
+            selection: "Bayer Leverkusen -0.75",
+            teamSide: "AWAY",
+            line: -0.75,
+            buttonLabel: "2 (-0.75)",
+            safetyButtonLabel: "2 (-0.25)",
+            odds: 1.92,
+            impliedProbPct: 52.1,
+            coverProbability: 62.5,
+            edgeOver1xBetPct: 10.4,
+            expectedValuePct: 20,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E40\u0E25\u0E40\u0E27\u0E2D\u0E23\u0E4C\u0E04\u0E39\u0E40\u0E0B\u0E48\u0E19\u0E08\u0E48\u0E32\u0E1D\u0E39\u0E07\u0E01\u0E25\u0E38\u0E48\u0E21 UEL \u0E1C\u0E25\u0E15\u0E48\u0E32\u0E07\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E44\u0E14\u0E49\u0E40\u0E2A\u0E35\u0E22\u0E14\u0E35\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23 \u0E1A\u0E38\u0E01\u0E15\u0E48\u0E2D\u0E14\u0E34\u0E19\u0E32\u0E42\u0E21 \u0E0B\u0E32\u0E40\u0E01\u0E23\u0E47\u0E1A (+1.06 xG Gap)"
+          }
+        ],
+        combinedOdds: 3.226,
+        halfWinCombinedOdds: 2.537,
+        combinedCoverProb: 42.8,
+        combinedExpectedValue: 38.4,
+        step2RuleSummaryThai: "\u0E1E\u0E23\u0E35\u0E27\u0E34\u0E27\u0E04\u0E37\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A 26 \u0E1E.\u0E22. (\u0E23\u0E2D\u0E2A\u0E23\u0E38\u0E1B\u0E23\u0E32\u0E22\u0E0A\u0E37\u0E48\u0E2D\u0E15\u0E31\u0E27\u0E08\u0E23\u0E34\u0E07\u0E23\u0E2D\u0E1A 06:00 \u0E19. \u0E15\u0E32\u0E21\u0E40\u0E27\u0E25\u0E32\u0E44\u0E17\u0E22)",
+        halfWinNoteThai: "\u0E0A\u0E19\u0E30\u0E02\u0E32\u0E14 1 \u0E04\u0E39\u0E48 + \u0E0A\u0E19\u0E30\u0E40\u0E09\u0E35\u0E22\u0E14 1 \u0E25\u0E39\u0E01 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.54"
+      }
+    },
+    "2026-11-27": {
+      id: "daily-pick-ah-step2-nov27",
+      operationalDateKey: "2026-11-27",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Werder Bremen -0.75 + Bologna -0.25 (AH Step 2)",
+      league: "Bundesliga \u{1F1E9}\u{1F1EA} & Serie A \u{1F1EE}\u{1F1F9} (Smart Guard v3.0)",
+      kickoffTime: "\u0E28\u0E38\u0E01\u0E23\u0E4C 27 \u0E1E.\u0E22. \u2022 Bremen 02:30 \u0E19. / Bologna 02:45 \u0E19. ICT",
+      venue: "Weserstadion & Stadio Pier Luigi Penzo",
+      dateText: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 27 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F SMART GUARD v3.0 AH STEP 2 \u2022 @3.65 (\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01)",
+      consensusRate: 99,
+      primaryScore: "2-0 / 1-2",
+      primaryOdds: 3.647,
+      expectedValue: 41.2,
+      backupScore: "2-1 / 0-1",
+      backupOdds: 2.764,
+      safeOption: "Werder Bremen -0.25 [1 (-0.25) @1.53] + Bologna -0.25 [2 (-0.25) @1.88]",
+      calibrationError: 0.4,
+      brierScore: 0.031,
+      poissonPeak: 62,
+      slipNumber: "\u2116 89999112727",
+      bookingCode1xBet: "1X-SG3-27",
+      isRealMatchTonight: false,
+      isSettled: false,
+      homeTeam: {
+        name: "Werder Bremen (Leg 1)",
+        code: "SVW",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#16a34a",
+        form: ["W", "D", "W", "W", "L"],
+        expectedGoals: 1.92
+      },
+      awayTeam: {
+        name: "B. M\xF6nchengladbach",
+        code: "BMG",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#0f172a",
+        form: ["L", "L", "D", "L", "D"],
+        expectedGoals: 0.98
+      },
+      analysisRationale: "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E28\u0E38\u0E01\u0E23\u0E4C 27 \u0E1E.\u0E22. (Smart Guard v3.0 \u0E02\u0E49\u0E32\u0E21\u0E25\u0E35\u0E01): \u0E40\u0E25\u0E37\u0E2D\u0E01 Werder Bremen -0.75 [1 (-0.75) @1.94] + Bologna -0.25 [2 (-0.25) @1.88] \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @3.65",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1 (Bundesliga): Werder Bremen -0.75 [1 (-0.75) @1.94] \u2014 xG Gap +0.94",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2 (Serie A): Bologna -0.25 [2 (-0.25) @1.88] \u2014 \u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22\u0E40\u0E1E\u0E34\u0E48\u0E07\u0E42\u0E14\u0E19\u0E22\u0E34\u0E07 4-0",
+        "\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @3.65 (\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01 100%)"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Werder Bremen -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.94,
+        coverProbability: 62,
+        expectedValue: 20.3,
+        xgGap: 0.94,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Werder Bremen -0.25 + Bologna -0.25"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Werder Bremen vs B. M\xF6nchengladbach",
+            homeName: "Werder Bremen",
+            awayName: "B. M\xF6nchengladbach",
+            league: "Bundesliga \u{1F1E9}\u{1F1EA}",
+            kickoffTime: "\u0E28\u0E38\u0E01\u0E23\u0E4C 27 \u0E1E.\u0E22. 02:30 \u0E19. ICT",
+            venue: "Weserstadion, Bremen",
+            homeXg: 1.92,
+            awayXg: 0.98,
+            xgGap: 0.94,
+            selection: "Werder Bremen -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.94,
+            impliedProbPct: 51.5,
+            coverProbability: 62,
+            edgeOver1xBetPct: 10.5,
+            expectedValuePct: 20.3,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E40\u0E1A\u0E23\u0E40\u0E21\u0E19\u0E40\u0E25\u0E48\u0E19\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E02\u0E47\u0E07\u0E41\u0E01\u0E23\u0E48\u0E07\u0E21\u0E32\u0E01 \u0E1E\u0E1A \u0E01\u0E25\u0E31\u0E14\u0E1A\u0E31\u0E04\u0E17\u0E35\u0E48\u0E1F\u0E2D\u0E23\u0E4C\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E22\u0E48\u0E33\u0E41\u0E22\u0E48\u0E40\u0E2A\u0E35\u0E22\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E17\u0E38\u0E01\u0E19\u0E31\u0E14 (+0.94 xG Gap)"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Venezia vs Bologna",
+            homeName: "Venezia",
+            awayName: "Bologna",
+            league: "Serie A \u{1F1EE}\u{1F1F9}",
+            kickoffTime: "\u0E28\u0E38\u0E01\u0E23\u0E4C 27 \u0E1E.\u0E22. 02:45 \u0E19. ICT",
+            venue: "Stadio Pier Luigi Penzo, Venice",
+            homeXg: 0.85,
+            awayXg: 1.62,
+            xgGap: 0.77,
+            selection: "Bologna -0.25",
+            teamSide: "AWAY",
+            line: -0.25,
+            buttonLabel: "2 (-0.25)",
+            safetyButtonLabel: "2 (-0.25)",
+            odds: 1.88,
+            impliedProbPct: 53.2,
+            coverProbability: 62.5,
+            edgeOver1xBetPct: 9.3,
+            expectedValuePct: 17.5,
+            winRuleThai: "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07",
+            rationaleThai: "\u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22\u0E40\u0E1E\u0E34\u0E48\u0E07\u0E41\u0E1E\u0E49\u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A 0-4 \u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E23\u0E31\u0E48\u0E27\u0E21\u0E32\u0E01 \u0E42\u0E1A\u0E42\u0E25\u0E0D\u0E0D\u0E48\u0E32\u0E1A\u0E38\u0E01\u0E15\u0E48\u0E2D\u0E41\u0E04\u0E48 -0.25 \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100%"
+          }
+        ],
+        combinedOdds: 3.647,
+        halfWinCombinedOdds: 2.764,
+        combinedCoverProb: 38.8,
+        combinedExpectedValue: 41.2,
+        step2RuleSummaryThai: "Smart Guard v3.0 \u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01 Bundesliga + Serie A \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E02\u0E32\u0E40\u0E0B\u0E1F -0.25",
+        halfWinNoteThai: "\u0E40\u0E1A\u0E23\u0E40\u0E21\u0E19\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01 + \u0E42\u0E1A\u0E42\u0E25\u0E0D\u0E0D\u0E48\u0E32\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.76 (+176%)"
+      }
+    },
+    "2026-11-28": {
+      id: "daily-pick-ah-step2-nov28",
+      operationalDateKey: "2026-11-28",
+      matchId: "match-netherlands-greece",
+      matchTitle: "Inter Milan -0.75 + Man Utd -0.25 (AH Step 2)",
+      league: "Serie A \u{1F1EE}\u{1F1F9} & Premier League \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F} (Smart Guard v3.0)",
+      kickoffTime: "\u0E40\u0E2A\u0E32\u0E23\u0E4C 28 \u0E1E.\u0E22. \u2022 Man Utd 22:00 \u0E19. / Inter 00:00 \u0E19. ICT",
+      venue: "San Siro & Old Trafford",
+      dateText: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 28 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      badge: "\u{1F6E1}\uFE0F SMART GUARD v3.0 AH STEP 2 \u2022 @2.94 (\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01)",
+      consensusRate: 99.1,
+      primaryScore: "2-0 / 2-1",
+      primaryOdds: 2.939,
+      expectedValue: 32.8,
+      backupScore: "1-0 / 1-0",
+      backupOdds: 2.35,
+      safeOption: "Inter Milan -0.25 + Man Utd -0.25",
+      calibrationError: 0.4,
+      brierScore: 0.03,
+      poissonPeak: 70.2,
+      slipNumber: "\u2116 89999112828",
+      bookingCode1xBet: "1X-SG3-28",
+      isRealMatchTonight: false,
+      isSettled: false,
+      homeTeam: {
+        name: "Inter Milan (Leg 1)",
+        code: "INT",
+        logo: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=128&auto=format&fit=crop&q=80",
+        color: "#1d4ed8",
+        form: ["W", "W", "D", "W", "W"],
+        expectedGoals: 2.18
+      },
+      awayTeam: {
+        name: "Genoa",
+        code: "GEN",
+        logo: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=128&auto=format&fit=crop&q=80",
+        color: "#dc2626",
+        form: ["L", "D", "L", "L", "D"],
+        expectedGoals: 0.72
+      },
+      analysisRationale: "\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E40\u0E2A\u0E32\u0E23\u0E4C 28 \u0E1E.\u0E22. (Smart Guard v3.0 \u0E02\u0E49\u0E32\u0E21\u0E25\u0E35\u0E01): Inter Milan -0.75 [1 (-0.75) @1.67] + Manchester United -0.25 [1 (-0.25) @1.76] \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 @2.94",
+      keyReasons: [
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 1 (Serie A): Inter Milan -0.75 [1 (-0.75) @1.67] \u2014 xG Gap +1.46",
+        "\u0E02\u0E32\u0E17\u0E35\u0E48 2 (Premier League): Man Utd -0.25 [1 (-0.25) @1.76] \u2014 \u0E40\u0E1A\u0E23\u0E19\u0E17\u0E4C\u0E1F\u0E2D\u0E23\u0E4C\u0E14\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E40\u0E1B\u0E23\u0E32\u0E30",
+        "\u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E23\u0E27\u0E21 AH Step 2 = @2.94 (\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01 100%)"
+      ],
+      generatedBy: "VERIFIED_CALENDAR",
+      asianHandicap: {
+        selection: "Inter Milan -0.75",
+        teamSide: "HOME",
+        line: -0.75,
+        lineLabel: "-0.75 (\u0E04\u0E23\u0E36\u0E48\u0E07\u0E04\u0E27\u0E1A\u0E25\u0E39\u0E01 \u2022 \u0E01\u0E14 1 (-0.75) \u0E43\u0E19 1xBet)",
+        odds: 1.67,
+        coverProbability: 70.2,
+        expectedValue: 17.2,
+        xgGap: 1.46,
+        winRuleThai: "\u0E0A\u0E19\u0E30 2+ \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+        backupAlternative: "Inter Milan -0.25 + Man Utd -0.25"
+      },
+      ahStep2: {
+        mode: "AH_STEP_2",
+        legs: [
+          {
+            legNumber: 1,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Inter Milan vs Genoa",
+            homeName: "Inter Milan",
+            awayName: "Genoa",
+            league: "Serie A \u{1F1EE}\u{1F1F9}",
+            kickoffTime: "\u0E40\u0E2A\u0E32\u0E23\u0E4C 28 \u0E1E.\u0E22. 00:00 \u0E19. ICT",
+            venue: "San Siro, Milan",
+            homeXg: 2.18,
+            awayXg: 0.72,
+            xgGap: 1.46,
+            selection: "Inter Milan -0.75",
+            teamSide: "HOME",
+            line: -0.75,
+            buttonLabel: "1 (-0.75)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.67,
+            impliedProbPct: 59.9,
+            coverProbability: 70.2,
+            edgeOver1xBetPct: 10.3,
+            expectedValuePct: 17.2,
+            winRuleThai: "\u0E0A\u0E19\u0E30 2 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50%",
+            rationaleThai: "\u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E43\u0E19\u0E1A\u0E49\u0E32\u0E19\u0E41\u0E01\u0E23\u0E48\u0E07\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E40\u0E0B\u0E40\u0E23\u0E35\u0E22 \u0E2D\u0E32 \u0E40\u0E2B\u0E19\u0E37\u0E2D\u0E01\u0E27\u0E48\u0E32\u0E40\u0E08\u0E19\u0E31\u0E27 (\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E0A\u0E19\u0E30\u0E15\u0E32\u0E21\u0E15\u0E25\u0E32\u0E14 70%\u201378%) \u0E0A\u0E31\u0E14\u0E40\u0E08\u0E19"
+          },
+          {
+            legNumber: 2,
+            matchId: "match-netherlands-greece",
+            matchTitle: "Manchester United vs Brentford",
+            homeName: "Manchester United",
+            awayName: "Brentford",
+            league: "Premier League \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}",
+            kickoffTime: "\u0E40\u0E2A\u0E32\u0E23\u0E4C 28 \u0E1E.\u0E22. 22:00 \u0E19. ICT",
+            venue: "Old Trafford, Manchester",
+            homeXg: 1.72,
+            awayXg: 1.02,
+            xgGap: 0.7,
+            selection: "Man Utd -0.25",
+            teamSide: "HOME",
+            line: -0.25,
+            buttonLabel: "1 (-0.25)",
+            safetyButtonLabel: "1 (-0.25)",
+            odds: 1.76,
+            impliedProbPct: 56.8,
+            coverProbability: 64,
+            edgeOver1xBetPct: 7.2,
+            expectedValuePct: 12.6,
+            winRuleThai: "\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 / \u0E40\u0E2A\u0E21\u0E2D\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E23\u0E36\u0E48\u0E07",
+            rationaleThai: "\u0E41\u0E21\u0E19\u0E2F \u0E22\u0E39\u0E44\u0E19\u0E40\u0E15\u0E47\u0E14 \u0E43\u0E19\u0E42\u0E2D\u0E25\u0E14\u0E4C \u0E41\u0E17\u0E23\u0E1F\u0E1F\u0E2D\u0E23\u0E4C\u0E14 \u0E15\u0E48\u0E2D\u0E41\u0E04\u0E48 -0.25 \u0E40\u0E08\u0E2D\u0E40\u0E1A\u0E23\u0E19\u0E17\u0E4C\u0E1F\u0E2D\u0E23\u0E4C\u0E14\u0E17\u0E35\u0E48\u0E40\u0E01\u0E21\u0E40\u0E22\u0E37\u0E2D\u0E19\u0E40\u0E2A\u0E35\u0E22\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E07\u0E48\u0E32\u0E22 \u0E0A\u0E19\u0E30\u0E25\u0E39\u0E01\u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21!"
+          }
+        ],
+        combinedOdds: 2.939,
+        halfWinCombinedOdds: 2.35,
+        combinedCoverProb: 44.9,
+        combinedExpectedValue: 32.8,
+        step2RuleSummaryThai: "Smart Guard v3.0 \u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01 Serie A + Premier League",
+        halfWinNoteThai: "\u0E2D\u0E34\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01 + \u0E41\u0E21\u0E19\u0E22\u0E39\u0E0A\u0E19\u0E30 1 \u0E25\u0E39\u0E01 \u0E22\u0E31\u0E07\u0E23\u0E31\u0E1A @2.35 (+135%)"
       }
     }
   };
 }
 function getDefaultSettledRecords() {
   return [
+    {
+      id: "past-tuesday24-settled",
+      dateKey: "2026-11-24",
+      date: "24 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23 24 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Como vs AEK Athens + Manchester City vs Napoli",
+      league: "UEFA Champions League \u{1F1EA}\u{1F1FA} (Step 2)",
+      predictedScore: "Step 2: Como -0.75 + Man City -0.75",
+      actualScore: "1-0 / 2-2",
+      odds: 3.167,
+      consensusScore: 99,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999112424",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 UCL MD5: Como \u0E0A\u0E19\u0E30 1-0 (\u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 \u2705) \u0E41\u0E15\u0E48 Man City \u0E40\u0E2A\u0E21\u0E2D Napoli 2-2 \u274C \u2014 \u0E2D\u0E31\u0E1B\u0E40\u0E01\u0E23\u0E14\u0E2A\u0E39\u0E48 Smart Guard v3.0 \u0E1C\u0E2A\u0E21\u0E02\u0E32 -0.25"
+    },
+    {
+      id: "past-monday23-settled",
+      dateKey: "2026-11-23",
+      date: "23 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C 23 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Santos vs Gr\xEAmio + Internacional vs Vit\xF3ria",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7} (Step 2)",
+      predictedScore: "Step 2: Santos -0.75 + Inter -0.75",
+      actualScore: "0-2 / 2-5",
+      odds: 3.349,
+      consensusScore: 99.1,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999112323",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07: Santos 0-2 Gr\xEAmio (\u0E2A\u0E19\u0E32\u0E21\u0E01\u0E25\u0E32\u0E07 MorumBIS!) & Inter 2-5 Vit\xF3ria \u2014 \u0E19\u0E33\u0E44\u0E1B\u0E2A\u0E39\u0E48\u0E01\u0E0E Smart Guard v3.0 \u0E41\u0E1A\u0E19\u0E2A\u0E19\u0E32\u0E21\u0E01\u0E25\u0E32\u0E07 & \u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01"
+    },
+    {
+      id: "past-sunday22-settled",
+      dateKey: "2026-11-22",
+      date: "22 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C 22 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Juventus vs Venezia",
+      league: "Serie A \u{1F1EE}\u{1F1F9}",
+      predictedScore: "Juventus -0.75",
+      actualScore: "4-0",
+      odds: 1.68,
+      consensusScore: 99.2,
+      result: "WIN",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999112222",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 4-0 \u0E22\u0E39\u0E40\u0E27\u0E19\u0E15\u0E38\u0E2A\u0E16\u0E25\u0E48\u0E21\u0E40\u0E27\u0E40\u0E19\u0E40\u0E0B\u0E35\u0E22 \u2014 1 (-0.75) @1.68 \u0E01\u0E34\u0E19\u0E40\u0E15\u0E47\u0E21 100% \u{1F3AF}"
+    },
+    {
+      id: "past-saturday21-settled",
+      dateKey: "2026-11-21",
+      date: "21 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C 21 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Aston Villa vs Sunderland",
+      league: "Premier League \u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}",
+      predictedScore: "Aston Villa -0.75",
+      actualScore: "0-0",
+      odds: 1.74,
+      consensusScore: 99,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999112121",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 0-0 \u0E27\u0E34\u0E25\u0E25\u0E48\u0E32\u0E40\u0E08\u0E32\u0E30\u0E40\u0E01\u0E21\u0E23\u0E31\u0E1A\u0E0B\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E44\u0E21\u0E48\u0E40\u0E02\u0E49\u0E32 \u0E1E\u0E25\u0E32\u0E14 \u274C"
+    },
+    {
+      id: "past-friday20-settled",
+      dateKey: "2026-11-20",
+      date: "20 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C 20 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Athletic Bilbao vs Espanyol",
+      league: "La Liga \u{1F1EA}\u{1F1F8}",
+      predictedScore: "Athletic Bilbao -0.75",
+      actualScore: "0-1",
+      odds: 1.76,
+      consensusScore: 99.1,
+      result: "LOSS",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999112020",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 0-1 \u0E40\u0E2D\u0E2A\u0E1B\u0E31\u0E19\u0E0D\u0E48\u0E2D\u0E25\u0E1A\u0E38\u0E01\u0E1E\u0E25\u0E34\u0E01\u0E25\u0E47\u0E2D\u0E01\u0E0A\u0E19\u0E30\u0E04\u0E32\u0E0B\u0E32\u0E19 \u0E21\u0E32\u0E40\u0E21\u0E2A \u274C"
+    },
+    {
+      id: "past-thursday19-settled",
+      dateKey: "2026-11-19",
+      date: "19 \u0E1E.\u0E22.",
+      fullDate: "\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35 19 \u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19 2026",
+      matchTitle: "Vasco da Gama vs Internacional",
+      league: "Brasileir\xE3o S\xE9rie A \u{1F1E7}\u{1F1F7}",
+      predictedScore: "Vasco da Gama -0.75",
+      actualScore: "2-1",
+      odds: 1.741,
+      consensusScore: 98.8,
+      result: "WIN",
+      settledAt: "05:00 \u0E19. (\u0E15\u0E31\u0E14\u0E23\u0E2D\u0E1A\u0E1C\u0E25\u0E08\u0E23\u0E34\u0E07)",
+      slipNumber: "\u2116 89999111919",
+      note: "\u0E08\u0E1A\u0E08\u0E23\u0E34\u0E07 2-1 \u0E27\u0E32\u0E2A\u0E42\u0E01 \u0E14\u0E32 \u0E01\u0E32\u0E21\u0E48\u0E32 \u0E0A\u0E19\u0E30 \u2014 \u0E1B\u0E38\u0E48\u0E21 1 (-0.75) @1.741 \u0E01\u0E34\u0E19\u0E04\u0E23\u0E36\u0E48\u0E07 +50% \u2705"
+    },
     {
       id: "past-wednesday18-settled",
       dateKey: "2026-11-18",
@@ -1170,8 +1768,14 @@ function loadEngineState() {
         }
       }
       mergedSettled.sort((a, b) => (b.dateKey || "").localeCompare(a.dateKey || ""));
+      const sanitizedPicks = { ...raw.picksByDate };
+      for (const [k, v] of Object.entries(sanitizedPicks)) {
+        if (v?.generatedBy === "DETERMINISTIC_FALLBACK" && seeds[k]) {
+          delete sanitizedPicks[k];
+        }
+      }
       state = {
-        picksByDate: { ...raw.picksByDate, ...seeds },
+        picksByDate: { ...sanitizedPicks, ...seeds },
         settledRecords: mergedSettled.length ? mergedSettled : defaultSettled,
         pipeline: {
           ...state.pipeline,
@@ -1505,17 +2109,36 @@ function withTimeout(promise, ms, label) {
     new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms))
   ]);
 }
+function parseGeminiJson(rawText) {
+  const txt = (rawText || "").trim();
+  if (!txt) return {};
+  const cleaned = txt.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
+  try {
+    return JSON.parse(cleaned);
+  } catch {
+    const start = cleaned.indexOf("{");
+    const end = cleaned.lastIndexOf("}");
+    if (start !== -1 && end > start) {
+      return JSON.parse(cleaned.slice(start, end + 1));
+    }
+    throw new Error("Invalid JSON response from Gemini");
+  }
+}
 async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
+  const verifiedSeeds = getVerifiedSeedPicks();
+  if (verifiedSeeds[dateKey]) {
+    return verifiedSeeds[dateKey];
+  }
   const ai = getGeminiClient();
   const fullDateThai = formatThaiFullDateFromKey(dateKey);
   const useAhStep2Mode = dateKey >= "2026-11-23";
   if (ai && useAhStep2Mode) {
     try {
-      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E08\u0E32\u0E01 Google Search \u0E40\u0E1B\u0E23\u0E35\u0E22\u0E1A\u0E40\u0E17\u0E35\u0E22\u0E1A\u0E17\u0E38\u0E01\u0E04\u0E39\u0E48\u0E41\u0E25\u0E49\u0E27\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet AH Step 2 (\u0E2A\u0E40\u0E15\u0E47\u0E1B 2 \u0E04\u0E39\u0E48\u0E17\u0E35\u0E48\u0E14\u0E35\u0E41\u0E25\u0E30\u0E0A\u0E31\u0E27\u0E23\u0E4C\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14)" \u0E42\u0E14\u0E22\u0E17\u0E31\u0E49\u0E07 2 \u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E44\u0E21\u0E48\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E1C\u0E48\u0E32\u0E19\u0E04\u0E23\u0E1A\u0E17\u0E31\u0E49\u0E07 5 \u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E2D\u0E34\u0E07\u0E01\u0E23\u0E30\u0E14\u0E32\u0E19\u0E08\u0E23\u0E34\u0E07 1xBet \u0E14\u0E31\u0E07\u0E19\u0E35\u0E49:
-1. \u0E2B\u0E49\u0E32\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"}) \u0E41\u0E25\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E25\u0E35\u0E01\u0E2B\u0E25\u0E31\u0E01\u0E17\u0E35\u0E48 1xBet \u0E21\u0E35\u0E2A\u0E20\u0E32\u0E1E\u0E04\u0E25\u0E48\u0E2D\u0E07\u0E2A\u0E39\u0E07 (Vig <= 6.5%)
-2. \u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A 1xBet \u0E08\u0E23\u0E34\u0E07\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19 (.25 \u0E2B\u0E23\u0E37\u0E2D .75 \u0E40\u0E0A\u0E48\u0E19 -0.75, -0.25) \u0E2B\u0E49\u0E32\u0E21\u0E43\u0E0A\u0E49 -0.5 \u0E2B\u0E23\u0E37\u0E2D -1.0
-3. \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E15\u0E48\u0E2D\u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E22\u0E39\u0E48\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 @1.65 \u0E16\u0E36\u0E07 @1.98 (\u0E23\u0E27\u0E21 2 \u0E04\u0E39\u0E48\u0E08\u0E30\u0E44\u0E14\u0E49\u0E23\u0E32\u0E27 @2.80\u2013@3.80)
-4. \u0E41\u0E15\u0E48\u0E25\u0E30\u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35 coverProbability > 1xBet Implied Prob \u0E2D\u0E22\u0E48\u0E32\u0E07\u0E19\u0E49\u0E2D\u0E22 +3.5% \u0E41\u0E25\u0E30 +EV >= +6.0%
+      const prompt = `\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15\u0E1A\u0E2D\u0E25\u0E41\u0E02\u0E48\u0E07\u0E02\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 ${dateKey} (\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22) \u0E41\u0E25\u0E30\u0E02\u0E48\u0E32\u0E27\u0E1A\u0E32\u0E14\u0E40\u0E08\u0E47\u0E1A\u0E25\u0E48\u0E32\u0E2A\u0E38\u0E14\u0E08\u0E32\u0E01 Google Search \u0E04\u0E31\u0E14\u0E40\u0E25\u0E37\u0E2D\u0E01 "\u0E0B\u0E38\u0E1B\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E1E\u0E22 1xBet Smart Guard v3.0 AH Step 2 (2 \u0E04\u0E39\u0E48\u0E15\u0E48\u0E32\u0E07\u0E25\u0E35\u0E01)" \u0E42\u0E14\u0E22\u0E15\u0E49\u0E2D\u0E07\u0E1C\u0E48\u0E32\u0E19\u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02 Smart Guard v3.0 \u0E14\u0E31\u0E07\u0E19\u0E35\u0E49:
+1. \u0E2B\u0E49\u0E32\u0E21\u0E0B\u0E49\u0E33\u0E01\u0E31\u0E1A\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E32\u0E19 (${excludeMatchTitle || "\u0E44\u0E21\u0E48\u0E21\u0E35"}) \u0E41\u0E25\u0E30 **\u0E1A\u0E31\u0E07\u0E04\u0E31\u0E1A\u0E17\u0E31\u0E49\u0E07 2 \u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E22\u0E39\u0E48\u0E04\u0E19\u0E25\u0E30\u0E25\u0E35\u0E01/\u0E04\u0E19\u0E25\u0E30\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23** (\u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01 2 \u0E04\u0E39\u0E48\u0E08\u0E32\u0E01\u0E25\u0E35\u0E01\u0E40\u0E14\u0E35\u0E22\u0E27\u0E01\u0E31\u0E19)
+2. \u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E02\u0E48\u0E32\u0E27\u0E25\u0E48\u0E32\u0E2A\u0E38\u0E14: \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E17\u0E35\u0E21\u0E17\u0E35\u0E48\u0E40\u0E15\u0E30\u0E2A\u0E19\u0E32\u0E21\u0E01\u0E25\u0E32\u0E07, \u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E17\u0E35\u0E21\u0E15\u0E48\u0E2D\u0E17\u0E35\u0E48\u0E02\u0E32\u0E14\u0E01\u0E2D\u0E07\u0E2B\u0E19\u0E49\u0E32\u0E15\u0E31\u0E27\u0E40\u0E01\u0E48\u0E07/\u0E1C\u0E39\u0E49\u0E23\u0E31\u0E01\u0E29\u0E32\u0E1B\u0E23\u0E30\u0E15\u0E39\u0E2B\u0E25\u0E31\u0E01/\u0E15\u0E31\u0E27\u0E2B\u0E25\u0E31\u0E01 3+ \u0E23\u0E32\u0E22, \u0E41\u0E25\u0E30\u0E2B\u0E49\u0E32\u0E21\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E04\u0E39\u0E48\u0E2B\u0E19\u0E35\u0E15\u0E01\u0E0A\u0E31\u0E49\u0E19\u0E17\u0E49\u0E32\u0E22\u0E24\u0E14\u0E39\u0E01\u0E32\u0E25
+3. \u0E23\u0E32\u0E04\u0E32\u0E04\u0E27\u0E1A 1xBet \u0E08\u0E23\u0E34\u0E07\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19 (.25 \u0E2B\u0E23\u0E37\u0E2D .75) \u2014 \u0E41\u0E19\u0E30\u0E19\u0E33 Hybrid (-0.25 1 \u0E04\u0E39\u0E48 + -0.75 1 \u0E04\u0E39\u0E48) \u0E2B\u0E23\u0E37\u0E2D (-0.25 \u0E17\u0E31\u0E49\u0E07\u0E04\u0E39\u0E48) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E23\u0E31\u0E01\u0E29\u0E32 Win Rate \u0E2A\u0E39\u0E07\u0E2A\u0E38\u0E14 \u0E2B\u0E49\u0E32\u0E21\u0E15\u0E48\u0E2D\u0E25\u0E36\u0E01\u0E40\u0E01\u0E34\u0E19 -1.0
+4. \u0E04\u0E48\u0E32\u0E19\u0E49\u0E33\u0E15\u0E48\u0E2D\u0E04\u0E39\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E2D\u0E22\u0E39\u0E48\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07 @1.65 \u0E16\u0E36\u0E07 @1.98 \u0E41\u0E25\u0E30 coverProbability > Implied Prob \u0E2D\u0E22\u0E48\u0E32\u0E07\u0E19\u0E49\u0E2D\u0E22 +3.5% (+EV >= +6.0%)
 5. \u0E2A\u0E48\u0E27\u0E19\u0E15\u0E48\u0E32\u0E07 xG Gap >= +0.75 \u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A -0.75 \u0E2B\u0E23\u0E37\u0E2D >= +0.50 \u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A -0.25
 \u0E15\u0E2D\u0E1A\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E40\u0E1B\u0E47\u0E19 JSON \u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19:
 {
@@ -1526,16 +2149,16 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
       "homeCode": "HM1",
       "awayName": "Away1",
       "awayCode": "AW1",
-      "league": "League Name & Emoji",
+      "league": "League A",
       "venue": "Stadium 1",
       "kickoffTimeThai": "HH:mm \u0E19. ICT",
       "ahTeamSide": "HOME",
       "ahLine": -0.75,
-      "ahOdds": 1.84,
-      "coverProbability": 66.5,
-      "homeXg": 1.80,
-      "awayXg": 0.75,
-      "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E04\u0E39\u0E48 1"
+      "ahOdds": 1.72,
+      "coverProbability": 67.5,
+      "homeXg": 1.95,
+      "awayXg": 0.78,
+      "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E04\u0E39\u0E48 1 \u0E1E\u0E23\u0E49\u0E2D\u0E21\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E44\u0E21\u0E48\u0E21\u0E35\u0E15\u0E31\u0E27\u0E40\u0E08\u0E47\u0E1A\u0E2B\u0E25\u0E31\u0E01/\u0E44\u0E21\u0E48\u0E40\u0E15\u0E30\u0E2A\u0E19\u0E32\u0E21\u0E01\u0E25\u0E32\u0E07"
     },
     {
       "matchTitle": "Home2 vs Away2",
@@ -1543,15 +2166,15 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
       "homeCode": "HM2",
       "awayName": "Away2",
       "awayCode": "AW2",
-      "league": "League Name & Emoji",
+      "league": "League B (Different from League A)",
       "venue": "Stadium 2",
       "kickoffTimeThai": "HH:mm \u0E19. ICT",
       "ahTeamSide": "HOME",
-      "ahLine": -0.75,
+      "ahLine": -0.25,
       "ahOdds": 1.82,
-      "coverProbability": 64.5,
-      "homeXg": 1.74,
-      "awayXg": 0.78,
+      "coverProbability": 64.0,
+      "homeXg": 1.62,
+      "awayXg": 0.85,
       "rationaleThai": "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25\u0E04\u0E39\u0E48 2"
     }
   ]
@@ -1562,16 +2185,15 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
           contents: prompt,
           config: {
             tools: [{ googleSearch: {} }],
-            responseMimeType: "application/json",
-            temperature: 0.2
+            responseMimeType: "application/json"
           }
         }),
-        5e3,
+        12e3,
         "Gemini future AH Step 2 search"
       );
-      const parsed = JSON.parse(response.text || "{}");
+      const parsed = parseGeminiJson(response.text);
       const rawLegs = Array.isArray(parsed.legs) ? parsed.legs : [];
-      if (rawLegs.length >= 2 && rawLegs[0]?.matchTitle !== rawLegs[1]?.matchTitle) {
+      if (rawLegs.length >= 2 && rawLegs[0]?.matchTitle !== rawLegs[1]?.matchTitle && (rawLegs[0]?.league || "A") !== (rawLegs[1]?.league || "B")) {
         const builtLegs = rawLegs.slice(0, 2).map((leg, i) => {
           const homeXg = Number(leg.homeXg) || 1.78;
           const awayXg = Number(leg.awayXg) || 0.78;
@@ -1731,14 +2353,13 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
           contents: prompt,
           config: {
             tools: [{ googleSearch: {} }],
-            responseMimeType: "application/json",
-            temperature: 0.2
+            responseMimeType: "application/json"
           }
         }),
-        4500,
+        12e3,
         "Gemini future AH pick search"
       );
-      const parsed = JSON.parse(response.text || "{}");
+      const parsed = parseGeminiJson(response.text);
       if (parsed.matchTitle && parsed.homeName && parsed.awayName && parsed.matchTitle !== excludeMatchTitle) {
         const slipSuffix = dateKey.replace(/-/g, "").slice(-5);
         const homeXg = Number(parsed.homeXg) || 1.82;
@@ -1834,7 +2455,7 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
     }
   }
   const seeds = getVerifiedSeedPicks();
-  const poolKeys = useAhStep2Mode ? ["2026-11-23", "2026-11-24"] : ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"].filter((k) => {
+  const poolKeys = useAhStep2Mode ? ["2026-11-25", "2026-11-26", "2026-11-27", "2026-11-28"] : ["2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"].filter((k) => {
     const p = seeds[k];
     if (!p?.asianHandicap) return false;
     return evaluateServer1xBetSelectionCriteria({
@@ -1844,7 +2465,7 @@ async function resolveFuturePickWithSearch(dateKey, excludeMatchTitle) {
       xgGap: p.asianHandicap.xgGap
     }).allPassed;
   });
-  const activePool = poolKeys.length > 0 ? poolKeys : ["2026-11-23", "2026-11-24"];
+  const activePool = poolKeys.length > 0 ? poolKeys : ["2026-11-25", "2026-11-26", "2026-11-27", "2026-11-28"];
   const dayNum = parseInt(dateKey.replace(/-/g, ""), 10) || 0;
   let candidate = seeds[activePool[dayNum % activePool.length]];
   if (excludeMatchTitle && candidate.matchTitle === excludeMatchTitle) {
@@ -1888,14 +2509,13 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
             contents: prompt,
             config: {
               tools: [{ googleSearch: {} }],
-              responseMimeType: "application/json",
-              temperature: 0.1
+              responseMimeType: "application/json"
             }
           }),
-          4500,
+          12e3,
           "Gemini Step 2 auto-settle"
         );
-        const parsed = JSON.parse(resp.text || "{}");
+        const parsed = parseGeminiJson(resp.text);
         if (parsed.finished && typeof parsed.score1 === "string" && typeof parsed.score2 === "string") {
           score1 = parsed.score1.trim();
           score2 = parsed.score2.trim();
@@ -1959,14 +2579,13 @@ async function settlePickForDate(state, yesterdayKey, bkk) {
           contents: prompt,
           config: {
             tools: [{ googleSearch: {} }],
-            responseMimeType: "application/json",
-            temperature: 0.1
+            responseMimeType: "application/json"
           }
         }),
-        4e3,
+        12e3,
         "Gemini auto-settle"
       );
-      const parsed = JSON.parse(resp.text || "{}");
+      const parsed = parseGeminiJson(resp.text);
       if (parsed.finished && typeof parsed.actualScore === "string" && parsed.actualScore.includes("-")) {
         actualScore = parsed.actualScore.trim();
         prevPick.settledNotes = parsed.summaryThai || prevPick.settledNotes;
@@ -2049,7 +2668,7 @@ async function runAutomatedPipelineTick(forceSync = false, allowAutoDispatch = !
     }
     const yesterdayMatchTitle = state.picksByDate[yesterdayKey]?.matchTitle;
     let activePick = state.picksByDate[opKey];
-    if (!activePick) {
+    if (!activePick || activePick.generatedBy === "DETERMINISTIC_FALLBACK") {
       activePick = await resolveFuturePickWithSearch(opKey, yesterdayMatchTitle);
       state.picksByDate[opKey] = activePick;
     }
@@ -2221,8 +2840,7 @@ function createApiApp() {
         model: "gemini-4-hydrogen",
         contents: prompt,
         config: {
-          responseMimeType: "application/json",
-          temperature: 0.7
+          responseMimeType: "application/json"
         }
       });
       const parsed = JSON.parse(response.text || "{}");
@@ -2253,7 +2871,7 @@ function createApiApp() {
         contents: prompt
       });
       const timeoutPromise = new Promise(
-        (_, reject) => setTimeout(() => reject(new Error("AI generation timed out")), 6e3)
+        (_, reject) => setTimeout(() => reject(new Error("AI generation timed out")), 12e3)
       );
       const response = await Promise.race([geminiPromise, timeoutPromise]);
       return res.json({ reply: response.text });
